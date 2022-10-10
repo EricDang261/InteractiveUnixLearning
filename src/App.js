@@ -53,7 +53,7 @@ function App() {
         <Route path='/login' element= {
           (user.email !== "") ? 
           (
-            <div className="Welcome">
+            <div className="welcome">
               <h2>Welcome, <span>{user.name}</span> </h2>
               <button onClick={Logout}>Logout </button>
             </div>

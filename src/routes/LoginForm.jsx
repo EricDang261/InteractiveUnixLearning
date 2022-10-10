@@ -1,5 +1,6 @@
 
 import React, { useState } from 'react'
+import './LoginForm.css'
 
 const LoginForm = ({ Login,  error}) => {
   const [details, setDetails] = useState({name: "", email: "", password: ""});
@@ -12,11 +13,11 @@ const LoginForm = ({ Login,  error}) => {
 
 
   return (
+    <div className= "form-container" >
     <form onSubmit={submitHandler}> 
         <div className="form-inner">
             <h2>Login</h2>
-            { /* error } */}
-
+  {(error !=="") ? (<div className="error"> {error} </div>) : "" } 
             <div className="form-group">
                 <label htmlFor="name"> Name: </label>
                 <input type="text" name="name" id="name" onChange={ e => setDetails({...details , name: e.target.value})} value={details.name}  />
@@ -34,6 +35,7 @@ const LoginForm = ({ Login,  error}) => {
             <input type="submit" value="LOGIN" />       
         </div>
     </form>
+    </div>
   )
 }
 

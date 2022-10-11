@@ -1,18 +1,5 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: montserrat, sans-serif;
-}
 
-input, button{
-    appearance: none;
-    background: none;
-    border: none;
-    outline: none;
-}
-
-.form-container {
+.SignUp-form-container {
     height: 100vh;
     display: flex;
     align-items: center;
@@ -20,12 +7,12 @@ input, button{
     background-color: #53565A;
 }
 
-.form-container form{
+.SignUp-form-container form{
     display: block;
     position:relative;
 }
 
-.form-container form::after{
+.SignUp-form-container form::after{
     content: '';
     display: block;
     position: absolute;
@@ -37,7 +24,7 @@ input, button{
     background-image: linear-gradient(to bottom right, #FFCE00, #FE4800);
 }
 
-.form-container form .form-inner{
+.SignUp-form-container form .form-inner{
     position: relative;
     display: block;
     background-color: #FFF;
@@ -45,14 +32,14 @@ input, button{
     z-index: 2;
 }
 
-.form-container form .form-inner h2{
+.SignUp-form-container form .form-inner h2{
     color: #888;
     font-size: 28px;
     font-weight: 500;
     margin-bottom: 30px;
 }
 
-.form-container form .form-inner .form-group{
+.SignUp-form-container form .form-inner .form-group{
     display: block;
     width: 300px;
     margin-bottom: 15px;
@@ -66,12 +53,12 @@ input, button{
     transition: 0.4s;
 }
 
-.form-container .form-inner .form-group:focus-within label{
+.SignUp-form-container .form-inner .form-group:focus-within label{
     color: #FE4800;
 
 }
 
-.form-container form .form-inner .form-group input{
+.SignUp-form-container form .form-inner .form-group input{
     display: block;
     width: 100%;
     padding: 10px 15px;
@@ -80,13 +67,13 @@ input, button{
     transition: 0.4s;
 }
 
-.form-container form .form-inner .form-group input:focus{
+.SignUp-form-container form .form-inner .form-group input:focus{
     box-shadow: 0px 0px 3px rgba(0,0,0,0.2);
 }
 
-.form-container form .form-inner input[type="submit"], 
-.form-container .form-inner button,
-.welcome button{
+.SignUp-form-container form .form-inner input[type="submit"], 
+.SignUp-form-container .form-inner button
+{
     display: inline-block;
     padding: 10px 15px;
     border-radius: 8px;
@@ -99,19 +86,14 @@ input, button{
     cursor: pointer;
 }
 
-.form-container form .form-inner input[type="submit"]:hover, 
-.form-container .form-inner button:hover,
-.welcome button:hover{
+.SignUp-form-container form .form-inner input[type="submit"]:hover, 
+.SignUp-form-container .form-inner button:hover
+{
     background-position: 100% 0%;
 }
 
-
-.welcome button{
-    margin: 5px 0px;
-}
-
-.sign_up_btn{
+.SignUp-form-container .link-btn{
     position: absolute;
-    right: 0;
-    margin-right: 10px;
+    padding-top: 8px;
 }
+

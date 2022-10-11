@@ -1,14 +1,15 @@
 import React, { useState } from "react";
-
 import {Routes, Route} from 'react-router-dom';
 
-import LoginForm from "./routes/LoginForm";
-import Home from './routes/Home';
-import Introduction from './routes/Introduction';
-import FileManagement from "./routes/FileManagement";
-import FileSecurity from "./routes/FileSecurity";
-import Basic from "./routes/Basic";
-import Advanced from "./routes/Advanced";
+import {  LoginForm, 
+          SignUpForm,
+          Home, 
+          Introduction, 
+          FileManagement, 
+          FileSecurity, 
+          Basic, 
+          Advanced 
+        }from "./routes";
 
 function App() {
 
@@ -20,7 +21,7 @@ function App() {
   const [user, setUser] = useState( { name: "" , email:"" } )
   const [error, setError] = useState("")
   
-  {/* for debuging purpose */} 
+  /* for debuging purpose */
   
   const Login = details =>{
     console.log(details);
@@ -53,7 +54,7 @@ function App() {
         <Route path='/login' element= {
           (user.email !== "") ? 
           (
-            <div className="Welcome">
+            <div className="welcome">
               <h2>Welcome, <span>{user.name}</span> </h2>
               <button onClick={Logout}>Logout </button>
             </div>
@@ -63,6 +64,8 @@ function App() {
             <LoginForm Login={Login} error={error}/>
           )
         } />
+        
+        <Route path='/SignUp' element={ <SignUpForm /> }></Route>
 
         <Route path='/intro' element={<Introduction/>}></Route>
         <Route path='/fileManage' element={<FileManagement/>}></Route>

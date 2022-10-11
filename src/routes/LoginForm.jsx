@@ -34,7 +34,7 @@ const LoginForm = ({ Login,  error}) => {
                 <input type="password" name="password" id="password"  onChange={ e => setDetails({...details , password: e.target.value})} value={details.password} />
             </div>
             <input type="submit" value="LOGIN" />  
-            <button onClick={() => navigate("/SignUp")}> Sign Up </button> 
+            <button id="sign_up_btn" onClick={() => navigate("/SignUp")}> Sign Up </button> 
             
         </div>
     </form>

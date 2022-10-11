@@ -28,6 +28,17 @@ code {
     monospace;
 }
 
+/* Make footer stay at the bottom of the page without being fixed to screen */
+.home{
+  display:flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.home_body{
+  flex:1;
+}
+
 .card_wrapper{
   /* position: absolute; */
   margin-top: 16rem;
@@ -43,3 +54,5 @@ code {
   font-size: 30pt;
   font-stretch: expanded;
 }
+
+

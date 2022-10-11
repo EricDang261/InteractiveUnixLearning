@@ -1,10 +1,18 @@
 import React from 'react'
-import Nav from '../components/Nav'
+import SideNav from '../components/SideNav'
+import Footer from '../components/Footer'
+import "./FileManagement.css"
+import { ManagementData } from '../components/ManagementData'
+
 
 const FileManagement = () => {
   return (
-    <div>
-        <Nav/>
+    <div className="management">
+      <SideNav page={ManagementData}/>
+      <div className="management_body">
+        <h1>File Management</h1>
+      </div>
+      <Footer/>
     </div>
   )
 }

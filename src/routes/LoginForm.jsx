@@ -1,16 +1,17 @@
 
 import React, { useState } from 'react'
+import {useNavigate} from 'react-router-dom'
 import './LoginForm.css'
 
 const LoginForm = ({ Login,  error}) => {
   const [details, setDetails] = useState({name: "", email: "", password: ""});
+  const navigate = useNavigate();
 
   const submitHandler = e =>{
     e.preventDefault();
     Login(details);
 
   }
-
 
   return (
     <div className= "form-container" >
@@ -32,7 +33,9 @@ const LoginForm = ({ Login,  error}) => {
                 <label htmlFor="password">Password: </label>
                 <input type="password" name="password" id="password"  onChange={ e => setDetails({...details , password: e.target.value})} value={details.password} />
             </div>
-            <input type="submit" value="LOGIN" />       
+            <input type="submit" value="LOGIN" />  
+            <button onClick={() => navigate("/SignUp")}> Sign Up </button> 
+            
         </div>
     </form>
     </div>

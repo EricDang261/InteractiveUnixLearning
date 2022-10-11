@@ -1,0 +1,9 @@
+.management{
+    display:flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+  
+.management_body{
+    flex: 1;
+  }

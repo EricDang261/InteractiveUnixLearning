@@ -7,3 +7,28 @@
 .intro_body{
     flex: 1;
   }
+
+  .intro_body{
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    line-height: 1.6rem;
+  }
+
+  .intro_os{
+    font-size: 13pt;
+  }
+
+  .intro_intro{
+    font-size: 13pt;
+  }
+
+  .intro_background{
+    font-size: 13pt;
+  }
+
+  .unics_reasons{
+    list-style-type: square;
+    margin-left: 2rem;
+    font-size: 13pt;
+    line-height: 1.6rem;
+  }

@@ -21,6 +21,11 @@ const SideNav = (props) => {
             <Link to="#" className="menu-bars">
                 <FaIcons.FaBars onClick={showSidebar}/>
             </Link>
+            <div className="home_link">
+                <Link to="/" className="home_icon">
+                    <FaIcons.FaHome/>
+                </Link>
+            </div>
         </div>
        <nav className ={sidebar ? "side-menu active" : "side-menu"}>
             <ul className="side-menu-items" onClick={showSidebar}>
@@ -34,7 +39,7 @@ const SideNav = (props) => {
                     return(
                         <li key={index} className={item.className}>
                             <Link to={item.path}>
-                            <span>{item.title}</span>
+                            <span className="side_titles">{item.title}</span>
                             </Link>
                         </li>
                     )

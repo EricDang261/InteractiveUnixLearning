@@ -1,5 +1,4 @@
 import React from 'react'
-import Nav from '../components/Nav'
 import SideNav from '../components/SideNav'
 import Footer from '../components/Footer'
 import "./Introduction.css"
@@ -11,8 +10,31 @@ const Introduction = () => {
         {/* <Nav/> */}
         <SideNav page={IntroData} />
         <div className="intro_body">
-            <h1>Introduction</h1>
-            <p></p>
+            <h1 className="intro_title">Introduction</h1>
+            <br/>
+            <p className="intro_intro">In this lesson you will learn what Unix is, the uses behind it, and the architecture it uses.</p>
+            <br/>
+            <h3 className="into_topic1"> What is Unix?</h3>
+            <p className="intro_os">Unix is the Granddaddy (yes capital G) of all operating systems (OS). Simply put the OS is software that 
+              controls the hardware of a computer system. OS manage resources and services such as memory management, device management,
+              and resource allocation to name a few. Basically, everyhting that makes a computer useful is taken care of by the OS. Without it,
+              your computer would be a pile of useless hardware. The purpose of an OS is to create an interface between the user and hardware of
+              their system.
+            </p>
+            <br/>
+            <p className="intro_background">
+              The Unix OS was created by Bell Labs back when punch cards were still being used and the first man landed on the moon.
+              It was born from the ashes of Multics, a failed previous attempt at an OS system, and was originally named Unics (wanna take a guess
+              why?). The goal of the project was to create a system that supports: 
+              <ul className="unics_reasons">
+                <li>Multiple users- several people using the computer at the same time</li>
+                <li>Multitasking- running multiple programs at the same time (exe programs)</li>
+                <li>Multi-processes- executing several processes simultaneously per user (programs in exe)</li>
+              </ul>
+              <br/>
+              As seen, their project ended up a success and can be described very simply as a shell program, a command line interpreter 
+              (CLI), which translates user input commands into a language the OS, or kernel, can understand.
+            </p>
         </div>
         <Footer/>  
     </div>

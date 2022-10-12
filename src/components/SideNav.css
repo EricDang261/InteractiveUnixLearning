@@ -1,7 +1,7 @@
 .sidebar{
     background-color: rgb(64, 65, 64);
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
     align-items: center;
 }
 
@@ -31,7 +31,7 @@
 
 .side-text{
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
     align-items: center;
     padding: 8px 0px 8px 16px;
     height: 60px;
@@ -60,10 +60,20 @@
     /* background-color: black; */
     height: 80px;
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
     align-items: center;
 }
 
-span{
+.side_titles{
     margin-left: 16px;
+}
+
+.home_link{
+    position: absolute;
+    right: 1rem;
+    font-size: 16pt;
+}
+
+.home_icon{
+    color: white;
 }

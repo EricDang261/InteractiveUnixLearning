@@ -49,6 +49,8 @@
 
 .side-text a:hover{
     background-color: grey;
+    cursor: pointer;
+
 }
 
 .side-menu-items{

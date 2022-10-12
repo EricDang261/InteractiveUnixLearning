@@ -3,6 +3,7 @@ import {Link} from "react-router-dom"
 import * as FaIcons from "react-icons/fa"
 import * as AiIcons from "react-icons/ai"
 import "./SideNav.css"
+import {Link as LinkScroll} from "react-scroll"
 // import { IntroData } from './IntroData'
 
 const SideNav = (props) => {
@@ -38,9 +39,9 @@ const SideNav = (props) => {
                 {props.page.map((item, index)=>{
                     return(
                         <li key={index} className={item.className}>
-                            <Link to={item.path}>
+                            <LinkScroll to={item.path} spy={true} smooth={true}>
                             <span className="side_titles">{item.title}</span>
-                            </Link>
+                            </LinkScroll>
                         </li>
                     )
                 })}

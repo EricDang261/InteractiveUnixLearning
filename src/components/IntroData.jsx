@@ -2,17 +2,17 @@
 export const IntroData = [
     {
         title: "What is Unix",
-        path: "/",
+        path: "definition",
         className: "side-text"
     },
     {
         title: "Why Use Unix?",
-        path: "/",
+        path: "uses",
         className: "side-text"
     },
     {
         title: "Unix Architecture",
-        path: "/",
+        path: "arch",
         className: "side-text"
     }
 ]

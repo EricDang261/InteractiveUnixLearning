@@ -11,6 +11,11 @@ import {  LoginForm,
           Advanced 
         }from "./routes";
 
+import {
+  FlashcardList,
+  FlashcardData
+} from "./components";
+
 function App() {
 
   const adminUser = {
@@ -46,6 +51,9 @@ function App() {
     });
   }
 
+  // this is for flash car
+  const [flashcards, setFlashcards ] = useState(FlashcardData) 
+
 
   return (
     <div className="App">
@@ -72,6 +80,7 @@ function App() {
         <Route path='/security' element={<FileSecurity/>}></Route>
         <Route path='/basic' element={<Basic/>}></Route>
         <Route path='/advanced' element={<Advanced/>}></Route>
+        <Route path='/flashcard' element={<FlashcardList flashcards={flashcards} />}> </Route>
       </Routes>
     </div>
   );

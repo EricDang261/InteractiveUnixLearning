@@ -1,13 +1,14 @@
 import React from 'react'
 import './Nav.css'
 import {Link} from 'react-router-dom'
+import WebsiteLogo from "../assets/websitelogo.png"
 // import {FaBars, FaTimes} from 'react-icons/fa'
 
 
 const Nav = () => {
   return (
     <div className="container">
-      <Link to='/'><h1 className="logo" > logo </h1></Link>
+      <Link to='/'><img className="logo" src={WebsiteLogo} alt="website logo"/></Link>
       {/* <div className="hamburger">
         <FaBars size={20}/>
       </div> */}

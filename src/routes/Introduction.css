@@ -12,6 +12,7 @@
   margin-left: .75rem;
   margin-right: 0.75rem;
   line-height: 1.6rem;
+  min-width: 800px;
 }
 
 .definition{

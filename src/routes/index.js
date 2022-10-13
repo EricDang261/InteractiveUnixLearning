@@ -6,4 +6,5 @@ export {default as FileManagement} from "./FileManagement";
 export {default as Introduction} from "./Introduction";
 export {default as Home} from "./Home";
 export {default as FileSecurity} from "./FileSecurity";
+export {default as Quiz} from "./Quiz"
 

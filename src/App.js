@@ -8,7 +8,8 @@ import {  LoginForm,
           FileManagement, 
           FileSecurity, 
           Basic, 
-          Advanced 
+          Advanced,
+          Quiz
         }from "./routes";
 
 import {
@@ -81,6 +82,7 @@ function App() {
         <Route path='/basic' element={<Basic/>}></Route>
         <Route path='/advanced' element={<Advanced/>}></Route>
         <Route path='/flashcard' element={<FlashcardList flashcards={flashcards} />}> </Route>
+        <Route path='/quiz' element={<Quiz/>}></Route>
       </Routes>
     </div>
   );

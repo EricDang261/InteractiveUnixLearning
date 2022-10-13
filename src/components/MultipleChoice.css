@@ -1,0 +1,35 @@
+.mc_questions{
+    padding: 16px;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 16px;
+    width: 80%;
+    height: auto;
+    background-color: white;
+}
+
+.question_choices li{
+    border: 3px solid black;
+    padding: 16 px;
+    border-radius: 20px;
+    font-size: 20px;
+    margin-top: 8px;
+}
+
+.question_text{
+    font-size: 20px;
+}
+
+.mc_results{
+    padding: 16px;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 16px;
+    width: 50%;
+    height: auto;
+    background-color: white;
+}
+
+.mc_restart{
+    background-color: burlywood;
+}

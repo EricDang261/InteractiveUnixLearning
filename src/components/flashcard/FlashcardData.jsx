@@ -21,5 +21,138 @@ export const FlashcardData = [
             'idk maybe someone',
             'my bf',
         ]
+    },
+    {
+        id: 2,
+        question: 'who is the most stupid person?',
+        ans: 4,
+        options: [
+            'no body',
+            'hmm me...? ', 
+            'idk maybe someone',
+            'my bf',
+        ]
+    },
+    {
+        id: 2,
+        question: 'who is the most stupid person?',
+        ans: 4,
+        options: [
+            'no body',
+            'hmm me...? ', 
+            'idk maybe someone',
+            'my bf',
+        ]
+    },
+    {
+        id: 2,
+        question: 'who is the most stupid person?',
+        ans: 4,
+        options: [
+            'no body',
+            'hmm me...? ', 
+            'idk maybe someone',
+            'my bf',
+        ]
+    },
+    {
+        id: 2,
+        question: 'who is the most stupid person?',
+        ans: 4,
+        options: [
+            'no body',
+            'hmm me...? ', 
+            'idk maybe someone',
+            'my bf',
+        ]
+    },
+    {
+        id: 2,
+        question: 'who is the most stupid person?',
+        ans: 4,
+        options: [
+            'no body',
+            'hmm me...? ', 
+            'idk maybe someone',
+            'my bf',
+        ]
+    },
+    {
+        id: 2,
+        question: 'who is the most stupid person?',
+        ans: 4,
+        options: [
+            'no body',
+            'hmm me...? ', 
+            'idk maybe someone',
+            'my bf',
+        ]
+    },
+    {
+        id: 2,
+        question: 'who is the most stupid person?',
+        ans: 4,
+        options: [
+            'no body',
+            'hmm me...? ', 
+            'idk maybe someone',
+            'my bf',
+        ]
+    },
+    {
+        id: 2,
+        question: 'who is the most stupid person?',
+        ans: 4,
+        options: [
+            'no body',
+            'hmm me...? ', 
+            'idk maybe someone',
+            'my bf',
+        ]
+    },
+    {
+        id: 2,
+        question: 'who is the most stupid person?',
+        ans: 4,
+        options: [
+            'no body',
+            'hmm me...? ', 
+            'idk maybe someone',
+            'my bf',
+        ]
+    },
+    {
+        id: 2,
+        question: 'who is the most stupid person?',
+        ans: 4,
+        options: [
+            'no body',
+            'hmm me...? ', 
+            'idk maybe someone',
+            'my bf',
+        ]
+    },
+
+     {
+        id: 2,
+        question: 'who is the most stupid person?',
+        ans: 4,
+        options: [
+            'no body',
+            'hmm me...? ', 
+            'idk maybe someone',
+            'my bf',
+        ]
+    },
+     {
+        id: 2,
+        question: 'who is the most stupid person?',
+        ans: 4,
+        options: [
+            'no body',
+            'hmm me...? ', 
+            'idk maybe someone',
+            'my bf',
+        ]
     }
 ]

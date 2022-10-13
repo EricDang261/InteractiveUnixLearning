@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import {Routes, Route} from 'react-router-dom';
+import {Routes, Route} from 'react-router-dom'
+import'./App.css'
 
 import {  LoginForm, 
           SignUpForm,
@@ -80,7 +81,9 @@ function App() {
         <Route path='/security' element={<FileSecurity/>}></Route>
         <Route path='/basic' element={<Basic/>}></Route>
         <Route path='/advanced' element={<Advanced/>}></Route>
-        <Route path='/flashcard' element={<FlashcardList flashcards={flashcards} />}> </Route>
+        <Route path='/flashcard' element={<div className="flashcard-container"> 
+                                              <FlashcardList flashcards={flashcards}/> 
+                                              </div>}> </Route>
       </Routes>
     </div>
   );

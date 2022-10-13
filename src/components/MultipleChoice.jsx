@@ -2,7 +2,10 @@ import React, { useState } from 'react'
 import "./MultipleChoice.css"
 import { IntroMCQs } from './IntroMCQs'
 
-const MultipleChoice = () => {
+const MultipleChoice = (props) => {
+
+    console.log( Array.isArray(IntroMCQs))
+    console.log(Array.isArray(props.data))
 
     //properties section
     const [showFinalRes, setFinalRes] = useState(false)
@@ -32,7 +35,6 @@ const MultipleChoice = () => {
     
     return (
         <div className='mc_components'>
-
             {showFinalRes ?
 
                 //if true show results
@@ -56,6 +58,7 @@ const MultipleChoice = () => {
                                 <li onClick={()=>optionClicked(option.isCorrect)}key={option.id}>{option.text}</li>
                             )
                         })}
+
                     </ul>
                 </div>
             }

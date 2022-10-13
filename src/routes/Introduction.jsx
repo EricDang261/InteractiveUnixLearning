@@ -1,8 +1,13 @@
-import React from 'react'
+import React, {useState} from 'react'
 import SideNav from '../components/SideNav'
 import Footer from '../components/Footer'
 import "./Introduction.css"
 import { IntroData } from '../components/IntroData'
+import { IntroMCQs } from '../components/IntroMCQs'
+import Quiz from './Quiz'
+import arch from "../assets/unix_arch.png"
+import * as AiIcons from "react-icons/ai"
+import Popup from '../components/Popup'
 
 const Introduction = () => {
   return (
@@ -49,9 +54,22 @@ const Introduction = () => {
             </div>
             <div className="arch">
               <h3 className="intro_topic3">Unix Architecture </h3>
+              <Popup trigger={false}><h1>My Popup</h1></Popup>
+              <div className="arch_diagram">
+                <AiIcons.AiOutlinePlusCircle className="hw_btn"/>
+                <AiIcons.AiOutlinePlusCircle className="kernel_btn"/>
+                <AiIcons.AiOutlinePlusCircle className="shell_btn"/>
+                <AiIcons.AiOutlinePlusCircle className="applic_btn"/>
+                <img className="unix_arch" src={arch} alt="overlapping circles of smaller sizes and colors"/>
+              </div>
+
+              
 
             </div>
         </div>
+        {console.log("WHYYYYY?", Array.isArray({IntroMCQs}))}
+        
+        {/* <Quiz data={IntroMCQs}/> */}
         <Footer/>  
     </div>
   )

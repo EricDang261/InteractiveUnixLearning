@@ -2,13 +2,12 @@
   display:flex;
   flex-direction: column;
   min-height: 100vh;
+  /* This will stop page going after footer */
+  overflow: hidden;
 }
 
 .intro_body{
   flex: 1;
-}
-
-.intro_body{
   margin-left: .75rem;
   margin-right: 0.75rem;
   line-height: 1.6rem;
@@ -16,7 +15,7 @@
 }
 
 .definition{
-  height: 600px;
+  height: 800px;
   background-color: aquamarine;
 }
 
@@ -42,11 +41,68 @@
   padding-top: 1rem;
 }
 .uses{
-  height: 600px;
+  height: 800px;
   background-color: aqua;
 }
 
 .arch{
-  height:600px;
+  height:800px;
   background-color: antiquewhite;
 }
+
+.arch_diagram{
+  position:relative;
+  z-index: 2;
+}
+
+
+.unix_arch{
+  width: 50%;
+  height: 50%;
+  margin-left: 20%;
+}
+
+.hw_btn{
+  z-index: 10;
+  position:absolute;
+  margin-left: 50%;
+  margin-top: 25%;
+  animation: pulse 2s linear infinite;
+}
+
+
+.kernel_btn{
+  z-index: 10;
+  position:absolute;
+  margin-left: 47%;
+  margin-top: 21%;
+  animation: pulse 3s linear infinite;
+}
+
+.shell_btn{
+  z-index: 10;
+  position:absolute;
+  margin-left: 43%;
+  margin-top: 20%;
+  animation: pulse 2s linear infinite;
+}
+
+.applic_btn{
+  z-index: 10;
+  position:absolute;
+  margin-left: 37%;
+  margin-top: 25%;
+  animation: pulse 3s linear infinite;
+}
+
+
+
+@keyframes pulse {
+  to {
+    opacity: .50;
+    transform: scale(1);
+  }
+}
+
+
+

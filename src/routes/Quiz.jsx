@@ -1,11 +1,13 @@
 import React from 'react'
 import MultipleChoice from '../components/MultipleChoice'
 
-const Quiz = () => {
+const Quiz = (props) => {
+  console.log("WHat is this?", props)
   return (
     <div className = "quiz">
         <div className="multiple_choice">
-            <MultipleChoice/>
+
+            <MultipleChoice data={props} />
         </div>
     </div>
   )

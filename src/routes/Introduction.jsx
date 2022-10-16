@@ -7,12 +7,25 @@ import { IntroMCQs } from '../components/IntroMCQs'
 import Quiz from './Quiz'
 import arch from "../assets/unix_arch.png"
 import * as AiIcons from "react-icons/ai"
+import encounter from "../assets/Encounter.png"
+import modularity from "../assets/modularity.png"
+import pas from "../assets/pas.png"
 import Popup from '../components/Popup'
 
 const Introduction = () => {
+  const [hwPopup, setHWPop] = useState(false)
+  const [kernPopup, setKernPop] = useState(false)
+  const [shellPopup, setShellPop] = useState(false)
+  const [appPopup, setAppPop] = useState(false)
+
+
+  let intro_mcs_deepcopy = JSON.stringify(IntroMCQs)
+
+  {console.log(intro_mcs_deepcopy)}
+
+
   return (
     <div className="intro">
-        {/* <Nav/> */}
         <SideNav page={IntroData} />
         <div className="intro_body">
             <h1 className="intro_title">Introduction</h1>
@@ -50,27 +63,59 @@ const Introduction = () => {
             </div>
             <div className="uses">
               <h3 className="intro_topic2">Why Use Unix? </h3>
-
+              <div className="encounter_wrapper">
+                <img className="encounter" src={encounter} alt="pokemon battle with Unix"/>
+                <p className="encounter_text">You will encounter more Unix systems in the future</p>
+              </div>
+              <div className="mod_wrapper">
+                <img className="mod" src={modularity} alt="tree diagram describing modules"/>
+                <p className="mod_text">"Unix philosophy", create small modular components that do one thing well</p>
+              </div>
+              <div className="pas_wrapper">
+                <img className="pas" src={pas} alt="blue arrow circle, sick figure, brown bag "/>
+                <p className="pas_text">Portability, Simplicity, Adaptability</p>
+              </div>
             </div>
             <div className="arch">
               <h3 className="intro_topic3">Unix Architecture </h3>
-              <Popup trigger={false}><h1>My Popup</h1></Popup>
+              <p className="arch_instructions">
+                Click the different components to learn more about 
+                Unix's 4-layered architecture.
+              </p>
+        
               <div className="arch_diagram">
-                <AiIcons.AiOutlinePlusCircle className="hw_btn"/>
-                <AiIcons.AiOutlinePlusCircle className="kernel_btn"/>
-                <AiIcons.AiOutlinePlusCircle className="shell_btn"/>
-                <AiIcons.AiOutlinePlusCircle className="applic_btn"/>
+              <Popup className= "hw_info"
+                    trigger={hwPopup} 
+                    setTrigger={setHWPop}
+                    text = "Hardware: Visible system components"/>
+
+              <Popup className= "kernel_info" 
+                     trigger={kernPopup} 
+                     setTrigger={setKernPop}
+                     text="Kernal: This manages and allocates memory and tasks"/>
+            
+              
+              <Popup className= "shell_info" 
+                     trigger={shellPopup} 
+                     setTrigger={setShellPop}
+                     text="Shell: The CLI, bridge between kernel and user"/>
+              
+              
+              <Popup className= "applic_info" 
+                     trigger={appPopup} 
+                     setTrigger={setAppPop}
+                     text="Application: Data and programs users write"/>
+             
+                <AiIcons.AiOutlinePlusCircle className="hw_btn" onClick={()=> setHWPop(true)}/>
+                <AiIcons.AiOutlinePlusCircle className="kernel_btn" onClick={()=> setKernPop(true)}/>
+                <AiIcons.AiOutlinePlusCircle className="shell_btn" onClick={()=> setShellPop(true)}/>
+                <AiIcons.AiOutlinePlusCircle className="applic_btn" onClick={()=> setAppPop(true)}/>
                 <img className="unix_arch" src={arch} alt="overlapping circles of smaller sizes and colors"/>
               </div>
 
-              
-
             </div>
         </div>
-        {console.log("WHYYYYY?", Array.isArray({IntroMCQs}))}
-        
-        {/* <Quiz data={IntroMCQs}/> */}
-        <Footer/>  
+        <Footer/>
     </div>
   )
 }

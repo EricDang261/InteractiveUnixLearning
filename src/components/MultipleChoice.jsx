@@ -4,8 +4,11 @@ import { IntroMCQs } from './IntroMCQs'
 
 const MultipleChoice = (props) => {
 
-    console.log( Array.isArray(IntroMCQs))
-    console.log(Array.isArray(props.data))
+    for (const [key, value] of Object.entries(props.data)) {
+        console.log(`${key}: ${value}`);
+      }
+    {console.log(props.data)}
+    {console.log("hello")}
 
     //properties section
     const [showFinalRes, setFinalRes] = useState(false)
@@ -43,6 +46,7 @@ const MultipleChoice = (props) => {
                     <h2>{score} out of {IntroMCQs.length} correct - ({(score/IntroMCQs.length)*100}%)</h2>
 
                     <button className="mc_restart" onClick={()=>restartMC()}>Restart</button>
+
 
                 </div>
 

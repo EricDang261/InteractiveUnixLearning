@@ -7,3 +7,8 @@
 .management_body{
     flex: 1;
   }
+
+.ls_input{
+    background-color: white;
+    color:black
+}

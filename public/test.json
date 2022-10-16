@@ -1,0 +1,106 @@
+{
+    "Unix-intro":[
+        {
+            "id" : 1,
+            "question": "what is 2 + 2",
+            "ans": 4,
+            "options": [
+                "2",
+                "3",
+                "4",
+                "5"
+            ]
+        },
+
+        {
+            "id": 2,
+            "question": "who is the most stupid person?",
+            "ans": 4,
+            "options": [
+                "no body",
+                "hmm me...? ", 
+                "idk maybe someone",
+                "my bf"
+            ]
+        }
+    ],
+
+    "File-management":[
+        {
+            "id" : 3,
+            "question": "File management 1",
+            "ans": 4,
+            "options": [
+                "2",
+                "3",
+                "4",
+                "5"
+            ]
+        },
+
+        {
+            "id": 4,
+            "question": "fM2",
+            "ans": 4,
+            "options": [
+                "no body",
+                "hmm me...? ", 
+                "idk maybe someone",
+                "my bf"
+            ]
+        }
+    ],
+
+    "Environment":[
+        {
+            "id" : 1,
+            "question": "E1",
+            "ans": 4,
+            "options": [
+                "2",
+                "3",
+                "4",
+                "5"
+            ]
+        },
+
+        {
+            "id": 2,
+            "question": "E2",
+            "ans": 4,
+            "options": [
+                "no body",
+                "hmm me...? ", 
+                "idk maybe someone",
+                "my bf"
+            ]
+        }
+    ],
+
+    "Advanced":[
+        {
+            "id" : 1,
+            "question": "A1",
+            "ans": 4,
+            "options": [
+                "2",
+                "3",
+                "4",
+                "5"
+            ]
+        },
+
+        {
+            "id": 2,
+            "question": "A2",
+            "ans": 4,
+            "options": [
+                "no body",
+                "hmm me...? ", 
+                "idk maybe someone",
+                "my bf"
+            ]
+        }
+    ]
+}
+

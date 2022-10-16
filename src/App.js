@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import {Routes, Route} from 'react-router-dom'
 import'./App.css'
 
@@ -10,13 +10,15 @@ import {  LoginForm,
           FileSecurity, 
           Basic, 
           Advanced,
-          Quiz
+          Quiz,
         }from "./routes";
 
 import {
   FlashcardList,
-  FlashcardData
+  FlashcardData,
+  ValueContext
 } from "./components";
+
 
 function App() {
 
@@ -28,11 +30,7 @@ function App() {
   const [user, setUser] = useState( { name: "" , email:"" } )
   const [error, setError] = useState("")
   
-  /* for debuging purpose */
-  
   const Login = details =>{
-    console.log(details);
-
     if(details.email === adminUser.email && details.password === adminUser.password){
       console.log("Logged in");
       setUser({
@@ -43,48 +41,49 @@ function App() {
       console.log("Details does not match")
       setError("Details does not match!")
     }
-
   }
 
-  const Logout = () =>{
-    setUser({
-      name: "",
-      email:""
-    });
-  }
+  // const Logout = () =>{
+  //   setUser({
+  //     name: "",
+  //     email:""
+  //   });
+  // }
+  
 
-  // this is for flash car
+  // this is for flash card
+
   const [flashcards, setFlashcards ] = useState(FlashcardData) 
+  
+  const [categories, setCategories] = useState([])
 
+  const context = useContext(ValueContext)
+
+  useEffect(() => {
+    fetch('./test.json')
+        .then(response => response.json() ) 
+        .then(data => { console.log(data)
+                        setCategories(Object.keys(data).map(function(value) { return data[value]; }))  
+                        console.log(Object.keys(data).map(function(value) { return data[value]; }))
+                        setFlashcards(context.value ==="Unix-intro" ? categories[0]: context.value === "File-management"? categories[1]: 
+                                      context.value === "Environment"? categories[2]: categories[3]) 
+                      })   
+      }, []) 
 
   return (
     <div className="App">
      <Routes>
         <Route path='/' element={<Home/>} />
-        <Route path='/login' element= {
-          (user.email !== "") ? 
-          (
-            <div className="welcome">
-              <h2>Welcome, <span>{user.name}</span> </h2>
-              <button onClick={Logout}>Logout </button>
-            </div>
-          ) :
-    
-          (
-            <LoginForm Login={Login} error={error}/>
-          )
-        } />
+        <Route path='/login' element= { (user.email !== "") ? 
+          (<Home />) : ( <LoginForm Login={Login} error={error}/>)}/>
         
         <Route path='/SignUp' element={ <SignUpForm /> }></Route>
-
         <Route path='/intro' element={<Introduction/>}></Route>
         <Route path='/fileManage' element={<FileManagement/>}></Route>
         <Route path='/security' element={<FileSecurity/>}></Route>
         <Route path='/basic' element={<Basic/>}></Route>
         <Route path='/advanced' element={<Advanced/>}></Route>
-        <Route path='/flashcard' element={<div className="flashcard-container"> 
-                                              <FlashcardList flashcards={flashcards}/> 
-                                              </div>}> </Route>
+        <Route path='/flashcard' element={ <FlashcardList flashcards={flashcards}/>}> </Route>
         <Route path='/quiz' element={<Quiz/>}></Route>
       </Routes>
     </div>

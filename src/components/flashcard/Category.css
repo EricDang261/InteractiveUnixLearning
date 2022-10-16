@@ -1,0 +1,25 @@
+.dropdown-container{
+    font-weight: 600;
+}
+
+.dropdown-container select{
+    display: inline-flex;
+    margin-left: .2rem;
+    position: relative;
+   
+}
+
+.dropdown-container input[type="submit"]{
+    display: inline-block;
+    margin-left: 3px;
+    padding: 2px 2px;
+    border: 2px solid black;
+    border-radius: 5px;
+    color:black;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+
+
+

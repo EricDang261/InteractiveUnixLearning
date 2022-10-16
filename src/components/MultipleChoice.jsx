@@ -2,7 +2,13 @@ import React, { useState } from 'react'
 import "./MultipleChoice.css"
 import { IntroMCQs } from './IntroMCQs'
 
-const MultipleChoice = () => {
+const MultipleChoice = (props) => {
+
+    for (const [key, value] of Object.entries(props.data)) {
+        console.log(`${key}: ${value}`);
+      }
+    {console.log(props.data)}
+    {console.log("hello")}
 
     //properties section
     const [showFinalRes, setFinalRes] = useState(false)
@@ -32,7 +38,6 @@ const MultipleChoice = () => {
     
     return (
         <div className='mc_components'>
-
             {showFinalRes ?
 
                 //if true show results
@@ -41,6 +46,7 @@ const MultipleChoice = () => {
                     <h2>{score} out of {IntroMCQs.length} correct - ({(score/IntroMCQs.length)*100}%)</h2>
 
                     <button className="mc_restart" onClick={()=>restartMC()}>Restart</button>
+
 
                 </div>
 
@@ -56,6 +62,7 @@ const MultipleChoice = () => {
                                 <li onClick={()=>optionClicked(option.isCorrect)}key={option.id}>{option.text}</li>
                             )
                         })}
+
                     </ul>
                 </div>
             }

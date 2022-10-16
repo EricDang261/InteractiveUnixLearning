@@ -2,13 +2,13 @@
   display:flex;
   flex-direction: column;
   min-height: 100vh;
+  /* This will stop page going after footer */
+  overflow: hidden;
+  overflow-x: scroll;
 }
 
 .intro_body{
   flex: 1;
-}
-
-.intro_body{
   margin-left: .75rem;
   margin-right: 0.75rem;
   line-height: 1.6rem;
@@ -16,7 +16,7 @@
 }
 
 .definition{
-  height: 600px;
+  height: 800px;
   background-color: aquamarine;
 }
 
@@ -41,12 +41,206 @@
 .intro_warning{
   padding-top: 1rem;
 }
+
 .uses{
   height: 600px;
   background-color: aqua;
+  overflow: hidden;
+  position: relative;
 }
 
+.intro_topic2{
+  font-size: 20pt;
+  text-align: center;
+  padding-top: 5pt;
+
+}
+
+.mod{
+  height: 150px;
+  width: 200px;
+  position:absolute;
+  left: 125px;
+  top: 150px;
+}
+
+.mod_wrapper:hover .mod_text{
+  visibility: visible;
+}
+
+.encounter{
+  height: 400px;
+  width: 400px;
+  position:absolute;
+  right: 50px;
+}
+
+.encounter_wrapper:hover .encounter_text{
+  visibility: visible;
+}
+
+.pas{
+  height: 400px;
+  width: 400px;
+  position:absolute;
+  right: 550px;
+}
+
+.pas_wrapper:hover .pas_text{
+  visibility: visible;
+}
+
+.mod_text{
+  background-color: white;
+  position: absolute;
+  left: 125px;
+  top: 400px;
+  width: 200px;
+  visibility: hidden;
+}
+
+.encounter_text{
+  background-color: silver;
+  position: absolute;
+  right: 170px;
+  top: 400px;
+  width: 200px;
+  visibility: hidden;
+  
+}
+.pas_text{
+  background-color: brown;
+  position: absolute;
+  left: 520px;
+  top: 400px;
+  width: 200px;
+  visibility: hidden;
+}
+
+
 .arch{
-  height:600px;
+  height:800px;
   background-color: antiquewhite;
 }
+
+.arch_diagram{
+  position:relative;
+  z-index: 2;
+}
+
+
+.unix_arch{
+  width: 50%;
+  height: 50%;
+  margin-left: 20%;
+  position: relative;
+}
+
+.hw_btn{
+  z-index: 10;
+  position:absolute;
+  margin-left: 50%;
+  margin-top: 25%;
+  animation: pulse 2s linear infinite;
+}
+
+.hw_btn:hover{
+  cursor: pointer;
+}
+
+
+.kernel_btn{
+  z-index: 10;
+  position:absolute;
+  margin-left: 47%;
+  margin-top: 21%;
+  animation: pulse 3s linear infinite;
+}
+
+.kernel_btn:hover{
+  cursor: pointer;
+}
+
+.shell_btn{
+  z-index: 10;
+  position:absolute;
+  margin-left: 43%;
+  margin-top: 20%;
+  animation: pulse 2s linear infinite;
+}
+.shell_btn:hover{
+  cursor: pointer;
+}
+
+.applic_btn{
+  z-index: 10;
+  position:absolute;
+  margin-left: 37%;
+  margin-top: 25%;
+  animation: pulse 3s linear infinite;
+}
+.applic_btn:hover{
+  cursor: pointer;
+}
+
+.kernel_info{
+  background-color: rgb(124, 255, 124);
+  height: 120px;
+  width: 200px;
+  right: 100px;
+  position:absolute;
+  margin-top: 100px;
+  z-index: 10;
+}
+
+.hw_info{
+  background-color: rgb(221, 255, 135);
+  height: 120px;
+  width: 200px;
+  margin-top: 50px;
+  left: 300px;
+  position:absolute;
+  z-index: 10;
+}
+
+.shell_info{
+  background-color: rgb(251, 211, 126);
+  height: 120px;
+  width: 200px;
+  left: 100px;
+  margin-top: 300px;
+  position:absolute;
+  z-index: 10;
+}
+
+.applic_info{
+  background-color: rgb(126, 184, 251);
+  height: 120px;
+  width: 200px;
+  margin-top: 350px;
+  right: 200px;
+  position:absolute;
+  z-index: 10;
+}
+
+.intro_topic3{
+  font-size: 20pt;
+  text-align: center;
+  padding-top: 5pt;
+}
+
+.arch_instructions{
+  text-align: center;
+  padding-top: 2rem;
+}
+
+
+@keyframes pulse {
+  to {
+    opacity: .50;
+    transform: scale(1);
+  }
+}
+
+
+

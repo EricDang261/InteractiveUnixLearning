@@ -3,8 +3,8 @@ import SideNav from '../components/SideNav'
 import Footer from '../components/Footer'
 import "./Introduction.css"
 import { IntroData } from '../components/IntroData'
-import { IntroMCQs } from '../components/IntroMCQs'
-import Quiz from './Quiz'
+
+
 import arch from "../assets/unix_arch.png"
 import * as AiIcons from "react-icons/ai"
 import encounter from "../assets/Encounter.png"
@@ -18,10 +18,6 @@ const Introduction = () => {
   const [shellPopup, setShellPop] = useState(false)
   const [appPopup, setAppPop] = useState(false)
 
-
-  let intro_mcs_deepcopy = JSON.stringify(IntroMCQs)
-
-  {console.log(intro_mcs_deepcopy)}
 
 
   return (

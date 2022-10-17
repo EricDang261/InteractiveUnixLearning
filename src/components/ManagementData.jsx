@@ -10,7 +10,12 @@ export const ManagementData = [
         className: "side-text"
     },
     {
-        title: "View Content",
+        title: "Change Directory",
+        path: "/",
+        className: "side-text"
+    },
+    {
+        title: "Create File",
         path: "/",
         className: "side-text"
     }

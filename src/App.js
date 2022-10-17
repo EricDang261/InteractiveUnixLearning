@@ -67,8 +67,9 @@ function App() {
                         console.log(Object.keys(data).map(function(value) { return data[value]; }))
                         setFlashcards(context.value ==="Unix-intro" ? categories[0]: context.value === "File-management"? categories[1]: 
                                       context.value === "Environment"? categories[2]: categories[3]) 
+                        
                       })   
-      }, []) 
+      }, [context.value]) 
 
   return (
     <div className="App">

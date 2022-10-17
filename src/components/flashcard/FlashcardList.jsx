@@ -2,7 +2,6 @@ import React from 'react'
 import Flashcard from './Flashcard'
 import Category from './Category'
 import "./Flashcard.css"
-import { FlashcardData } from './FlashcardData'
 
 export default function FlashcardList({ flashcards }) {
 

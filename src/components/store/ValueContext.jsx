@@ -14,6 +14,7 @@ function ValueProvider({ children }){
         event.target.value = `${value}`
         setValue(event.target.value)
         console.log(event.target.value)
+        alert("you choose to review: " + value )
     }
 
     const valueObject = {

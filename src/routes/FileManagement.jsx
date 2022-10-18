@@ -58,9 +58,9 @@ const FileManagement = () => {
             </p>
         </div>
         <div className="ls_cmd">
-            <h1>LS COMMAND</h1>
+            <h1>ls command</h1>
               <p>
-                ls commands (abbreviation of list) list out all of the files in the directed folder
+                ls commands (abbreviation of list) list out all of the files in the directed folder <br />  
                 <b> ls [option] </b>
               </p>
 
@@ -92,9 +92,9 @@ const FileManagement = () => {
         </div> {/* end of ls_cmd div */}
 
         <div className="cd_cmd">
-            <h1> CD command </h1>
+            <h1> cd command </h1>
             <p>
-              cd commands( abbreviation of change directory) swiches the current directory to the specific directory 
+              cd commands( abbreviation of change directory) swiches the current directory to the specific directory <br />
               <b>cd [directory]</b>
             </p>
 
@@ -112,22 +112,123 @@ const FileManagement = () => {
 
 
       <div className="pwd_cmd">
-            <h1> PWD command </h1>
+            <h1> pwd command </h1>
             <p>
-              cd commands( abbreviation of change directory) swiches the current directory to the specific directory 
-              <b>cd [directory]</b>
+              cd commands( abbreviation of change directory) swiches the current directory to the specific directory <br />
+              <b>pwd</b>
             </p>
 
+        </div>{/* end of pwd_cmd div */}
+
+
+      <div className="mkdir_cmd">
+            <h1> mkdir command </h1>
             <p>
-              Some special cases:
-              <ol>
-                <li> <b> cd / </b>: from the current directory enter into the system root directory </li>
-                <li> <b> cd .. </b>: from the current directory enter into the parent directory </li>
-                <li> <b> cd ~ </b>:  Entering the current user's home directory from the current directory </li>
-                <li> <b> cd - </b>:  from the current directory into the previous directory </li>
-              </ol>
+              mkdir command ( abbreviation for make directory) create a directory from the current directory <br />
+              <b>mkdir [options] directory </b>
             </p>
-        </div>{/* end of cd_cmd div */}
+
+            <table>
+                  <tr>
+                    <th> Common Parameters</th>
+                    <th> Description </th>
+                  </tr>
+
+                  <tr>
+                    <td> -m </td>
+                    <td> Set permision </td>
+                  </tr>
+
+                  <tr>
+                    <td> -p </td>
+                    <td> Create missing intermediate path name direciries. if the <b>-p</b> is not specified,
+                    the parent directory of each-newly created directory must already exist.
+                    </td>
+                  </tr>
+
+                </table>
+        </div>{/* end of mkdir_cmd div */}
+
+        <div className="rm_cmd">
+            <h1> rm command </h1>
+            <p>
+            rm command ( short for remove) deletes one or more files or directories in a directory. It can also delete a directory and all files and subdirectories under it. <br /> <br />
+            When using rm command be careful of what file or directory are going to be deleted 
+            Be careful when using rm commands. Especially for new user, the entire system might be destroyed with this command 
+            (for example, rm * -rf under / (root directory)). Therefore, be sure and confirm which directory we are in, and what we want to delete. <br />
+
+              <b>rm [options] files or directory </b>
+            </p>
+
+            <table>
+                  <tr>
+                    <th> Common Parameters</th>
+                    <th> Description </th>
+                  </tr>
+
+                  <tr>
+                    <td> -f </td>
+                    <td> --force Ignore nonexistent files and warning </td>
+                  </tr>
+
+                  <tr>
+                    <td> -i </td>
+                    <td> Make an interactive deleteion </td>
+                  </tr>
+
+                  <tr>
+                    <td> -r </td>
+                    <td> Recursively delete all directories and subdirectories listed in the paramemter </td>
+                  </tr>
+
+                </table>
+        </div>{/* end of rm_cmd div */}
+
+        <div className="cp_cmd">
+            <h1> cp command </h1>
+            <p>
+            cp command ( short for copy) is a common used commands. This commands used to copy files or directories. <br />
+              <b>
+                cp [options] source file directory <br />
+                cp [options] -t directory source file
+              </b>
+            </p>
+
+            <table>
+                  <tr>
+                    <th> Common Parameters</th>
+                    <th> Description </th>
+                  </tr>
+
+                  <tr>
+                    <td> -f </td>
+                    <td> --force copy files or directories  </td>
+                  </tr>
+
+                  <tr>
+                    <td> -i </td>
+                    <td> ask before overwritting the file </td>
+                  </tr>
+
+                  <tr>
+                    <td> -n </td>
+                    <td> Do not overwritting exisiting files ( disable -i flag) </td>
+                  </tr>
+
+                  <tr>
+                    <td> -u </td>
+                    <td> --update The file will be copied only when the modiciation time of the souce file is more than the destination
+                      file, or the corresponding destination file does not exist
+                    </td>
+                  </tr>
+
+                </table>
+        </div>{/* end of mv_cmd div */}
+
+
+        
+        
+
 
 
 

@@ -9,6 +9,9 @@ const Basic = () => {
     <div className="basic">
       <SideNav page={BasicData}/>
       <div className="basic_body">
+        <div className="man_pages">
+          
+        </div>
 
       </div>
       <Footer/>

@@ -11,6 +11,7 @@ import {  LoginForm,
           Basic, 
           Advanced,
           Quiz,
+          FMPractice
         }from "./routes";
 
 import {
@@ -81,6 +82,7 @@ function App() {
         <Route path='/SignUp' element={ <SignUpForm /> }></Route>
         <Route path='/intro' element={<Introduction/>}></Route>
         <Route path='/fileManage' element={<FileManagement/>}></Route>
+        <Route path='/fileManagePractice' element={<FMPractice/>}></Route>
         <Route path='/security' element={<FileSecurity/>}></Route>
         <Route path='/basic' element={<Basic/>}></Route>
         <Route path='/advanced' element={<Advanced/>}></Route>

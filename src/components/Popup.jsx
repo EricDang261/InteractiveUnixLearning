@@ -8,6 +8,7 @@ const Popup = (props) => {
         <div className={props.className}>
             <button className="close_btn" onClick={() =>props.setTrigger(false)}><AiIcons.AiOutlineClose/></button>
             <p className="popup_text">{props.text}</p>
+            <img className="popup_img" src={props.img}></img>
         </div>
     </div>
   ):"";

@@ -1,44 +1,32 @@
-import React, {useState, useRef, createContext} from 'react'
+import React, {useState} from 'react'
 import SideNav from '../components/SideNav'
 import Footer from '../components/Footer'
 import "./FileManagement.css"
 import { ManagementData } from '../components/ManagementData'
 import tree from "../assets/Directory-Structure.png"
-import terminal from "../assets/empty_terminal.png"
-import lsCmd from "../assets/ls_command.png"
-import error_msg from "../assets/error_msg.png"
 import Quiz from './Quiz'
 import  {IntroMCQs}  from '../components/IntroMCQs'
 import Q1Context from '../components/store/Quiz1Context'
+import lsGif from "../assets/lsGif.gif"
+import Popup from '../components/Popup'
+import cdGif from "../assets/cdgif.gif"
+import pwdGif from "../assets/pwdGif.gif"
+import mkdirGif from "../assets/mkdirGif.gif"
+import rmGif from "../assets/rmGif.gif"
+import catGif from "../assets/catGif.gif"
+import {Link} from 'react-router-dom'
 
 
 
 const FileManagement = () => {
 
+  const [imgLs, setLs] = useState(false)
+  const [imgCd, setCd] = useState(false)
+  const [imgPwd, setPwd] = useState(false)
+  const [imgMkdir, setMkdir] = useState(false)
+  const [imgRm, setRm] = useState(false)
+  const [imgCat, setCat] = useState(false)
 
-  const [image, setImg] = useState(terminal)
-  const [text, setText] = useState("")
-  const textRef = useRef()
-
-  const handleChange = (event) =>{
-    setText(event.target.value)
-    textRef.current.value = text
-    console.log(textRef.current.value)
-    
-  }
-
-  const handleSubmit = (event, cmd, pic) =>{
-    console.log(textRef.current.value)
-    event.preventDefault();
-    
-    if (textRef.current.value ===cmd){
-      setImg(pic)
-    }
-    else{
-      alert("wrong command!")
-    }
-    
-  }
 
   return (
     <div className="management">
@@ -85,10 +73,12 @@ const FileManagement = () => {
                     <td> -directory displays the directory as a file instead of the file in it </td>
                   </tr>
                 </table>
-
-            <input name="command" ref={textRef} className="ls_input" type="text" value={text} onChange={handleChange} /> 
-            <button className="ls_submit " onClick={(event) => {handleSubmit(event, "ls", lsCmd)}}> Submit </button>
-            <img src={image}></img>
+                <button className="ls_btn" onClick={()=> setLs(true)}>Click Me!</button>
+                <Popup className= "ls_popup"
+                    trigger={imgLs} 
+                    setTrigger={setLs}
+                    img ={lsGif}
+                    />
         </div> {/* end of ls_cmd div */}
 
         <div className="cd_cmd">
@@ -107,6 +97,12 @@ const FileManagement = () => {
                 <li> <b> cd - </b>:  from the current directory into the previous directory </li>
               </ol>
             </p>
+            <button className="cd_btn" onClick={()=> setCd(true)}>Click Me!</button>
+            <Popup className= "cd_popup"
+                    trigger={imgCd} 
+                    setTrigger={setCd}
+                    img ={cdGif}
+                    />
         </div>{/* end of cd_cmd div */}
 
 
@@ -117,7 +113,12 @@ const FileManagement = () => {
               cd commands( abbreviation of change directory) swiches the current directory to the specific directory <br />
               <b>pwd</b>
             </p>
-
+            <button className="pwd_btn" onClick={()=> setPwd(true)}>Click Me!</button>
+            <Popup className= "pwd_popup"
+                    trigger={imgPwd} 
+                    setTrigger={setPwd}
+                    img ={pwdGif}
+                    />
         </div>{/* end of pwd_cmd div */}
 
 
@@ -147,6 +148,13 @@ const FileManagement = () => {
                   </tr>
 
                 </table>
+                <button className="mkdir_btn" onClick={()=> setMkdir(true)}>Click Me!</button>
+                <Popup className= "mkdir_popup"
+                        trigger={imgMkdir} 
+                        setTrigger={setMkdir}
+                        img ={mkdirGif}
+                        />
+
         </div>{/* end of mkdir_cmd div */}
 
         <div className="rm_cmd">
@@ -182,6 +190,13 @@ const FileManagement = () => {
                   </tr>
 
                 </table>
+                <button className="rm_btn" onClick={()=> setRm(true)}>Click Me!</button>
+                <Popup className= "rm_popup"
+                        trigger={imgRm} 
+                        setTrigger={setRm}
+                        img ={rmGif}
+                        />
+
         </div>{/* end of rm_cmd div */}
 
         <div className="cp_cmd">
@@ -221,17 +236,65 @@ const FileManagement = () => {
                       file, or the corresponding destination file does not exist
                     </td>
                   </tr>
-
+                  
+              
                 </table>
-        </div>{/* end of mv_cmd div */}
+                
+        </div>{/* end of cp_cmd div */}
+
+        <div className="cat_cmd">
+            <h1> cat command </h1>
+            <p>
+            cat command ( abbreviation for concatenate ) is toouput a file or standard input.  This command is often used to display the contents of a file, or to link several files together, 
+            or to read and display content from standard input. It is often used in conjunction with redirection symbols <br />
+              <b> cat option  </b>
+            </p>
+
+            <table>
+                  <tr>
+                    <th> Common Parameters</th>
+                    <th> Description </th>
+                  </tr>
+
+                  <tr>
+                    <td> -A </td>
+                    <td> --show all Equivalent to -vET </td>
+                  </tr>
+
+                  <tr>
+                    <td> -n </td>
+                    <td> --number For all the output line numbers, starting from 1 for all output line numbers</td>
+                  </tr>
+                
+                  </table>
+
+            <p>
+              Common Used Examples: 
+              <ul>
+                <li> View a single file <b> $cat filename </b> : It will show content of given filename </li>
+                <li> View multiple files <b> $cat file1 file2 </b>: This will show the content of file1 and file2. </li>
+                <li> View contents of a file preceding with line numbers <b> $cat -n filename </b>: will show content with line number</li> {/* example will be in geekforgeeks website https://www.geeksforgeeks.org/cat-command-in-linux-with-examples/} */}
+                <li> Create a file  <b> $ cat {`>`} newfile</b>: create a file named newfile</li>
+                <li> Copy the contents of one file to another file. <b> $cat [filename-whose-contents-is-to-be-copied] {`>`}[destination-filename] </b> The content will be copied in destination file</li>
+                <li> Append the content will be copied in destination file <b> $cat file1 {`>`} file2</b>: Will append the contents of one file to the end of another file </li>
+                <li> Display content in reverse order using tac command <b>$tac filename </b>:  display content in reverse order  </li>
+                <li> Highlight the end of line <b>$cat -E "filename"</b>: highlight the end of line </li>
+                <li> Cat command if the file has a lot of content and can't fit in the terminal <b>$cat "filename" | more</b>: Will show that much content, which could fit in terminal and will ask to show more. </li>
+                <li> Cat command to merge the contents of multiple files <b>$cat "filename1" "filename2" "filename3" {`>`} "merged_filename" </b>:  merge the contents of file in respective order and will insert that content in "merged_filename". </li>
+                <li> Display the content of all text files in the folder <b> $cat *.txt</b>: show the content of all text files present in the folder.</li>
+                <li> Write in an already existing file <b>  $cat {`>>`} geeks.txt The newly added text.</b>: append the text "The newly added text." to the end of the file. </li>
+              </ul>
+            </p>
+            <button className="cat_btn" onClick={()=> setCat(true)}>Click Me!</button>
+                  <Popup className= "cat_popup"
+                          trigger={imgCat} 
+                          setTrigger={setCat}
+                          img ={catGif}
+                          />
 
 
-        
-        
-
-
-
-
+        </div>{/* end of cat_cmd div */}
+        <Link to="/fileManagePractice">PRACTICE HERE!</Link>
 
       </div>
       <Footer/>

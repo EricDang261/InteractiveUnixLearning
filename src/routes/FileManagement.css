@@ -12,3 +12,34 @@
     background-color: white;
     color:black
 }
+
+.ls_btn{
+    background-color: white;
+    border: 1px solid;
+}
+
+.cd_btn{
+    background-color: white;
+    border: 1px solid;
+}
+
+.pwd_btn{
+    background-color: white;
+    border: 1px solid;
+}
+
+.mkdir_btn{
+    background-color: white;
+    border: 1px solid;
+}
+
+
+.rm_btn{
+    background-color: white;
+    border: 1px solid;
+}
+
+.cat_btn{
+    background-color: white;
+    border: 1px solid;
+}

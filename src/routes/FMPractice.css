@@ -20,3 +20,16 @@
 .FMPractice .terminal{
     white-space: pre-line;
 }
+
+.fm_next{
+    background-color: white;
+}
+
+.fm_next:hover{
+    cursor: pointer;
+}
+
+.fm_exit{
+    padding-left: 2rem;
+    color: white;
+}

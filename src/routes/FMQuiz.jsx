@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import {Link} from "react-router-dom"
 import {FMQs} from "../components/FMQs"
 
 const FMQuiz = () => {
@@ -30,6 +31,7 @@ const FMQuiz = () => {
 
 return (
  <div className='mc_components'>
+    <Link to="/fileManage">Back</Link>
  {showFinalRes ?
 
      //if true show results

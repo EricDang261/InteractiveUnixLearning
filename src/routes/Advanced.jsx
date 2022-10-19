@@ -2,7 +2,9 @@ import React from 'react'
 
 const Advanced = () => {
   return (
-    <div>Advanced</div>
+    <div>
+      <h1>UNDER CONSTRUCTION....</h1>
+    </div>
   )
 }
 

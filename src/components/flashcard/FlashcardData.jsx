@@ -1,173 +1,58 @@
 export const FlashcardData = [
     {
         id : 1,
-        question: 'what is 2 + 2',
-        ans: 4,
-        options: [
-            '2',
-            '3',
-            '4',
-            '5',
-        ]
+        question: 'pwd',
+        ans: "Print out the current working directory" ,
     },
 
     {
         id: 2,
-        question: 'who is the most stupid person?',
-        ans: 4,
-        options: [
-            'no body',
-            'hmm me...? ', 
-            'idk maybe someone',
-            'my bf',
-        ]
+        question: 'mkdir <directory>',
+        ans: "Creates a new empty directory",
     },
     {
         id: 3,
-        question: 'who is the most stupid person?',
-        ans: 4,
-        options: [
-            'no body',
-            'hmm me...? ', 
-            'idk maybe someone',
-            'my bf',
-        ]
+        question: 'cd',
+        ans: "change directory” allows you to navigate the filesystem"
     },
     {
         id: 4,
-        question: 'who is the most stupid person?',
-        ans: 4,
-        options: [
-            'no body',
-            'hmm me...? ', 
-            'idk maybe someone',
-            'my bf',
-        ]
+        question: 'cd <directory>',
+        ans: "will make your path longer by one directory, moving you into the directory represented by <directory>."
     },
     {
         id: 5,
-        question: 'who is the most stupid person?',
-        ans: 4,
-        options: [
-            'no body',
-            'hmm me...? ', 
-            'idk maybe someone',
-            'my bf',
-        ]
+        question: 'cd <path>/<dir>',
+        ans: "This is a relative path. Moving you into the directory represented by <dir> at the end of the path"
     },
     {
         id: 6,
-        question: 'who is the most stupid person?',
-        ans: 4,
-        options: [
-            'no body',
-            'hmm me...? ', 
-            'idk maybe someone',
-            'my bf',
-        ]
+        question: 'cd /<path>/<dir>',
+        ans: "This is the absolute path. Moving you into the directory represented by <dir> at the end of the path"
     },
     {
         id: 7,
-        question: 'who is the most stupid person?',
-        ans: 4,
-        options: [
-            'no body',
-            'hmm me...? ', 
-            'idk maybe someone',
-            'my bf',
-        ]
+        question: 'cd ..',
+        ans: "Move you to the close slash directory",
     },
     {
         id: 8,
-        question: 'who is the most stupid person?',
-        ans: 4,
-        options: [
-            'no body',
-            'hmm me...? ', 
-            'idk maybe someone',
-            'my bf',
-        ]
+        question: 'du -sh ~',
+        ans: "Disk usage. This command tell you how much space you are using in your home directory.",
     },
     {
         id: 9,
-        question: 'who is the most stupid person?',
-        ans: 4,
-        options: [
-            'no body',
-            'hmm me...? ', 
-            'idk maybe someone',
-            'my bf',
-        ]
+        question: 'ls',
+        ans: "“list”. Lists all “visible” files in current directory. An “invisible” file begins with a dot.",
     },
     {
         id: 10,
-        question: 'who is the most stupid person?',
-        ans: 4,
-        options: [
-            'no body',
-            'hmm me...? ', 
-            'idk maybe someone',
-            'my bf',
-        ]
+        question: 'ls -la',
+        ans: "“list”, long, all. Lists all files in current directory and presents them in a long list format." 
     },
     {
         id: 11,
         question: 'who is the most stupid person?',
-        ans: 4,
-        options: [
-            'no body',
-            'hmm me...? ', 
-            'idk maybe someone',
-            'my bf',
-        ]
-    },
-    {
-        id: 12,
-        question: 'who is the most stupid person?',
-        ans: 4,
-        options: [
-            'no body',
-            'hmm me...? ', 
-            'idk maybe someone',
-            'my bf',
-        ]
-    },
-
-    {
-        id: 13,
-        question: 'who is the most stupid person?',
-        ans: 4,
-        options: [
-            'no body',
-            'hmm me...? ', 
-            'idk maybe someone',
-            'my bf',
-        ]
-    },
-    
-    {
-        id: 14,
-        question: 'who is the most stupid person?',
-        ans: 4,
-        options: [
-            'no body',
-            'hmm me...? ', 
-            'idk maybe someone',
-            'my bf',
-        ]
-    }
-]
-
-export const environment=[
-    {
-        id: 15,
-        question: 'who is handsome?',
-        ans: 4,
-        options: [
-            'no body',
-            'hmm me...? ', 
-            'idk maybe someone',
-            'my bf',
-        ]
+        ans: "“copy”. copy existing filename1 into new filename2.",
     }
 ]

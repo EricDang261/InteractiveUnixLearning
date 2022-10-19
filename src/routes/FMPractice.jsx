@@ -26,11 +26,11 @@ const FMPractice = () => {
     let qt = 
     [
       "1. Let's try to see what are files in the current directory ",
-      "2. Okay, now you see what are files in the current directory! Want to know more? (hint: use -l flag) " ,
+      "2. Okay, now you see what are files in the current directory! Do you Want to know more? (hint: use -l flag) " ,
       "3. Now let's visit the Documents folder! ",
       "4. Good Job! Now try pwd command determine what is your location",
-      "5. There is a Message file here. Let's explore what is inside? (hmm treasure map? maybe???!!) ( hint: using cat cmd)",
-      "6. Yahoo!, you have found the treasure map file1. Now clone it to your own map named file2 ( hint using cat cmd with >) ",
+      "5. There is a Message file here. Let's explore what is inside? ( hint: using cat cmd)",
+      "6. Yahoo!, you have found the treasure map named file1. Now overwrite the content of file1 into file2 ( hint using cat cmd with >) ",
       "7. Append the file1 to file2 ",
       "8. Copy the file name Message to a new file and named it as copyMessage",
       "9. Try man cmd for the manual",

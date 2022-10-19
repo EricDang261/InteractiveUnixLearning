@@ -15,7 +15,6 @@ import {  LoginForm,
           IntroQuiz,
           FMQuiz,
           FSQuiz,
-          Story
         }from "./routes";
 
 import {
@@ -95,7 +94,6 @@ function App() {
         <Route path='/advanced' element={<Advanced/>}></Route>
         <Route path='/flashcard' element={ <FlashcardList flashcards={flashcards}/>}> </Route>
         <Route path='/quiz' element={<Quiz/>}></Route>
-        <Route path='/story' element={<Story/>}></Route>
       </Routes>
     </div>
   );

@@ -1,19 +1,25 @@
 .jungle_story{
-
+    display: inline-block;
 
 }
-
-.wtf{
-    text-align: center;
-}
-
 
 .story_text{
-    text-align: center;
+    text-align: left;
     color: black;
 
 }
 
-.story_image{
-    
+.s_img{
+    width: 50%;
+    padding-left: 5rem;
+    float: right;
+}
+
+.s_input{
+    background-color: white;
+}
+
+
+.clearFix{
+    clear: both;
 }

@@ -21,71 +21,97 @@ import whoamiCmd from "../assets/whoami_cmd.png"
 const FMPractice = () => {
     const [text, setText] = useState("")
     const [img, setImg] = useState(terminal)
-    const [currQuestion, setQuestion] = useState(1)
+    const [currQuestion, setCurrQuestion] = useState(1)
     const [ans, setAns] = useState("ls")
+    let qt = 
+    [
+      "1. Let's try to see what are files in the current directory ",
+      "2. Okay, now you see what are files in the current directory! Want to know more? (hint: use -l flag) " ,
+      "3. Now let's visit the Documents folder! ",
+      "4. Good Job! Now try pwd command determine what is your location",
+      "5. There is a Message file here. Let's explore what is inside? (hmm treasure map? maybe???!!) ( hint: using cat cmd)",
+      "6. Yahoo!, you have found the treasure map file1. Now clone it to your own map named file2 ( hint using cat cmd with >) ",
+      "7. Append the file1 to file2 ",
+      "8. Copy the file name Message to a new file and named it as copyMessage",
+      "9. Try man cmd for the manual",
+      "10. Now make a new directory which is named newFileName",
+      "11. Alright now move file1 into /home/kali/Pictures",
+      "12. Rename the file1 into newFileName",
+      "13. Remove file1",
+      "14. Remove a directory named directory1 ",
+      "15. Now try to count the number of lines, words, and bytes in the file Message (hint: using wc cmd)",
+      "16. Good job! You have have one question left. Try to discovery who you are by printting the your usename.",
+    ]
     const textRef = useRef()
 
 
     function nextQuestion(){
       if(currQuestion + 1 <= 16){
         setImg(terminal)
-       // if(currQuestion === 2)
-        // switch(currQuestion){
-        //   case 1:
-        //     break;
-        //   case 2: 
-        //     setAns("ls -l")
-        //     break;
-        //   case 3: 
-        //     setAns("cd Documents")
-        //     break;
-        //   case 4: 
-        //     setAns("pwd")
-        //     break;
-        //   case 5: 
-        //     setAns("cat Message")
-        //     break;
-        //   case 6: 
-        //     setAns("cat file1 > file2")
-        //     break;
-        //   case 7: 
-        //     setAns("cat file1 >> file2")
-        //     break;
-        //   case 8: 
-        //     setAns("cp Message copyMessage")
-        //     break;
-        //   case 9: 
-        //     setAns("man")
-        //     break;
-        //   case 10: 
-        //     setAns("mkdir directory1")
-        //     break;
-        //   case 11: 
-        //     setAns("mv file1 /home/kali/Pictures")
-        //     break;
-        //   case 12: 
-        //     setAns("mv file1 newFileName")
-        //     break;
-        //   case 13: 
-        //     setAns("rm file1")
-        //     break;
-        //   case 14: 
-        //     setAns("rmdir directory1")
-        //     break;
-        //   case 15: 
-        //     setAns("wc Message")
-        //     break;
-        //   case 16: 
-        //     setAns("whoami")
-        //     break;
-        //   default:
-        //     setAns("")
-        // }
-        setQuestion(currQuestion + 1)
-
+        
+        if(currQuestion === 1)
+        {
+          setAns("ls -l")
+        }
+        if(currQuestion === 2)
+        {
+          setAns("cd Documents")
+        }
+        if(currQuestion === 3)
+        {
+          setAns("pwd")
+        }
+        if(currQuestion === 4)
+        {
+          setAns("cat Message")
+        }
+        if(currQuestion === 5)
+        {
+          setAns("cat file1 > file2")
+        }
+        if(currQuestion === 6)
+        {
+          setAns("cat file1 >> file2")
+        }
+        if(currQuestion === 7)
+        {
+          setAns("cp Message copyMessage")
+        }
+        if(currQuestion === 8)
+        {
+          setAns("man")
+        }
+        if(currQuestion === 10)
+        {
+          setAns("mkdir directory1")
+        }
+        if(currQuestion === 11)
+        {
+          setAns("mv file1 /home/kali/Pictures")
+        }
+        if(currQuestion === 12)
+        {
+          setAns("mv file1 newFileName")
+        }
+        if(currQuestion === 13)
+        {
+          setAns("rm file1")
+        }
+        if(currQuestion === 14)
+        {
+          setAns("rmdir directory1")
+        }
+        if(currQuestion === 15)
+        {
+          setAns("wc Message")
+        }
+        if(currQuestion === 16)
+        {
+          setAns("whoami")
+        }
+        setCurrQuestion(currQuestion + 1)
       }
     }
-
 
     useEffect(() =>{
         textRef.current.focus()
@@ -94,7 +120,6 @@ const FMPractice = () => {
     const handleChange = (event) =>{
         setText(event.target.value)
         textRef.current.value = text
-       // console.log(textRef.current.value)
     }
 
     const handleEnter = (e) =>{
@@ -155,6 +180,7 @@ const FMPractice = () => {
           setText("")
         }
       }
+
   return (
     <div className ="FMPractice"
           onClick={ e => {textRef.current.focus()}}>
@@ -165,7 +191,10 @@ const FMPractice = () => {
               onChange={handleChange}
               onKeyDown={handleEnter}
       />
-      <h1 className="question_number">Question {currQuestion} out of 15</h1>
+      <h5 className="question_numberkk">Question {currQuestion} out of 15</h5>
+       <div className='practice_question'>
+          {qt[currQuestion -1 ]}
+      </div>
       <div className ="terminal">
         <img src={img} ></img>
       </div>

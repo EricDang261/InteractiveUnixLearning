@@ -1,43 +1,67 @@
-import React, {useState, useRef} from 'react'
+import React, {useState, useEffect, useRef} from 'react'
+import './FMPractice.css'
 import terminal from "../assets/empty_terminal.png"
 import lsCmd from "../assets/ls_command.png"
 import cdCmd from "../assets/cd_command.png"
 
 const FMPractice = () => {
-    const [image, setImg] = useState(terminal)
     const [text, setText] = useState("")
+    const [textOutput, setTextOutput] = useState("")
+    const [img, setImg] = useState(terminal)
     const textRef = useRef()
 
-    const handleChange = (event, cmd) =>{
+
+    useEffect(() =>{
+        textRef.current.focus()
+    },[])
+
+    const handleChange = (event) =>{
         setText(event.target.value)
         textRef.current.value = text
         console.log(textRef.current.value)
         
     }
 
-    const handleSubmit = (event, cmd, pic) =>{
-        console.log(textRef.current.value)
-        event.preventDefault();
-        
-        if (textRef.current.value ===cmd){
-        setImg(pic)
-        }
-        else{
-        alert("wrong command!")
-        }
+    const handleEnter = (e) =>{
+        if(e.key === "Enter"){
+          let newTextOutput =""
+          newTextOutput = textOutput + "\n" + "$ " + text + "\n"
+          switch(text){
+            case "ls":
+             newTextOutput += "List of projects"
+              setImg(lsCmd)
+              break;
+            case "cd":
+              setImg(cdCmd)
+            case "pwd":
+              newTextOutput += "Your are on my cool terminal site!"
+              break;
+            case "clear":
+                setImg(terminal)
+                break;
 
-    }
+            default:
+              newTextOutput += "Wrong or unknown command"
+          }
+          setTextOutput(newTextOutput)
+          setText("")
+         
+        }
+      }
   return (
-    <div>FMPractice
-        <input name="ls_cmd" ref={textRef} className="ls_input" type="text" value={text} onChange={handleChange} /> 
-        <button className="ls_submit " onClick={(event) => {handleSubmit(event, "ls", lsCmd)}}> Submit </button>
-        <img src={image}></img> 
-
-        <br/>
-        <input name="cd_cmd" ref={textRef} className="cd_input" type="text" value={text} onChange={handleChange}/>
-        <button className="cd_submit " onClick={(event) => {handleSubmit(event, "cd Documents", cdCmd)}}> Submit </button>
-        <img src={image}></img> 
-        
+    <div className ="FMPractice"
+          onClick={ e => {textRef.current.focus()}}>
+      <input className="terminal_input_cmd" 
+              type ="text" 
+              ref={textRef}
+              value={text}
+              onChange={handleChange}
+              onKeyDown={handleEnter}
+      />
+      <div className ="terminal">
+        {textOutput}
+        <img src={img} ></img>
+      </div>
     </div>
   )
 }

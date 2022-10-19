@@ -8,4 +8,8 @@ export {default as Home} from "./Home";
 export {default as FileSecurity} from "./FileSecurity";
 export {default as Quiz} from "./Quiz";
 export {default as FMPractice} from "./FMPractice";
+export {default as IntroQuiz} from "./IntroQuiz"
+export {default as FMQuiz} from "./FMQuiz"
+export {default as FSQuiz} from "./FSQuiz"
+export {default as Story} from "./Story"
 

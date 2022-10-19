@@ -4,7 +4,7 @@ import { IntroMCQs } from '../components/IntroMCQs'
 
 const Quiz = (props) => {
 
-
+  const{item} = useContext()
   return (
     <div className = "quiz">
         <div className="multiple_choice">

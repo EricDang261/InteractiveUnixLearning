@@ -3,6 +3,7 @@ import SideNav from '../components/SideNav'
 import Footer from '../components/Footer'
 import "./Introduction.css"
 import { IntroData } from '../components/IntroData'
+import {Link} from "react-router-dom"
 
 
 import arch from "../assets/unix_arch.png"
@@ -110,6 +111,9 @@ const Introduction = () => {
               </div>
 
             </div>
+        </div>
+        <div className="quiz">
+                  <Link to="/introQuiz">Quiz Here!</Link>
         </div>
         <Footer/>
     </div>

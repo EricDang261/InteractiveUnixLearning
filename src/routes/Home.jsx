@@ -32,6 +32,10 @@ const Home = () => {
                         title="Advanced Commands (optional)"
                         descr="Cool description"
                         path="advanced"/>
+                  <Card img="https://th.bing.com/th/id/R.107af3c9c17acaa9eb1148b92a14b068?rik=e4yQlYiHiI3L0Q&pid=ImgRaw&r=0" 
+                        title="Story time"
+                        descr = "comprehensive practice of all the commands"
+                        path ="/story"/>
             </div>
         </div>
         <Footer/>

@@ -11,7 +11,11 @@ import {  LoginForm,
           Basic, 
           Advanced,
           Quiz,
-          FMPractice
+          FMPractice,
+          IntroQuiz,
+          FMQuiz,
+          FSQuiz,
+          Story
         }from "./routes";
 
 import {
@@ -81,13 +85,17 @@ function App() {
         
         <Route path='/SignUp' element={ <SignUpForm /> }></Route>
         <Route path='/intro' element={<Introduction/>}></Route>
+        <Route path='/introQuiz' element={<IntroQuiz/>}></Route>
         <Route path='/fileManage' element={<FileManagement/>}></Route>
+        <Route path='/fmQuiz' element={<FMQuiz/>}></Route>
         <Route path='/fileManagePractice' element={<FMPractice/>}></Route>
+        <Route path='/fsQuiz' element={<FSQuiz/>}></Route>
         <Route path='/security' element={<FileSecurity/>}></Route>
         <Route path='/basic' element={<Basic/>}></Route>
         <Route path='/advanced' element={<Advanced/>}></Route>
         <Route path='/flashcard' element={ <FlashcardList flashcards={flashcards}/>}> </Route>
         <Route path='/quiz' element={<Quiz/>}></Route>
+        <Route path='/story' element={<Story/>}></Route>
       </Routes>
     </div>
   );

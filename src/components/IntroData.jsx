@@ -14,5 +14,11 @@ export const IntroData = [
         title: "Unix Architecture",
         path: "arch",
         className: "side-text"
+    },
+    {
+        
+        title: "Quiz",
+        path: "quiz",
+        className: "side-text"
     }
 ]

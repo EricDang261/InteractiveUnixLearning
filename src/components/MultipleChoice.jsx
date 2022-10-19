@@ -4,12 +4,6 @@ import { IntroMCQs } from './IntroMCQs'
 
 const MultipleChoice = (props) => {
 
-    for (const [key, value] of Object.entries(props.data)) {
-        console.log(`${key}: ${value}`);
-      }
-    {console.log(props.data)}
-    {console.log("hello")}
-
     //properties section
     const [showFinalRes, setFinalRes] = useState(false)
     const [score, setScore] = useState(0)

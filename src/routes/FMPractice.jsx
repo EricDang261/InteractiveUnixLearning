@@ -1,4 +1,5 @@
 import React, {useState, useEffect, useRef} from 'react'
+import {Link} from "react-router-dom"
 import './FMPractice.css'
 import terminal from "../assets/empty_terminal.png"
 import lsCmd from "../assets/ls_command.png"
@@ -198,7 +199,8 @@ const FMPractice = () => {
       <div className ="terminal">
         <img src={img} ></img>
       </div>
-      <button onClick={nextQuestion}>Next</button>
+      <button className="fm_next"onClick={nextQuestion}>Next</button>
+      <Link className="fm_exit"to="/fileManage">Exit</Link>
     </div>
   )
 }

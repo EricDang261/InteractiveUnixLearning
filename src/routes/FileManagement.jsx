@@ -297,6 +297,7 @@ const FileManagement = () => {
         <Link to="/fileManagePractice">PRACTICE HERE!</Link>
 
       </div>
+      <Link to="/FMQuiz">QUIZ</Link>
       <Footer/>
     </div>
   )

@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import {Link} from "react-router-dom"
 import { IntroMCQs } from '../components/IntroMCQs'
 
 const IntroQuiz = () => {
@@ -30,6 +31,7 @@ const IntroQuiz = () => {
 
   return (
     <div className='mc_components'>
+        <Link to="/intro">Back</Link>
     {showFinalRes ?
 
         //if true show results

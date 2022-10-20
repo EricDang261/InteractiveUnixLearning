@@ -52,7 +52,68 @@ export const FlashcardData = [
     },
     {
         id: 11,
-        question: 'who is the most stupid person?',
-        ans: "“copy”. copy existing filename1 into new filename2.",
-    }
+        question: 'cp <filename1> <filename2>',
+        ans: "“copy”. copy existing filename1 into new filename2." 
+    },
+
+    {
+        id: 12,
+        question: 'cp -r <dir1> <dir2>',
+        ans: "“copy”, recursively. copy existing contents of directory1 into directory2." 
+    },
+
+    {
+        id: 13,
+        question: 'rm <filename1> <filename2>',
+        ans: "“remove”. delete filename1 and filename2. * Not reversible!" 
+    },
+
+    {
+        id: 14,
+        question: 'rm -r <directory1>',
+        ans: "“remove”, recursively. delete directory1 and all its contents. * Not reversible!" 
+    },
+
+    {
+        id: 15,
+        question: 'mv <file1> <directory1>',
+        ans: "“move”. move file1 into directory1. * Not reversible! Be careful with mv, cp is safer." 
+    },
+
+    {
+        id: 16,
+        question: 'cat <filename>',
+        ans: "“catalogue”. Display file contents."
+    },
+
+    {
+        id: 17,
+        question: 'cat <file1> > <file2>',
+        ans: "Overwite the contents of file2 with the contents of file1."
+    },
+
+    {
+        id: 18,
+        question: 'cat <file1> >> <file2>',
+        ans: " Write the contents of file1 to the end of file2."
+    },
+
+    {
+        id: 19,
+        question: 'cat <file1> 2> <file2>',
+        ans: "“list”, long, all. Lists all files in current directory and presents them in a long list format." 
+    },
+
+    {
+        id: 20,
+        question: 'cat <file1> 2> <file2>',
+        ans: " Write the contents of file1 to standard output, and any errors to file2."
+    },
+
+    {
+        id: 21,
+        question: 'cat <file1> 2>> <file2>',
+        ans: " Write the contents of file1 to standard output, and any errors (like “permission denied”) to the end of file2"
+    },
+
 ]

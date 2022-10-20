@@ -10,6 +10,7 @@ export default function FlashcardList({ flashcards }) {
       <Category />
       <div className="flashcard-container">
         <div className="card-grid">
+          {/* {console.log(flashcards)} */}
           {flashcards.map(flashcard => {
             return <Flashcard flashcard={flashcard} key={flashcard.id} />
           })}

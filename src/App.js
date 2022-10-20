@@ -24,6 +24,7 @@ import {
 } from "./components";
 import Story from "./routes/Story";
 
+import test from './components/flashcard/test.json'
 
 function App() {
 
@@ -59,6 +60,7 @@ function App() {
   // this is for flash card
 
   const [flashcards, setFlashcards ] = useState(FlashcardData) 
+
   
   const [categories, setCategories] = useState([])
 
@@ -67,13 +69,23 @@ function App() {
   useEffect(() => {
     fetch('./test.json')
         .then(response => response.json() ) 
-        .then(data => { console.log(data)
-                        setCategories(Object.keys(data).map(function(value) { return data[value]; }))  
-                        console.log(Object.keys(data).map(function(value) { return data[value]; }))
-                        // setFlashcards(context.value ==="Unix-intro" ? categories[0]: context.value === "File-management"? categories[1]: 
-                        //               context.value === "Environment"? categories[2]: categories[3]) 
-                        
-                      })   
+        .then(data => {
+                      console.log(Object.keys(data).map(function(value) { return data[value]; })) 
+                      setCategories(Object.keys(data).map(function(value) { return data[value]; })) 
+         
+                    if(context.value ==="Unix-intro"){
+                          setFlashcards(categories[0])
+                    }
+                    if(context.value ==="File-management"){
+                        setFlashcards(categories[1])
+                      }
+                    if(context.value ==="Environment"){
+                      setFlashcards(categories[2])
+                    }
+                    if(context.value ==="Advanced-commands"){
+                      setFlashcards(categories[3])
+                    } })
+        
       }, [context.value]) 
 
   return (

@@ -1,7 +1,7 @@
 import React from 'react'
-import Nav from '../components/Nav'
-import Card from '../components/Card'
-import Footer from '../components/Footer'
+import Nav from '../components/utility/Nav'
+import Card from '../components/utility/Card'
+import Footer from '../components/utility/Footer'
 
 
 const Home = () => {
@@ -17,25 +17,21 @@ const Home = () => {
                         descr = "funny description"
                         path = "/intro"/>
                   <Card img="https://th.bing.com/th/id/OIP.S9ZfCoAJNaJlC3B13jfjrAHaEW?pid=ImgDet&rs=1" 
-                        title="File Management"
+                        title="Directory Management"
                         descr="Cool description"
                         path="fileManage"/>
                   <Card img="https://th.bing.com/th/id/R.107af3c9c17acaa9eb1148b92a14b068?rik=e4yQlYiHiI3L0Q&pid=ImgRaw&r=0" 
-                        title="File Security"
+                        title="File Management"
                         descr = "description"
-                        path ="/security"/>
+                        path =""/>
                   <Card img="https://th.bing.com/th/id/R.107af3c9c17acaa9eb1148b92a14b068?rik=e4yQlYiHiI3L0Q&pid=ImgRaw&r=0" 
-                        title="Basic Information/ Environment"
+                        title="Environment/ Development"
                         descr = "funny description"
                         path ="/basic"/>
                   <Card img="https://th.bing.com/th/id/OIP.S9ZfCoAJNaJlC3B13jfjrAHaEW?pid=ImgDet&rs=1" 
                         title="Advanced Commands (optional)"
                         descr="Cool description"
                         path="advanced"/>
-                  <Card img="https://th.bing.com/th/id/R.107af3c9c17acaa9eb1148b92a14b068?rik=e4yQlYiHiI3L0Q&pid=ImgRaw&r=0" 
-                        title="Story time"
-                        descr = "comprehensive practice of all the commands"
-                        path ="/story"/>
             </div>
         </div>
         <Footer/>

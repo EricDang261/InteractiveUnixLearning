@@ -2,21 +2,21 @@ import React, {useState, useEffect, useRef} from 'react'
 import {Link} from "react-router-dom"
 import './FMPractice.css'
 import terminal from "../assets/empty_terminal.png"
-import lsCmd from "../assets/ls_command.png"
-import cdCmd from "../assets/cd_command.png"
-import catCmd from "../assets/readFile_cmd.png"
-import catOverWriteCmd from "../assets/cat1_cmd.png"
-import catAppendCmd from "../assets/cat2_cmd.png"
-import cpCmd from "../assets/cp_cmd.png"
-import lsLongCmd from "../assets/ls_long_cmd.png"
-import manCmd from "../assets/man_cmd.png"
-import mkdirCmd from "../assets/mkdir_cmd.png"
-import mvCmd from "../assets/mv_cmd.png"
-import mvRenameCmd from "../assets/mv_rename.png"
-import rmCmd from "../assets/rm_file.png"
-import rmDirCmd from "../assets/rmdir_cmd.png"
-import  wcCmd from "../assets/wc_cmd.png"
-import whoamiCmd from "../assets/whoami_cmd.png"
+// import lsCmd from "../assets/fm/ls_command.png"
+import cdCmd from "../assets/fm/cd_command.png"
+import catCmd from "../assets/fm/readFile_cmd.png"
+import catOverWriteCmd from "../assets/fm/cat1_cmd.png"
+import catAppendCmd from "../assets/fm/cat2_cmd.png"
+import cpCmd from "../assets/fm/cp_cmd.png"
+// import lsLongCmd from "../assets/fm/ls_long_cmd.png"
+// import manCmd from "../assets/man_cmd.png"
+// import mkdirCmd from "../assets/mkdir_cmd.png"
+import mvCmd from "../assets/fm/mv_cmd.png"
+import mvRenameCmd from "../assets/fm/mv_rename.png"
+import rmCmd from "../assets/fm/rm_file.png"
+// import rmDirCmd from "../assets/rmdir_cmd.png"
+import  wcCmd from "../assets/fm/wc_cmd.png"
+// import whoamiCmd from "../assets/whoami_cmd.png"
 
 
 const FMPractice = () => {
@@ -127,13 +127,13 @@ const FMPractice = () => {
         if(e.key === "Enter"){
           
           if(text === "ls" && currQuestion === 1){
-            setImg(lsCmd)
+            // setImg(lsCmd)
           }
           else if(text === "ls -l" && currQuestion === 2){
-            setImg(lsLongCmd)
+            // setImg(lsLongCmd)
           }
           else if(text === "cd Documents" && currQuestion === 3){
-            setImg(cdCmd)
+            // setImg(cdCmd)
           }
           else if(text === "pwd" && currQuestion === 4){
             // setImg(pwdCmd)
@@ -151,10 +151,10 @@ const FMPractice = () => {
              setImg(cpCmd)
           }
           else if(text === "man" && currQuestion === 9){
-            setImg(manCmd)
+            // setImg(manCmd)
           }
           else if(text === "mkdir directory1" && currQuestion === 10){
-            setImg(mkdirCmd)
+            // setImg(mkdirCmd)
           }
           else if(text === "mv file1 /home/kali/Pictures" && currQuestion === 11){
             setImg(mvCmd)
@@ -166,13 +166,13 @@ const FMPractice = () => {
             setImg(rmCmd)
           }
           else if(text === "rmdir directory1" && currQuestion === 14){
-            setImg(rmDirCmd)
+            // setImg(rmDirCmd)
           }        
           else if(text === "wc Message" && currQuestion === 15){
             setImg(wcCmd)
           }     
           else if(text === "whoami" && currQuestion === 16){
-              setImg(whoamiCmd)
+              // setImg(whoamiCmd)
           }    
           else{
             alert("Wrong command! Expected to input: " + ans);

@@ -63,6 +63,7 @@
   position:absolute;
   left: 125px;
   top: 150px;
+  margin: auto;
 }
 
 .mod_wrapper:hover .mod_text{
@@ -111,7 +112,7 @@
 }
 .pas_text{
   background-color: brown;
-  position: absolute;
+  position: relative;
   left: 520px;
   top: 400px;
   width: 200px;

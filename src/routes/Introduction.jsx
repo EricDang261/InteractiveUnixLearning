@@ -1,24 +1,36 @@
-import React, {useState} from 'react'
-import SideNav from '../components/SideNav'
-import Footer from '../components/Footer'
-import "./Introduction.css"
-import { IntroData } from '../components/IntroData'
+import React, {useState, useEffect} from 'react'
+import SideNav from '../components/sidenav/SideNav'
+import Footer from '../components/utility/Footer'
+// import "./Introduction.css"
+import "./Intro.css"
+import { IntroData } from '../components/sidenav/IntroData'
 import {Link} from "react-router-dom"
+import Quiz from './Quiz'
 
-
+import { IntroMCQs } from '../components/IntroMCQs'
 import arch from "../assets/unix_arch.png"
 import * as AiIcons from "react-icons/ai"
 import encounter from "../assets/Encounter.png"
 import modularity from "../assets/modularity.png"
 import pas from "../assets/pas.png"
-import Popup from '../components/Popup'
+import Popup from '../components/utility/Popup'
 
 const Introduction = () => {
   const [hwPopup, setHWPop] = useState(false)
   const [kernPopup, setKernPop] = useState(false)
   const [shellPopup, setShellPop] = useState(false)
   const [appPopup, setAppPop] = useState(false)
+  const [qData, setQData] = useState(IntroMCQs)
 
+
+
+  useEffect(()=>{
+    fetch("./introMC.json")
+    .then(res => res.json())
+    .then(data =>{
+      setQData(Object.keys(data).map(function(value){return data[value]}))
+    })
+  }, [])
 
 
   return (
@@ -52,28 +64,31 @@ const Introduction = () => {
                 (CLI), which translates user input commands into a language the OS, or kernel, can understand. A good analogy is to imagine
                 the kernal is a foreign manager and the shell is the translating app you are using to communicate.
               </p>
+              <br/>
               <p className="intro_warning">
                 WARNING: Linux != Unix
+                <br/>
                 <br/>
                 Linix is one of Unix's many grandchildren. Linux is used with GNU (an OS) which stands for GNU is Not Unix.
               </p>
             </div>
             <div className="uses">
               <h3 className="intro_topic2">Why Use Unix? </h3>
-              <div className="encounter_wrapper">
-                <img className="encounter" src={encounter} alt="pokemon battle with Unix"/>
-                <p className="encounter_text">You will encounter more Unix systems in the future</p>
-              </div>
               <div className="mod_wrapper">
                 <img className="mod" src={modularity} alt="tree diagram describing modules"/>
                 <p className="mod_text">"Unix philosophy", create small modular components that do one thing well</p>
               </div>
               <div className="pas_wrapper">
-                <img className="pas" src={pas} alt="blue arrow circle, sick figure, brown bag "/>
-                <p className="pas_text">Portability, Simplicity, Adaptability</p>
+                {/* <img className="pas" src={pas} alt="blue arrow circle, sick figure, brown bag "/> */}
+                {/* <p className="pas_text">Portability, Simplicity, Adaptability</p> */}
               </div>
+              <div className="encounter_wrapper">
+                {/* <img className="encounter" src={encounter} alt="pokemon battle with Unix"/> */}
+                {/* <p className="encounter_text">You will encounter more Unix systems in the future</p> */}
+              </div>
+             
             </div>
-            <div className="arch">
+            {/* <div className="arch">
               <h3 className="intro_topic3">Unix Architecture </h3>
               <p className="arch_instructions">
                 Click the different components to learn more about 
@@ -110,8 +125,10 @@ const Introduction = () => {
                 <img className="unix_arch" src={arch} alt="overlapping circles of smaller sizes and colors"/>
               </div>
 
-            </div>
+                </div>*/}
         </div>
+         {console.log("Intro", qData)}
+        <Quiz data={qData}/>
         <div className="quiz">
                   <Link to="/introQuiz">Quiz Here!</Link>
         </div>

@@ -1,7 +1,7 @@
 import React from 'react'
 import './Nav.css'
 import {Link} from 'react-router-dom'
-import WebsiteLogo from "../assets/websitelogo.png"
+import WebsiteLogo from "../../assets/websitelogo.png"
 // import {FaBars, FaTimes} from 'react-icons/fa'
 
 

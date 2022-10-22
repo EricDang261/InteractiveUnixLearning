@@ -1,20 +1,18 @@
 import React, {useState} from 'react'
-import SideNav from '../components/SideNav'
-import Footer from '../components/Footer'
-import "./FileManagement.css"
-import { ManagementData } from '../components/ManagementData'
-import tree from "../assets/Directory-Structure.png"
-import Quiz from './Quiz'
-import  {IntroMCQs}  from '../components/IntroMCQs'
-import Q1Context from '../components/store/Quiz1Context'
-import lsGif from "../assets/lsGif.gif"
-import Popup from '../components/Popup'
-import cdGif from "../assets/cdgif.gif"
-import pwdGif from "../assets/pwdGif.gif"
-import mkdirGif from "../assets/mkdirGif.gif"
-import rmGif from "../assets/rmGif.gif"
-import catGif from "../assets/catGif.gif"
 import {Link} from 'react-router-dom'
+import {
+  SideNav,
+  Footer,
+  ManagementData, 
+  IntroMCQs
+} from '../components'
+
+import Quiz from './Quiz'
+import "./FileManagement.css"
+
+import tree from "../assets/Directory-Structure.png"
+import Q1Context from '../components/context/Quiz1Context'
+
 
 
 
@@ -74,11 +72,6 @@ const FileManagement = () => {
                   </tr>
                 </table>
                 <button className="ls_btn" onClick={()=> setLs(true)}>Click Me!</button>
-                <Popup className= "ls_popup"
-                    trigger={imgLs} 
-                    setTrigger={setLs}
-                    img ={lsGif}
-                    />
         </div> {/* end of ls_cmd div */}
 
         <div className="cd_cmd">
@@ -98,11 +91,6 @@ const FileManagement = () => {
               </ol>
             </p>
             <button className="cd_btn" onClick={()=> setCd(true)}>Click Me!</button>
-            <Popup className= "cd_popup"
-                    trigger={imgCd} 
-                    setTrigger={setCd}
-                    img ={cdGif}
-                    />
         </div>{/* end of cd_cmd div */}
 
 
@@ -114,11 +102,6 @@ const FileManagement = () => {
               <b>pwd</b>
             </p>
             <button className="pwd_btn" onClick={()=> setPwd(true)}>Click Me!</button>
-            <Popup className= "pwd_popup"
-                    trigger={imgPwd} 
-                    setTrigger={setPwd}
-                    img ={pwdGif}
-                    />
         </div>{/* end of pwd_cmd div */}
 
 
@@ -149,11 +132,6 @@ const FileManagement = () => {
 
                 </table>
                 <button className="mkdir_btn" onClick={()=> setMkdir(true)}>Click Me!</button>
-                <Popup className= "mkdir_popup"
-                        trigger={imgMkdir} 
-                        setTrigger={setMkdir}
-                        img ={mkdirGif}
-                        />
 
         </div>{/* end of mkdir_cmd div */}
 
@@ -191,11 +169,7 @@ const FileManagement = () => {
 
                 </table>
                 <button className="rm_btn" onClick={()=> setRm(true)}>Click Me!</button>
-                <Popup className= "rm_popup"
-                        trigger={imgRm} 
-                        setTrigger={setRm}
-                        img ={rmGif}
-                        />
+            
 
         </div>{/* end of rm_cmd div */}
 
@@ -286,11 +260,6 @@ const FileManagement = () => {
               </ul>
             </p>
             <button className="cat_btn" onClick={()=> setCat(true)}>Click Me!</button>
-                  <Popup className= "cat_popup"
-                          trigger={imgCat} 
-                          setTrigger={setCat}
-                          img ={catGif}
-                          />
 
 
         </div>{/* end of cat_cmd div */}

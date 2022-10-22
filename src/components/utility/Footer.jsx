@@ -1,6 +1,6 @@
 import React from 'react'
 import "./Footer.css"
-import UWlogo from "../assets/uw-logo.png"
+import UWlogo from "../../assets/uw-logo.png"
 
 const Footer = () => {
   return (

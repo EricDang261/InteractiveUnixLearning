@@ -1,0 +1,25 @@
+{
+    
+    "introMC":[ 
+        {
+        "text": "What was the main goal for the creation of the Unix system?",
+        "options": [
+            { "id": 0, "text": "To create an interface between user and hardware system", "isCorrect": false },
+            { "id": 1, "text": "To create a system that worked after the Multics failure", "isCorrect": false },
+            { "id": 2, "text": "To create an interface between user and software", "isCorrect": false },
+            { "id": 3, "text": "To fulfill a longtime dream", "isCorrect": true }
+          ]
+        },
+
+        {
+            "text": "What are the main features of the Unix system?",
+            "options": [
+                { "id": 0, "text": "A bridge between user and hardware", "isCorrect": false },
+                { "id": 1, "text": "The Gradndaddy of many OS systems", "isCorrect": false },
+                { "id": 2, "text": "Multi-users, Multi-tasking, and Multi-processes", "isCorrect": true },
+                { "id": 3, "text": "All of the above", "isCorrect": false }
+              ]
+            }
+
+    ]
+  }

@@ -1,0 +1,136 @@
+.intro {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    /* This will stop page going after footer */
+    overflow: hidden;
+    overflow-x: scroll;
+}
+
+.intro_body {
+    flex: 1;
+    margin-left: .75rem;
+    margin-right: 0.75rem;
+    line-height: 1.6rem;
+    min-width: 800px;
+}
+
+.intro_os,
+.intro_intro,
+.intro_background {
+    font-size: 13pt;
+}
+
+.unics_reasons {
+    list-style-type: square;
+    margin-left: 2rem;
+    font-size: 13pt;
+}
+
+
+
+.uses {
+    height: 600px;
+    /* background-color: aqua; */
+    overflow: hidden;
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat((1, 1fr));
+    grid-gap: 5px;
+    grid-column-gap: 6rem;
+    /* align-items: center; */
+    /* justify-content: space-between; */
+}
+
+.intro_topic2{
+    font-size: 20pt;
+    text-align: center;
+    padding-top: 5pt;
+    grid-column-start: 2;
+    grid-column-end: 4;
+  
+  }
+
+  .mod_wrapper{
+    /* background-color: aqua; */
+    grid-column-start: 1;
+    height: 150px;
+    width: 210px;
+    position:relative;
+  }
+
+  .mod_wrapper:hover .mod_text{
+    visibility: visible;
+    
+  }
+
+  .mod{
+    height: 150px;
+    width: 200px;
+    position:relative;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    /* top: 10rem;
+    left: 2rem; */
+    margin: auto;
+    z-index: -1;
+  }
+
+
+  .mod_text{
+    background-color: white;
+    position: relative;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    /* top: 10rem;
+    left: 2rem; */
+    width: 200px;
+    visibility: hidden;
+  }
+
+  /* .pas{
+    height: 425px;
+    grid-area: left-center;
+    width: 425px;
+    position:relative;
+
+    left: 30rem;
+    bottom: 12rem;
+    margin: auto;
+  } */
+
+  /* .pas_wrapper:hover .pas_text{
+    visibility: visible;
+  } */
+
+  .pas_wrapper{
+    background-color: white;
+    position: grid;
+    display: block;
+    width: 200px;
+    height: 150px;
+    grid-column-start: 2;
+    grid-column-end: 3;
+
+  }
+
+
+  /* .pas_text{
+    background-color: brown;
+    position: relative;
+    width: 200px;
+    left: 37rem;
+    bottom: 20rem;
+    visibility: hidden;
+  } */
+
+  /* .encounter{
+    height: 425px;
+    width: 425px;
+    position:relative;
+    left: 50rem;
+    bottom: 12rem;
+    margin: auto;
+  } */
+  
+  

@@ -6,9 +6,7 @@ import {  LoginForm,
           SignUpForm,
           Home, 
           Introduction, 
-          FileManagement, 
-          FileSecurity, 
-          Basic, 
+          FileManagement,  
           Advanced,
           Quiz,
           FMPractice,
@@ -20,11 +18,10 @@ import {  LoginForm,
 import {
   FlashcardList,
   FlashcardData,
-  ValueContext
 } from "./components";
-import Story from "./routes/Story";
 
-import test from './components/flashcard/test.json'
+import { ValueContext } from "./components/context/ValueContext";
+
 
 function App() {
 
@@ -49,21 +46,9 @@ function App() {
     }
   }
 
-  // const Logout = () =>{
-  //   setUser({
-  //     name: "",
-  //     email:""
-  //   });
-  // }
-  
-
-  // this is for flash card
 
   const [flashcards, setFlashcards ] = useState(FlashcardData) 
-
-  
   const [categories, setCategories] = useState([])
-
   const context = useContext(ValueContext)
 
   useEffect(() => {
@@ -102,12 +87,9 @@ function App() {
         <Route path='/fmQuiz' element={<FMQuiz/>}></Route>
         <Route path='/fileManagePractice' element={<FMPractice/>}></Route>
         <Route path='/fsQuiz' element={<FSQuiz/>}></Route>
-        <Route path='/security' element={<FileSecurity/>}></Route>
-        <Route path='/basic' element={<Basic/>}></Route>
         <Route path='/advanced' element={<Advanced/>}></Route>
         <Route path='/flashcard' element={ <FlashcardList flashcards={flashcards}/>}> </Route>
         <Route path='/quiz' element={<Quiz/>}></Route>
-        <Route path='/story' element={<Story/>}></Route>
       </Routes>
     </div>
   );

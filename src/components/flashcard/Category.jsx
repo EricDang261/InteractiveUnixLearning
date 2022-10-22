@@ -1,5 +1,5 @@
 import React, {useContext} from 'react'
-import { ValueContext } from '../store/ValueContext'
+import { ValueContext } from '../context/ValueContext'
 import './Category.css'
 
 const Category = () => {

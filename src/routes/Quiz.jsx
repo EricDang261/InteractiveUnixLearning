@@ -2,9 +2,9 @@ import React, {createContext, useContext} from 'react'
 import MultipleChoice from '../components/MultipleChoice'
 import { IntroMCQs } from '../components/IntroMCQs'
 
-const Quiz = (props) => {
-
-  const{item} = useContext()
+const Quiz = (data) => {
+  
+  // const{item} = useContext()
   return (
     <div className = "quiz">
         <div className="multiple_choice">
@@ -20,8 +20,9 @@ const Quiz = (props) => {
             ))}
           </div>
         ))} */}
-
-            {/* <MultipleChoice data={props.data} /> */}
+            {console.log("Hello", data)
+}
+            <MultipleChoice/>
         </div>
     </div>
   )

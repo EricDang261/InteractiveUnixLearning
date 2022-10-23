@@ -12,7 +12,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  background: grey;
+  background: rgb(242, 232, 216);
 }
 
 ul {
@@ -41,6 +41,7 @@ code {
 
 .card_wrapper{
   /* position: absolute; */
+  margin-left: 2rem;
   margin-top: 16rem;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(12rem, 16rem));

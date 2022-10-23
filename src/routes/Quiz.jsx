@@ -20,9 +20,7 @@ const Quiz = (data) => {
             ))}
           </div>
         ))} */}
-            {console.log("Hello", data)
-}
-            <MultipleChoice/>
+            <MultipleChoice d={data}/>
         </div>
     </div>
   )

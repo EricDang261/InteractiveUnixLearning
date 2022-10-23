@@ -2,6 +2,7 @@ import React from 'react'
 import Nav from '../components/utility/Nav'
 import Card from '../components/utility/Card'
 import Footer from '../components/utility/Footer'
+import intro from "../assets/intro_pic.gif"
 
 
 const Home = () => {
@@ -12,7 +13,7 @@ const Home = () => {
         <div className="home_body">
             <h1 className="home_title">Unix With Us</h1>
             <div className='card_wrapper'>
-                  <Card img="https://th.bing.com/th/id/R.107af3c9c17acaa9eb1148b92a14b068?rik=e4yQlYiHiI3L0Q&pid=ImgRaw&r=0" 
+                  <Card img={intro} 
                         title="Unix Introduction"
                         descr = "funny description"
                         path = "/intro"/>

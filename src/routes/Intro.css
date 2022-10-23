@@ -1,136 +1,318 @@
 .intro {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    /* This will stop page going after footer */
-    overflow: hidden;
-    overflow-x: scroll;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  /* This will stop page going after footer */
+  overflow: hidden;
+  overflow-x: scroll;
+}
+
+.intro_title {
+  text-align: center;
 }
 
 .intro_body {
-    flex: 1;
-    margin-left: .75rem;
-    margin-right: 0.75rem;
-    line-height: 1.6rem;
-    min-width: 800px;
+  flex: 1;
+  margin-left: .75rem;
+  margin-right: 0.75rem;
+  line-height: 1.6rem;
+  min-width: 800px;
 }
 
 .intro_os,
 .intro_intro,
 .intro_background {
-    font-size: 13pt;
+  font-size: 13pt;
 }
 
 .unics_reasons {
-    list-style-type: square;
-    margin-left: 2rem;
-    font-size: 13pt;
+  list-style-type: square;
+  margin-left: 2rem;
+  font-size: 13pt;
 }
 
 
-
+/* Uses section */
 .uses {
-    height: 600px;
-    /* background-color: aqua; */
-    overflow: hidden;
-    display:grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat((1, 1fr));
-    grid-gap: 5px;
-    grid-column-gap: 6rem;
-    /* align-items: center; */
-    /* justify-content: space-between; */
+  height: 600px;
+  /* background-color: aqua; */
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  margin-left: 15rem;
+  /* grid-gap: 5px; */
+  /* grid-column-gap: 15rem; */
+  /* align-items: center; */
+  /* justify-content: center; */
 }
 
-.intro_topic2{
-    font-size: 20pt;
-    text-align: center;
-    padding-top: 5pt;
-    grid-column-start: 2;
-    grid-column-end: 4;
-  
-  }
+.intro_topic2 {
+  font-size: 20pt;
+  /* text-align: center; */
+  padding-top: 5pt;
+  grid-column-start: 2;
+  grid-column-end: 3;
 
-  .mod_wrapper{
-    /* background-color: aqua; */
-    grid-column-start: 1;
-    height: 150px;
-    width: 210px;
-    position:relative;
-  }
+}
 
-  .mod_wrapper:hover .mod_text{
-    visibility: visible;
-    
-  }
+/* Hover photos */
 
-  .mod{
-    height: 150px;
-    width: 200px;
-    position:relative;
-    grid-column-start: 1;
-    grid-column-end: 2;
-    /* top: 10rem;
+.mod_wrapper {
+  /* background-color: aqua; */
+  grid-column-start: 1;
+  grid-column-end: 2;
+  height: 150px;
+  width: 210px;
+  position: relative;
+
+}
+
+.mod_wrapper:hover .mod_text {
+  visibility: visible;
+
+}
+
+.mod {
+  height: 150px;
+  width: 200px;
+  position: relative;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  /* top: 10rem;
     left: 2rem; */
-    margin: auto;
-    z-index: -1;
-  }
+  margin: auto;
+  z-index: -1;
+}
 
 
-  .mod_text{
-    background-color: white;
-    position: relative;
-    grid-column-start: 1;
-    grid-column-end: 2;
-    /* top: 10rem;
-    left: 2rem; */
-    width: 200px;
-    visibility: hidden;
-  }
+.mod_text {
+  background-color: white;
+  position: relative;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  width: 200px;
+  visibility: hidden;
+  z-index: -1;
+}
 
-  /* .pas{
-    height: 425px;
-    grid-area: left-center;
-    width: 425px;
-    position:relative;
+.pas {
+  height: 450px;
+  width: 425px;
+  position: relative;
+  bottom: 10rem;
+  right: 7rem;
+  z-index: -1;
+}
 
-    left: 30rem;
-    bottom: 12rem;
-    margin: auto;
-  } */
+.pas_wrapper:hover .pas_text {
+  visibility: visible;
+}
 
-  /* .pas_wrapper:hover .pas_text{
-    visibility: visible;
-  } */
+.pas_wrapper {
+  /* background-color: white; */
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  height: 150px;
+  grid-column-start: 2;
+  grid-column-end: 3;
 
-  .pas_wrapper{
-    background-color: white;
-    position: grid;
-    display: block;
-    width: 200px;
-    height: 150px;
-    grid-column-start: 2;
-    grid-column-end: 3;
-
-  }
+}
 
 
-  /* .pas_text{
-    background-color: brown;
-    position: relative;
-    width: 200px;
-    left: 37rem;
-    bottom: 20rem;
-    visibility: hidden;
-  } */
+.pas_text {
+  background-color: brown;
+  position: absolute;
+  width: 200px;
+  top: 10rem;
+  visibility: hidden;
+  z-index: -1;
+}
 
-  /* .encounter{
-    height: 425px;
-    width: 425px;
-    position:relative;
-    left: 50rem;
-    bottom: 12rem;
-    margin: auto;
-  } */
+.encounter {
+  height: 425px;
+  width: 425px;
+  position: relative;
+  bottom: 9rem;
+  right: 7rem;
+}
+
+.encounter_wrapper {
+  background-color: red;
+  position: relative;
+  width: 200px;
+  height: 130px;
+  grid-column-start: 3;
+  grid-column-end: 4;
+
+}
+
+.encounter_text {
+  /* background-color: silver; */
+  position: absolute;
+  top: 10rem;
+  width: 200px;
+  visibility: hidden;
+  z-index: -1;
+}
+
+.encounter_wrapper:hover .encounter_text {
+  visibility: visible;
+}
+
+/* Architecture section */
+.arch {
+  height: 800px;
+  /* z-index: 1; */
+  /* background-color: aqua; */
+}
+
+.intro_topic3{
+  font-size: 20pt;
+  text-align: center;
+}
+
+.arch_instructions{
+  text-align: center;
+  padding-top: 2rem;
+}
+
+.arch_diagram {
+  background-color: blue;
+  position: relative;
+  z-index: -2;
+  width: 500px;
+  height: 500px;
+  /* width: 50%;
+  height: 50%; */
+  /* margin-left: 26%; */
   
-  
+}
+
+.unix_arch {
+  width: 700px;
+  height: 800px;
+  /* width: 50%;
+  height: 50%;
+  margin-left: 20%; */
+  position: relative;
+  z-index: -1;
+  background-color: rebeccapurple;
+}
+
+/* Popup buttons */
+
+.hw_btn{
+  background-color: black;
+  z-index: 10;
+  position:absolute;
+  margin-left: 50%;
+  margin-top: 25%;
+  animation: pulse 2s linear infinite;
+  z-index: 1;
+}
+
+.hw_btn:hover{
+  cursor: pointer;
+}
+
+.hw_info{
+  background-color: rgb(221, 255, 135);
+  height: 120px;
+  width: 200px;
+  margin-top: 50px;
+  left: 300px;
+  position:absolute;
+  z-index: 10;
+}
+
+
+/* .kernel_btn{
+  z-index: 10;
+  position:absolute;
+  margin-left: 47%;
+  margin-top: 21%;
+  animation: pulse 3s linear infinite;
+} */
+
+/* .kernel_btn:hover{
+  cursor: pointer;
+} */
+
+/* .shell_btn{
+  z-index: 10;
+  position:absolute;
+  margin-left: 43%;
+  margin-top: 20%;
+  animation: pulse 2s linear infinite;
+} */
+/* .shell_btn:hover{
+  cursor: pointer;
+} */
+
+/* .applic_btn{
+  z-index: 10;
+  position:absolute;
+  margin-left: 37%;
+  margin-top: 25%;
+  animation: pulse 3s linear infinite;
+} */
+/* .applic_btn:hover{
+  cursor: pointer;
+} */
+
+/* .kernel_info{
+  background-color: rgb(124, 255, 124);
+  height: 120px;
+  width: 200px;
+  right: 100px;
+  position:absolute;
+  margin-top: 100px;
+  z-index: 10;
+} */
+
+
+/* .shell_info{
+  background-color: rgb(251, 211, 126);
+  height: 120px;
+  width: 200px;
+  left: 100px;
+  margin-top: 300px;
+  position:absolute;
+  z-index: 10;
+} */
+
+/* .applic_info{
+  background-color: rgb(126, 184, 251);
+  height: 120px;
+  width: 200px;
+  margin-top: 350px;
+  right: 200px;
+  position:absolute;
+  z-index: 10;
+} */
+
+/* .intro_topic3{
+  font-size: 20pt;
+  text-align: center;
+  padding-top: 5pt;
+} */
+
+
+
+/* .quiz{
+  z-index: 5;
+  text-align: center;
+  font-size: 24pt;
+  background-color: rgb(255, 222, 162);
+} */
+
+
+@keyframes pulse {
+  to {
+    opacity: .50;
+    transform: scale(1);
+  }
+}

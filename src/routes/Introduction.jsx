@@ -53,13 +53,15 @@ const Introduction = () => {
               <p className="intro_background">
                 The Unix OS was created by Bell Labs back when punch cards were still being used and the first man landed on the moon.
                 It was born from the ashes of Multics, a failed previous attempt at an OS system, and was originally named Unics (wanna take a guess
-                why?). The goal of the project was to create a system that supports: 
+                why?). The goal of the project was to create a system that supports:
+              </p> 
                 <ul className="unics_reasons">
                   <li>Multiple users- several people using the computer at the same time</li>
                   <li>Multitasking- running multiple programs at the same time (exe programs)</li>
                   <li>Multi-processes- executing several processes simultaneously per user (programs in exe)</li>
                 </ul>
                 <br/>
+              <p className="intro_background">
                 As seen, their project ended up a success and can be described very simply as a shell program, a command line interpreter 
                 (CLI), which translates user input commands into a language the OS, or kernel, can understand. A good analogy is to imagine
                 the kernal is a foreign manager and the shell is the translating app you are using to communicate.
@@ -79,16 +81,16 @@ const Introduction = () => {
                 <p className="mod_text">"Unix philosophy", create small modular components that do one thing well</p>
               </div>
               <div className="pas_wrapper">
-                {/* <img className="pas" src={pas} alt="blue arrow circle, sick figure, brown bag "/> */}
-                {/* <p className="pas_text">Portability, Simplicity, Adaptability</p> */}
+                <img className="pas" src={pas} alt="blue arrow circle, sick figure, brown bag "/>
+                <p className="pas_text">Portability, Simplicity, Adaptability</p>
               </div>
               <div className="encounter_wrapper">
-                {/* <img className="encounter" src={encounter} alt="pokemon battle with Unix"/> */}
-                {/* <p className="encounter_text">You will encounter more Unix systems in the future</p> */}
+                <img className="encounter" src={encounter} alt="pokemon battle with Unix"/>
+                <p className="encounter_text">You will encounter more Unix systems in the future</p>
               </div>
              
             </div>
-            {/* <div className="arch">
+            <div className="arch">
               <h3 className="intro_topic3">Unix Architecture </h3>
               <p className="arch_instructions">
                 Click the different components to learn more about 
@@ -96,7 +98,7 @@ const Introduction = () => {
               </p>
         
               <div className="arch_diagram">
-              <Popup className= "hw_info"
+              {/* <Popup className= "hw_info"
                     trigger={hwPopup} 
                     setTrigger={setHWPop}
                     text = "Hardware: Visible system components"/>
@@ -116,7 +118,7 @@ const Introduction = () => {
               <Popup className= "applic_info" 
                      trigger={appPopup} 
                      setTrigger={setAppPop}
-                     text="Application: Data and programs users write"/>
+                     text="Application: Data and programs users write"/> */}
              
                 <AiIcons.AiOutlinePlusCircle className="hw_btn" onClick={()=> setHWPop(true)}/>
                 <AiIcons.AiOutlinePlusCircle className="kernel_btn" onClick={()=> setKernPop(true)}/>
@@ -125,10 +127,10 @@ const Introduction = () => {
                 <img className="unix_arch" src={arch} alt="overlapping circles of smaller sizes and colors"/>
               </div>
 
-                </div>*/}
+                </div>
         </div>
-         {console.log("Intro", qData)}
-        <Quiz data={qData}/>
+         {/* {console.log("Intro", qData)} */}
+        {/* <Quiz data={qData}/> */}
         <div className="quiz">
                   <Link to="/introQuiz">Quiz Here!</Link>
         </div>

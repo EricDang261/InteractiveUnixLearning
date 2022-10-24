@@ -8,7 +8,7 @@ export const Card = (props) => {
     <div className="card">
         <div className="cardBody">
             <Link to={props.path}>
-            <img src={props.img} alt="course cover"/>
+            <img className="card_pic"src={props.img} alt="course cover"/>
             <h2 className="cardTitle">{props.title}</h2>
             <p className="cardDescr">{props.descr}</p>
             </Link>

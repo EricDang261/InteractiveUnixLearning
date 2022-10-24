@@ -100,7 +100,7 @@ const Introduction = () => {
               </p>
         
               <div className="arch_diagram">
-              {/* <Popup className= "hw_info"
+              <Popup className= "hw_info"
                     trigger={hwPopup} 
                     setTrigger={setHWPop}
                     text = "Hardware: Visible system components"/>
@@ -120,22 +120,19 @@ const Introduction = () => {
               <Popup className= "applic_info" 
                      trigger={appPopup} 
                      setTrigger={setAppPop}
-                     text="Application: Data and programs users write"/> */}
+                     text="Application: Data and programs users write"/>
              
                 <AiIcons.AiOutlinePlusCircle className="hw_btn" onClick={()=> setHWPop(true)}/>
                 <AiIcons.AiOutlinePlusCircle className="kernel_btn" onClick={()=> setKernPop(true)}/>
                 <AiIcons.AiOutlinePlusCircle className="shell_btn" onClick={()=> setShellPop(true)}/>
                 <AiIcons.AiOutlinePlusCircle className="applic_btn" onClick={()=> setAppPop(true)}/>
-                <img className="unix_arch" src={arch} alt="overlapping circles of smaller sizes and colors"/>
+                {/* <img className="unix_arch" src={arch} alt="overlapping circles of smaller sizes and colors"/> */}
               </div>
 
                 </div>
         </div>
        
-        <Quiz data={qData}/>
-        <div className="quiz">
-                  <Link to="/introQuiz">Quiz Here!</Link>
-        </div>
+        {/* <Quiz data={qData}/> */}
         <Footer/>
     </div>
   )

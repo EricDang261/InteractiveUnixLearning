@@ -2,7 +2,11 @@ import React from 'react'
 import Nav from '../components/utility/Nav'
 import Card from '../components/utility/Card'
 import Footer from '../components/utility/Footer'
-import intro from "../assets/intro_pic.gif"
+import intro from "../assets/intro_card_image.gif"
+import dir from "../assets/directory_card_image.gif"
+import file from "../assets/file_card_image.gif"
+import environ from "../assets/environ_card_image.gif"
+import advanced from "../assets/advanced_card_image.gif"
 
 
 const Home = () => {
@@ -17,19 +21,19 @@ const Home = () => {
                         title="Unix Introduction"
                         descr = "funny description"
                         path = "/intro"/>
-                  <Card img="https://th.bing.com/th/id/OIP.S9ZfCoAJNaJlC3B13jfjrAHaEW?pid=ImgDet&rs=1" 
+                  <Card img={dir} 
                         title="Directory Management"
                         descr="Cool description"
                         path="fileManage"/>
-                  <Card img="https://th.bing.com/th/id/R.107af3c9c17acaa9eb1148b92a14b068?rik=e4yQlYiHiI3L0Q&pid=ImgRaw&r=0" 
+                  <Card img={file}
                         title="File Management"
                         descr = "description"
                         path =""/>
-                  <Card img="https://th.bing.com/th/id/R.107af3c9c17acaa9eb1148b92a14b068?rik=e4yQlYiHiI3L0Q&pid=ImgRaw&r=0" 
+                  <Card img={environ} 
                         title="Environment/ Development"
                         descr = "funny description"
                         path ="/basic"/>
-                  <Card img="https://th.bing.com/th/id/OIP.S9ZfCoAJNaJlC3B13jfjrAHaEW?pid=ImgDet&rs=1" 
+                  <Card img={advanced} 
                         title="Advanced Commands (optional)"
                         descr="Cool description"
                         path="advanced"/>

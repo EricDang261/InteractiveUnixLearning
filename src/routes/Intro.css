@@ -9,6 +9,7 @@
 
 .intro_title {
   text-align: center;
+  font-size: 50px;
 }
 
 .intro_body {
@@ -48,11 +49,12 @@
 }
 
 .intro_topic2 {
-  font-size: 20pt;
+  font-size: 30pt;
   /* text-align: center; */
   padding-top: 5pt;
   grid-column-start: 2;
   grid-column-end: 3;
+  transform: translate(-35px)
 
 }
 
@@ -167,51 +169,53 @@
   height: 800px;
   /* z-index: 1; */
   /* background-color: aqua; */
+  background-image: url("../assets/unix_arch.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 .intro_topic3{
-  font-size: 20pt;
+  font-size: 30pt;
   text-align: center;
+  padding-left: 70px;
 }
 
 .arch_instructions{
   text-align: center;
   padding-top: 2rem;
+  padding-left: 100px;
 }
 
 .arch_diagram {
-  background-color: blue;
+  /* background-color: blue; */
   position: relative;
-  z-index: -2;
+  /* Makes so buttons can be clicked */
+  z-index: 1;
   width: 500px;
-  height: 500px;
+  height: 400px;
   /* width: 50%;
   height: 50%; */
-  /* margin-left: 26%; */
+  margin-left: 26%;
+
   
 }
 
-.unix_arch {
-  width: 700px;
-  height: 800px;
-  /* width: 50%;
-  height: 50%;
-  margin-left: 20%; */
+/* .unix_arch {
+  width: 600px;
+  height: 650px;
   position: relative;
-  z-index: -1;
   background-color: rebeccapurple;
-}
+} */
 
 /* Popup buttons */
 
 .hw_btn{
-  background-color: black;
-  z-index: 10;
+  /* background-color: black; */
   position:absolute;
-  margin-left: 50%;
-  margin-top: 25%;
+  margin-left: 75%;
+  margin-top: 50%;
   animation: pulse 2s linear infinite;
-  z-index: 1;
 }
 
 .hw_btn:hover{
@@ -229,28 +233,37 @@
 }
 
 
-/* .kernel_btn{
-  z-index: 10;
+.kernel_btn{
   position:absolute;
-  margin-left: 47%;
-  margin-top: 21%;
+  margin-left: 67%;
+  margin-top: 38%;
   animation: pulse 3s linear infinite;
-} */
+}
 
-/* .kernel_btn:hover{
+.kernel_btn:hover{
   cursor: pointer;
-} */
+}
 
-/* .shell_btn{
+.kernel_info{
+  background-color: rgb(124, 255, 124);
+  height: 120px;
+  width: 200px;
+  right: 100px;
+  position:absolute;
+  margin-top: 100px;
+  z-index: 10;
+}
+
+.shell_btn{
   z-index: 10;
   position:absolute;
-  margin-left: 43%;
-  margin-top: 20%;
+  margin-left: 85%;
+  margin-top: 40%;
   animation: pulse 2s linear infinite;
-} */
-/* .shell_btn:hover{
+}
+.shell_btn:hover{
   cursor: pointer;
-} */
+}
 
 /* .applic_btn{
   z-index: 10;
@@ -263,15 +276,7 @@
   cursor: pointer;
 } */
 
-/* .kernel_info{
-  background-color: rgb(124, 255, 124);
-  height: 120px;
-  width: 200px;
-  right: 100px;
-  position:absolute;
-  margin-top: 100px;
-  z-index: 10;
-} */
+
 
 
 /* .shell_info{

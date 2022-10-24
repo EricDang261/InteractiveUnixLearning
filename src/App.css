@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro');
 *{
   box-sizing:border-box;
   margin: 0;
@@ -33,11 +34,43 @@ code {
   display:flex;
   flex-direction: column;
   min-height: 100vh;
+  background-image: url(./assets/home_background.png);
+  background-position: center;
 }
 
 .home_body{
   flex:1;
 }
+
+.home_title{
+  /* text-align: center; */
+  margin-left: 35rem;
+  font-family: "Source Code Pro", monospace;
+  font-size: 45pt;
+  font-stretch: expanded;
+  color: white;
+  /* For cursor bar */
+  border-right: solid 3px white;
+  white-space: nowrap;
+  overflow: hidden;
+  /* animation */
+  animation: animated-write 4s steps(29,end) 1s 1 normal both,
+             animated-cursor 600ms steps(29,end) infinite;
+
+}
+
+/* text animation def */
+@keyframes animated-write {
+  from{width: 0;}
+  to{width: 472px;}
+  
+}
+
+@keyframes animated-cursor {
+  from{border-right-color: white;}
+  to{border-right-color: transparent;}
+}
+
 
 .card_wrapper{
   /* position: absolute; */
@@ -49,10 +82,4 @@ code {
   text-align: center;
 }
 
-.home_title{
-  text-align: center;
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  font-size: 30pt;
-  font-stretch: expanded;
-}
 

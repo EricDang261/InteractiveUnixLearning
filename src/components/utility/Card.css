@@ -27,11 +27,15 @@
 
 .card{
     border-style: solid;
-    background-color: white;
-    color: black;
+    background-color: rgb(107, 172, 94);
+    color: white;
 }
 .card :hover{
     transform: scale(1.02);
+}
+
+.cardTitle{
+    color:black;
 }
 
 

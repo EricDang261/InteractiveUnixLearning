@@ -21,7 +21,7 @@ const MultipleChoice = (d) => {
         if(isCorrect){
             setScore(score + 1)
         }
-        if(currQuestion + 1 < Object.keys(d).length){
+        if(currQuestion + 1 < d.d[0].length){
             setQuestion(currQuestion + 1)
         }
         else{
@@ -29,15 +29,16 @@ const MultipleChoice = (d) => {
         }
   
     }
-    
+     
     return (
+
         <div className='mc_components'>
             {showFinalRes ?
 
                 //if true show results
                 <div className="mc_results">
                     <h1 className="mc_results_header">Final Results</h1>
-                    <h2>{score} out of {d} correct - ({(score/d.length)*100}%)</h2>
+                    <h2>{score} out of {d.d[0].length} correct - ({(score/d.d[0].length)*100}%)</h2>
 
                     <button className="mc_restart" onClick={()=>restartMC()}>Restart</button>
 
@@ -48,15 +49,17 @@ const MultipleChoice = (d) => {
                 //else false and show cards
                 <div className="mc_questions">
                     <h2 className="mc_score"> Current Score: {score}</h2>
-                    <h2>Question {currQuestion + 1} out of {d.length}</h2>
-                    <h3 className='question_text'>{d[currQuestion].text}</h3>
+                    <h2>Question {currQuestion + 1} out of {d.d[0].length}</h2> 
                     <ul className="question_choices">
-                        {d[currQuestion].options.map((option)=>{
-                            return(
-                                <li onClick={()=>optionClicked(option.isCorrect)}key={option.id}>{option.text}</li>
-                            )
-                        })}
+                    {  
 
+                        d.d[0][currQuestion].options && 
+                        d.d[0][currQuestion].options.map((option)=>{
+                        return(
+                            <li onClick={()=>optionClicked(option.isCorrect)}key={option.id}>{option.text}</li>
+                        )})
+                        
+                    }
                     </ul>
                 </div>
             }

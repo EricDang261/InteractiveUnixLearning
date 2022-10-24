@@ -21,17 +21,19 @@ const Introduction = () => {
   const [shellPopup, setShellPop] = useState(false)
   const [appPopup, setAppPop] = useState(false)
   const [qData, setQData] = useState(IntroMCQs)
-
+  const [loading, SetLoading] = useState(true)
 
 
   useEffect(()=>{
     fetch("./introMC.json")
     .then(res => res.json())
-    .then(data =>{
+    .then(data => {
       setQData(Object.keys(data).map(function(value){return data[value]}))
+      SetLoading(false);  
     })
   }, [])
 
+  if(loading) return <h1>Loading</h1>
 
   return (
     <div className="intro">
@@ -129,8 +131,8 @@ const Introduction = () => {
 
                 </div>
         </div>
-         {/* {console.log("Intro", qData)} */}
-        {/* <Quiz data={qData}/> */}
+       
+        <Quiz data={qData}/>
         <div className="quiz">
                   <Link to="/introQuiz">Quiz Here!</Link>
         </div>

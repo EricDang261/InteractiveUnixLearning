@@ -1,10 +1,8 @@
-import React, {createContext, useContext} from 'react'
+import React from 'react'
 import MultipleChoice from '../components/MultipleChoice'
 import { IntroMCQs } from '../components/IntroMCQs'
 
 const Quiz = (data) => {
-  
-  // const{item} = useContext()
   return (
     <div className = "quiz">
         <div className="multiple_choice">
@@ -20,7 +18,7 @@ const Quiz = (data) => {
             ))}
           </div>
         ))} */}
-            <MultipleChoice d={data}/>
+        <MultipleChoice d = {data.data}/>   
         </div>
     </div>
   )

@@ -38,8 +38,9 @@ const Home = () => {
                         descr="Cool description"
                         path="advanced"/>
             </div>
+            <Footer/>
         </div>
-        <Footer/>
+     
     </div>
   )
 }

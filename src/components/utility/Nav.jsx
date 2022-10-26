@@ -4,7 +4,6 @@ import {Link} from 'react-router-dom'
 import WebsiteLogo from "../../assets/websitelogo.png"
 // import {FaBars, FaTimes} from 'react-icons/fa'
 
-
 const Nav = () => {
   return (
     <div className="container">
@@ -12,6 +11,7 @@ const Nav = () => {
       {/* <div className="hamburger">
         <FaBars size={20}/>
       </div> */}
+   
       <ul className="navbar-list">
         <li><Link to="/">Home</Link></li>
         <li><Link to="/login">Sign In</Link></li>

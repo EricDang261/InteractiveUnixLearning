@@ -2,7 +2,7 @@ import React from 'react'
 import MultipleChoice from '../components/MultipleChoice'
 import { IntroMCQs } from '../components/IntroMCQs'
 
-const Quiz = (data) => {
+const Quiz = ({data}) => {
   return (
     <div className = "quiz">
         <div className="multiple_choice">
@@ -18,7 +18,7 @@ const Quiz = (data) => {
             ))}
           </div>
         ))} */}
-        <MultipleChoice d = {data.data}/>   
+        <MultipleChoice d = {data}/>   
         </div>
     </div>
   )

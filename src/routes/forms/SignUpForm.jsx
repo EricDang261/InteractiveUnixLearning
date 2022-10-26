@@ -1,12 +1,11 @@
 
 import React from 'react'
-import './SignUpForm.css'
 import {Link} from 'react-router-dom'
 
 const SignUpForm = () => {
 
   return (
-    <div className= "SignUp-form-container" >
+    <div className= "form-container" >
     <form>
           <div className="form-inner">
               <h2>User Register</h2>

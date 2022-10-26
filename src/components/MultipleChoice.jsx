@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import "./MultipleChoice.css"
 import { IntroMCQs } from './IntroMCQs'
 
-const MultipleChoice = (d) => {
+const MultipleChoice = ({d}) => {
 
     //properties section
     const [showFinalRes, setFinalRes] = useState(false)
@@ -21,7 +21,7 @@ const MultipleChoice = (d) => {
         if(isCorrect){
             setScore(score + 1)
         }
-        if(currQuestion + 1 < d.d[0].length){
+        if(currQuestion + 1 < d[0].length){
             setQuestion(currQuestion + 1)
         }
         else{
@@ -38,7 +38,7 @@ const MultipleChoice = (d) => {
                 //if true show results
                 <div className="mc_results">
                     <h1 className="mc_results_header">Final Results</h1>
-                    <h2>{score} out of {d.d[0].length} correct - ({(score/d.d[0].length)*100}%)</h2>
+                    <h2>{score} out of {d[0].length} correct - ({(score/d[0].length)*100}%)</h2>
 
                     <button className="mc_restart" onClick={()=>restartMC()}>Restart</button>
 
@@ -49,12 +49,12 @@ const MultipleChoice = (d) => {
                 //else false and show cards
                 <div className="mc_questions">
                     <h2 className="mc_score"> Current Score: {score}</h2>
-                    <h2>Question {currQuestion + 1} out of {d.d[0].length}</h2> 
+                    <h2>Question {currQuestion + 1} out of {d[0].length}</h2> 
                     <ul className="question_choices">
                     {  
 
-                        d.d[0][currQuestion].options && 
-                        d.d[0][currQuestion].options.map((option)=>{
+                        d[0][currQuestion].options && 
+                        d[0][currQuestion].options.map((option)=>{
                         return(
                             <li onClick={()=>optionClicked(option.isCorrect)}key={option.id}>{option.text}</li>
                         )})

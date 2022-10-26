@@ -7,7 +7,7 @@ export {default as Introduction} from "./Introduction";
 export {default as Home} from "./Home";                                                                                                                                                             
 export {default as Quiz} from "./Quiz";
 export {default as FMPractice} from "./FMPractice";
-export {default as IntroQuiz} from "./IntroQuiz"
 export {default as FMQuiz} from "./FMQuiz"
 export {default as FSQuiz} from "./FSQuiz"
+export {default as DirectoryManagement} from "./DirectoryManagement"
 

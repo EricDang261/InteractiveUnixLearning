@@ -10,9 +10,9 @@ import {  LoginForm,
           Advanced,
           Quiz,
           FMPractice,
-          IntroQuiz,
           FMQuiz,
           FSQuiz,
+          DirectoryManagement
         }from "./routes";
 
 import {
@@ -82,7 +82,7 @@ function App() {
         
         <Route path='/SignUp' element={ <SignUpForm /> }></Route>
         <Route path='/intro' element={<Introduction/>}></Route>
-        <Route path='/introQuiz' element={<IntroQuiz/>}></Route>
+        <Route path="/dirManage" element={<DirectoryManagement/>}></Route>
         <Route path='/fileManage' element={<FileManagement/>}></Route>
         <Route path='/fmQuiz' element={<FMQuiz/>}></Route>
         <Route path='/fileManagePractice' element={<FMPractice/>}></Route>

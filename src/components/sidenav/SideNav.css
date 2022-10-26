@@ -1,19 +1,21 @@
 .sidebar{
-    background-color: rgb(64, 65, 64);
+    background-color: rgb(85, 126, 82);
     display: flex;
     justify-content: flex-start;
     align-items: center;
 }
 
 .menu-bars{
+    top: 5px;
     margin-left: 2rem;
     font-size: 2rem;
     background: none;
     color:white;
+    position: fixed;
 }
 
 .side-menu{
-    background-color: rgb(64, 65, 64);
+    background-color: rgb(85, 126, 82);
     width: 20%;
     height: 100%;
     display: flex;
@@ -71,7 +73,8 @@
 }
 
 .home_link{
-    position: absolute;
+    top: 5px;
+    position: fixed;
     right: 1rem;
     font-size: 16pt;
 }

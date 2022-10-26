@@ -6,6 +6,11 @@
     width: 80%;
     height: auto;
     background-color: white;
+    color: green
+}
+
+.mc_questions h2{
+    color:green;
 }
 
 .question_choices li{
@@ -26,10 +31,50 @@
     margin: 0 auto;
     border-radius: 16px;
     width: 50%;
-    height: auto;
     background-color: white;
+    color: black;
+}
+
+.mc_results_header{
+    padding-bottom: 1rem;
+    text-decoration: underline;
+    text-align: center;
+    color: green;
+}
+
+.mc_score{
+    font-size: 20pt;
+    padding-bottom: 2rem;
+    text-align: center;
+}
+
+
+.mc_incorrect_title{
+    padding-bottom: .5rem;
+    text-align: center;
+    color: green;
+}
+
+.mc_results p{
+    font-weight: bold;
+    padding-bottom: 1rem;
+}
+
+.mc_incorrect_list li{
+    line-height: 2;
+    padding-bottom: 3rem;
 }
 
 .mc_restart{
+    position: relative;
     background-color: burlywood;
+    border: 1px solid;
+    font-size: 30px;
+    width: 200px;
+    left: 35%;
+
+}
+
+.mc_restart:hover{
+    cursor: pointer;
 }

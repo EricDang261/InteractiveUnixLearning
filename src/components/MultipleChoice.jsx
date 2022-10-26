@@ -8,18 +8,40 @@ const MultipleChoice = (d) => {
     const [showFinalRes, setFinalRes] = useState(false)
     const [score, setScore] = useState(0)
     const [currQuestion, setQuestion] = useState(0)
+    const [incorrectAns, setIncorrect] = useState([])
 
     //helper functions
     const restartMC = ()=>{
         setScore(0)
         setQuestion(0)
         setFinalRes(false)
+        setIncorrect([])
+    }
+
+    function getAnswer(){
+        for (var option in d.d[0][currQuestion].options){
+            if (d.d[0][currQuestion].options[option].isCorrect == true){
+                return d.d[0][currQuestion].options[option].text
+            }
+        }
+    }
+
+    function updateIncorrect(newItem){
+        var temp = incorrectAns
+        temp.push(newItem)
+        return setIncorrect(temp)
     }
 
 
     const optionClicked = (isCorrect) =>{
         if(isCorrect){
             setScore(score + 1)
+        }
+        else{
+            var temp = new Array()
+            temp.push(d.d[0][currQuestion].text)
+            temp.push(getAnswer())
+            updateIncorrect(temp)
         }
         if(currQuestion + 1 < d.d[0].length){
             setQuestion(currQuestion + 1)
@@ -38,10 +60,19 @@ const MultipleChoice = (d) => {
                 //if true show results
                 <div className="mc_results">
                     <h1 className="mc_results_header">Final Results</h1>
-                    <h2>{score} out of {d.d[0].length} correct - ({(score/d.d[0].length)*100}%)</h2>
-
+                    <h3 className="mc_score">{score} out of {d.d[0].length} correct - ({(score/d.d[0].length)*100}%)</h3>
+                    <h2 className="mc_incorrect_title">Correct Answers</h2>
+                    <p>Number of incorrect answers: {incorrectAns.length}</p>
+                    <ul className = "mc_incorrect_list">
+                    {
+                        incorrectAns.map((question) =>{
+                            return(
+                                <li>Question: {question[0]} <br/> Answer: {question[1]}</li>
+                            )
+                        })
+                    }
+                    </ul>
                     <button className="mc_restart" onClick={()=>restartMC()}>Restart</button>
-
 
                 </div>
 

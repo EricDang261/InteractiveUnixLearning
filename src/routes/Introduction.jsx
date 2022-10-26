@@ -1,10 +1,8 @@
 import React, {useState, useEffect} from 'react'
 import SideNav from '../components/sidenav/SideNav'
 import Footer from '../components/utility/Footer'
-// import "./Introduction.css"
 import "./Intro.css"
 import { IntroData } from '../components/sidenav/IntroData'
-import {Link} from "react-router-dom"
 import Quiz from './Quiz'
 
 import { IntroMCQs } from '../components/IntroMCQs'
@@ -23,12 +21,27 @@ const Introduction = () => {
   const [qData, setQData] = useState(IntroMCQs)
   const [loading, SetLoading] = useState(true)
 
+  let scrollPercentage=() =>{
+    let scrollProgress = document.getElementById("progressbar")
+    let progressVal = document.getElementById("progress_val")
+    let pos = document.documentElement.scrollTop
+    let calcHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight
+    let scrollVal = Math.round(pos * 100/calcHeight)
+    console.log("what is this??", scrollVal)
+    scrollProgress.style.background = `conic-gradient(rgb(124, 255, 124) ${scrollVal}%, #696969 ${scrollVal}%)`
+    progressVal.textContent=`${scrollVal}%`
+  }
+
+  window.onscroll = scrollPercentage
+  window.onload = scrollPercentage
+
 
   useEffect(()=>{
     fetch("./introMC.json")
     .then(res => res.json())
     .then(data => {
       setQData(Object.keys(data).map(function(value){return data[value]}))
+      console.log(qData)
       SetLoading(false);  
     })
   }, [])
@@ -37,11 +50,13 @@ const Introduction = () => {
 
   return (
     <div className="intro">
-        <SideNav page={IntroData} />
+        <SideNav className="intro_nav" page={IntroData} />
         <div className="intro_body">
             <h1 className="intro_title">Introduction</h1>
             <br/>
             <p className="intro_intro">In this lesson you will learn what Unix is, the uses behind it, and the architecture it uses.</p>
+            <br/>
+            <div className="break">============</div>
             <br/>
             <div className="definition">
               <h3 className="intro_topic1"> What is Unix?</h3>
@@ -76,6 +91,7 @@ const Introduction = () => {
                 Linix is one of Unix's many grandchildren. Linux is used with GNU (an OS) which stands for GNU is Not Unix.
               </p>
             </div>
+            <div className="break">============</div>
             <div className="uses">
               <h3 className="intro_topic2">Why Use Unix? </h3>
               <div className="mod_wrapper">
@@ -90,16 +106,22 @@ const Introduction = () => {
                 <img className="encounter" src={encounter} alt="pokemon battle with Unix"/>
                 <p className="encounter_text">You will encounter more Unix systems in the future</p>
               </div>
-             
             </div>
+            <div className="break">============</div>
             <div className="arch">
               <h3 className="intro_topic3">Unix Architecture </h3>
               <p className="arch_instructions">
                 Click the different components to learn more about 
                 Unix's 4-layered architecture.
               </p>
-        
               <div className="arch_diagram">
+                <AiIcons.AiOutlinePlusCircle className="hw_btn" onClick={()=> setHWPop(true)}/>
+                <AiIcons.AiOutlinePlusCircle className="kernel_btn" onClick={()=> setKernPop(true)}/>
+                <AiIcons.AiOutlinePlusCircle className="shell_btn" onClick={()=> setShellPop(true)}/>
+                <AiIcons.AiOutlinePlusCircle className="applic_btn" onClick={()=> setAppPop(true)}/>
+                <img className="unix_arch" src={arch} alt="overlapping circles of smaller sizes and colors"/>
+              </div>
+              
               <Popup className= "hw_info"
                     trigger={hwPopup} 
                     setTrigger={setHWPop}
@@ -109,9 +131,8 @@ const Introduction = () => {
                      trigger={kernPopup} 
                      setTrigger={setKernPop}
                      text="Kernal: This manages and allocates memory and tasks"/>
-            
-              
-              <Popup className= "shell_info" 
+
+               <Popup className= "shell_info" 
                      trigger={shellPopup} 
                      setTrigger={setShellPop}
                      text="Shell: The CLI, bridge between kernel and user"/>
@@ -121,18 +142,16 @@ const Introduction = () => {
                      trigger={appPopup} 
                      setTrigger={setAppPop}
                      text="Application: Data and programs users write"/>
-             
-                <AiIcons.AiOutlinePlusCircle className="hw_btn" onClick={()=> setHWPop(true)}/>
-                <AiIcons.AiOutlinePlusCircle className="kernel_btn" onClick={()=> setKernPop(true)}/>
-                <AiIcons.AiOutlinePlusCircle className="shell_btn" onClick={()=> setShellPop(true)}/>
-                <AiIcons.AiOutlinePlusCircle className="applic_btn" onClick={()=> setAppPop(true)}/>
-                {/* <img className="unix_arch" src={arch} alt="overlapping circles of smaller sizes and colors"/> */}
               </div>
-
-                </div>
         </div>
-       
-        {/* <Quiz data={qData}/> */}
+        <div className="break">============</div>
+        <div className="intro_quiz">
+          <h1 className= "intro_quiz_title">End of Lesson Quiz</h1>
+          <Quiz data={qData}/>
+        </div>
+        <div id="progressbar">
+          <span id="progress_val"></span>
+        </div>
         <Footer/>
     </div>
   )

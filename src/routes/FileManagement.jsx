@@ -9,8 +9,6 @@ import {
 
 import Quiz from './Quiz'
 import "./FileManagement.css"
-
-import tree from "../assets/Directory-Structure.png"
 import Q1Context from '../components/context/Quiz1Context'
 
 
@@ -36,7 +34,7 @@ const FileManagement = () => {
           <p className="file_system">
             The directory structure is a multi-level heirarchy often called a directory tree.
             All leaves(end nodes) and branches(middle nodes) stem from a singlular root. 
-            <img className="directory_tree_img" src={tree} alt="file directory tree"></img>
+            {/* <img className="directory_tree_img" src={tree} alt="file directory tree"></img> */}
             <p className="tree_img_resource">https://www.linuxyogi.com/linux-directory-structure-file-system-hierarchy/</p>
             <h5>Types of Files:</h5>
             <p>ordinary, directories, special/device files</p>

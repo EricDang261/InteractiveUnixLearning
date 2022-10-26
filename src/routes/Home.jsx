@@ -24,11 +24,11 @@ const Home = () => {
                   <Card img={dir} 
                         title="Directory Management"
                         descr="Cool description"
-                        path="fileManage"/>
+                        path="/dirManage"/>
                   <Card img={file}
                         title="File Management"
                         descr = "description"
-                        path =""/>
+                        path ="/fileManage"/>
                   <Card img={environ} 
                         title="Environment/ Development"
                         descr = "funny description"
@@ -38,8 +38,8 @@ const Home = () => {
                         descr="Cool description"
                         path="advanced"/>
             </div>
+            <Footer/>
         </div>
-        <Footer/>
     </div>
   )
 }

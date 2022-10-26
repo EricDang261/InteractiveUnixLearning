@@ -11,8 +11,9 @@ import {  Login,
           Feedback,
           FMPractice,
           FMQuiz,
-          FSQuiz,
-          DirectoryManagement
+          DirectoryManagement,
+          Environ,
+          DMPractice
         }from "./routes";
 
 import {
@@ -61,10 +62,11 @@ function App() {
         <Route path='/fileManage' element={<FileManagement/>}></Route>
         <Route path='/fmQuiz' element={<FMQuiz/>}></Route>
         <Route path='/fileManagePractice' element={<FMPractice/>}></Route>
-        <Route path='/fsQuiz' element={<FSQuiz/>}></Route>
         <Route path='/advanced' element={<Advanced/>}></Route>
         <Route path='/flashcard' element={ <FlashcardList flashcards={flashcards}/>}> </Route>
         <Route path='/feedback' element={<Feedback/>}></Route>
+        <Route path="/environ" element={<Environ/>}></Route>
+        <Route path="/dmPractice" element={<DMPractice/>}></Route>
         {/* <Route path='/progressbar' element={<Progressbar/>}></Route> */}
       </Routes>
     </div>

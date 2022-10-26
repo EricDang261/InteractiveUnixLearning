@@ -32,7 +32,7 @@ const Home = () => {
                   <Card img={environ} 
                         title="Environment/ Development"
                         descr = "funny description"
-                        path ="/basic"/>
+                        path ="/environ"/>
                   <Card img={advanced} 
                         title="Advanced Commands (optional)"
                         descr="Cool description"

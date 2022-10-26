@@ -1,0 +1,51 @@
+.env {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    /* This will stop page going after footer */
+    overflow: hidden;
+    overflow-x: scroll;
+    color: #52a76e;
+}
+
+.env_body {
+    flex: 1;
+    margin-left: .75rem;
+    margin-right: 0.75rem;
+    line-height: 1.8rem;
+    min-width: 800px;
+}
+
+.env_title, .env_body p, th, td, h3, .env_quiz_title{
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.env_body h3{
+    font-size: 25pt;
+    padding-top: 2rem;
+}
+
+
+.env_body span{
+    color: rgb(253, 126, 126);
+}
+
+.env_title {
+    text-align: center;
+    font-size: 60px;
+    padding-top: 4rem;
+}
+
+.env_intro {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    text-align: center;
+}
+
+.env_quiz_title{
+    text-align: center;
+    padding-top: 4rem;
+    padding-bottom: 2rem;
+}
+
+

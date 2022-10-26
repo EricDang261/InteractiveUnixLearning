@@ -1,54 +1,51 @@
 import React, {useState} from 'react'
-import {Link} from 'react-router-dom'
 import {
   SideNav,
   Footer,
-  ManagementData, 
-  IntroMCQs
+  fmData, 
 } from '../components'
 
 import Quiz from './Quiz'
+import {FaHandPointRight} from "react-icons/fa"
 import "./FileManagement.css"
-import Q1Context from '../components/context/Quiz1Context'
-
-
 
 
 const FileManagement = () => {
-
-  const [imgLs, setLs] = useState(false)
-  const [imgCd, setCd] = useState(false)
-  const [imgPwd, setPwd] = useState(false)
-  const [imgMkdir, setMkdir] = useState(false)
-  const [imgRm, setRm] = useState(false)
-  const [imgCat, setCat] = useState(false)
-
-
   return (
-    <div className="management">
-      <SideNav page={ManagementData}/>
-      <div className="management_body">
-        <h1>File Management</h1>
-        <div className="directory_info">
-          <h3>Directory Structure</h3>
-          <p className="file_system">
-            The directory structure is a multi-level heirarchy often called a directory tree.
-            All leaves(end nodes) and branches(middle nodes) stem from a singlular root. 
-            {/* <img className="directory_tree_img" src={tree} alt="file directory tree"></img> */}
-            <p className="tree_img_resource">https://www.linuxyogi.com/linux-directory-structure-file-system-hierarchy/</p>
-            <h5>Types of Files:</h5>
-            <p>ordinary, directories, special/device files</p>
-            <h5>File paths</h5>
-            </p>
-        </div>
-        <div className="ls_cmd">
-            <h1>ls command</h1>
+    <div className="fm_container">
+      <SideNav className="fm_nav" page={fmData}/>
+      <div className="fm_body">
+          <h1 className='fm_title'>File Management</h1>  <br/>
+          <p className="fm_intro">
+             You will look so cool with your friends when you are able to flex around with file-commands in the terminal. YES!!
+             I am not kidding!! In fact, most of the operations are performed on files. After this ultimate lesson, you will 
+             become an expert. Are you ready? Let's go <FaHandPointRight style={{color: "white"}} />
+          </p> <br/>
+          <div className="break">============</div>
+
+
+          <div className="file_type">
+              <h3 className="cmd_title">File Types </h3>
               <p>
-                ls commands (abbreviation of list) list out all of the files in the directed folder <br />  
-                <b> ls [option] </b>
+                In Unix, we will mostly see these 3 basic types of files: <br />
+                <strong> Ordinary Files - </strong> contains data, text, or program instructions. <br/>
+                <strong> Special Files - </strong> provide access to hardware, or they could be aliases or shortcuts 
+                and enable you to access a single file using different names. <br/>
+                <strong> Directories - </strong> As you know, directories are folders which stores both ordinary files and special files.
+              </p>
+          </div> {/*end of file_type*/ }
+          <br/>
+          <div className="break">============</div>
+
+          <div className="ls_cmd">
+              <h3 className='cmd_title'>ls command</h3>
+              <p>
+                <span>ls</span> commands (abbreviation of list) list out all of the files in the current location <br />  
               </p>
 
-                <table>
+              <p className="cmd_exe"><span>cd [option]</span></p>
+
+              <table>
                   <tr>
                     <th> Common Parameters</th>
                     <th> Description </th>
@@ -56,7 +53,7 @@ const FileManagement = () => {
 
                   <tr>
                     <td> -a </td>
-                    <td> -all list all files in the directory, include hidden files beginning with . </td>
+                    <td> -all, list all files in the directory, include hidden files beginning with . </td>
                   </tr>
 
                   <tr>
@@ -66,83 +63,24 @@ const FileManagement = () => {
 
                   <tr>
                     <td> -d </td>
-                    <td> -directory displays the directory as a file instead of the file in it </td>
+                    <td> -directory, displays the directory as a file instead of the file in it </td>
                   </tr>
                 </table>
-                <button className="ls_btn" onClick={()=> setLs(true)}>Click Me!</button>
-        </div> {/* end of ls_cmd div */}
 
-        <div className="cd_cmd">
-            <h1> cd command </h1>
+          </div> {/*end of ls_cmd*/ }
+          <br/>
+          <div className="break">============</div>
+
+          <div className='rm_cmd'>
+            <h3 className='cmd_title'>rm command</h3>
             <p>
-              cd commands( abbreviation of change directory) swiches the current directory to the specific directory <br />
-              <b>cd [directory]</b>
+            <span>rm </span> command ( short for remove) deletes one or more files or directories in a directory. 
+            It can also delete a directory and all files and subdirectories under it. <br />
+            For new user be careful when you use this command.This is not a reversale command. 
+            The entire system might be destroyed with this command 
+            (for example, rm * -rf under / (root directory)). Therefore, be sure and confirm what you want to delete and your current locatio.  
             </p>
-
-            <p>
-              Some special cases:
-              <ol>
-                <li> <b> cd / </b>: from the current directory enter into the system root directory </li>
-                <li> <b> cd .. </b>: from the current directory enter into the parent directory </li>
-                <li> <b> cd ~ </b>:  Entering the current user's home directory from the current directory </li>
-                <li> <b> cd - </b>:  from the current directory into the previous directory </li>
-              </ol>
-            </p>
-            <button className="cd_btn" onClick={()=> setCd(true)}>Click Me!</button>
-        </div>{/* end of cd_cmd div */}
-
-
-
-      <div className="pwd_cmd">
-            <h1> pwd command </h1>
-            <p>
-              cd commands( abbreviation of change directory) swiches the current directory to the specific directory <br />
-              <b>pwd</b>
-            </p>
-            <button className="pwd_btn" onClick={()=> setPwd(true)}>Click Me!</button>
-        </div>{/* end of pwd_cmd div */}
-
-
-      <div className="mkdir_cmd">
-            <h1> mkdir command </h1>
-            <p>
-              mkdir command ( abbreviation for make directory) create a directory from the current directory <br />
-              <b>mkdir [options] directory </b>
-            </p>
-
-            <table>
-                  <tr>
-                    <th> Common Parameters</th>
-                    <th> Description </th>
-                  </tr>
-
-                  <tr>
-                    <td> -m </td>
-                    <td> Set permision </td>
-                  </tr>
-
-                  <tr>
-                    <td> -p </td>
-                    <td> Create missing intermediate path name direciries. if the <b>-p</b> is not specified,
-                    the parent directory of each-newly created directory must already exist.
-                    </td>
-                  </tr>
-
-                </table>
-                <button className="mkdir_btn" onClick={()=> setMkdir(true)}>Click Me!</button>
-
-        </div>{/* end of mkdir_cmd div */}
-
-        <div className="rm_cmd">
-            <h1> rm command </h1>
-            <p>
-            rm command ( short for remove) deletes one or more files or directories in a directory. It can also delete a directory and all files and subdirectories under it. <br /> <br />
-            When using rm command be careful of what file or directory are going to be deleted 
-            Be careful when using rm commands. Especially for new user, the entire system might be destroyed with this command 
-            (for example, rm * -rf under / (root directory)). Therefore, be sure and confirm which directory we are in, and what we want to delete. <br />
-
-              <b>rm [options] files or directory </b>
-            </p>
+            <p className='cmd_exe'> <span>rm [options] files or directory</span> </p>
 
             <table>
                   <tr>
@@ -157,28 +95,29 @@ const FileManagement = () => {
 
                   <tr>
                     <td> -i </td>
-                    <td> Make an interactive deleteion </td>
+                    <td> --interactive, make an interactive deleteion </td>
                   </tr>
 
                   <tr>
                     <td> -r </td>
-                    <td> Recursively delete all directories and subdirectories listed in the paramemter </td>
+                    <td> --recursively, delete all directories and subdirectories listed in the paramemter </td>
                   </tr>
-
                 </table>
-                <button className="rm_btn" onClick={()=> setRm(true)}>Click Me!</button>
-            
 
-        </div>{/* end of rm_cmd div */}
+          </div> {/*end of rm_cmd*/ }
+          <br/>
+          <div className="break">============</div>
 
-        <div className="cp_cmd">
-            <h1> cp command </h1>
+          <div className="cp_cmd">
+            <h3 className='cmd_title'> cp command</h3>
             <p>
-            cp command ( short for copy) is a common used commands. This commands used to copy files or directories. <br />
-              <b>
+               <span> cp </span> command ( short for copy) is a common used commands. This commands used to copy files or directories. <br />
+            </p>
+            <p className='cmd_exe'>
+            <span>
                 cp [options] source file directory <br />
                 cp [options] -t directory source file
-              </b>
+            </span>
             </p>
 
             <table>
@@ -189,7 +128,7 @@ const FileManagement = () => {
 
                   <tr>
                     <td> -f </td>
-                    <td> --force copy files or directories  </td>
+                    <td> --force, copy files or directories  </td>
                   </tr>
 
                   <tr>
@@ -204,25 +143,158 @@ const FileManagement = () => {
 
                   <tr>
                     <td> -u </td>
-                    <td> --update The file will be copied only when the modiciation time of the souce file is more than the destination
+                    <td> --update, the file will be copied only when the modiciation time of the souce file is more than the destination
                       file, or the corresponding destination file does not exist
                     </td>
                   </tr>
-                  
-              
                 </table>
-                
-        </div>{/* end of cp_cmd div */}
+          </div> {/*end of cp_cmd*/ }
+          <br/>
+          <div className="break">============</div>
 
-        <div className="cat_cmd">
-            <h1> cat command </h1>
+          <div className="mv_cmd">
+            <h3 className='cmd_title'>mv command</h3>
             <p>
-            cat command ( abbreviation for concatenate ) is toouput a file or standard input.  This command is often used to display the contents of a file, or to link several files together, 
-            or to read and display content from standard input. It is often used in conjunction with redirection symbols <br />
-              <b> cat option  </b>
+              <span>mv</span> command is used to move files or change file names. It is also used to back up files or director.
+            </p>
+            <p className='cmd_exe'> <span>mv [option] src file or directory target file or directory</span></p>
+
+            <div className="example">
+            Common Examples: 
+            <p>
+              To move file called "hacker" into directory named "room", you would type <br/>
+              <span>$ mv hacker room</span> <br/>
+
+              To rename file called "redHoddie" into "blackHoodie", you would type <br/>
+              <span>$ mv redHoddie blackHoodie</span> <br/>
+            </p>
+            </div>
+          </div> {/*end of mv_cmd*/ }
+          <br/>
+          <div className="break">============</div>
+
+          <div className="more_cmd">
+            <h3 className='cmd_title'> more command</h3>
+            <p>
+              <span>More </span> command is to display file contents, one screen at at time. To display a single line more, hit {'<enter>'} key. 
+              To display the next screenful, hit {'<spacebar>'}. To exit, press {"<q>"}
             </p>
 
+            <p className='cmd_exe'>
+              <span> more filename </span>
+            </p>
+          </div> {/*end of more_cmd*/ }
+          <br/>
+          <div className="break">============</div>
+
+          <div className='tar_cmd'>
+            <h3 className='cmd_title'>tar command</h3>
+            <p>
+            <span>tar</span> stands for tape archive, is used to create Archive and extract the Archive files. 
+            tar command in Linux is one of the important command which provides archiving functionality in Linux.
+            We can use Linux tar command to create compressed or uncompressed Archive files and also maintain and modify them
+            </p> <br/>
+
+            <p>
+             <strong> What is archive file? </strong> archive file is a file contains one or more 
+             than one file along with metadata. The benefit of archive file is that it is easier 
+             portability and storage, or simply to compress files to use less storage space. 
+            </p>
+            <p className='cmd_exe'> <span>tar [options] [archive-file] [file or directory to be archived]</span></p>
+
             <table>
+                  <tr>
+                    <th> Common Parameters</th>
+                    <th> Description </th>
+                  </tr>
+
+                  <tr>
+                    <td> -c </td>
+                    <td> --create, create archive </td>
+                  </tr>
+
+                  <tr>
+                    <td> -x </td>
+                    <td> --extract, extract archive </td>
+                  </tr>
+
+                  <tr>
+                    <td> -f </td>
+                    <td>  creates archive with given filename </td>
+                  </tr>
+
+                  <tr>
+                    <td> -t </td>
+                    <td>  displays or lists files in archived file </td>
+                  </tr>
+
+                  <tr>
+                    <td> -v </td>
+                    <td>  displays Verbose Information  </td>
+                  </tr>
+
+                  <tr>
+                    <td> -A </td>
+                    <td>  Concatenates the archive files  </td>
+                  </tr>
+
+                  
+                  <tr>
+                    <td> -z </td>
+                    <td>  --zip, tells tar command that creates tar file using gzip   </td>
+                  </tr>
+
+                  
+                  <tr>
+                    <td> -j </td>
+                    <td>  filter archive tar file using tbzip </td>
+                  </tr>
+
+                  
+                  <tr>
+                    <td> -W </td>
+                    <td>  Verify a archive file  </td>
+                  </tr>
+
+                  <tr>
+                    <td> -r </td>
+                    <td>  update or add file or directory in already existed .tar file   </td>
+                  </tr>
+            </table>
+
+            <div className='example'>
+              Common Examples: <br/>
+              <p>
+                To create, verbose, filename. Bundle all the content of dir_1 into a single file called dir_1.tar <br/>
+              <span>$ tar -cvf dir_1.tar dir_1 </span> <br/>
+                To extract files from Archives use -xvf <br/>
+              <span>$ tar xvf file.tar </span> <br/>
+                To update existing tar file in Linux <br/>
+              <span>$  tar rvf file.tar *.c  </span> <br/>
+                We can also apply pipe to through 'prep' commands to find what we are looking for <br/>
+              <span>$ tar tvf file.tar | grep "text to find" </span> 
+                (This command will list only for the mentioned text or image in grep from archived file)
+              </p>
+            </div>
+
+          </div> {/*end of tar_cmd*/ }
+
+          <div className='cat_cmd'>
+              <h3 className='cmd_title'>cat command</h3>
+              <p>
+                <span>cat </span> command ( abbreviation for catalogue/ or concatenate) This command is handy and let's see what cat command can do:
+
+                <ul>
+                  <li> To ouput a file or standard input. </li>
+                  <li> To display the contents of a file, or to link several files together. </li>
+                  <li> To read and display content from standard input </li>
+                  <li> It is also often used in conjunction with redirection symbols</li>
+                </ul> 
+              </p>
+
+              <p className='cmd_exe'> <span> cat option </span></p>
+
+              <table>
                   <tr>
                     <th> Common Parameters</th>
                     <th> Description </th>
@@ -240,31 +312,45 @@ const FileManagement = () => {
                 
                   </table>
 
-            <p>
-              Common Used Examples: 
-              <ul>
-                <li> View a single file <b> $cat filename </b> : It will show content of given filename </li>
-                <li> View multiple files <b> $cat file1 file2 </b>: This will show the content of file1 and file2. </li>
-                <li> View contents of a file preceding with line numbers <b> $cat -n filename </b>: will show content with line number</li> {/* example will be in geekforgeeks website https://www.geeksforgeeks.org/cat-command-in-linux-with-examples/} */}
-                <li> Create a file  <b> $ cat {`>`} newfile</b>: create a file named newfile</li>
-                <li> Copy the contents of one file to another file. <b> $cat [filename-whose-contents-is-to-be-copied] {`>`}[destination-filename] </b> The content will be copied in destination file</li>
-                <li> Append the content will be copied in destination file <b> $cat file1 {`>`} file2</b>: Will append the contents of one file to the end of another file </li>
-                <li> Display content in reverse order using tac command <b>$tac filename </b>:  display content in reverse order  </li>
-                <li> Highlight the end of line <b>$cat -E "filename"</b>: highlight the end of line </li>
-                <li> Cat command if the file has a lot of content and can't fit in the terminal <b>$cat "filename" | more</b>: Will show that much content, which could fit in terminal and will ask to show more. </li>
-                <li> Cat command to merge the contents of multiple files <b>$cat "filename1" "filename2" "filename3" {`>`} "merged_filename" </b>:  merge the contents of file in respective order and will insert that content in "merged_filename". </li>
-                <li> Display the content of all text files in the folder <b> $cat *.txt</b>: show the content of all text files present in the folder.</li>
-                <li> Write in an already existing file <b>  $cat {`>>`} geeks.txt The newly added text.</b>: append the text "The newly added text." to the end of the file. </li>
-              </ul>
-            </p>
-            <button className="cat_btn" onClick={()=> setCat(true)}>Click Me!</button>
+                  <div className='example'>
+                    Let's go to some common used examples: 
+                    <p>
+                        To show content of given filename <br/>
+                        <span>$cat filename </span> <br/>
+                        To show the content of file1 and file2 <br/>
+                        <span> $cat file1 file2</span><br/>
+                        To show content with line number <br/>
+                        <span>$cat -n filename </span><br/>
+                        To create a file named newfile<br/>
+                        <span>$ cat {`>`} newfile</span><br/>
+                        To copy the content of a file to another file <br/>
+                        <span> $cat [filename-whose-contents-is-to-be-copied] {`>`}[destination-filename]</span> <br/>
+                        To append the contents of one file to the end of another file <br/>
+                        <span> $cat file1 {`>`} file2</span> <br/>
+                        To display content in reverse order <br/>
+                        <span>$tac filename </span> <nr/>
+                        To highlight the end of line <br/>
+                        <span> $cat -E "filename"</span> <br/>
+                        To show that much content, which could fit in terminal and will ask to show more <br/>
+                        <span> $cat "filename" | more</span> <br/>
+                        To merge the contents of file in respective order and will insert that content in "merged_filename" <br/>
+                        <span>$cat "filename1" "filename2" "filename3" {`>`} "merged_filename"</span> <br/>
+                        To show the content of all text files present in the folder <br/>
+                        <span>$cat *.txt</span><br/>
+                        To append the content at the end of the file <br/>
+                        <span>$cat {`>>`} text.txt The newly added text</span> ( this will append the text "The newly added text" to the end of the txt file.)
 
 
-        </div>{/* end of cat_cmd div */}
-        <Link to="/fileManagePractice">PRACTICE HERE!</Link>
 
+
+
+
+                    </p>
+                     
+                  </div>
+
+          </div> {/*end of cp_cmd*/ }
       </div>
-      <Link to="/FMQuiz">QUIZ</Link>
       <Footer/>
     </div>
   )

@@ -6,4 +6,4 @@ export {default as Progressbar} from "./utility/Progressbar"
 export { ValueContext } from "./context/ValueContext";
 export{ IntroMCQs } from "./IntroMCQs"
 export { FlashcardData } from  "./flashcard/FlashcardData"
-export { ManagementData} from "./sidenav/ManagementData"
+export { fmData} from "./sidenav/fmData"

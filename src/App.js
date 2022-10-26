@@ -65,7 +65,7 @@ function App() {
         <Route path='/advanced' element={<Advanced/>}></Route>
         <Route path='/flashcard' element={ <FlashcardList flashcards={flashcards}/>}> </Route>
         <Route path='/feedback' element={<Feedback/>}></Route>
-        {/* <Route path='/progressbar' element={<Progressbar/>}></Route> */}
+        <Route path='/progressbar' element={<Progressbar/>}></Route>
       </Routes>
     </div>
   );

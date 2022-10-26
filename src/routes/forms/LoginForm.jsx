@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react'
 import {useNavigate} from 'react-router-dom'
-import './LoginForm.css'
+import './form.css'
 
 const LoginForm = ({ Login,  error}) => {
   const [details, setDetails] = useState({name: "", email: "", password: ""});
@@ -15,7 +15,6 @@ const LoginForm = ({ Login,  error}) => {
 
   return (
     <div className= "form-container" >
-
     <form onSubmit={submitHandler}>
           <div className="form-inner">
               <h2>Login</h2>

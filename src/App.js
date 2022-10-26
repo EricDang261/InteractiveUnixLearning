@@ -2,13 +2,13 @@ import React, { useEffect, useState, useContext } from "react";
 import {Routes, Route} from 'react-router-dom'
 import'./App.css'
 
-import {  LoginForm, 
+import {  Login, 
           SignUpForm,
           Home, 
           Introduction, 
           FileManagement,  
           Advanced,
-          Quiz,
+          Feedback,
           FMPractice,
           FMQuiz,
           FSQuiz,
@@ -18,35 +18,12 @@ import {  LoginForm,
 import {
   FlashcardList,
   FlashcardData,
+  ValueContext,
+  Progressbar
 } from "./components";
-
-import { ValueContext } from "./components/context/ValueContext";
 
 
 function App() {
-
-  const adminUser = {
-    email: "admin@admin.com",
-    password: "admin123"
-  }
-
-  const [user, setUser] = useState( { name: "" , email:"" } )
-  const [error, setError] = useState("")
-  
-  const Login = details =>{
-    if(details.email === adminUser.email && details.password === adminUser.password){
-      console.log("Logged in");
-      setUser({
-        name: details.name,
-        email:details.email
-      });
-    }else{
-      console.log("Details does not match")
-      setError("Details does not match!")
-    }
-  }
-
-
   const [flashcards, setFlashcards ] = useState(FlashcardData) 
   const [categories, setCategories] = useState([])
   const context = useContext(ValueContext)
@@ -76,11 +53,9 @@ function App() {
   return (
     <div className="App">
      <Routes>
-        <Route path='/' element={<Home/>} />
-        <Route path='/login' element= { (user.email !== "") ? 
-          (<Home />) : ( <LoginForm Login={Login} error={error}/>)}/>
-        
-        <Route path='/SignUp' element={ <SignUpForm /> }></Route>
+        <Route path='/' element={<Home/>} > </Route> 
+        <Route path='/login' element= { <Login /> } > </Route> 
+        <Route path='/signup' element={ <SignUpForm /> }></Route>
         <Route path='/intro' element={<Introduction/>}></Route>
         <Route path="/dirManage" element={<DirectoryManagement/>}></Route>
         <Route path='/fileManage' element={<FileManagement/>}></Route>
@@ -89,7 +64,8 @@ function App() {
         <Route path='/fsQuiz' element={<FSQuiz/>}></Route>
         <Route path='/advanced' element={<Advanced/>}></Route>
         <Route path='/flashcard' element={ <FlashcardList flashcards={flashcards}/>}> </Route>
-        <Route path='/quiz' element={<Quiz/>}></Route>
+        <Route path='/feedback' element={<Feedback/>}></Route>
+        {/* <Route path='/progressbar' element={<Progressbar/>}></Route> */}
       </Routes>
     </div>
   );

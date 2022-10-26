@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import "./MultipleChoice.css"
 import { IntroMCQs } from './IntroMCQs'
 
-const MultipleChoice = (d) => {
+const MultipleChoice = ({d}) => {
 
     //properties section
     const [showFinalRes, setFinalRes] = useState(false)
@@ -19,9 +19,9 @@ const MultipleChoice = (d) => {
     }
 
     function getAnswer(){
-        for (var option in d.d[0][currQuestion].options){
-            if (d.d[0][currQuestion].options[option].isCorrect == true){
-                return d.d[0][currQuestion].options[option].text
+        for (var option in d[0][currQuestion].options){
+            if (d[0][currQuestion].options[option].isCorrect == true){
+                return d[0][currQuestion].options[option].text
             }
         }
     }
@@ -37,13 +37,7 @@ const MultipleChoice = (d) => {
         if(isCorrect){
             setScore(score + 1)
         }
-        else{
-            var temp = new Array()
-            temp.push(d.d[0][currQuestion].text)
-            temp.push(getAnswer())
-            updateIncorrect(temp)
-        }
-        if(currQuestion + 1 < d.d[0].length){
+        if(currQuestion + 1 < d[0].length){
             setQuestion(currQuestion + 1)
         }
         else{
@@ -60,7 +54,7 @@ const MultipleChoice = (d) => {
                 //if true show results
                 <div className="mc_results">
                     <h1 className="mc_results_header">Final Results</h1>
-                    <h3 className="mc_score">{score} out of {d.d[0].length} correct - ({(score/d.d[0].length)*100}%)</h3>
+                    <h3 className="mc_score">{score} out of {d[0].length} correct - ({(score/d[0].length)*100}%)</h3>
                     <h2 className="mc_incorrect_title">Correct Answers</h2>
                     <p>Number of incorrect answers: {incorrectAns.length}</p>
                     <ul className = "mc_incorrect_list">
@@ -80,12 +74,12 @@ const MultipleChoice = (d) => {
                 //else false and show cards
                 <div className="mc_questions">
                     <h2 className="mc_score"> Current Score: {score}</h2>
-                    <h2>Question {currQuestion + 1} out of {d.d[0].length}</h2> 
+                    <h2>Question {currQuestion + 1} out of {d[0].length}</h2> 
                     <ul className="question_choices">
                     {  
 
-                        d.d[0][currQuestion].options && 
-                        d.d[0][currQuestion].options.map((option)=>{
+                        d[0][currQuestion].options && 
+                        d[0][currQuestion].options.map((option)=>{
                         return(
                             <li onClick={()=>optionClicked(option.isCorrect)}key={option.id}>{option.text}</li>
                         )})

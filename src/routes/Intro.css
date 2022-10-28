@@ -29,7 +29,7 @@
   margin-left: .75rem;
   margin-right: 0.75rem;
   line-height: 1.8rem;
-  min-width: 800px;
+  /* min-width: 800px; */
 }
 
 .intro_intro{
@@ -285,8 +285,7 @@
   background-color: rgb(221, 255, 135);
   height: 120px;
   width: 200px;
-  margin-left: 20%;
-  margin-top: -25%;
+  margin-left: 20rem;
   position:absolute;
 }
 
@@ -309,9 +308,9 @@
   width: 200px;
   /* right: 11%; */
   margin-left: 70%;
-  position:relative;
+  position:absolute;
   margin-top: -33%;
-  z-index: 1;
+  /* z-index: 1; */
 }
 
 .shell_btn{
@@ -330,10 +329,10 @@
   background-color: rgb(251, 211, 126);
   height: 120px;
   width: 200px;
-  margin-left: 25%;
-  margin-top: 25%;
+  margin-left: 21rem;
+  margin-top: -27rem;
   position:absolute;
-  z-index: 10;
+  /* z-index: 10; */
 }
 
 .applic_btn{
@@ -351,10 +350,9 @@
   background-color: rgb(126, 184, 251);
   height: 120px;
   width: 200px;
-  margin-top: 350px;
   right: 200px;
   position:absolute;
-  z-index: 10;
+  /* z-index: 10; */
 }
 
 @media screen and (max-width: 1000px) {
@@ -395,30 +393,6 @@
 
 }
 
-#progressbar{
-  height: 70px;
-  width: 70px;
-  background-color: #dadada;
-  border-radius: 50%;
-  position: fixed;
-  right: 10px;
-  bottom: 20px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
-  display: grid;
-  place-items: center;
-
-}
-
-#progress_val{
-  display: block;
-  height: 50px;
-  width: 50px;
-  background-color: grey;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  font-weight: 500;
-}
 
 @keyframes pulse {
   to {

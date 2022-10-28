@@ -61,16 +61,18 @@
 }
 
 .dirM_title, .dirM_intro, .dirM_struct_title, .dirM_struct p, .dirM_pwd p, .pwd_title, .cd_title,
-.dirM_cd p, .mkdir_title, .dirM_mkdir p, .rmdir_title, .dirM_rmdir p, .du_title, .dirM_du p, .dm_quiz_title{
+.dirM_cd p, .mkdir_title, .dirM_mkdir p, .rmdir_title, .dirM_rmdir p, .du_title, .dirM_du p, .dm_quiz_title,
+.dirM_mv p, .mv_title{
     font-family: 'Courier New', Courier, monospace;
 }
 
-.dirM_pwd span, .dirM_cd span, .dirM_mkdir span, .mkdir_ex, .dirM_rmdir span, .rmdir_ex, .dirM_du span{
+.dirM_pwd span, .dirM_cd span, .dirM_mkdir span, .mkdir_ex, .dirM_rmdir span, .rmdir_ex, .dirM_du span,
+.dirM_mv span{
     color: rgb(253, 126, 126);
     font-family: 'Courier New', Courier, monospace;
 } 
 
-.pwd_title, .cd_title, .mkdir_title, .rmdir_title, .du_title{
+.pwd_title, .cd_title, .mkdir_title, .rmdir_title, .du_title, .mv_title{
     font-size: 25pt;
 }
 
@@ -118,6 +120,15 @@
     padding-bottom: 4rem;
 }
 
+.dm_practice{
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    color:white;
+    font-size: 40pt;
+    padding-left: 35%;
+
+}
+
 .dm_quiz{
     padding-top: 4rem;
     padding-bottom: 2rem;
@@ -127,6 +138,7 @@
     text-align: center;
     padding-bottom: 1rem;
 }
+
 
 
 

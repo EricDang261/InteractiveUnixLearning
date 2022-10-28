@@ -5,6 +5,7 @@ import {
   fmData, 
 } from '../components'
 
+import Progress from "../components/utility/Progress"
 import Quiz from './Quiz'
 import {FaHandPointRight} from "react-icons/fa"
 import "./FileManagement.css"
@@ -351,6 +352,7 @@ const FileManagement = () => {
 
           </div> {/*end of cp_cmd*/ }
       </div>
+      <Progress/>
       <Footer/>
     </div>
   )

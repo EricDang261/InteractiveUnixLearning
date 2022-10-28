@@ -37,6 +37,12 @@ const MultipleChoice = ({d}) => {
         if(isCorrect){
             setScore(score + 1)
         }
+        else{
+            var temp = new Array()
+            temp.push(d[0][currQuestion].text)
+            temp.push(getAnswer())
+            updateIncorrect(temp)
+        }
         if(currQuestion + 1 < d[0].length){
             setQuestion(currQuestion + 1)
         }
@@ -74,7 +80,8 @@ const MultipleChoice = ({d}) => {
                 //else false and show cards
                 <div className="mc_questions">
                     <h2 className="mc_score"> Current Score: {score}</h2>
-                    <h2>Question {currQuestion + 1} out of {d[0].length}</h2> 
+                    <h2>Question {currQuestion + 1} out of {d[0].length}</h2>
+                    <p>{d[0][currQuestion].text}</p>
                     <ul className="question_choices">
                     {  
 

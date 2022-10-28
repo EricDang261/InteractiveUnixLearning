@@ -1,7 +1,9 @@
 import React, {useState, useEffect} from 'react'
+import {Link} from "react-router-dom"
 import "./DirectoryManagement.css"
 import SideNav from '../components/sidenav/SideNav'
 import Footer from '../components/utility/Footer'
+import Progress from '../components/utility/Progress'
 import {dmData} from "../components/sidenav/dmData"
 import tree from "../assets/dm/Directory-Structure.png"
 import Quiz from './Quiz'
@@ -88,16 +90,39 @@ const DirectoryManagement = () => {
                 <p className="rmdir_ex"><span>rmdir</span> dirName</p>
             </div>
             <div className="break">============</div>
+            <div className="dirM_mv">
+                <h3 className="mv_title">What is mv?</h3>
+                <p>The <span>mv</span> command can be used to rename or move a directory. The commands stands for "move". When the second argument is a path, the command
+                interprets it as a move operation. When  the second argument is not a path, it considers is a renaming operation.</p>
+                <table>
+                    <tr>
+                        <th>Command</th>
+                        <th>What is does</th>
+                    </tr>
+                    <tr>
+                        <td>mv dirName /path/dest</td>
+                        <td>Moves the directory to the specified destination</td>
+                    </tr>
+                    <tr> 
+                         <td>mv dirName newDirName</td>
+                        <td>Renames the directory to the specified new name</td>
+                    </tr>
+                </table>
+            </div>
+            <div className="break">============</div>
             <div className="dirM_du">
                 <h3 className="du_title">What is du -sh ~?</h3>
                 <p>The <span>du -sh ~</span> command tells you the disk usage for your home directory. The ~ can also be replaced with directory or file names. Realtive and absolute paths can also be used. The <span>s</span> flag stands for "summary" and the <span>h</span> tag stands for "human-readable.</p>
             </div>
         </div>
         <div className="break">============</div>
+        <Link to="/DMPractice" className="dm_practice">PRACTICE HERE!</Link>
+        <div className="break">============</div>
         <div className="dm_quiz">
             <h1 className= "dm_quiz_title">End of Lesson Quiz</h1>
             <Quiz data={qData}/>
         </div>
+        <Progress/>
         <Footer/>
         
     </div>

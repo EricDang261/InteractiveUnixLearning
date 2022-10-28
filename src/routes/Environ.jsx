@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react'
 import { SideNav } from '../components'
 import {envData} from "../components/sidenav/envData"
 import Footer from '../components/utility/Footer'
+import Progress from '../components/utility/Progress'
 import "./Environ.css"
 import Quiz from './Quiz'
 
@@ -272,6 +273,7 @@ const Environ = () => {
             <h1 className= "env_quiz_title">End of Lesson Quiz</h1>
             <Quiz data={qData}/>
         </div>
+        <Progress/>
         <Footer/>
     </div>
   )

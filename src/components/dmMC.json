@@ -1,76 +1,76 @@
 {
     "dmMC": [
         {
-            "text": "What was the main goal for the creation of the Unix system?",
+            "text": "Your are currently at the root. If you were to make a directory named Directory1 and then move that directory into another directory named Important. What would the absolute path of that directory be?",
             "options": [
                 {
                     "id": 0,
-                    "text": "To create an interface between user and hardware system",
-                    "isCorrect": true
+                    "text": "/Important/Directory1",
+                    "isCorrect": false
                 },
                 {
                     "id": 1,
-                    "text": "To create a system that worked after the Multics failure",
+                    "text": "/home/Directory1",
                     "isCorrect": false
                 },
                 {
                     "id": 2,
-                    "text": "To create an interface between user and software",
-                    "isCorrect": false
+                    "text": "/home/Important/Directory1",
+                    "isCorrect": true
                 },
                 {
                     "id": 3,
-                    "text": "To fulfill a longtime dream",
+                    "text": "/home/Directory1/Important",
                     "isCorrect": false
                 }
             ]
         },
         {
-            "text": "What are the main features of the Unix system?",
+            "text": "What would happen if you were to remove a directory that didn't exist?",
             "options": [
                 {
                     "id": 0,
-                    "text": "A bridge between user and hardware",
+                    "text": "It would create that directory and then delete it",
                     "isCorrect": false
                 },
                 {
                     "id": 1,
-                    "text": "The Gradndaddy of many OS systems",
+                    "text": "Your file system would get a bit messed up",
                     "isCorrect": false
                 },
                 {
                     "id": 2,
-                    "text": "Multi-users, Multi-tasking, and Multi-processes",
-                    "isCorrect": true
+                    "text": "The system would break",
+                    "isCorrect": false
                 },
                 {
                     "id": 3,
-                    "text": "All of the above",
-                    "isCorrect": false
+                    "text": "An error message would show",
+                    "isCorrect": true
                 }
             ]
         },
         {
-            "text": "Why shoud you learn Unix?",
+            "text": "How would you check to see the disk usage for the directory cat? You are currently at the root and the cat directory is located within the feline directory.",
             "options": [
                 {
                     "id": 0,
-                    "text": "Becasue it's cool, why else?",
+                    "text": "du -sh cat",
                     "isCorrect": false
                 },
                 {
                     "id": 1,
-                    "text": "Modularity, Portability, Commonality",
+                    "text": "The thrid and fourth answers",
                     "isCorrect": true
                 },
                 {
                     "id": 2,
-                    "text": "Something everyone should know",
+                    "text": "du -sh feline/cat",
                     "isCorrect": false
                 },
                 {
                     "id": 3,
-                    "text": "Framework, Power, Niche",
+                    "text": "du -sh /home/feline/cat",
                     "isCorrect": false
                 }
             ]

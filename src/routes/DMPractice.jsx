@@ -4,7 +4,11 @@ import "./DMPractice.css"
 import terminal from "../assets/empty_terminal.png"
 import Nav from '../components/utility/Nav'
 import { Footer } from '../components'
+import pwdCmd from "../assets/dm/pwd_cmd.png"
 import mkdirCmd from "../assets/dm/mkdir_cmd.png"
+import cdCmd from "../assets/dm/cd_cmd.png"
+import rmdirCmd from "../assets/dm/rmdir_cmd.png"
+import duCmd from "../assets/dm/du_cmd.png"
 import Popup from '../components/utility/Popup'
 
 const DMPractice = () => {
@@ -24,21 +28,30 @@ const DMPractice = () => {
     const textRef = useRef()
 
 
+    function restart(){
+        setCurrQuestion(1)
+        setImg(terminal)
+        setAns("pwd")
+        setPopup(false)
+    }
+
+
     function nextQuestion() {
         if (currQuestion + 1 <= 5) {
             setImg(terminal)
+            setPopup(false)
 
             if (currQuestion === 1) {
-                setAns("pwd")
-            }
-            if (currQuestion === 2) {
                 setAns("cd dir2")
             }
-            if (currQuestion === 3) {
+            if (currQuestion === 2) {
                 setAns("mkdir cat")
             }
-            if (currQuestion === 4) {
+            if (currQuestion === 3) {
                 setAns("rmdir cat")
+            }
+            if (currQuestion === 4) {
+                setAns("du -sh dir1")
             }
             if (currQuestion === 5) {
                 setAns("du -sh dir1")
@@ -60,23 +73,22 @@ const DMPractice = () => {
         if (e.key === "Enter") {
 
             if (text === "pwd" && currQuestion === 1) {
-                // setImg(lsCmd)
+                setImg(pwdCmd)
             }
             else if (text === "cd dir2" && currQuestion === 2) {
-                // setImg(lsLongCmd)
+                setImg(cdCmd)
             }
-            else if (text === "mkdir directory1" && currQuestion === 3) {
+            else if (text === "mkdir cat" && currQuestion === 3) {
                 setImg(mkdirCmd)
             }
-            else if (text === "rmdir directory1" && currQuestion === 4) {
-                // setImg(pwdCmd)
+            else if (text === "rmdir cat" && currQuestion === 4) {
+                setImg(rmdirCmd)
             }
             else if (text === "du -sh dir1" && currQuestion === 5) {
-                // setImg(catCmd)
+                setImg(duCmd)
             }
             else {
-                alert("Wrong command! Expected to input: " + ans);
-                setPopup(false)
+                setPopup(true)
             }
 
             setText("")
@@ -94,10 +106,10 @@ const DMPractice = () => {
             </div>
             <div className="grid_right"
                 onClick={e => { textRef.current.focus() }}>
-                    <Popup 
+                    <Popup className="wrong_ans"
                     trigger = {popup}
                     setTrigger={setPopup}
-                    text="Wrong command! Expected to input: "
+                    text={`Wrong command! Expected to input: ${ans}`}
                     />
                 <input className="terminal_input_cmd"
                     type="text"
@@ -109,8 +121,9 @@ const DMPractice = () => {
                     <img src={img} ></img>
                 </div>
                 <button className="dm_next" onClick={nextQuestion}>Next</button>
+                <button className="dm_restart" onClick={restart}>Restart</button>
                 
-                <Link className="dm_exit" to="/fileManage">Exit</Link>
+                <Link className="dm_exit" to="/dirManage">Exit</Link>
             
             </div>
         </div>

@@ -12,6 +12,7 @@ import encounter from "../assets/Encounter.png"
 import modularity from "../assets/modularity.png"
 import pas from "../assets/pas.png"
 import Popup from '../components/utility/Popup'
+import Progress from '../components/utility/Progress'
 
 const Introduction = () => {
   const [hwPopup, setHWPop] = useState(false)
@@ -20,20 +21,6 @@ const Introduction = () => {
   const [appPopup, setAppPop] = useState(false)
   const [qData, setQData] = useState(IntroMCQs)
   const [loading, SetLoading] = useState(true)
-
-  let scrollPercentage=() =>{
-    let scrollProgress = document.getElementById("progressbar")
-    let progressVal = document.getElementById("progress_val")
-    let pos = document.documentElement.scrollTop
-    let calcHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight
-    let scrollVal = Math.round(pos * 100/calcHeight)
-    console.log("what is this??", scrollVal)
-    scrollProgress.style.background = `conic-gradient(rgb(124, 255, 124) ${scrollVal}%, #696969 ${scrollVal}%)`
-    progressVal.textContent=`${scrollVal}%`
-  }
-
-  window.onscroll = scrollPercentage
-  window.onload = scrollPercentage
 
 
   useEffect(()=>{
@@ -122,26 +109,26 @@ const Introduction = () => {
                 <img className="unix_arch" src={arch} alt="overlapping circles of smaller sizes and colors"/>
               </div>
               
-              <Popup className= "hw_info"
-                    trigger={hwPopup} 
-                    setTrigger={setHWPop}
-                    text = "Hardware: Visible system components"/>
+                <Popup className= "hw_info"
+                      trigger={hwPopup} 
+                      setTrigger={setHWPop}
+                      text = "Hardware: Visible system components"/>
 
-              <Popup className= "kernel_info" 
-                     trigger={kernPopup} 
-                     setTrigger={setKernPop}
-                     text="Kernal: This manages and allocates memory and tasks"/>
+                <Popup className= "kernel_info" 
+                      trigger={kernPopup} 
+                      setTrigger={setKernPop}
+                      text="Kernal: This manages and allocates memory and tasks"/>
 
-               <Popup className= "shell_info" 
-                     trigger={shellPopup} 
-                     setTrigger={setShellPop}
-                     text="Shell: The CLI, bridge between kernel and user"/>
-              
-              
-              <Popup className= "applic_info" 
-                     trigger={appPopup} 
-                     setTrigger={setAppPop}
-                     text="Application: Data and programs users write"/>
+                <Popup className= "shell_info" 
+                      trigger={shellPopup} 
+                      setTrigger={setShellPop}
+                      text="Shell: The CLI, bridge between kernel and user"/>
+                
+                
+                <Popup className= "applic_info" 
+                      trigger={appPopup} 
+                      setTrigger={setAppPop}
+                      text="Application: Data and programs users write"/>
               </div>
         </div>
         <div className="break">============</div>
@@ -149,9 +136,7 @@ const Introduction = () => {
           <h1 className= "intro_quiz_title">End of Lesson Quiz</h1>
           <Quiz data={qData}/>
         </div>
-        <div id="progressbar">
-          <span id="progress_val"></span>
-        </div>
+        <Progress/>
         <Footer/>
     </div>
   )

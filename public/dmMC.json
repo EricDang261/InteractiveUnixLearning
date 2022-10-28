@@ -1,129 +1,205 @@
 {
     "dmMC": [
         {
-            "text": "What was the main goal for the creation of the Unix system?",
+            "text": "Your are currently at the root. If you were to make a directory named Directory1 and then move that directory into another directory named Important, what would the absolute path of that directory be?",
             "options": [
                 {
                     "id": 0,
-                    "text": "To create an interface between user and hardware system",
-                    "isCorrect": true
+                    "text": "/Important/Directory1",
+                    "isCorrect": false
                 },
                 {
                     "id": 1,
-                    "text": "To create a system that worked after the Multics failure",
+                    "text": "/home/Directory1",
                     "isCorrect": false
                 },
                 {
                     "id": 2,
-                    "text": "To create an interface between user and software",
-                    "isCorrect": false
+                    "text": "/home/Important/Directory1",
+                    "isCorrect": true
                 },
                 {
                     "id": 3,
-                    "text": "To fulfill a longtime dream",
+                    "text": "/home/Directory1/Important",
                     "isCorrect": false
                 }
             ]
         },
         {
-            "text": "What are the main features of the Unix system?",
+            "text": "What would happen if you were to remove a directory that didn't exist?",
             "options": [
                 {
                     "id": 0,
-                    "text": "A bridge between user and hardware",
+                    "text": "It would create that directory and then delete it",
                     "isCorrect": false
                 },
                 {
                     "id": 1,
-                    "text": "The Gradndaddy of many OS systems",
+                    "text": "Your file system would get a bit messed up",
                     "isCorrect": false
                 },
                 {
                     "id": 2,
-                    "text": "Multi-users, Multi-tasking, and Multi-processes",
-                    "isCorrect": true
+                    "text": "The system would break",
+                    "isCorrect": false
                 },
                 {
                     "id": 3,
-                    "text": "All of the above",
+                    "text": "An error message would show",
+                    "isCorrect": true
+                }
+            ]
+        },
+        {
+            "text": "How would you check to see the disk usage for the directory cat? You are currently at the root and the cat directory is located within the feline directory.",
+            "options": [
+                {
+                    "id": 0,
+                    "text": "du -sh cat",
+                    "isCorrect": false
+                },
+                {
+                    "id": 1,
+                    "text": "The third and fourth answers",
+                    "isCorrect": true
+                },
+                {
+                    "id": 2,
+                    "text": "du -sh feline/cat",
+                    "isCorrect": false
+                },
+                {
+                    "id": 3,
+                    "text": "du -sh /home/feline/cat",
                     "isCorrect": false
                 }
             ]
         },
         {
-            "text": "Why shoud you learn Unix?",
+            "text": "You are currently at the root. If you were to make a directory named dog and placed that into another directory named canine that is sitting in the root, what would be the relative path of the dog directory from where you are currently?",
             "options": [
                 {
                     "id": 0,
-                    "text": "Becasue it's cool, why else?",
+                    "text": "home/canine/dog",
                     "isCorrect": false
                 },
                 {
                     "id": 1,
-                    "text": "Modularity, Portability, Commonality",
+                    "text": "canine/dog",
                     "isCorrect": true
                 },
                 {
                     "id": 2,
-                    "text": "Something everyone should know",
+                    "text": "dog",
                     "isCorrect": false
                 },
                 {
                     "id": 3,
-                    "text": "Framework, Power, Niche",
+                    "text": "home/dog",
                     "isCorrect": false
                 }
             ]
         },
         {
-            "text": "What does CLI stand for and what does it do?",
+            "text": "You are currently in the directory Documents. The Documents directory is in the Data directory which sits in the root. What is the best way to get back to the root?",
             "options": [
                 {
                     "id": 0,
-                    "text": "Command Line Interpreter, translates OS language into human understandable language",
+                    "text": "cd home",
                     "isCorrect": false
                 },
                 {
                     "id": 1,
-                    "text": "Command Line Interpreter, translates input to OS language",
-                    "isCorrect": true
+                    "text": "cd ../../",
+                    "isCorrect": false
                 },
                 {
                     "id": 2,
-                    "text": "Console Linguistics Interpreter, translator",
+                    "text": "cd ..",
                     "isCorrect": false
                 },
                 {
                     "id": 3,
-                    "text": "Command Linuz Interpreter, input to OS language",
+                    "text": "cd ~",
+                    "isCorrect": true
+                }
+            ]
+        },        
+        {
+            "text": "Can you remove a nested directory? What happens to the contents within it?",
+            "options": [
+                {
+                    "id": 0,
+                    "text": "yes; the contents get deleted as well",
+                    "isCorrect": true
+                },
+                {
+                    "id": 1,
+                    "text": "no, if you do you will get an error",
+                    "isCorrect": false
+                },
+                {
+                    "id": 2,
+                    "text": "yes, the contents get moved to the parent folder",
+                    "isCorrect": false
+                },
+                {
+                    "id": 3,
+                    "text": "no, if you try you will mess up your file system",
                     "isCorrect": false
                 }
             ]
         },
         {
-            "text": "What are the components within the Unix architecture and what is the order from lowest to highest?",
+            "text": "Within the root, there are three directories named dir1, dir2, and dir3 respectively. How would you create a directory named dir4 within dir3 from the root?",
             "options": [
                 {
                     "id": 0,
-                    "text": "Kernal, Hardware, Shell",
+                    "text": "mkdir dir2/dir4",
                     "isCorrect": false
                 },
                 {
                     "id": 1,
-                    "text": "Hardware, Kernal, Shell",
-                    "isCorrect": false
+                    "text": "mkdir dir3/dir4",
+                    "isCorrect": true
                 },
                 {
                     "id": 2,
-                    "text": "Kernal, Hardware, Shell, Application",
+                    "text": "mkdir dir4",
                     "isCorrect": false
                 },
                 {
                     "id": 3,
-                    "text": "Hardware, Kernal, Shell, Application",
+                    "text": "mkdir dir3/dir5",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "text": "What is the correct way to move back two directories?",
+            "options": [
+                {
+                    "id": 0,
+                    "text": "cd ../../",
                     "isCorrect": true
+                },
+                {
+                    "id": 1,
+                    "text": "cd .. ..",
+                    "isCorrect": false
+                },
+                {
+                    "id": 2,
+                    "text": "cd ..",
+                    "isCorrect": false
+                },
+                {
+                    "id": 3,
+                    "text": "cd",
+                    "isCorrect": false
                 }
             ]
         }
+        
     ]
 }

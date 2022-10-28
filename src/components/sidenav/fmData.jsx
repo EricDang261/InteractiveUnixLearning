@@ -5,6 +5,11 @@ export const fmData = [
         className: "side-text"
     },
     {
+        title: "echo command",
+        path: "echo_cmd",
+        className: "side-text"
+    },
+    {
         title: "ls command",
         path: "ls_cmd",
         className: "side-text"

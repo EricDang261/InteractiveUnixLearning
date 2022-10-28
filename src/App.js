@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from "react";
+import React from "react";
 import {Routes, Route} from 'react-router-dom'
 import'./App.css'
 
@@ -16,41 +16,11 @@ import {  Login,
           DMPractice
         }from "./routes";
 
-import {
-  FlashcardList,
-  FlashcardData,
-  ValueContext,
-  Progressbar
-} from "./components";
+import{ FlashcardComp,
+      } from './components'
 
 
 function App() {
-  const [flashcards, setFlashcards ] = useState(FlashcardData) 
-  const [categories, setCategories] = useState([])
-  const context = useContext(ValueContext)
-
-  useEffect(() => {
-    fetch('./test.json')
-        .then(response => response.json() ) 
-        .then(data => {
-                      console.log(Object.keys(data).map(function(value) { return data[value]; })) 
-                      setCategories(Object.keys(data).map(function(value) { return data[value]; })) 
-         
-                    if(context.value ==="Unix-intro"){
-                          setFlashcards(categories[0])
-                    }
-                    if(context.value ==="File-management"){
-                        setFlashcards(categories[1])
-                      }
-                    if(context.value ==="Environment"){
-                      setFlashcards(categories[2])
-                    }
-                    if(context.value ==="Advanced-commands"){
-                      setFlashcards(categories[3])
-                    } })
-        
-      }, [context.value]) 
-
   return (
     <div className="App">
      <Routes>
@@ -63,12 +33,10 @@ function App() {
         <Route path='/fmQuiz' element={<FMQuiz/>}></Route>
         <Route path='/fileManagePractice' element={<FMPractice/>}></Route>
         <Route path='/advanced' element={<Advanced/>}></Route>
-        <Route path='/flashcard' element={ <FlashcardList flashcards={flashcards}/>}> </Route>
+        <Route path='/flashcard' element={ <FlashcardComp/>}> </Route>
         <Route path='/feedback' element={<Feedback/>}></Route>
-        <Route path='/progressbar' element={<Progressbar/>}></Route>
         <Route path="/environ" element={<Environ/>}></Route>
         <Route path="/dmPractice" element={<DMPractice/>}></Route>
-        {/* <Route path='/progressbar' element={<Progressbar/>}></Route> */}
       </Routes>
     </div>
   );

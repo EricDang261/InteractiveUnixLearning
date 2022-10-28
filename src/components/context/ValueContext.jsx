@@ -1,4 +1,4 @@
-import { useState, createContext, useEffect } from "react";
+import { useState, createContext } from "react";
 
 const ValueContext = createContext()
 
@@ -13,7 +13,6 @@ function ValueProvider({ children }){
         event.preventDefault()
         event.target.value = `${value}`
         setValue(event.target.value)
-        console.log(event.target.value)
         alert("you choose to review: " + value )
     }
 
@@ -23,7 +22,6 @@ function ValueProvider({ children }){
         handleSubmit
     }
 
-    // console.log("test: " + valueObject.val)
     return(
         <ValueContext.Provider value={valueObject}>
             {children}

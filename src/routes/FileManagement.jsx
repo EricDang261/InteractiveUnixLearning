@@ -1,17 +1,50 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import {
   SideNav,
   Footer,
   fmData, 
+  FM_MCQs,
+  Checkbox
 } from '../components'
 
 import Progress from "../components/utility/Progress"
 import Quiz from './Quiz'
 import {FaHandPointRight} from "react-icons/fa"
-import "./FileManagement.css"
-
+import {SiAzuredataexplorer} from "react-icons/si"
+import "./fileManagement.css"
 
 const FileManagement = () => {
+  const [qData, setQData] = useState(FM_MCQs)
+  const [loading, SetLoading] = useState(true)
+
+  let scrollPercentage=() =>{
+    let scrollProgress = document.getElementById("progressbar")
+    let progressVal = document.getElementById("progress_val")
+    let pos = document.documentElement.scrollTop
+    let calcHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight
+    let scrollVal = Math.round(pos * 100/calcHeight)
+    scrollProgress.style.background = `conic-gradient(rgb(124, 255, 124) ${scrollVal}%, #696969 ${scrollVal}%)`
+    progressVal.textContent=`${scrollVal}%`
+  }
+
+  window.onscroll = scrollPercentage
+  window.onload = scrollPercentage
+
+
+  useEffect(()=>{
+    fetch("./fmMC.json")
+    .then(res => res.json())
+    .then(data => {
+      setQData(Object.keys(data).map(function(value){return data[value]}))
+      console.log(qData)
+      SetLoading(false);  
+    })
+  }, [])
+
+  if(loading) return <h1>Loading</h1>
+
+
+
   return (
     <div className="fm_container">
       <SideNav className="fm_nav" page={fmData}/>
@@ -21,7 +54,7 @@ const FileManagement = () => {
              You will look so cool with your friends when you are able to flex around with file-commands in the terminal. YES!!
              I am not kidding!! In fact, most of the operations are performed on files. After this ultimate lesson, you will 
              become an expert. Are you ready? Let's go <FaHandPointRight style={{color: "white"}} />
-          </p> <br/>
+          </p>
           <div className="break">============</div>
 
 
@@ -38,6 +71,33 @@ const FileManagement = () => {
           <br/>
           <div className="break">============</div>
 
+          <div className='echo_cmd'>
+            <h3 className="cmd_title">echo command</h3>
+          <p>
+            Let's start off with one of the most basic and common used command <span>echo</span>. This
+            command in linux is used to display line of text or string that are passed as an argument.
+          </p>
+          <p className='cmd_exe'> <span> echo [option] [string]</span> </p>
+          <p>To enable the interpretation of backslash escapes in a string. You will need to set -e as a flag to the command </p>
+
+          <div className='example'>
+            <p>Let's see some examples: </p>
+               <p>
+                To delete all the spaces in between the text <br/>
+                <span>$echo -e "hello \bworld \b!"</span> &emsp; {`=>`} output: hellworld! <br/>
+                To create new line <br/>
+                <span>$echo -e "\nHello \nWorld \n!"</span> &emsp; {`=>`} output: <br/> hello<br/>world<br/>!<br/>
+                To have a sound alert return at the end of the string or text <br/>
+                <span>$echo -e "\aHello World</span> <br/>
+                Last but not least, to print all files/folders  <br/>
+                <span>$echo * </span> <br/>
+                <SiAzuredataexplorer/> !!! And there are so many more escapes options waiting for you to explore!! <SiAzuredataexplorer/>
+              </p>
+          </div>
+          </div> {/*end of echo cmd */}
+          <br/>
+          <div className="break">============</div>
+
           <div className="ls_cmd">
               <h3 className='cmd_title'>ls command</h3>
               <p>
@@ -46,9 +106,10 @@ const FileManagement = () => {
 
               <p className="cmd_exe"><span>cd [option]</span></p>
 
-              <table>
+              <table className="fm_table">
+                <tbody>
                   <tr>
-                    <th> Common Parameters</th>
+                    <th> Common Flags</th>
                     <th> Description </th>
                   </tr>
 
@@ -66,6 +127,7 @@ const FileManagement = () => {
                     <td> -d </td>
                     <td> -directory, displays the directory as a file instead of the file in it </td>
                   </tr>
+                  </tbody>
                 </table>
 
           </div> {/*end of ls_cmd*/ }
@@ -83,9 +145,10 @@ const FileManagement = () => {
             </p>
             <p className='cmd_exe'> <span>rm [options] files or directory</span> </p>
 
-            <table>
+            <table className="fm_table">
+              <tbody>
                   <tr>
-                    <th> Common Parameters</th>
+                    <th> Common Flags</th>
                     <th> Description </th>
                   </tr>
 
@@ -103,6 +166,7 @@ const FileManagement = () => {
                     <td> -r </td>
                     <td> --recursively, delete all directories and subdirectories listed in the paramemter </td>
                   </tr>
+                  </tbody>
                 </table>
 
           </div> {/*end of rm_cmd*/ }
@@ -121,9 +185,10 @@ const FileManagement = () => {
             </span>
             </p>
 
-            <table>
+            <table className='fm_table'>
+              <tbody>
                   <tr>
-                    <th> Common Parameters</th>
+                    <th> Common Flags</th>
                     <th> Description </th>
                   </tr>
 
@@ -145,9 +210,10 @@ const FileManagement = () => {
                   <tr>
                     <td> -u </td>
                     <td> --update, the file will be copied only when the modiciation time of the souce file is more than the destination
-                      file, or the corresponding destination file does not exist
+                      file (or not existed)
                     </td>
                   </tr>
+                  </tbody>
                 </table>
           </div> {/*end of cp_cmd*/ }
           <br/>
@@ -203,9 +269,10 @@ const FileManagement = () => {
             </p>
             <p className='cmd_exe'> <span>tar [options] [archive-file] [file or directory to be archived]</span></p>
 
-            <table>
+            <table className='fm_table'>
+              <tbody>
                   <tr>
-                    <th> Common Parameters</th>
+                    <th> Common Flags</th>
                     <th> Description </th>
                   </tr>
 
@@ -261,6 +328,7 @@ const FileManagement = () => {
                     <td> -r </td>
                     <td>  update or add file or directory in already existed .tar file   </td>
                   </tr>
+                </tbody>
             </table>
 
             <div className='example'>
@@ -283,21 +351,21 @@ const FileManagement = () => {
           <div className='cat_cmd'>
               <h3 className='cmd_title'>cat command</h3>
               <p>
-                <span>cat </span> command ( abbreviation for catalogue/ or concatenate) This command is handy and let's see what cat command can do:
-
-                <ul>
-                  <li> To ouput a file or standard input. </li>
-                  <li> To display the contents of a file, or to link several files together. </li>
-                  <li> To read and display content from standard input </li>
-                  <li> It is also often used in conjunction with redirection symbols</li>
-                </ul> 
+                <span>cat </span> command ( abbreviation for catalogue/ or concatenate) This command is handy because it can do:
               </p>
+              <ul>
+                  <li> Ouput a file or standard input. </li>
+                  <li> Display the contents of a file, or to link several files together. </li>
+                  <li> Read and display content from standard input </li>
+                  <li> It is also often used in conjunction with redirection symbols</li>
+              </ul> 
 
               <p className='cmd_exe'> <span> cat option </span></p>
 
-              <table>
+              <table className='fm_table'>
+                <tbody>
                   <tr>
-                    <th> Common Parameters</th>
+                    <th> Common Flags</th>
                     <th> Description </th>
                   </tr>
 
@@ -310,8 +378,8 @@ const FileManagement = () => {
                     <td> -n </td>
                     <td> --number For all the output line numbers, starting from 1 for all output line numbers</td>
                   </tr>
-                
-                  </table>
+                  </tbody>
+                </table>
 
                   <div className='example'>
                     Let's go to some common used examples: 
@@ -328,8 +396,6 @@ const FileManagement = () => {
                         <span> $cat [filename-whose-contents-is-to-be-copied] {`>`}[destination-filename]</span> <br/>
                         To append the contents of one file to the end of another file <br/>
                         <span> $cat file1 {`>`} file2</span> <br/>
-                        To display content in reverse order <br/>
-                        <span>$tac filename </span> <nr/>
                         To highlight the end of line <br/>
                         <span> $cat -E "filename"</span> <br/>
                         To show that much content, which could fit in terminal and will ask to show more <br/>
@@ -341,18 +407,22 @@ const FileManagement = () => {
                         To append the content at the end of the file <br/>
                         <span>$cat {`>>`} text.txt The newly added text</span> ( this will append the text "The newly added text" to the end of the txt file.)
 
-
-
-
-
-
                     </p>
                      
                   </div>
 
           </div> {/*end of cp_cmd*/ }
-      </div>
-      <Progress/>
+      </div>{/*end of fm_container*/ }
+
+      <div className="break">============</div>
+        <div className="quiz">
+          <h1 className= "quiz_title">End of Lesson Quiz</h1>
+          <Quiz data={qData}/>
+        </div>
+        <div id="progressbar">
+          <span id="progress_val"></span>
+        </div>
+      <Checkbox/>
       <Footer/>
     </div>
   )

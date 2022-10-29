@@ -137,9 +137,8 @@ const Introduction = () => {
           <h1 className= "intro_quiz_title">End of Lesson Quiz</h1>
           <Quiz data={qData}/>
         </div>
-        <Checkbox/>
         <Progress/>
-        <Checkbox/>
+        <Checkbox id="1"/>
         <Footer/>
     </div>
   )

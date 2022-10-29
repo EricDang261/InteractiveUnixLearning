@@ -1,101 +1,101 @@
 {
     "envMC": [
         {
-            "text": "What was the main goal for the creation of the Unix system?",
+            "text": "How would you see if you could connect to google.com?",
             "options": [
                 {
                     "id": 0,
-                    "text": "To create an interface between user and hardware system",
-                    "isCorrect": true
+                    "text": "ssh google.com",
+                    "isCorrect": false
                 },
                 {
                     "id": 1,
-                    "text": "To create a system that worked after the Multics failure",
+                    "text": "ps google.com",
                     "isCorrect": false
                 },
                 {
                     "id": 2,
-                    "text": "To create an interface between user and software",
-                    "isCorrect": false
+                    "text": "ping google.com",
+                    "isCorrect": true
                 },
                 {
                     "id": 3,
-                    "text": "To fulfill a longtime dream",
+                    "text": "scp google.com",
                     "isCorrect": false
                 }
             ]
         },
         {
-            "text": "What are the main features of the Unix system?",
+            "text": "I want to learn all about the ls command and everything that it can do. Which command do I use to achieve that?",
             "options": [
                 {
                     "id": 0,
-                    "text": "A bridge between user and hardware",
+                    "text": "whatis ls",
                     "isCorrect": false
                 },
                 {
                     "id": 1,
-                    "text": "The Gradndaddy of many OS systems",
-                    "isCorrect": false
-                },
-                {
-                    "id": 2,
-                    "text": "Multi-users, Multi-tasking, and Multi-processes",
+                    "text": "man ls",
                     "isCorrect": true
                 },
                 {
+                    "id": 2,
+                    "text": "ifconfig ls",
+                    "isCorrect": false
+                },
+                {
                     "id": 3,
-                    "text": "All of the above",
+                    "text": "whereis ls",
                     "isCorrect": false
                 }
             ]
         },
         {
-            "text": "Why shoud you learn Unix?",
+            "text": "What does this command sequence do? Sequence: ps -fu user1 | grep pID, kill pID, jobs, bg pID",
             "options": [
                 {
                     "id": 0,
-                    "text": "Becasue it's cool, why else?",
+                    "text": "Looks for all the processes for a user and displays them, stops a process, lists status of all active processes",
                     "isCorrect": false
                 },
                 {
                     "id": 1,
-                    "text": "Modularity, Portability, Commonality",
-                    "isCorrect": true
+                    "text": "Looks for all the processes, stops a process, lists status of all processes, brings a process from the background to the foreground",
+                    "isCorrect": false
                 },
                 {
                     "id": 2,
-                    "text": "Something everyone should know",
+                    "text": "Looks for all the processes for a user, suspends a process, lists status of all active processes, forces a process to run in the background",
                     "isCorrect": false
                 },
                 {
                     "id": 3,
-                    "text": "Framework, Power, Niche",
-                    "isCorrect": false
+                    "text": "Looks for all the processes for a user and displays them, stops a process, lists status of all active processes, forces a process to run in the background",
+                    "isCorrect": true
                 }
             ]
         },
         {
-            "text": "What does CLI stand for and what does it do?",
+            "text": "What command allows you to see the type of os a machine is running?",
             "options": [
                 {
                     "id": 0,
-                    "text": "Command Line Interpreter, translates OS language into human understandable language",
+                    "text": "type -os",
                     "isCorrect": false
                 },
                 {
                     "id": 1,
-                    "text": "Command Line Interpreter, translates input to OS language",
+                    "text": "uname -a",
                     "isCorrect": true
                 },
                 {
                     "id": 2,
-                    "text": "Console Linguistics Interpreter, translator",
+                    "text": "who",
                     "isCorrect": false
                 },
                 {
                     "id": 3,
-                    "text": "Command Linuz Interpreter, input to OS language",
+                    "text": "ifconfig -a",
                     "isCorrect": false
                 }
             ]

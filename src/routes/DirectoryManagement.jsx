@@ -9,8 +9,6 @@ import tree from "../assets/dm/Directory-Structure.png"
 import Quiz from './Quiz'
 import {Checkbox} from '../components/'
 
-import { Checkbox } from '../components'
-
 const DirectoryManagement = () => {
   const [qData, setQData] = useState()
   const [loading, SetLoading] = useState(true)
@@ -131,9 +129,8 @@ const DirectoryManagement = () => {
             <Quiz data={qData}/>
         </div>
 
-        <Checkbox />
         <Progress/>
-        <Checkbox/>
+        <Checkbox id="2"/>
         <Footer/>
         
     </div>

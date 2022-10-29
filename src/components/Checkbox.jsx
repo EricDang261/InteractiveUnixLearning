@@ -1,16 +1,20 @@
-import React, {useContext, useState} from 'react'
+import React, {useContext, useState, useRef} from 'react'
 import {CheckBoxContext} from './context/CheckBoxContext'
+import useLocalStorage from './LocalStorage'
 
-const Checkbox = () => {
-  const [checked, setChecked] = useState(false)
+const Checkbox = (props) => {
+  // const [check, setCheck] = useState(false)
+  const [checked, setChecked] = useLocalStorage(props.id, false)
+  console.log("What's here?", checked)
   const [complete, setComplete] = useState(0)
   const [text, setText] = useState("Lesson Completed!")
-
+  const checkedRef = useRef(checked)
   const context = useContext(CheckBoxContext)
 
 
-
   const handleChange = () =>{
+    console.log("handle change", checked)
+    checkedRef.current.value= !checked
     setChecked(!checked)
     if(checked == false){
         setComplete(complete + 30)
@@ -24,26 +28,16 @@ const Checkbox = () => {
         setText("Lesson Completed!")
     
     }
-
-    
+ 
   }
 
   return (
-<<<<<<< HEAD
-    <div>
-    <label>
-        <input type="checkbox"
-            value={context.checked}
-            onChange={context.handleChange}
-            />
-       <p>My value checked ? {context.checked.toString()} </p> 
-       <p>Completion ? {context.score.toString()}</p>
-    </label>
-    </div>
-=======
     <div className='checkbox'>
-      <label>
+      <label >
+      {console.log(checked)}
           <input type="checkbox"
+              id = {props.id}
+              ref= {checkedRef}
               value={checked}
               onChange={handleChange}
               />
@@ -51,9 +45,9 @@ const Checkbox = () => {
         <p>Completion ? {complete.toString()}</p>
         <p>text? {text.toString()}</p>
         <p>completion? {context.completion.toString()}</p>
+        <p>id? {props.id}</p>
       </label>
   </div>
->>>>>>> cec23b29f9c6787ba7adb1010d1c17c2a46e476d
   )
 }
 

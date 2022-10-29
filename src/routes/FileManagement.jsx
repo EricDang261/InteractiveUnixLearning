@@ -9,6 +9,7 @@ import {
 
 import Progress from "../components/utility/Progress"
 import Quiz from './Quiz'
+
 import {FaHandPointRight} from "react-icons/fa"
 import {SiAzuredataexplorer} from "react-icons/si"
 import "./fileManagement.css"
@@ -16,34 +17,18 @@ import "./fileManagement.css"
 const FileManagement = () => {
   const [qData, setQData] = useState(FM_MCQs)
   const [loading, SetLoading] = useState(true)
-
-  let scrollPercentage=() =>{
-    let scrollProgress = document.getElementById("progressbar")
-    let progressVal = document.getElementById("progress_val")
-    let pos = document.documentElement.scrollTop
-    let calcHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight
-    let scrollVal = Math.round(pos * 100/calcHeight)
-    scrollProgress.style.background = `conic-gradient(rgb(124, 255, 124) ${scrollVal}%, #696969 ${scrollVal}%)`
-    progressVal.textContent=`${scrollVal}%`
-  }
-
-  window.onscroll = scrollPercentage
-  window.onload = scrollPercentage
-
+ 
 
   useEffect(()=>{
     fetch("./fmMC.json")
     .then(res => res.json())
     .then(data => {
       setQData(Object.keys(data).map(function(value){return data[value]}))
-      console.log(qData)
       SetLoading(false);  
     })
   }, [])
 
   if(loading) return <h1>Loading</h1>
-
-
 
   return (
     <div className="fm_container">
@@ -418,11 +403,9 @@ const FileManagement = () => {
         <div className="quiz">
           <h1 className= "quiz_title">End of Lesson Quiz</h1>
           <Quiz data={qData}/>
-        </div>
-        <div id="progressbar">
-          <span id="progress_val"></span>
-        </div>
-      <Checkbox/>
+      </div>
+      <Checkbox />
+      <Progress />
       <Footer/>
     </div>
   )

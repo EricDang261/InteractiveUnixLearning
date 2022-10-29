@@ -1,29 +1,40 @@
 import React, {useState, useEffect, useRef} from 'react'
 import {Link} from "react-router-dom"
 import './FMPractice.css'
-import terminal from "../assets/empty_terminal.png"
-// import lsCmd from "../assets/fm/ls_command.png"
-import cdCmd from "../assets/fm/cd_command.png"
-import catCmd from "../assets/fm/readFile_cmd.png"
-import catOverWriteCmd from "../assets/fm/cat1_cmd.png"
-import catAppendCmd from "../assets/fm/cat2_cmd.png"
-import cpCmd from "../assets/fm/cp_cmd.png"
-// import lsLongCmd from "../assets/fm/ls_long_cmd.png"
-// import manCmd from "../assets/man_cmd.png"
-// import mkdirCmd from "../assets/mkdir_cmd.png"
-import mvCmd from "../assets/fm/mv_cmd.png"
-import mvRenameCmd from "../assets/fm/mv_rename.png"
-import rmCmd from "../assets/fm/rm_file.png"
-// import rmDirCmd from "../assets/rmdir_cmd.png"
-import  wcCmd from "../assets/fm/wc_cmd.png"
-// import whoamiCmd from "../assets/whoami_cmd.png"
 
+import Nav from '../components/utility/Nav'
+import Popup from '../components/utility/Popup'
+
+import initial from '../assets/fm/initial.png'
+
+        // pwd,
+        // ls, 
+        // cdvirtualdesktop, 
+        // appendcontentwithecho,
+        // catmerge,
+        // cdparentandls,
+        // touch, 
+        // rmfail,
+        // rmandls, 
+        // rmwithr,
+        // mv,
+        // lswithla,
+        // lsafterrm,
+        // ls_after_merge,
+        // lsaftercreatingvirtualdesktop,
+        // echo,
+        // cdandtouch,
+        // cdandls,
+        // catseethecontent
+ 
 
 const FMPractice = () => {
     const [text, setText] = useState("")
-    const [img, setImg] = useState(terminal)
+    const [img, setImg] = useState(initial)
     const [currQuestion, setCurrQuestion] = useState(1)
     const [ans, setAns] = useState("ls")
+    const [popup, setPopup] = useState(false)
+
     let qt = 
     [
       "1. Let's try to see what are files in the current directory ",
@@ -45,10 +56,17 @@ const FMPractice = () => {
     ]
     const textRef = useRef()
 
+    function restart(){
+      setCurrQuestion(1)
+      setImg(initial)
+      setAns("pwd")
+      setPopup(false)
+    }
+
 
     function nextQuestion(){
       if(currQuestion + 1 <= 16){
-        setImg(terminal)
+        setImg(initial)
         
         if(currQuestion === 1)
         {
@@ -127,52 +145,52 @@ const FMPractice = () => {
         if(e.key === "Enter"){
           
           if(text === "ls" && currQuestion === 1){
-            // setImg(lsCmd)
+           
           }
           else if(text === "ls -l" && currQuestion === 2){
-            // setImg(lsLongCmd)
+           
           }
           else if(text === "cd Documents" && currQuestion === 3){
-            // setImg(cdCmd)
+ 
           }
           else if(text === "pwd" && currQuestion === 4){
-            // setImg(pwdCmd)
+            
           }
           else if(text === "cat Message" && currQuestion === 5){
-            setImg(catCmd)
+            
          }
           else if(text === "cat file1 > file2" && currQuestion === 6){
-             setImg(catOverWriteCmd)
+          
           }
           else if(text === "cat file1 >> file2" && currQuestion === 7){
-             setImg(catAppendCmd )
+         
           }
           else if(text === "cp Message copyMessage" && currQuestion === 8){
-             setImg(cpCmd)
+             
           }
           else if(text === "man" && currQuestion === 9){
             // setImg(manCmd)
           }
           else if(text === "mkdir directory1" && currQuestion === 10){
-            // setImg(mkdirCmd)
+     
           }
           else if(text === "mv file1 /home/kali/Pictures" && currQuestion === 11){
-            setImg(mvCmd)
+       
           }
           else if(text === "mv file1 newFileName" && currQuestion === 12){
-            setImg(mvRenameCmd)
+       
          }    
           else if(text === "rm file1" && currQuestion === 13){
-            setImg(rmCmd)
+       
           }
           else if(text === "rmdir directory1" && currQuestion === 14){
-            // setImg(rmDirCmd)
+      
           }        
           else if(text === "wc Message" && currQuestion === 15){
-            setImg(wcCmd)
+            
           }     
           else if(text === "whoami" && currQuestion === 16){
-              // setImg(whoamiCmd)
+        
           }    
           else{
             alert("Wrong command! Expected to input: " + ans);
@@ -182,27 +200,33 @@ const FMPractice = () => {
         }
       }
 
-  return (
-    <div className ="FMPractice"
-          onClick={ e => {textRef.current.focus()}}>
-      <input className="terminal_input_cmd" 
-              type ="text" 
-              ref={textRef}
-              value={text}
-              onChange={handleChange}
-              onKeyDown={handleEnter}
-      />
-      <h5 className="question_numberkk">Question {currQuestion} out of 15</h5>
-       <div className='practice_question'>
-          {qt[currQuestion -1 ]}
-      </div>
-      <div className ="terminal">
-        <img src={img} ></img>
-      </div>
-      <button className="fm_next"onClick={nextQuestion}>Next</button>
-      <Link className="fm_exit"to="/fileManage">Exit</Link>
-    </div>
-  )
-}
+      return (
+        <div className ="FMPractice">
+            <div className="grid_left">    
+                <h5 className="question_number">Question {currQuestion} out of 20</h5>
+                <div className='question_text'>
+                    {qt[currQuestion - 1]}
+                </div>
+              </div>
+            <div className="grid_right"
+              onClick={ e => {textRef.current.focus()}} >
+
+                  <input className="terminal_input_cmd" 
+                              type ="text" 
+                              ref={textRef}
+                              value={text}
+                              onChange={handleChange}
+                              onKeyDown={handleEnter}
+                    />
+                <div className ="terminal">
+                  <img src={img} ></img>
+                </div>
+                <button className="fm_next" onClick={nextQuestion}>Next</button>
+                <button className="fm_restart" onClick={restart}>Restart</button>
+                <Link className="fm_exit"to="/fileManage">Exit</Link>
+          </div>
+        </div>
+      )
+    }
 
 export default FMPractice

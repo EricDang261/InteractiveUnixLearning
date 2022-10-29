@@ -9,17 +9,17 @@ function ValueProvider({ children }){
        setValue(event.target.value)
     }
         
-    const handleSubmit = (event) =>{
-        event.preventDefault()
-        event.target.value = `${value}`
-        setValue(event.target.value)
-        alert("you choose to review: " + value )
-    }
+    // const handleSubmit = (event) =>{
+    //     event.preventDefault()
+    //     event.target.value = `${value}`
+    //     setValue(event.target.value)
+    //     alert("you choose to review: " + value )
+    // }
 
     const valueObject = {
         value,
         handleChange,
-        handleSubmit
+        // handleSubmit
     }
 
     return(

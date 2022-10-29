@@ -11,13 +11,14 @@ const Category = () => {
           <label>
             Categories:
             <select onChange={context.handleChange}> 
+              <option value="All">All cards</option>
               <option value="Unix-intro">Unix Introduction</option>
               <option value="File-management">File Management</option>
               <option value="Environment">Environment</option>
               <option value="Advanced-commands">Advanced Commands</option>
             </select>
           </label>
-          <input type="submit" value="Submit" />
+          {/* <input type="submit" value="Submit" /> */}
         </form>
       </div>
    

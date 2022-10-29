@@ -7,6 +7,8 @@ import Progress from '../components/utility/Progress'
 import {dmData} from "../components/sidenav/dmData"
 import tree from "../assets/dm/Directory-Structure.png"
 import Quiz from './Quiz'
+import {Checkbox} from '../components/'
+
 import { Checkbox } from '../components'
 
 const DirectoryManagement = () => {
@@ -128,6 +130,8 @@ const DirectoryManagement = () => {
             <h1 className= "dm_quiz_title">End of Lesson Quiz</h1>
             <Quiz data={qData}/>
         </div>
+
+        <Checkbox />
         <Progress/>
         <Checkbox/>
         <Footer/>

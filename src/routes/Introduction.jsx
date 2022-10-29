@@ -13,7 +13,7 @@ import modularity from "../assets/modularity.png"
 import pas from "../assets/pas.png"
 import Popup from '../components/utility/Popup'
 import Progress from '../components/utility/Progress'
-import { Checkbox } from '../components'
+import Checkbox from '../components/Checkbox'
 
 const Introduction = () => {
   const [hwPopup, setHWPop] = useState(false)
@@ -137,6 +137,7 @@ const Introduction = () => {
           <h1 className= "intro_quiz_title">End of Lesson Quiz</h1>
           <Quiz data={qData}/>
         </div>
+        <Checkbox/>
         <Progress/>
         <Checkbox/>
         <Footer/>

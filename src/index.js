@@ -10,10 +10,10 @@ import { CheckBoxProvider } from './components/context/CheckBoxContext';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <CheckBoxProvider>
-    {/* <ValueProvider> */}
+    <ValueProvider>
       <BrowserRouter>
         <App />
       </BrowserRouter>
-    {/* </ValueProvider>   */}
+    </ValueProvider>  
   </CheckBoxProvider>
 );

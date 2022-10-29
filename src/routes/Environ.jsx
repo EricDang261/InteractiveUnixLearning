@@ -5,6 +5,7 @@ import Footer from '../components/utility/Footer'
 import Progress from '../components/utility/Progress'
 import "./Environ.css"
 import Quiz from './Quiz'
+import Checkbox from '../components/Checkbox'
 
 const Environ = () => {
     const [qData, setQData] = useState()
@@ -277,6 +278,8 @@ const Environ = () => {
             <h1 className= "env_quiz_title">End of Lesson Quiz</h1>
             <Quiz data={qData}/>
         </div>
+
+        <Checkbox />
         <Progress/>
         {/* <Checkbox/> */}
         <Footer/>

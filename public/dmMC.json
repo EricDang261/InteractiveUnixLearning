@@ -199,6 +199,56 @@
                     "isCorrect": false
                 }
             ]
+        },
+        {
+            "text": "Within the root, there is a directory named d1 and a directory named d2. What is the correct way to move the directory?",
+            "options": [
+                {
+                    "id": 0,
+                    "text": "cd d1",
+                    "isCorrect": false
+                },
+                {
+                    "id": 1,
+                    "text": "du d1 d2",
+                    "isCorrect": false
+                },
+                {
+                    "id": 2,
+                    "text": "mv d1 cat",
+                    "isCorrect": false
+                },
+                {
+                    "id": 3,
+                    "text": "mv d1 d2",
+                    "isCorrect": true
+                }
+            ]
+        },
+        {
+            "text": "You are at the root. You create a directory named d1 then create two more directories named d2 and d3. You go inside d3 and decide to delete d2. What are the commands used to complete this task and what does the resulting path look like ending at where you are?",
+            "options": [
+                {
+                    "id": 0,
+                    "text": "mkdir d2, mkdir d3, cd d3, rmdir home/d2, path: /home/d3",
+                    "isCorrect": false
+                },
+                {
+                    "id": 1,
+                    "text": "mkdir d1, cd d1, mkdir d2, mkdir d3, cd d3, rm /home/d1/d2, path: /home/d1/d3",
+                    "isCorrect": false
+                },
+                {
+                    "id": 2,
+                    "text": "mkdir d1, mkdir d2, mkdir d3, cd d3, rmdir /home/d2, path: /home/d3",
+                    "isCorrect": true
+                },
+                {
+                    "id": 3,
+                    "text": "mkdir d1, mkdir d2, mkdir d3, cd d3, rmdir d2, path: /home/d3",
+                    "isCorrect": false
+                }
+            ]
         }
         
     ]

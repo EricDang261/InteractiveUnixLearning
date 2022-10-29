@@ -7,6 +7,7 @@ import Progress from '../components/utility/Progress'
 import {dmData} from "../components/sidenav/dmData"
 import tree from "../assets/dm/Directory-Structure.png"
 import Quiz from './Quiz'
+import { Checkbox } from '../components'
 
 const DirectoryManagement = () => {
   const [qData, setQData] = useState()
@@ -21,6 +22,7 @@ const DirectoryManagement = () => {
       SetLoading(false);  
     })
   }, [])
+
 
   if(loading) return <h1>Loading</h1>
   return (
@@ -51,30 +53,32 @@ const DirectoryManagement = () => {
                 <p>The <span>cd</span> command is used for traversing through the directory structure. The command stands for "change directory". There are a couple of arguments that the command can take that will navigate you to specific destinations in certain ways:</p>
                 <br/>
                 <table className="cd_ex">
-                    <tr>
-                        <th>Command</th>
-                        <th>What it does</th>
-                    </tr>
-                    <tr>
-                        <td>cd</td>
-                        <td>The command by itself will always take you back to your home directory.</td>
-                    </tr>
-                    <tr>
-                        <td>cd dirName</td>
-                        <td>This will navigate you to the specified directory as long as it is one branch lower in the directory tree (listed within your current directory)</td>
-                    </tr>
-                    <tr>
-                        <td>cd path/dirName</td>
-                        <td>This type of traversing uses the relative path of the directory. The relative path starts from the current directory continues down the branches of the tree (other directories) until the target.</td>
-                    </tr>
-                    <tr>
-                        <td>cd fullPath/dirName</td>
-                        <td>This type of traversing uses the absolute path os the directory. It starts form the root directory and includes all subsequent directories.</td>
-                    </tr>
-                    <tr>
-                        <td>cd ..</td>
-                        <td>This is like a back button. It will navigate you back to the previous (parent) directory. Combining it with / and more dots will navigate you back more directories.</td>
-                    </tr>
+                    <tbody>
+                        <tr>
+                            <th>Command</th>
+                            <th>What it does</th>
+                        </tr>
+                        <tr>
+                            <td>cd</td>
+                            <td>The command by itself will always take you back to your home directory.</td>
+                        </tr>
+                        <tr>
+                            <td>cd dirName</td>
+                            <td>This will navigate you to the specified directory as long as it is one branch lower in the directory tree (listed within your current directory)</td>
+                        </tr>
+                        <tr>
+                            <td>cd path/dirName</td>
+                            <td>This type of traversing uses the relative path of the directory. The relative path starts from the current directory continues down the branches of the tree (other directories) until the target.</td>
+                        </tr>
+                        <tr>
+                            <td>cd fullPath/dirName</td>
+                            <td>This type of traversing uses the absolute path os the directory. It starts form the root directory and includes all subsequent directories.</td>
+                        </tr>
+                        <tr>
+                            <td>cd ..</td>
+                            <td>This is like a back button. It will navigate you back to the previous (parent) directory. Combining it with / and more dots will navigate you back more directories.</td>
+                        </tr>
+                    </tbody>
                 </table>
             </div>
             <div className="break">============</div>
@@ -95,18 +99,20 @@ const DirectoryManagement = () => {
                 <p>The <span>mv</span> command can be used to rename or move a directory. The commands stands for "move". When the second argument is a path, the command
                 interprets it as a move operation. When  the second argument is not a path, it considers is a renaming operation.</p>
                 <table>
-                    <tr>
-                        <th>Command</th>
-                        <th>What is does</th>
-                    </tr>
-                    <tr>
-                        <td>mv dirName /path/dest</td>
-                        <td>Moves the directory to the specified destination</td>
-                    </tr>
-                    <tr> 
-                         <td>mv dirName newDirName</td>
-                        <td>Renames the directory to the specified new name</td>
-                    </tr>
+                    <tbody>
+                        <tr>
+                            <th>Command</th>
+                            <th>What is does</th>
+                        </tr>
+                        <tr>
+                            <td>mv dirName /path/dest</td>
+                            <td>Moves the directory to the specified destination</td>
+                        </tr>
+                        <tr> 
+                            <td>mv dirName newDirName</td>
+                            <td>Renames the directory to the specified new name</td>
+                        </tr>
+                    </tbody>
                 </table>
             </div>
             <div className="break">============</div>
@@ -123,6 +129,7 @@ const DirectoryManagement = () => {
             <Quiz data={qData}/>
         </div>
         <Progress/>
+        <Checkbox/>
         <Footer/>
         
     </div>

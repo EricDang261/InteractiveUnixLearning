@@ -6,16 +6,20 @@ function CheckBoxProvider( {children} ){
     const[checked, setChecked] = useState(false);
     const[completion, setCompletion] = useState(0)
     const[text, setText] = useState(" Mark to complete the lesson! ")
+    const[score, setScore] = useState(0)
 
     function handleChange(){
-        setChecked(!checked)
         if(checked == false){
+            setChecked(true)
             setCompletion(completion + 20)
+            setScore(score + 20)
             setText("Completed!")
         }
         
         if(checked == true){
+            setChecked(false)
             setCompletion(completion -20)
+            setScore(score - 20)
             setText("Mark to complete the lesson!!")
         }
 
@@ -27,6 +31,7 @@ function CheckBoxProvider( {children} ){
         checked,
         completion,
         text,
+        score,
         handleChange
     }
 

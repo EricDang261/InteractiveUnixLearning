@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import { SideNav } from '../components'
+import { Checkbox, SideNav } from '../components'
 import {envData} from "../components/sidenav/envData"
 import Footer from '../components/utility/Footer'
 import Progress from '../components/utility/Progress'
@@ -130,22 +130,24 @@ const Environ = () => {
                     NOTE: "pipe" <span>|</span> redirects output, it takes the output of one process and sends it t another for further processing
                 </p>
                 <table>
-                    <tr>
-                        <th>Command</th>
-                        <th>What is does</th>
-                    </tr>
-                    <tr>
-                        <td>ps -fu userName</td>
-                        <td>Full listing of all the processes owned by a specified user</td>
-                    </tr>
-                    <tr>
-                        <td>ps -fu userName | grep process</td>
-                        <td>Full listing of all the processes that match the processName or processID owned by a specified user.</td>
-                    </tr>
-                    <tr>
-                        <td>ps aux</td>
-                        <td>Displays all processes on machine</td>
-                    </tr>
+                    <tbody>
+                        <tr>
+                            <th>Command</th>
+                            <th>What is does</th>
+                        </tr>
+                        <tr>
+                            <td>ps -fu userName</td>
+                            <td>Full listing of all the processes owned by a specified user</td>
+                        </tr>
+                        <tr>
+                            <td>ps -fu userName | grep process</td>
+                            <td>Full listing of all the processes that match the processName or processID owned by a specified user.</td>
+                        </tr>
+                        <tr>
+                            <td>ps aux</td>
+                            <td>Displays all processes on machine</td>
+                        </tr>
+                    </tbody>
                 </table>
             </div>
             <div className="break">============</div>
@@ -153,22 +155,24 @@ const Environ = () => {
                 <h3 className="ctr_title">What is ctrl?</h3>
                 <p>The different <span>ctrl</span> commands terminate or stop processes. The most commonly used version is <span>ctrl-c</span>.</p>
                 <table>
-                    <tr>
-                        <th>Command</th>
-                        <th>What is does</th>
-                    </tr>
-                    <tr>
-                        <td>ctrl-c</td>
-                        <td>Terminates a process. Commonly used in CSS classes when you encounter an infinite loop or "hanging" code.</td>
-                    </tr>
-                    <tr>
-                        <td>ctrl-d</td>
-                        <td>Terminates an external process.</td>
-                    </tr>
-                    <tr>
-                        <td>ctrl-z</td>
-                        <td>Suspends a job. Exactly like pausing a movie. Good for large downloads and transfers.</td>
-                    </tr>
+                    <tbody>
+                        <tr>
+                            <th>Command</th>
+                            <th>What is does</th>
+                        </tr>
+                        <tr>
+                            <td>ctrl-c</td>
+                            <td>Terminates a process. Commonly used in CSS classes when you encounter an infinite loop or "hanging" code.</td>
+                        </tr>
+                        <tr>
+                            <td>ctrl-d</td>
+                            <td>Terminates an external process.</td>
+                        </tr>
+                        <tr>
+                            <td>ctrl-z</td>
+                            <td>Suspends a job. Exactly like pausing a movie. Good for large downloads and transfers.</td>
+                        </tr>
+                    </tbody>
                 </table>
             </div>
             <div className="break">============</div>
@@ -274,6 +278,7 @@ const Environ = () => {
             <Quiz data={qData}/>
         </div>
         <Progress/>
+        {/* <Checkbox/> */}
         <Footer/>
     </div>
   )

@@ -40,5 +40,11 @@
     color:black;
 }
 
-
+@media screen and (max-width: 600px){
+    .card.card_pic{
+        height: 100px;;
+        width: 100px;
+    }
+  }
+  
 

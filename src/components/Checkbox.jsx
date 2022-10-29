@@ -12,7 +12,7 @@ const Checkbox = () => {
             onChange={context.handleChange}
             />
        <p>My value checked ? {context.checked.toString()} </p> 
-       <p>Completion ? {context.completion.toString()}</p>
+       <p>Completion ? {context.score.toString()}</p>
     </label>
     </div>
   )

@@ -11,7 +11,7 @@ import Progress from "../components/utility/Progress"
 import Quiz from './Quiz'
 import {FaHandPointRight} from "react-icons/fa"
 import {SiAzuredataexplorer} from "react-icons/si"
-import "./fileManagement.css"
+import "./FileManagement.css"
 
 const FileManagement = () => {
   const [qData, setQData] = useState(FM_MCQs)

@@ -24,6 +24,7 @@
     top: 0;
     left: -100%;
     transition: 850ms;
+    overflow: scroll;
 }
 
 .side-menu.active{
@@ -81,4 +82,8 @@
 
 .home_icon{
     color: white;
+}
+
+.side_titles{
+    color: whitesmoke;
 }

@@ -101,7 +101,7 @@
             ]
         },
         {
-            "text": "What are the components within the Unix architecture and what is the order from lowest to highest?",
+            "text": "You are in account U1. You want to switch users and access account U2. What are the steps that happen to achieve that?",
             "options": [
                 {
                     "id": 0,
@@ -110,18 +110,143 @@
                 },
                 {
                     "id": 1,
-                    "text": "Hardware, Kernal, Shell",
+                    "text": "whoami U2, set password, access account",
                     "isCorrect": false
                 },
                 {
                     "id": 2,
-                    "text": "Kernal, Hardware, Shell, Application",
+                    "text": "su U2, access account",
                     "isCorrect": false
                 },
                 {
                     "id": 3,
-                    "text": "Hardware, Kernal, Shell, Application",
+                    "text": "su U2, ask for password, access if correct",
                     "isCorrect": true
+                }
+            ]
+        },
+        {
+            "text": "What does ctrl-c do?",
+            "options": [
+                {
+                    "id": 0,
+                    "text": "Suspends a process",
+                    "isCorrect": false
+                },
+                {
+                    "id": 1,
+                    "text": "Terminates a process",
+                    "isCorrect": true
+                },
+                {
+                    "id": 2,
+                    "text": "Terminates an external process",
+                    "isCorrect": false
+                },
+                {
+                    "id": 3,
+                    "text": "Suspends a job for an amount of time before temrinating it",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "text": "What does ssh stand for and when would you use it?",
+            "options": [
+                {
+                    "id": 0,
+                    "text": "socket shell, used when you need a secure connection between hosts ",
+                    "isCorrect": false
+                },
+                {
+                    "id": 1,
+                    "text": "secure shell; used when you need to see if a host is available",
+                    "isCorrect": false
+                },
+                {
+                    "id": 2,
+                    "text": "secure shell; used when you need a secure connection between hosts",
+                    "isCorrect": true
+                },
+                {
+                    "id": 3,
+                    "text": "security shell; used when you need a secure connection between hosts",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "text": "When would you use who vs. when would you use whoami?",
+            "options": [
+                {
+                    "id": 0,
+                    "text": "Why would I ever use those commands?",
+                    "isCorrect": false
+                },
+                {
+                    "id": 1,
+                    "text": "Use who when you want to see who did a certain action, use whoami when you want to switch between users",
+                    "isCorrect": false
+                },
+                {
+                    "id": 2,
+                    "text": "Use whoami when you would like to see all logged in users' information; use who when you want to see current username",
+                    "isCorrect": false
+                },
+                {
+                    "id": 3,
+                    "text": "Use who when you would like to see all logged in users' information; use whoami when you want to see current username",
+                    "isCorrect": true
+                }
+            ]
+        },
+        {
+            "text": "What's the similarity and difference between scp and ssh?",
+            "options": [
+                {
+                    "id": 0,
+                    "text": "Similarity: network protocols that can be used to exchange data through a secure channel between two remote devices in a network; Difference: scp is for transfering files and can use ssh, and ssh is for establishing a secure connection between two remote devices",
+                    "isCorrect": true
+                },
+                {
+                    "id": 1,
+                    "text": "Similarity: network protocols that can be used to exchange data through a secure channel between two remote devices in a network; Difference: ssh is for transfering files and can use scp, and scp is for establishing a secure connection between two remote devices",
+                    "isCorrect": false
+                },
+                {
+                    "id": 2,
+                    "text": "Similarity: network protocols that are both used for transfering files but in different ways; Difference: ssh provides a secure connection while scp provides a more unsecure connection",
+                    "isCorrect": false
+                },
+                {
+                    "id": 3,
+                    "text": "Similarities: file protocols that can be used to exchange data through a secure channel between two remote devices in a network; Difference: scp is for transfering files and can use ssh, and ssh is for establishing a secure connection between two remote devices",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "text": "What is an environment variable and how do you see them?",
+            "options": [
+                {
+                    "id": 0,
+                    "text": "Environment variables describe the environment is which programs and applications run; command: en",
+                    "isCorrect": false
+                },
+                {
+                    "id": 1,
+                    "text": "Environment variables describe the environment is which programs and applications run; command: env ",
+                    "isCorrect": true
+                },
+                {
+                    "id": 2,
+                    "text": "Environment variables are variables used to store application data in; command: env",
+                    "isCorrect": false
+                },
+                {
+                    "id": 3,
+                    "text": "I have no idea",
+                    "isCorrect": false
                 }
             ]
         }

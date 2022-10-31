@@ -42,6 +42,36 @@
     text-align: center;
 }
 
+
+.man_ex, .uname_ex, .passwd_ex, .whereis_ex,
+.whatis_ex, .kill_ex, .amp_ex, .ssh_ex,
+.ifconfig_ex, .ping_ex, .su_ex{
+    padding-left: 42rem;
+} 
+.scp_ex, .g_ex{
+    padding-left: 35rem;
+}
+
+.env_man, .env_uname, .env_who, .env_su, .env_passwd,
+.env_env, .env_whereis, .env_whatis, .env_ps, .env_ctrl,
+.env_kill, .env_amp, .env_bg, .env_fg, .env_top, .env_ssh,
+.env_scp, .env_ifconfig, .env_ping, .env_g{
+    padding-top: 2rem;
+    padding-bottom: 4rem;
+}
+
+.env_ping p, .env_g p, .env_kill p, .env_ssh p, .env_whatis p,
+.env_ps p, .env_whereis p, .env_passwd p{
+    padding-bottom: 2rem;
+}
+
+.subtitle{
+    padding-bottom: 2rem;
+    /* text-align: center; */
+}
+
+
+
 .env_quiz_title{
     text-align: center;
     padding-top: 4rem;

@@ -1,51 +1,58 @@
-import React, {useContext, useState, useRef} from 'react'
+import React, {useContext, useState} from 'react'
+import { useEffect } from 'react'
 import {CheckBoxContext} from './context/CheckBoxContext'
-import useLocalStorage from './LocalStorage'
+//import useLocalStorage from './LocalStorage'
 
 const Checkbox = (props) => {
-  // const [check, setCheck] = useState(false)
-  const [checked, setChecked] = useLocalStorage(props.id, false)
-  console.log("What's here?", checked)
-  const [complete, setComplete] = useState(0)
+  const [isChecked , setIsChecked] = useState(JSON.parse(localStorage.getItem(props.id)) || false)
   const [text, setText] = useState("Lesson Completed!")
-  const checkedRef = useRef(checked)
   const context = useContext(CheckBoxContext)
 
+  useEffect( () => {
+      const completion = JSON.parse(localStorage.getItem("completion"))
+      if(completion){
+        context.setCompletion(completion)
+      }
+  }, [])
 
-  const handleChange = () =>{
-    console.log("handle change", checked)
-    checkedRef.current.value= !checked
-    setChecked(!checked)
-    if(checked == false){
-        setComplete(complete + 30)
-        context.setCompletion(context.completion + 25)
-        setText("Completed!")
+  useEffect( () => {
+      localStorage.setItem("completion", JSON.stringify(context.completion))
+  }, [context.completion])
+
+  useEffect(()=>{
+    localStorage.setItem(props.id, JSON.stringify(isChecked));
+  },[isChecked])
+ 
+  if(context.completion === undefined) return <h1>checkbox loading...</h1>
+
+
+  const handleChange = (e) =>{
+    let checked = e.target.checked
+
+    if(checked){
+          setIsChecked(!isChecked)
+          context.setCompletion(context.completion + 25)
+          setText("Completed!")
     }
-    
-    if(checked == true){
-        setComplete(complete-30)
+    else{
+        setIsChecked(false)
         context.setCompletion(context.completion - 25)
         setText("Lesson Completed!")
-    
-    }
- 
+        
+    }   
   }
 
   return (
     <div className='checkbox'>
       <label >
-      {console.log(checked)}
-          <input type="checkbox"
-              id = {props.id}
-              ref= {checkedRef}
-              value={checked}
-              onChange={handleChange}
+          <input 
+              id={props.id}
+              type="checkbox"
+              checked={isChecked}
+              onChange={(e) => handleChange(e)}
               />
-        <p>My value checked ? {checked.toString()} </p> 
-        <p>Completion ? {complete.toString()}</p>
         <p>text? {text.toString()}</p>
         <p>completion? {context.completion.toString()}</p>
-        <p>id? {props.id}</p>
       </label>
   </div>
   )

@@ -404,7 +404,7 @@ const FileManagement = () => {
           <h1 className= "quiz_title">End of Lesson Quiz</h1>
           <Quiz data={qData}/>
       </div>
-      <Checkbox />
+      <Checkbox id="3"/>
       <Progress />
       <Footer/>
     </div>

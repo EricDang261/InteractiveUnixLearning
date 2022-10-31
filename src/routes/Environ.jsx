@@ -278,7 +278,7 @@ const Environ = () => {
             <Quiz data={qData}/>
         </div>
 
-        <Checkbox />
+        <Checkbox id="4"/>
         <Progress/>
         {/* <Checkbox/> */}
         <Footer/>

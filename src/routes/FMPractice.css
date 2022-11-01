@@ -1,5 +1,6 @@
 .FMPractice{
   display:flex;
+  position: absolue;
   margin-top: 2rem;
 }
 

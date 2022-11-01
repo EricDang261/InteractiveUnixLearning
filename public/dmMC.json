@@ -130,12 +130,12 @@
             "options": [
                 {
                     "id": 0,
-                    "text": "yes; the contents get deleted as well",
+                    "text": "yes; as long as the flag -r is also use then all the contents get deleted as well",
                     "isCorrect": true
                 },
                 {
                     "id": 1,
-                    "text": "no, if you do you will get an error",
+                    "text": "no, if you do you will get an error becasue you can only delete empty directories",
                     "isCorrect": false
                 },
                 {

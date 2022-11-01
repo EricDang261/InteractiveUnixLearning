@@ -72,7 +72,7 @@ const DirectoryManagement = () => {
                         </tr>
                         <tr>
                             <td>cd fullPath/dirName</td>
-                            <td>This type of traversing uses the absolute path os the directory. It starts form the root directory and includes all subsequent directories.</td>
+                            <td>This type of traversing uses the absolute path of the directory. It starts from the root directory and includes all subsequent directories.</td>
                         </tr>
                         <tr>
                             <td>cd ..</td>
@@ -90,7 +90,7 @@ const DirectoryManagement = () => {
             <div className="break">============</div>
             <div className="dirM_rmdir">
                 <h3 className="rmdir_title">What is rmdir?</h3>
-                <p>The <span>rmdir</span> command removes a directory only if the directory is empty. The command stands for "remove directory". The command is followed by the name directory to be remove.</p>
+                <p>The <span>rmdir</span> command removes a directory only if the directory is empty. The command stands for "remove directory". The command is followed by the name directory to be remove. If the <span>-r</span> flag is used, then non-empty directories can be deleted.</p>
                 <p className="rmdir_ex"><span>rmdir</span> dirName</p>
             </div>
             <div className="break">============</div>

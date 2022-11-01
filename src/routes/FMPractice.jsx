@@ -67,6 +67,7 @@ const FMPractice = () => {
     function nextQuestion(){
       if(currQuestion + 1 <= 20){
         setImg(initial)
+        setPopup(false)
         
         if(currQuestion === 1)
         {
@@ -208,7 +209,7 @@ const FMPractice = () => {
         
           }    
           else{
-            alert("Wrong command! Expected to input: " + ans);
+            setPopup(true);
           }
 
           setText("")
@@ -216,31 +217,38 @@ const FMPractice = () => {
       }
 
       return (
-        <div className ="FMPractice">
-            <div className="grid_left">    
-                <h5 className="question_number">Question {currQuestion} out of 18</h5>
-                <div className='question_text'>
-                    {qt[currQuestion - 1]}
+        <>
+          <Nav/>
+          <div className ="FMPractice">
+              <div className="grid_left">    
+                  <h5 className="question_number">Question {currQuestion} out of 18</h5>
+                  <div className='question_text'>
+                      {qt[currQuestion - 1]}
+                  </div>
                 </div>
-              </div>
-            <div className="grid_right"
-              onClick={ e => {textRef.current.focus()}} >
-
-                  <input className="terminal_input_cmd" 
-                              type ="text" 
-                              ref={textRef}
-                              value={text}
-                              onChange={handleChange}
-                              onKeyDown={handleEnter}
-                    />
-                <div className ="terminal">
-                  <img src={img} ></img>
-                </div>
-                <button className="fm_next" onClick={nextQuestion}>Next</button>
-                <button className="fm_restart" onClick={restart}>Restart</button>
-                <Link className="fm_exit"to="/fileManage">Exit</Link>
+              <div className="grid_right"
+                onClick={ e => {textRef.current.focus()}} >
+                    <Popup className="wrong_ans"
+                      trigger = {popup}
+                      setTrigger={setPopup}
+                      text={`Wrong command! Expected to input: ${ans}`}
+                      />
+                    <input className="terminal_input_cmd" 
+                                type ="text" 
+                                ref={textRef}
+                                value={text}
+                                onChange={handleChange}
+                                onKeyDown={handleEnter}
+                      />
+                  <div className ="terminal">
+                    <img src={img} ></img>
+                  </div>
+                  <button className="fm_next" onClick={nextQuestion}>Next</button>
+                  <button className="fm_restart" onClick={restart}>Restart</button>
+                  <Link className="fm_exit"to="/fileManage">Exit</Link>
+            </div>
           </div>
-        </div>
+        </>
       )
     }
 

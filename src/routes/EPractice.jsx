@@ -2,10 +2,27 @@ import React, {useState, useEffect, useRef} from 'react'
 import {Link} from "react-router-dom"
 import './FMPractice.css'
 
+
 import Nav from '../components/utility/Nav'
 import Popup from '../components/utility/Popup'
 
 import initial from '../assets/fm/initial.png'
+import ctrlc from '../assets/environment/ctrlC.png'
+import ctrlz from '../assets/environment/CtrlZ.png'
+import env from '../assets/environment/env.png'
+import ifconfig from '../assets/environment/ifconfig.png'
+import kill from '../assets/environment/kill.png'
+import man from '../assets/environment/manlist.png'
+import pgrep from '../assets/environment/pgrepfirefox.png'
+import ping from '../assets/environment/ping_cmd.png'
+import psaux from '../assets/environment/psaux.png'
+import psfu from '../assets/environment/psfu.png'
+import top from '../assets/environment/top.png'
+import uname from '../assets/environment/unamewitha.png'
+import whatis from '../assets/environment/whatis.png'
+import whereis from '../assets/environment/whereis.png'
+import who from '../assets/environment/who.png'
+import whoami from '../assets/environment/whoami.png'
 
 
  
@@ -19,26 +36,22 @@ const EPractice = () => {
 
     let qt = 
     [
-      "1. Let's see the details of the ls command!",
+      "1. Let's see all the details of the ls command!",
       "2. How can we see all the information about the system we are using?",
       "3. Now check who you currently are on the machine",
       "4. Let's snoop! How would you see information on logged in users and their login times?",
-      "5. You're in a pickle and need to quickly switch to another user",
-      "6. Using the UI to change your password can be a pain. Let's be lazy and change it from the terminal!",
-      "7. Let's check environment variables",
-      "8. Sometimes it's hard to find files using the file UI, let's find where the ls command exists quickly from the terminal!",
-      "9. How do we quickly see a short summary of what a command does?",
-      "10. What are all the current processes on the machine?",
-      "11. How about all the processes for the user [insert]?",
-      "12. Let's terminate the current process",
-      "13. Let's suspend a job",
-      "14. Now lets run the suspended job in the background",
-      "15. How about running the suspended job in the foreground?",
-      "16. We want to run the [insert] command while leaving the terminal free",
-      "17. Let's kill the firefox process!",
-      "18. I wonder what the real time usage for this machine is?",
-      "19. I wonder what the network configuration currently look like?",
-      "20. Let's try pining google.com!"
+      "5. Let's check environment variables",
+      "6. Sometimes it's hard to find files using the file UI, let's find where the ls command exists quickly from the terminal!",
+      "7. How do we quickly see a short summary of what the ls command does?",
+      "8. What are all the current processes on the machine?",
+      "9. How about all the processes for the user UserName?",
+      "10. Let's try pinging google.com!",
+      "11. Now that you have pinged Google, the only way to stop it is to terminate the current process. Go ahead and do that. (This will be a key stroke ctrl command, but since this practice does not take keystrokes as input please type out the command instead)",
+      "12. Instead of terminating the pin process, what happens if you try suspending it? (This will be a key stroke ctrl command, but since this practice does not take keystrokes as input please type out the command instead)",
+      "13. I wonder what the real time usage for this machine is?",
+      "14. I wonder what the network configuration currently look like?",
+      "15. Lets start the Firefox browser process",
+      "16. You are currently running the firefox browser process using pgreg which has the id 27085, let's kill it!"
       
     ]
     const textRef = useRef()
@@ -46,7 +59,7 @@ const EPractice = () => {
     function restart(){
       setCurrQuestion(1)
       setImg(initial)
-      setAns("ls")
+      setAns("man ls")
       setPopup(false)
     }
 
@@ -54,75 +67,72 @@ const EPractice = () => {
     function nextQuestion(){
       if(currQuestion + 1 <= 20){
         setImg(initial)
-        
+        setPopup(false)
         if(currQuestion === 1)
         {
-          setAns("ls -la")
+          setAns("uname")
         }
         if(currQuestion === 2)
         {
-          setAns("cd virtualDesktop")
+          setAns("whoami")
         }
         if(currQuestion === 3)
         {
-          setAns("pwd")
+          setAns("who")
         }
         if(currQuestion === 4)
         {
-          setAns("touch filename.txt")
+          setAns("env")
         }
         if(currQuestion === 5)
         {
-          setAns("echo 'aloha' >filename.txt")
+          setAns("whereis ls")
         }
         if(currQuestion === 6)
         {
-          setAns("cat filename.txt")
+          setAns("whatis ls")
         }
         if(currQuestion === 7)
         {
-          setAns("cd ..; touch test.txt")
+          setAns("ps aux")
         }
         if(currQuestion === 8)
         {
-          setAns( "cp test.txt virtualDesktop; ls; cd virtualDeskop; echo 'this line should be merged' > test.txt; cat `filename.txt` `test.txt` > `merged_fn.txt`  ")
+          setAns( "ps UserName")
         }
         if(currQuestion === 9)
         {
-          setAns("cat merged_fn")
+          setAns("ping google.com")
         }
         if(currQuestion === 10)
         {
-          setAns("ls")
+          setAns("ctrl-c")
         }
         if(currQuestion === 11)
         {
-          setAns("mv merged_fn ../")
+          setAns("ctrl-z")
         }
         if(currQuestion === 12)
         {
-          setAns("cd ..; ls")
+          setAns("top")
         }
         if(currQuestion === 13)
         {
-          setAns("rm virtualDesktop")
+          setAns("ifconfig -a")
         }
         if(currQuestion === 14)
         {
-          setAns("rm -r virtualDesktop")
+          setAns("pgrep firefox")
         }
         if(currQuestion === 15)
         {
-          setAns("ls")
+          setAns("kill 27085")
         }
         if(currQuestion === 16)
         {
-          setAns("rm test.txt merged_fn.txt; ls")
+          setAns("kill 27085")
         }
-        if(currQuestion === 17)
-        {
-          setAns("whoami")
-        }
+        
         setCurrQuestion(currQuestion + 1)
       }
     }
@@ -139,63 +149,57 @@ const EPractice = () => {
     const handleEnter = (e) =>{
         if(e.key === "Enter"){
           
-          if(text === "ls" && currQuestion === 1){
-        //    setImg(ls)
+          if(text === "man ls" && currQuestion === 1){
+            setImg(man)
           }
-          else if(text === "ls-la" && currQuestion === 2){
-        //    setImg(lswithla)
+          else if(text === "uname" && currQuestion === 2){
+            setImg(uname)
           }
-          else if(text === "cd virtualDesktop" && currQuestion === 3){
-            // setImg(cdvirtualdesktop)
+          else if(text === "whoami" && currQuestion === 3){
+            setImg(whoami)
           }
-          else if(text === "pwd" && currQuestion === 4){
-            // setImg(pwd)
-          }
-          else if(text === "touch filename.txt" && currQuestion === 5){
-            // setImg(touch)
+          else if(text === "who" && currQuestion === 4){
+            setImg(who)
          }
-          else if(text === "echo 'aloha' >filename.txt" && currQuestion === 6){
-            // setImg(echo)
+          else if(text === "env" && currQuestion === 5){
+            setImg(env)
           }
-          else if(text === "cat filename.txt" && currQuestion === 7){
-            // setImg(appendcontentwithecho)
+          else if(text === "whereis ls" && currQuestion === 6){
+            setImg(whereis)
           }
-          else if(text === "cd ..; touch test.txt" && currQuestion === 8){
-            //  setImg(cdandtouch)
+          else if(text === "whatis ls" && currQuestion === 7){
+            setImg(whatis)
           }
-          else if(text === "cp test.txt virtualDesktop;cd virtualDeskop; echo 'this line should be merged' > test.txt; cat `filename.txt` `test.txt` > `merged_fn.txt`" && currQuestion === 9){
-            //   setImg(catmerge)
+          else if(text === "ps aux" && currQuestion === 8){
+             setImg(psaux)
           }
-          else if(text === "cat merged_fn" && currQuestion === 10){
-            // setImg(catseethecontent)
+          else if(text === "ps -fu UserName" && currQuestion === 9){
+              setImg(psfu)
           }
-          else if(text === "ls" && currQuestion === 11){
-            // setImg(ls_after_merge)
+          else if(text === "ping google.com" && currQuestion === 10){
+            setImg(ping)
           }
-          else if(text === "mv merged_fn ../" && currQuestion === 12){
-            //   setImg(mv)
+          else if(text === "ctrl-c" && currQuestion === 11){
+            setImg(ctrlc)
           }
-          else if(text === "cd ..; ls" && currQuestion === 13){
-            // setImg(cdparentandls)
+          else if(text === "ctrl-z" && currQuestion === 12){
+              setImg(ctrlz)
           }
-          else if(text === "rm virtualDesktop" && currQuestion === 14){
-            // setImg(rmfail)
+          else if(text === "top" && currQuestion === 13){
+            setImg(top)
+          }
+          else if(text === "ifconfig -a" && currQuestion === 14){
+            setImg(ifconfig)
           }    
-          else if(text === "rm -r virtualDesktop" && currQuestion === 15){
-            // setImg(rmwithr)
+          else if(text === "pgrep firefoxp" && currQuestion === 15){
+            setImg(pgrep)
        
           }
-          else if(text === "ls" && currQuestion === 16){
-            //   setImg(lsafterrm)
+          else if(text === "kill 27085" && currQuestion === 16){
+              setImg(kill)
           }        
-          else if(text === "rm test.txt merged_fn.txt; ls" && currQuestion === 17){
-            // setImg(rmandls)
-          }     
-          else if(text === "whoami" && currQuestion === 18){
-        
-          }    
           else{
-            alert("Wrong command! Expected to input: " + ans);
+            setPopup(true);
           }
 
           setText("")
@@ -203,31 +207,38 @@ const EPractice = () => {
       }
 
       return (
-        <div className ="FMPractice">
-            <div className="grid_left">    
-                <h5 className="question_number">Question {currQuestion} out of 18</h5>
-                <div className='question_text'>
-                    {qt[currQuestion - 1]}
+        <>
+          <Nav/>
+          <div className ="FMPractice">
+              <div className="grid_left">    
+                  <h5 className="question_number">Question {currQuestion} out of 18</h5>
+                  <div className='question_text'>
+                      {qt[currQuestion - 1]}
+                  </div>
                 </div>
-              </div>
-            <div className="grid_right"
-              onClick={ e => {textRef.current.focus()}} >
-
-                  <input className="terminal_input_cmd" 
-                              type ="text" 
-                              ref={textRef}
-                              value={text}
-                              onChange={handleChange}
-                              onKeyDown={handleEnter}
-                    />
-                <div className ="terminal">
-                  <img src={img} ></img>
-                </div>
-                <button className="fm_next" onClick={nextQuestion}>Next</button>
-                <button className="fm_restart" onClick={restart}>Restart</button>
-                <Link className="fm_exit"to="/environ">Exit</Link>
+              <div className="grid_right"
+                onClick={ e => {textRef.current.focus()}} >
+                    <Popup className="wrong_ans"
+                      trigger = {popup}
+                      setTrigger={setPopup}
+                      text={`Wrong command! Expected to input: ${ans}`}
+                      />
+                    <input className="terminal_input_cmd" 
+                                type ="text" 
+                                ref={textRef}
+                                value={text}
+                                onChange={handleChange}
+                                onKeyDown={handleEnter}
+                      />
+                  <div className ="terminal">
+                    <img src={img} ></img>
+                  </div>
+                  <button className="fm_next" onClick={nextQuestion}>Next</button>
+                  <button className="fm_restart" onClick={restart}>Restart</button>
+                  <Link className="fm_exit"to="/fileManage">Exit</Link>
+            </div>
           </div>
-        </div>
+        </>
       )
     }
 

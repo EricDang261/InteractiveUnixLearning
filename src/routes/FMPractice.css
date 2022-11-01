@@ -1,5 +1,6 @@
 .FMPractice{
-  display:flex
+  display:flex;
+  margin-top: 2rem;
 }
 
 
@@ -47,7 +48,7 @@
 .fm_exit{
     position: relative;
     border: 2px solid;
-    margin-left: 30rem;
+    margin-left: 33rem;
     padding-left: 2px;
     padding-right: 2px;
     color:rgba(124, 255, 124);
@@ -58,5 +59,9 @@
 .FMPractice .terminal img{
     position: relative;
     width:700px;
-    height:500px
+    height:500px;
+}
+
+.grid_right{
+    padding-right: 1rem;
 }

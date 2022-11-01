@@ -14,7 +14,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 
   /* background color for all pages */
-  background: rgb(51, 51, 51);
+  background-color: rgb(51, 51, 51);
 }
 
 ul {

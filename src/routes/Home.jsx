@@ -6,6 +6,7 @@ import dir from "../assets/directory_card_image.gif"
 import file from "../assets/file_card_image.gif"
 import environ from "../assets/environ_card_image.gif"
 import intro from "../assets/intro_card_image.gif"
+import flashcardgif from "../assets/flashcard.gif"
 
 
 const Home = () => {
@@ -20,24 +21,24 @@ const Home = () => {
             <div className='card_wrapper'>
                   <Card img={intro} 
                         title="Unix Introduction"
-                        descr = "funny description"
+                        descr = "I want to know more about Unix!"
                         path = "/intro"/>
                   <Card img={dir} 
                         title="Directory Management"
-                        descr="Cool description"
+                        descr="Let's explore Directory!"
                         path="/dirManage"/>
                   <Card img={file}
                         title="File Management"
-                        descr = "description"
+                        descr = "Becoming expert in file operation!"
                         path ="/fileManage"/>
                   <Card img={environ} 
                         title="Environment/ Development"
                         descr = "funny description"
                         path ="/environ"/>
-                  <Card 
-                        title="Advanced Commands (optional)"
-                        descr="Cool description"
-                        path="advanced"/>
+                  <Card img={flashcardgif}
+                        title="FlashCards"
+                        descr="The best way to memorize"
+                        path="/flashcard"/>
             </div>
             <Footer/>
         </div>

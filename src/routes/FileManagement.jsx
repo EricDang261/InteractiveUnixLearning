@@ -7,6 +7,7 @@ import {
   Checkbox
 } from '../components'
 
+import { Link } from 'react-router-dom'
 import Progress from "../components/utility/Progress"
 import Quiz from './Quiz'
 
@@ -400,6 +401,9 @@ const FileManagement = () => {
       </div>{/*end of fm_container*/ }
 
       <div className="break">============</div>
+        <Link to="/fileManagePractice" className="practice">Click Me For More Practice!</Link>
+        <div className="break">============</div>
+
         <div className="quiz">
           <h1 className= "quiz_title">End of Lesson Quiz</h1>
           <Quiz data={qData}/>

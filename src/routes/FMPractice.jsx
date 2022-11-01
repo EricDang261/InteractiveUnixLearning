@@ -22,7 +22,6 @@ import lsafterrm from '../assets/fm/ls_after_rm.png'
 import ls_after_merge from '../assets/fm/ls_after_merge.png'
 import echo from '../assets/fm/echo.png'
 import cdandtouch from '../assets/fm/cdandtouch.png'
-import cdandls from '../assets/fm/cdandls.png'
 import catseethecontent from '../assets/fm/catSeeTheContent.png'
 
  
@@ -67,6 +66,7 @@ const FMPractice = () => {
     function nextQuestion(){
       if(currQuestion + 1 <= 20){
         setImg(initial)
+        setPopup(false)
         
         if(currQuestion === 1)
         {
@@ -208,7 +208,8 @@ const FMPractice = () => {
         
           }    
           else{
-            alert("Wrong command! Expected to input: " + ans);
+            setPopup(true)
+           // alert("Wrong command! Expected to input: " + ans);
           }
 
           setText("")
@@ -216,6 +217,9 @@ const FMPractice = () => {
       }
 
       return (
+        <>
+        <Nav />
+
         <div className ="FMPractice">
             <div className="grid_left">    
                 <h5 className="question_number">Question {currQuestion} out of 18</h5>
@@ -225,6 +229,11 @@ const FMPractice = () => {
               </div>
             <div className="grid_right"
               onClick={ e => {textRef.current.focus()}} >
+                  <Popup className="wrong_ans"
+                    trigger = {popup}
+                    setTrigger={setPopup}
+                    text={`Wrong command! Expected to input: ${ans}`}
+                    />
 
                   <input className="terminal_input_cmd" 
                               type ="text" 
@@ -241,6 +250,7 @@ const FMPractice = () => {
                 <Link className="fm_exit"to="/fileManage">Exit</Link>
           </div>
         </div>
+      </>
       )
     }
 

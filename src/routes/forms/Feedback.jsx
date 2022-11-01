@@ -1,5 +1,7 @@
 import React from 'react'
+import {Link} from "react-router-dom"
 import emailjs from 'emailjs-com'
+import { FaHome } from 'react-icons/fa'
 
 const Feedback = () => {
   const sendEmail = (e) => {
@@ -18,7 +20,9 @@ const Feedback = () => {
     <form onSubmit={sendEmail}>
           <div className="form-inner">
               <h2>Feedback</h2>
-
+              <Link to="/">
+                <FaHome className="home_link"/>
+              </Link>
               <div className="form-group">
                   <label htmlFor="name"> Name: </label>
                   <input type="text" name="name" id="name"/>
@@ -36,7 +40,6 @@ const Feedback = () => {
 
               </div> 
 
-            
           </div> 
     </form>
   </div>

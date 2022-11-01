@@ -2,6 +2,7 @@
 import React, { useState } from 'react'
 import {useNavigate} from 'react-router-dom'
 import './form.css'
+import { FaHome } from 'react-icons/fa'
 
 const LoginForm = ({ Login,  error}) => {
   const [details, setDetails] = useState({name: "", email: "", password: ""});
@@ -20,6 +21,7 @@ const LoginForm = ({ Login,  error}) => {
               <h2>Login</h2>
     {(error !=="") ? (<div className="error"> {error} </div>) : "" } 
 
+              <FaHome className="home_link" onClick={() => navigate("/")}/>
               <div className="form-group">
                   <label htmlFor="name"> Name: </label>
                   <input type="text" name="name" id="name" onChange={ e => setDetails({...details , name: e.target.value})} value={details.name}  />

@@ -17,8 +17,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url("../../assets/background.jpg");
-    background-position: 100% top;
+    background-image: url("../../assets/signin_bg.gif");
+    background-position: 100% left;
+    background-size: cover;
 }
 
 .form-container form{
@@ -35,7 +36,8 @@
     bottom: -5px;
     right: -5px;
     z-index: 1;
-    background-image: linear-gradient(to bottom right, #FFCE00, #FE4800);
+    /* background-image: linear-gradient(to bottom right, #FFCE00, #FE4800); */
+    background-image: linear-gradient(to bottom right, #95fa63, #f5acff);
 }
 
 .form-container form .form-inner{
@@ -124,4 +126,13 @@ textarea{
 .link-btn{
     position: absolute;
     color: white;
+}
+
+.home_link{
+    z-index: 1;
+    color: white;
+}
+
+.home_link:hover{
+    cursor: pointer;
 }

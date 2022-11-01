@@ -13,4 +13,5 @@ export {default as Login} from "./Login"
 export {default as SignUpForm} from "./forms/SignUpForm";
 export {default as Environ} from "./Environ";
 export {default as DMPractice} from "./DMPractice"
+export {default as EPractice} from "./EPractice";
 

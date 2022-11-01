@@ -13,7 +13,8 @@ import {  Login,
           FMQuiz,
           DirectoryManagement,
           Environ,
-          DMPractice
+          DMPractice,
+          EPractice
         }from "./routes";
 
 import{ FlashcardComp,
@@ -37,6 +38,7 @@ function App() {
         <Route path='/feedback' element={<Feedback/>}></Route>
         <Route path="/environ" element={<Environ/>}></Route>
         <Route path="/dmPractice" element={<DMPractice/>}></Route>
+        <Route path="/ePractice" element={<EPractice/>}></Route>
       </Routes>
     </div>
   );

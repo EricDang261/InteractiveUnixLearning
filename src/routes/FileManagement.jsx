@@ -7,12 +7,13 @@ import {
   Checkbox
 } from '../components'
 
+import { Link } from 'react-router-dom'
 import Progress from "../components/utility/Progress"
 import Quiz from './Quiz'
 
 import {FaHandPointRight} from "react-icons/fa"
 import {SiAzuredataexplorer} from "react-icons/si"
-import "./FileManagement.css"
+import "./fileManagement.css"
 
 const FileManagement = () => {
   const [qData, setQData] = useState(FM_MCQs)
@@ -400,6 +401,9 @@ const FileManagement = () => {
       </div>{/*end of fm_container*/ }
 
       <div className="break">============</div>
+        <Link to="/fileManagePractice" className="practice">Click Me For More Practice!</Link>
+        <div className="break">============</div>
+
         <div className="quiz">
           <h1 className= "quiz_title">End of Lesson Quiz</h1>
           <Quiz data={qData}/>

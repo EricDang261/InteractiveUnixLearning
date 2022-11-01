@@ -262,28 +262,7 @@ export const FlashcardData = [
     },
     {
         id: 51,
-        question: "it provides modularity, portability, simplicity, adapility, highly secured, and Linux os is everywhere!"
-    },
-    {
-        id: 52
-    },
-    {
-        id: 53
-    },
-    {
-        id: 54
-    },
-    {
-
-        id: 55
-    },
-    {
-        id: 56
-    },
-    {
-        id: 57
-    },
-    {
-        id: 58
+        question: "Why Unix?",
+        ans: "it provides modularity, portability, simplicity, adapility, highly secured, and Linux os is everywhere!"
     },
 ]

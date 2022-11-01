@@ -1,6 +1,7 @@
 .flashcard-container{
     max-width: 900px;
     margin: 1rem 2rem;
+
   }
   
 .card-grid{
@@ -34,7 +35,7 @@
 }
 
 .flashCard .front{
-    left: 0;
+    left: center;
 }
 
 .flashCard .front,
@@ -48,17 +49,18 @@
     transform: rotateY(180deg);
 }
 
-.flashcard-options{
-    margin-top: .5rem;
+.unavailable_data{
+
+  position: absolute;
+  width: 300px;
+  height: 200px;
+  top: 50%;
+  left: 50%;
+  margin: -100px 0 0 -150px;
+  background-color: white;
 
 }
 
-.flashcard-option{
-    margin-top: .25rem;
-    color: #555;
-    font-size: .75rem;
-}
-
-.flashcard-option:first-child{
-    margin-top: 0;
+.unavailable_data h1{
+    color: black
 }

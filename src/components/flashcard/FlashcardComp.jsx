@@ -48,7 +48,7 @@ const FlashcardComp = () => {
     <Popup className="unavailable_data"
         trigger = {popup}
         setTrigger={setPopup}
-        text={`This data is unvailable. We are working on it rn!`}
+        text={ <h1>This data is unvailable. We are working on it rn! </h1>}
     />
     
     <FlashcardList flashcards={flashcards}/>

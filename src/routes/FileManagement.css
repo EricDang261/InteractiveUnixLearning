@@ -78,3 +78,11 @@
     white-space: nowrap;
  }
 
+ .practice{
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    color:white;
+    font-size: 40pt;
+    text-align: center;
+
+}

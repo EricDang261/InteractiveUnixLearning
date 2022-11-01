@@ -98,7 +98,7 @@ const FMPractice = () => {
         }
         if(currQuestion === 8)
         {
-          setAns( "cp test.txt virtualDesktop; ls; cd virtualDeskop; echo 'this line should be merged' > test.txt; cat `filename.txt` `test.txt` > `merged_fn.txt`  ")
+          setAns( "cp test.txt virtualDesktop; ls; cd virtualDeskop; echo 'this line should be merged' > test.txt; cat 'filename.txt' 'test.txt' > 'merged_fn.txt'  ")
         }
         if(currQuestion === 9)
         {
@@ -176,7 +176,7 @@ const FMPractice = () => {
           else if(text === "cd ..; touch test.txt" && currQuestion === 8){
              setImg(cdandtouch)
           }
-          else if(text === "cp test.txt virtualDesktop;cd virtualDeskop; echo 'this line should be merged' > test.txt; cat `filename.txt` `test.txt` > `merged_fn.txt`" && currQuestion === 9){
+          else if(text === "cp test.txt virtualDesktop;cd virtualDeskop; echo 'this line should be merged' > test.txt; cat 'filename.txt' 'test.txt' > 'merged_fn.txt'" && currQuestion === 9){
               setImg(catmerge)
           }
           else if(text === "cat merged_fn" && currQuestion === 10){

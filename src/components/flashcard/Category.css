@@ -2,24 +2,17 @@
     font-weight: 600;
 }
 
+.dropdown-container span{
+    color: #52a76e;
+    font-size: x-large;
+}
+
 .dropdown-container select{
     display: inline-flex;
     margin-left: .2rem;
+    height: 30px;
     position: relative;
-   
 }
-
-.dropdown-container input[type="submit"]{
-    display: inline-block;
-    margin-left: 3px;
-    padding: 2px 2px;
-    border: 2px solid black;
-    border-radius: 5px;
-    color:black;
-    font-weight: 600;
-    cursor: pointer;
-}
-
 
 
 

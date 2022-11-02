@@ -8,6 +8,8 @@ import environ from "../assets/environ_card_image.gif"
 import intro from "../assets/intro_card_image.gif"
 import flashcardgif from "../assets/flashcard.gif"
 
+import "./home.css"
+
 
 const Home = () => {
 
@@ -17,7 +19,7 @@ const Home = () => {
         {console.log("height: ",window.screen.availHeight)}
         <Nav/>
         <div className="home_body">
-            {/* <h1 className="home_title">Unix With Us</h1>
+            <h1 className="home_title">Unix With Us</h1>
             <div className='card_wrapper'>
                   <Card img={intro} 
                         title="Unix Introduction"
@@ -39,11 +41,9 @@ const Home = () => {
                         title="FlashCards"
                         descr="The best way to memorize"
                         path="/flashcard"/>
-            </div> */}
-            
+            </div>
         </div>
-        <Footer className="footer"/>
-     
+        <Footer/>
     </div>
   )
 }

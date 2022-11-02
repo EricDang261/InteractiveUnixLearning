@@ -8,6 +8,8 @@ import environ from "../assets/environ_card_image.gif"
 import intro from "../assets/intro_card_image.gif"
 import flashcardgif from "../assets/flashcard.gif"
 
+import "./home.css"
+
 
 const Home = () => {
 
@@ -40,9 +42,8 @@ const Home = () => {
                         descr="The best way to memorize"
                         path="/flashcard"/>
             </div>
-            <Footer/>
         </div>
-     
+        <Footer/>
     </div>
   )
 }

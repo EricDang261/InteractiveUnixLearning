@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react'
+import {Link} from "react-router-dom"
 import { Checkbox, SideNav } from '../components'
 import {envData} from "../components/sidenav/envData"
 import Footer from '../components/utility/Footer'
@@ -272,6 +273,8 @@ const Environ = () => {
                 <span className="g_ex"> g++ exeFileName cppFileNames</span>
             </div>
         </div>
+        <div className="break">============</div>
+        <Link to="/EPractice" className="dm_practice">PRACTICE HERE!</Link>
         <div className="break">============</div>
         <div className="env_quiz">
             <h1 className= "env_quiz_title">End of Lesson Quiz</h1>

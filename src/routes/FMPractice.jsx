@@ -33,6 +33,25 @@ const FMPractice = () => {
     const [ans, setAns] = useState("ls")
     const [popup, setPopup] = useState(false)
 
+    const pattern1 = new RegExp(/(ls)/i)
+    const pattern2 = new RegExp(/(ls)\s+(-la)/i)
+    const pattern3 = new RegExp(/(cd)\s+(virtualDesktop)/i)
+    const pattern4 = new RegExp(/(pwd)/i)
+    const pattern5 = new RegExp(/(touch)\s+(filename.txt)/i)
+    const pattern6 = new RegExp(/(echo)\s+('aloha')\s+(>)\s+()filename.txt/i)
+    const pattern7 = new RegExp(/(cat)\s+(filename.txt)/i)
+    const pattern8 = new RegExp(/(cd)\s+(..)\s+(;)\s+(touch)\s+(test.txt)/i)
+    const pattern9 = new RegExp(/(cp)\s+(test.txt)\s+(virtualDesktop)\s+(;)\s+(ls)\s+(;)\s+(cd)\s+(virtualDesktop)\s+(;)\s+(echo)\s+('this line should be merged')\s+(>)\s+(test.txt)\s(;)\s+(cat)\s+('filename.txt')\s+('test.txt')\s+(>)\s+('merged_fn.txt')/i)
+    const pattern10 = new RegExp(/(cat)\s+(merged_fn)/i)
+    const pattern11 = new RegExp(/(ls)/i)
+    const pattern12 = new RegExp(/(mv)\s+(merged_fn)\s+(..\/)/i)
+    const pattern13 = new RegExp(/(cd)\s+(..)\s+(;)\s+(ls)/i)
+    const pattern14 = new RegExp(/(rm)\s+(virtualDesktop)/i)
+    const pattern15 = new RegExp(/(rm)\s+(-r)\s+(virtualDesktop)/i)
+    const pattern16 = new RegExp(/(ls)/i)
+    const pattern17 = new RegExp(/(rm)\s+(test.txt)\s+(merged_fn.txt)\s+(;)\s+(ls)/i)
+    const pattern18 = new RegExp(/(whoami)/i)
+
     let qt = 
     [
       "1. Let's try to see what are files in the current directory ",
@@ -151,60 +170,62 @@ const FMPractice = () => {
 
     const handleEnter = (e) =>{
         if(e.key === "Enter"){
+
+          var lower = text.toLowerCase()
           
-          if(text === "ls" && currQuestion === 1){
+          if(pattern1.test(text) === true && currQuestion === 1){
            setImg(ls)
           }
-          else if(text === "ls-la" && currQuestion === 2){
+          else if(pattern2.test(text) === true && currQuestion === 2){
            setImg(lswithla)
           }
-          else if(text === "cd virtualDesktop" && currQuestion === 3){
+          else if(pattern3.test(text) === true && currQuestion === 3){
             setImg(cdvirtualdesktop)
           }
-          else if(text === "pwd" && currQuestion === 4){
+          else if(pattern4.test(text) === true && currQuestion === 4){
             setImg(pwd)
           }
-          else if(text === "touch filename.txt" && currQuestion === 5){
+          else if(pattern5.test(text) === true && currQuestion === 5){
             setImg(touch)
          }
-          else if(text === "echo 'aloha' >filename.txt" && currQuestion === 6){
+          else if(pattern6.test(text) === true && currQuestion === 6){
             setImg(echo)
           }
-          else if(text === "cat filename.txt" && currQuestion === 7){
+          else if(pattern7.test(text) === true && currQuestion === 7){
             setImg(appendcontentwithecho)
           }
-          else if(text === "cd ..; touch test.txt" && currQuestion === 8){
+          else if(pattern8.test(text) === true && currQuestion === 8){
              setImg(cdandtouch)
           }
-          else if(text === "cp test.txt virtualDesktop;cd virtualDeskop; echo 'this line should be merged' > test.txt; cat 'filename.txt' 'test.txt' > 'merged_fn.txt'" && currQuestion === 9){
+          else if(pattern9.test(text) === true && currQuestion === 9){
               setImg(catmerge)
           }
-          else if(text === "cat merged_fn" && currQuestion === 10){
+          else if(pattern10.test(text) === true && currQuestion === 10){
             setImg(catseethecontent)
           }
-          else if(text === "ls" && currQuestion === 11){
+          else if(pattern11.test(text) === true && currQuestion === 11){
             setImg(ls_after_merge)
           }
-          else if(text === "mv merged_fn ../" && currQuestion === 12){
+          else if(pattern12.test(text) === true && currQuestion === 12){
               setImg(mv)
           }
-          else if(text === "cd ..; ls" && currQuestion === 13){
+          else if(pattern13.test(text) === true && currQuestion === 13){
             setImg(cdparentandls)
           }
-          else if(text === "rm virtualDesktop" && currQuestion === 14){
+          else if(pattern14.test(text) === true && currQuestion === 14){
             setImg(rmfail)
           }    
-          else if(text === "rm -r virtualDesktop" && currQuestion === 15){
+          else if(pattern15.test(text) === true && currQuestion === 15){
             setImg(rmwithr)
        
           }
-          else if(text === "ls" && currQuestion === 16){
+          else if(pattern16.test(text) === true && currQuestion === 16){
               setImg(lsafterrm)
           }        
-          else if(text === "rm test.txt merged_fn.txt; ls" && currQuestion === 17){
+          else if(pattern17.test(text) === true && currQuestion === 17){
             setImg(rmandls)
           }     
-          else if(text === "whoami" && currQuestion === 18){
+          else if(pattern18.test(text) === true && currQuestion === 18){
         
           }    
           else{

@@ -40,6 +40,10 @@
     margin-left: 3rem;
     margin-top: 4.70rem;
     font-weight: 100;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: white;
 }
 
 .dm_exit:hover, .dm_next:hover, .dm_restart:hover{

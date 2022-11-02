@@ -1,5 +1,4 @@
 import React, {useState, useEffect, useContext} from 'react'
-import Popup from '../utility/Popup';
 
 import {
     FlashcardList,
@@ -10,7 +9,6 @@ import {
 const FlashcardComp = () => {
     const [flashcards, setFlashcards ] = useState(FlashcardData) 
     const [categories, setCategories] = useState([])
-    const [popup, setPopup] = useState(false)
 
     const context = useContext(ValueContext)
 
@@ -35,9 +33,8 @@ const FlashcardComp = () => {
                         if(context.value ==="Environment"){
                             setFlashcards(categories[2])
                         }
-                        if(context.value ==="Advanced-commands"){
-                            setFlashcards(categories[3]);
-                            setPopup(true); 
+                        if(context.value ==="Directory Management"){
+                            setFlashcards(categories[3]); 
                         } 
                       })
             
@@ -45,12 +42,6 @@ const FlashcardComp = () => {
 
   return (
     <>
-    <Popup className="unavailable_data"
-        trigger = {popup}
-        setTrigger={setPopup}
-        text={ <h1>This data is unvailable. We are working on it rn! </h1>}
-    />
-    
     <FlashcardList flashcards={flashcards}/>
     </>
   )

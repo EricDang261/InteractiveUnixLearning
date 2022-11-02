@@ -34,6 +34,23 @@ const EPractice = () => {
     const [ans, setAns] = useState("ls")
     const [popup, setPopup] = useState(false)
 
+    const pattern1 = new RegExp(/(man)\s+(ls)/i)
+    const pattern2 = new RegExp(/(uname)/i)
+    const pattern3 = new RegExp(/(whoami)/i)
+    const pattern4 = new RegExp(/(who)/i)
+    const pattern5 = new RegExp(/(env)/i)
+    const pattern6 = new RegExp(/(whereis)\s+(ls)/i)
+    const pattern7 = new RegExp(/(whatis)\s+(ls)/i)
+    const pattern8 = new RegExp(/(ps)\s+(aux)/i)
+    const pattern9 = new RegExp(/(ps)\s+(-fu)\s+(UserName)/i)
+    const pattern10 = new RegExp(/(ping)\s+(google.com)/i)
+    const pattern11 = new RegExp(/(ctrl-c)/i)
+    const pattern12 = new RegExp(/(ctrl-z)/i)
+    const pattern13 = new RegExp(/(top)/i)
+    const pattern14 = new RegExp(/(ifconfig)\s+(-a)/i)
+    const pattern15 = new RegExp(/(pgrep)\s+(firefox)/i)
+    const pattern16 = new RegExp(/(kill)\s+(27085)/i)
+
     let qt = 
     [
       "1. Let's see all the details of the ls command!",
@@ -98,7 +115,7 @@ const EPractice = () => {
         }
         if(currQuestion === 8)
         {
-          setAns( "ps UserName")
+          setAns( "ps -fu UserName")
         }
         if(currQuestion === 9)
         {
@@ -149,53 +166,53 @@ const EPractice = () => {
     const handleEnter = (e) =>{
         if(e.key === "Enter"){
           
-          if(text === "man ls" && currQuestion === 1){
+          if(pattern1.test(text) === true && currQuestion === 1){
             setImg(man)
           }
-          else if(text === "uname" && currQuestion === 2){
+          else if(pattern2.test(text) === true && currQuestion === 2){
             setImg(uname)
           }
-          else if(text === "whoami" && currQuestion === 3){
+          else if(pattern3.test(text) === true && currQuestion === 3){
             setImg(whoami)
           }
-          else if(text === "who" && currQuestion === 4){
+          else if(pattern4.test(text) === true && currQuestion === 4){
             setImg(who)
          }
-          else if(text === "env" && currQuestion === 5){
+          else if(pattern5.test(text) === true && currQuestion === 5){
             setImg(env)
           }
-          else if(text === "whereis ls" && currQuestion === 6){
+          else if(pattern6.test(text) === true && currQuestion === 6){
             setImg(whereis)
           }
-          else if(text === "whatis ls" && currQuestion === 7){
+          else if(pattern7.test(text) === true && currQuestion === 7){
             setImg(whatis)
           }
-          else if(text === "ps aux" && currQuestion === 8){
+          else if(pattern8.test(text) === true && currQuestion === 8){
              setImg(psaux)
           }
-          else if(text === "ps -fu UserName" && currQuestion === 9){
+          else if(pattern9.test(text) === true && currQuestion === 9){
               setImg(psfu)
           }
-          else if(text === "ping google.com" && currQuestion === 10){
+          else if(pattern10.test(text) === true && currQuestion === 10){
             setImg(ping)
           }
-          else if(text === "ctrl-c" && currQuestion === 11){
+          else if(pattern11.test(text) === true && currQuestion === 11){
             setImg(ctrlc)
           }
-          else if(text === "ctrl-z" && currQuestion === 12){
+          else if(pattern12.test(text) === true && currQuestion === 12){
               setImg(ctrlz)
           }
-          else if(text === "top" && currQuestion === 13){
+          else if(pattern13.test(text) === true && currQuestion === 13){
             setImg(top)
           }
-          else if(text === "ifconfig -a" && currQuestion === 14){
+          else if(pattern14.test(text) === true && currQuestion === 14){
             setImg(ifconfig)
           }    
-          else if(text === "pgrep firefoxp" && currQuestion === 15){
+          else if(pattern15.test(text) === true && currQuestion === 15){
             setImg(pgrep)
        
           }
-          else if(text === "kill 27085" && currQuestion === 16){
+          else if(pattern16.test(text) === true && currQuestion === 16){
               setImg(kill)
           }        
           else{
@@ -211,7 +228,7 @@ const EPractice = () => {
           <Nav/>
           <div className ="FMPractice">
               <div className="grid_left">    
-                  <h5 className="question_number">Question {currQuestion} out of 18</h5>
+                  <h5 className="question_number">Question {currQuestion} out of 16</h5>
                   <div className='question_text'>
                       {qt[currQuestion - 1]}
                   </div>
@@ -235,7 +252,7 @@ const EPractice = () => {
                   </div>
                   <button className="fm_next" onClick={nextQuestion}>Next</button>
                   <button className="fm_restart" onClick={restart}>Restart</button>
-                  <Link className="fm_exit"to="/fileManage">Exit</Link>
+                  <Link className="fm_exit"to="/environ">Exit</Link>
             </div>
           </div>
         </>

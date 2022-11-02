@@ -27,6 +27,11 @@ const DMPractice = () => {
         ]
     const textRef = useRef()
 
+    const pattern1 = new RegExp(/(pwd)/i)
+    const pattern2 = new RegExp(/(cd)\s+(dir2)/i)
+    const pattern3 = new RegExp(/(mkdir)\s+(cat)/i)
+    const pattern4 = new RegExp(/(rmdir)\s+(cat)/i)
+    const pattern5 = new RegExp(/(du)\s+(-sh)\s+(dir1)/i)
 
     function restart(){
         setCurrQuestion(1)
@@ -72,19 +77,19 @@ const DMPractice = () => {
     const handleEnter = (e) => {
         if (e.key === "Enter") {
 
-            if (text === "pwd" && currQuestion === 1) {
+            if (pattern1.test(text) === true && currQuestion === 1) {
                 setImg(pwdCmd)
             }
-            else if (text === "cd dir2" && currQuestion === 2) {
+            else if (pattern2.test(text) === true && currQuestion === 2) {
                 setImg(cdCmd)
             }
-            else if (text === "mkdir cat" && currQuestion === 3) {
+            else if (pattern3.test(text) === true && currQuestion === 3) {
                 setImg(mkdirCmd)
             }
-            else if (text === "rmdir cat" && currQuestion === 4) {
+            else if (pattern4.test(text) === true && currQuestion === 4) {
                 setImg(rmdirCmd)
             }
-            else if (text === "du -sh dir1" && currQuestion === 5) {
+            else if (pattern5.test(text) === true && currQuestion === 5) {
                 setImg(duCmd)
             }
             else {

@@ -32,16 +32,12 @@ code {
 
 /* Make footer stay at the bottom of the page without being fixed to screen */
 .home{
-  display:flex;
-  flex-direction: column;
-  min-height: 100vh;
-  background-image: url(./assets/home_background.png);
+  display: grid;
+  min-width: 100vh;
+  grid-template-rows: auto 1fr auto;
+  /* background-image: url(./assets/home_background.png);
   background-position: 50% 130%;
-  background-size:cover;
-}
-
-.home_body{
-  flex:1;
+  background-size:cover; */
 }
 
 .home_title{
@@ -59,6 +55,10 @@ code {
   animation: animated-write 4s steps(29,end) 1s 1 normal both,
              animated-cursor 600ms steps(29,end) infinite;
 
+}
+
+.home_body{
+  min-height: 100vh;
 }
 
 
@@ -106,4 +106,7 @@ code {
   }
 }
 
+.footer{
+  bottom:0;
+}
 

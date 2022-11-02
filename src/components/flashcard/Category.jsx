@@ -15,7 +15,7 @@ const Category = () => {
               <option value="Unix-intro">Unix Introduction</option>
               <option value="File-management">File Management</option>
               <option value="Environment">Environment</option>
-              <option value="Advanced-commands">Advanced Commands</option>
+              <option value="Directory Management">Directory Management</option>
             </select>
           </label>
         </form>

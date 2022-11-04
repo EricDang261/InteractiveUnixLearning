@@ -1,6 +1,5 @@
 import React from 'react'
 import MultipleChoice from '../components/MultipleChoice'
-import { IntroMCQs } from '../components/IntroMCQs'
 
 const Quiz = ({data}) => {
   return (

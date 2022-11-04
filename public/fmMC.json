@@ -1,128 +1,190 @@
 {
-    "envMC": [
+    "fmMC": [
         {
-            "text": "What was the main goal for the creation of the Unix system?",
+            "text": "Which command is used for printing the current working directory?",
             "options": [
                 {
                     "id": 0,
-                    "text": "To create an interface between user and hardware system",
-                    "isCorrect": true
+                    "text": "dir",
+                    "isCorrect": false
                 },
                 {
                     "id": 1,
-                    "text": "To create a system that worked after the Multics failure",
+                    "text": "HOME",
                     "isCorrect": false
                 },
                 {
                     "id": 2,
-                    "text": "To create an interface between user and software",
-                    "isCorrect": false
+                    "text": "pwd",
+                    "isCorrect": true
                 },
                 {
                     "id": 3,
-                    "text": "To fulfill a longtime dream",
+                    "text": "cd",
                     "isCorrect": false
                 }
             ]
         },
         {
-            "text": "What are the main features of the Unix system?",
+            "text": " Which command is used for listing files in a directory?",
             "options": [
                 {
                     "id": 0,
-                    "text": "A bridge between user and hardware",
+                    "text": "list",
                     "isCorrect": false
                 },
                 {
                     "id": 1,
-                    "text": "The Gradndaddy of many OS systems",
-                    "isCorrect": false
-                },
-                {
-                    "id": 2,
-                    "text": "Multi-users, Multi-tasking, and Multi-processes",
+                    "text": "ls",
                     "isCorrect": true
                 },
                 {
+                    "id": 2,
+                    "text": "wc",
+                    "isCorrect": false
+                },
+                {
                     "id": 3,
-                    "text": "All of the above",
+                    "text": "ps",
                     "isCorrect": false
                 }
             ]
         },
         {
-            "text": "Why shoud you learn Unix?",
+            "text": "Which command is used to delete all files in a directory?",
             "options": [
                 {
                     "id": 0,
-                    "text": "Becasue it's cool, why else?",
+                    "text": "del *",
                     "isCorrect": false
                 },
                 {
                     "id": 1,
-                    "text": "Modularity, Portability, Commonality",
+                    "text": "rm *",
                     "isCorrect": true
                 },
                 {
                     "id": 2,
-                    "text": "Something everyone should know",
+                    "text": "mv *",
                     "isCorrect": false
                 },
                 {
                     "id": 3,
-                    "text": "Framework, Power, Niche",
+                    "text": "rm *",
                     "isCorrect": false
                 }
             ]
         },
         {
-            "text": "What does CLI stand for and what does it do?",
+            "text": "echo command is used for ",
             "options": [
                 {
                     "id": 0,
-                    "text": "Command Line Interpreter, translates OS language into human understandable language",
-                    "isCorrect": false
-                },
-                {
-                    "id": 1,
-                    "text": "Command Line Interpreter, translates input to OS language",
+                    "text": "Displaying diagnostic messages",
                     "isCorrect": true
                 },
                 {
+                    "id": 1,
+                    "text": "Display date and time",
+                    "isCorrect": false
+                },
+                {
                     "id": 2,
-                    "text": "Console Linguistics Interpreter, translator",
+                    "text": "displaying errors",
                     "isCorrect": false
                 },
                 {
                     "id": 3,
-                    "text": "Command Linuz Interpreter, input to OS language",
+                    "text": "displaying operating system details",
                     "isCorrect": false
                 }
             ]
         },
         {
-            "text": "What are the components within the Unix architecture and what is the order from lowest to highest?",
+            "text": "What is the function of cp command in Unix?",
             "options": [
                 {
                     "id": 0,
-                    "text": "Kernal, Hardware, Shell",
+                    "text": "Delete given file",
                     "isCorrect": false
                 },
                 {
                     "id": 1,
-                    "text": "Hardware, Kernal, Shell",
+                    "text": "Change the directory",
                     "isCorrect": false
                 },
                 {
                     "id": 2,
-                    "text": "Kernal, Hardware, Shell, Application",
+                    "text": "List all of the available files is in the current directory",
                     "isCorrect": false
                 },
                 {
                     "id": 3,
-                    "text": "Hardware, Kernal, Shell, Application",
+                    "text": "cp is a command used for copying files and directories",
                     "isCorrect": true
                 }
+            ]
+        },
+        {
+            "text": "Which command is safer to use, mv or cp? ",
+            "options": [
+                {
+                    "id": 0,
+                    "text": "mv since it moves file directly without creating any copies of a file",
+                    "isCorrect": false
+                },
+                {
+                    "id": 1,
+                    "text": "cp since mv is inreversable. Once you there is an error ( system coruption) while moving, it might cause data loss",
+                    "isCorrect": true
+                }
+            ]
+        },
+        {
+            "text": "How to extract an Archive file ",
+            "options": [
+                {
+                    "id": 0,
+                    "text": "cat file.tar",
+                    "isCorrect": false
+                },
+                {
+                    "id": 1,
+                    "text": "gzip file.tar",
+                    "isCorrect": false
+                },
+                {
+                    "id": 2,
+                    "text": "tar xvf file.tar",
+                    "isCorrect": true
+                }
+
+            ]
+        },
+        {
+            "text": "cat is one of the most handy command in Unix, what can it do? ",
+            "options": [
+                {
+                    "id": 0,
+                    "text": "Ouput a file or standard input.",
+                    "isCorrect": false
+                },
+                {
+                    "id": 1,
+                    "text": "Display the contents of a file, or to link several files together",
+                    "isCorrect": false
+                },
+                {
+                    "id": 2,
+                    "text": "Read and display content from standard input",
+                    "isCorrect": false
+                },
+                {
+                    "id": 3,
+                    "text": "All of the the options",
+                    "isCorrect": true
+                }
+
             ]
         }
     ]

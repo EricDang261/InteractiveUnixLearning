@@ -3,7 +3,6 @@ import {
   SideNav,
   Footer,
   fmData, 
-  FM_MCQs,
   Checkbox
 } from '../components'
 
@@ -16,7 +15,7 @@ import {SiAzuredataexplorer} from "react-icons/si"
 import "./fileManagement.css"
 
 const FileManagement = () => {
-  const [qData, setQData] = useState(FM_MCQs)
+  const [qData, setQData] = useState()
   const [loading, SetLoading] = useState(true)
  
 

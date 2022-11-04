@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import "./MultipleChoice.css"
-import { IntroMCQs } from './IntroMCQs'
 
 const MultipleChoice = ({d}) => {
 
@@ -67,7 +66,7 @@ const MultipleChoice = ({d}) => {
                     {
                         incorrectAns.map((question) =>{
                             return(
-                                <li>Question: {question[0].text} <br/> Answer: {question[1]}</li>
+                                <li>Question: {question[0]} <br/> Answer: {question[1]}</li>
                             )
                         })
                     }

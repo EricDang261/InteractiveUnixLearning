@@ -8,10 +8,12 @@ import {dmData} from "../components/sidenav/dmData"
 import tree from "../assets/dm/Directory-Structure.png"
 import Quiz from './Quiz'
 import {Checkbox} from '../components/'
+import DMPractice from "./DMPractice"
 
 const DirectoryManagement = () => {
   const [qData, setQData] = useState()
   const [loading, SetLoading] = useState(true)
+  const [quizPopup, setQuizPop] = useState(false)
 
   useEffect(()=>{
     fetch("./dmMC.json")
@@ -126,8 +128,9 @@ const DirectoryManagement = () => {
         <div className="break">============</div>
         <div className="dm_quiz">
             <h1 className= "dm_quiz_title">End of Lesson Quiz</h1>
-            <Quiz data={qData}/>
+            <p onClick={()=>setQuizPop(true)}>Start!</p>
         </div>
+        <Quiz data={qData} trigger={quizPopup} setTrigger={setQuizPop}/>
 
         <Progress/>
         <Checkbox id="2"/>

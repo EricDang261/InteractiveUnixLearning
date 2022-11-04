@@ -11,3 +11,10 @@
     width: 100px;
 }
 
+@media screen and (max-width: 40rem){
+    .footer_container{
+      display: none;
+    }
+    
+  }
+

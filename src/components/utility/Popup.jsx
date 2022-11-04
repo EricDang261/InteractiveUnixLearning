@@ -5,7 +5,6 @@ import "./Popup.css"
 const Popup = (props) => {
   return (props.trigger) ? (
     <div className="popup">
-      {console.log(props.text)}
         <div className={props.className}>
             <button className="close_btn" onClick={() =>props.setTrigger(false)}><AiIcons.AiOutlineClose/></button>
             <p className="popup_text">{props.text}</p>

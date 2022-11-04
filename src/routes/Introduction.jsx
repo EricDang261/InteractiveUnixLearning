@@ -4,6 +4,7 @@ import Footer from '../components/utility/Footer'
 import "./Intro.css"
 import { IntroData } from '../components/sidenav/IntroData'
 import Quiz from './Quiz'
+import "./Quiz.css"
 
 import { IntroMCQs } from '../components/IntroMCQs'
 import arch from "../assets/unix_arch.png"
@@ -22,6 +23,7 @@ const Introduction = () => {
   const [appPopup, setAppPop] = useState(false)
   const [qData, setQData] = useState(IntroMCQs)
   const [loading, SetLoading] = useState(true)
+  const [quizPopup, setQuizPop] = useState(false)
 
 
   useEffect(()=>{
@@ -135,8 +137,9 @@ const Introduction = () => {
         <div className="break">============</div>
         <div className="intro_quiz">
           <h1 className= "intro_quiz_title">End of Lesson Quiz</h1>
-          <Quiz data={qData}/>
+          <p onClick={()=>setQuizPop(true)}>Start!</p>
         </div>
+        <Quiz data={qData} trigger={quizPopup} setTrigger={setQuizPop}/>
         <Progress/>
         <Checkbox id="1"/>
         <Footer/>

@@ -56,5 +56,25 @@
   right: 2em
 }
 
+@media screen and (max-width: 40rem){
+  .home{
+    min-width: 300px;
+    width: 40rem;
+    background-image: none;
+    background-color: black;
+  }
+  .card_wrapper{
+    flex-direction: column;
+    position: relative;
+    top: 0;
+    width: 40rem;
+    /* margin-left: 30%; */
+    overflow: hidden;
+  }
 
+  .home_title{
+    display: none;
+  }
+  
+}
 

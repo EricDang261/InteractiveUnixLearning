@@ -5,8 +5,6 @@ export { default as Footer } from "./utility/Footer"
 export { default as Checkbox} from "./Checkbox"
 
 export { ValueContext } from "./context/ValueContext";
-export { IntroMCQs } from "./IntroMCQs"
-export { FM_MCQs} from "./FM_MCQs"
 
 export { FlashcardData } from  "./flashcard/FlashcardData"
 export { fmData} from "./sidenav/fmData"

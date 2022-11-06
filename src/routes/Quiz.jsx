@@ -1,6 +1,5 @@
 import React from 'react'
 import MultipleChoice from '../components/MultipleChoice'
-import { IntroMCQs } from '../components/IntroMCQs'
 import {AiOutlineClose} from "react-icons/ai"
 
 const Quiz = (props) => {

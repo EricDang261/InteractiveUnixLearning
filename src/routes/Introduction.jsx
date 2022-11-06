@@ -6,7 +6,6 @@ import { IntroData } from '../components/sidenav/IntroData'
 import Quiz from './Quiz'
 import "./Quiz.css"
 
-import { IntroMCQs } from '../components/IntroMCQs'
 import arch from "../assets/unix_arch.png"
 import * as AiIcons from "react-icons/ai"
 import encounter from "../assets/Encounter.png"
@@ -21,7 +20,7 @@ const Introduction = () => {
   const [kernPopup, setKernPop] = useState(false)
   const [shellPopup, setShellPop] = useState(false)
   const [appPopup, setAppPop] = useState(false)
-  const [qData, setQData] = useState(IntroMCQs)
+  const [qData, setQData] = useState()
   const [loading, SetLoading] = useState(true)
   const [quizPopup, setQuizPop] = useState(false)
 

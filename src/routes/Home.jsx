@@ -17,7 +17,6 @@ const Home = () => {
       {console.log("width: ",window.screen.availWidth)}
         {console.log("height: ",window.screen.availHeight)}
         <Nav/>
-        <div className="home_body">
             <h1 className="home_title">Unix With Us</h1>
             <div className='card_wrapper'>
                   <Card img={intro} 
@@ -41,8 +40,7 @@ const Home = () => {
                         descr="The best way to memorize"
                         path="/flashcard"/>
             </div>
-        </div>
-        <Footer/>
+        {/* <Footer/> */}
     </div>
   )
 }

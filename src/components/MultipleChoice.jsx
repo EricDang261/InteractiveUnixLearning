@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import "./MultipleChoice.css"
-import { IntroMCQs } from './IntroMCQs'
 
 const MultipleChoice = ({d}) => {
 

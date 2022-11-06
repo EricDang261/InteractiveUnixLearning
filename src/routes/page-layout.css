@@ -1,0 +1,255 @@
+.module {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    /* This will stop page going after footer */
+    overflow: hidden;
+    color: #52a76e;
+}
+
+.module_body {
+    flex: 1;
+    margin-left: .75rem;
+    margin-right: 0.75rem;
+    line-height: 1.8rem;
+}
+
+.module_title {
+    text-align: center;
+    font-size: 60px;
+    padding-top: 4rem;
+}
+
+.module_intro {
+    padding-bottom: 1rem;
+    text-align: center;
+    padding-top: 2rem;
+}
+
+
+.topic_title, .topic p{
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.topic span{
+    color: rgb(253, 126, 126);
+    font-family: 'Courier New', Courier, monospace;
+} 
+
+.topic_title{
+    font-size: 25pt;
+    padding-bottom: 1rem;
+}
+
+
+.topic{ 
+    padding-bottom: 2rem;
+}
+
+
+.topic p{
+    padding-top: 1rem;
+}
+
+.topic_title{
+    padding-top: 4rem;
+    text-align: center;
+    color: rgb(132, 176, 102);
+}
+
+
+table{
+    border-collapse:collapse;
+    /* border-spacing: 0 15pt; */
+    width: 100%;
+    table-layout: auto;
+    /* overflow: hidden; */
+    
+}
+
+td{
+    width: 100%;
+    word-wrap: break-word;
+    word-break: break-word;
+    overflow-x:auto;
+}
+
+
+.topic_ex{
+    padding-top: 1rem;
+    text-align: center;
+}
+
+.practice{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    gap: 2rem;
+}
+
+.practice_title{
+    text-align: center;
+    text-decoration: underline;
+    font-size: 40pt;
+    padding-bottom: 3rem;
+    color: rgba(132, 176, 102);
+}
+
+.practice img{
+    max-width: 30rem;
+    width: 100%;
+    height: auto;
+}
+
+.practice_link{
+    color:black;
+    font-size: 25pt;
+    background:linear-gradient(100deg, #88ff00 0%, #7ac84d 20%, #3acd64 45%, #5eb080 70%, #11ffb3 90%);
+    border: 3px white inset;
+    width: 25rem;
+    max-width:100%;
+}
+
+
+.topic_quiz{
+    padding-top: 4rem;
+    padding-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.topic_quiz_title{
+    text-align: center;
+    text-decoration: underline;
+    font-size: 40pt;
+    padding-bottom: 6rem;
+    color: rgba(132, 176, 102);
+}
+
+.topic_quiz img{
+    max-width: 20rem;
+    width: 100%;
+    height: auto;
+    background-color: white;
+}
+
+.topic_quiz button{
+    font-size: 25pt;
+    color: black;
+    /* background-color: white; */
+    background: linear-gradient(100deg, #88ff00 0%, #7ac84d 20%, #3acd64 45%, #5eb080 70%, #11ffb3 90%);
+    border: 3px inset rgb(254, 255, 254);
+    max-width: 100%;
+}
+
+.topic_quiz button:hover{
+    cursor: pointer;
+}
+
+
+
+/* DM module css */
+
+.dirM_nav {
+    z-index: 2;
+}
+
+.dirM_struct{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-indent: 4em;
+    padding-bottom: 2rem;
+}
+
+.dirM_heirarchy{
+    padding-top: 3rem;
+    max-width: 100%;
+    height: auto;
+}
+
+.tree_img_resource{
+    padding-top: 1rem;
+    text-align: center;
+    font-size: 10pt;
+    padding-bottom: 1rem;
+}
+
+/* End DM css */
+
+/* Table responsiveness */
+
+@media screen and (max-width: 90rem){
+    table th{
+        display: none;
+    }
+
+    table, table tbody, table tr , table td{
+        display: block;
+        width: 100%;
+    }
+
+    table td:nth-child(odd){
+        display: none;
+    }
+
+    table td{
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+    }
+
+    table td::before{
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 50%;
+        text-align: left;
+    }
+
+    
+}
+
+@media screen and (max-width: 41rem) {
+
+    .module_title{
+        font-size: 35pt;
+    }
+
+
+    .topic_quiz_title, .practice_title{
+        font-size: 30pt;
+
+    }
+
+    .topic_quiz button{
+        font-size: 15pt;
+    }
+
+    .topic_quiz img{
+        width: 15rem;
+    }
+
+    .practice img{
+        width: 25rem;
+    }
+
+    .practice_link{
+        font-size: 20pt;
+        width: 20rem;
+
+    }
+    
+}
+
+
+
+
+

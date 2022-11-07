@@ -1,9 +1,9 @@
 import React from "react";
 import {Routes, Route} from 'react-router-dom'
-import'./App.css'
+import'./index.css'
 
 import {  Login, 
-          SignUpForm,
+          SignUp,
           Home, 
           Introduction, 
           FileManagement,  
@@ -25,9 +25,9 @@ function App() {
   return (
     <div className="App">
      <Routes>
-        <Route path='/' element={<Home/>} > </Route> 
+        <Route path='/' element={<Home/> }> </Route> 
         <Route path='/login' element= { <Login /> } > </Route> 
-        <Route path='/signup' element={ <SignUpForm /> }></Route>
+        <Route path='/signup' element={ <SignUp /> }></Route>
         <Route path='/intro' element={<Introduction/>}></Route>
         <Route path="/dirManage" element={<DirectoryManagement/>}></Route>
         <Route path='/fileManage' element={<FileManagement/>}></Route>

@@ -8,6 +8,8 @@ import environ from "../assets/environ_card_image.gif"
 import intro from "../assets/intro_card_image.gif"
 import flashcardgif from "../assets/flashcard.gif"
 
+import {useAuth} from "../components/context/AuthContext" 
+
 import "./home.css"
 
 
@@ -43,7 +45,7 @@ const Home = () => {
                         path="/flashcard"/>
             </div>
         </div>
-        <Footer/>
+        {/* <Footer/> */}
     </div>
   )
 }

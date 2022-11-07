@@ -1,4 +1,6 @@
 import React, {useState, useEffect, useContext} from 'react'
+import { FaHome } from 'react-icons/fa'
+import { Link  } from 'react-router-dom';
 
 import {
     FlashcardList,
@@ -42,6 +44,9 @@ const FlashcardComp = () => {
 
   return (
     <>
+     <Link to="/">
+                <FaHome className="home_link"/>
+      </Link>
     <FlashcardList flashcards={flashcards}/>
     </>
   )

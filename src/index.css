@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro');
 *{
   box-sizing:border-box;
@@ -12,10 +13,12 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: black;
+  /* background-color: rgb(51, 51, 51); */
 
-  /* background color for all pages */
-  background-color: rgb(51, 51, 51)
-}
+  height: 100vh;
+
+ } 
 
 ul {
   list-style-type: none;
@@ -29,3 +32,4 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+

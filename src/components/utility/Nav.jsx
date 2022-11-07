@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import './Nav.css'
-import {Link, useNavigate} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 import WebsiteLogo from "../../assets/websitelogo.png"
 
 import {useAuth} from "../context/AuthContext" 
@@ -10,8 +10,6 @@ import { UsernameContext } from '../context/UsernameContext'
 
 const Nav = () => {
   const [hello, setHello] = useState("Sign In")
-  const navigate = useNavigate()
-  const {currentUser} = useAuth()
   const context = useContext(UsernameContext)
 
 

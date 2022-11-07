@@ -28,6 +28,7 @@ const SignUpForm = () => {
       await signup(emailRef.current.value, passwordRef.current.value)
       context.setUsrName(nameRef.current.value)
       navigate("/")
+      navigate(0)
     } catch {
       setError("Failed to create an account")
     }

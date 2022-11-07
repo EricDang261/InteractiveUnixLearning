@@ -41,6 +41,30 @@ const DMPractice = () => {
     }
 
 
+    function prevQuestion(){
+        if (currQuestion - 1 >= 1){
+            setImg(terminal)
+            setPopup(false)
+
+            if (currQuestion === 1) {
+                setAns("pwd")
+            }
+            if (currQuestion === 2) {
+                setAns("cd dir2")
+            }
+            if (currQuestion === 3) {
+                setAns("mkdir cat")
+            }
+            if (currQuestion === 4) {
+                setAns("rmdir cat")
+            }
+            if (currQuestion === 5) {
+                setAns("du -sh dir1")
+            }
+            setCurrQuestion(currQuestion - 1)
+
+        }
+    }
     function nextQuestion() {
         if (currQuestion + 1 <= 5) {
             setImg(terminal)
@@ -125,6 +149,7 @@ const DMPractice = () => {
                 <div className="terminal">
                     <img src={img} ></img>
                 </div>
+                <button className="dm_prev" onClick={prevQuestion}>Prev</button>
                 <button className="dm_next" onClick={nextQuestion}>Next</button>
                 <button className="dm_restart" onClick={restart}>Restart</button>
                 

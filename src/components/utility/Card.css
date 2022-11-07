@@ -11,6 +11,7 @@
 
 .cardDescr{
     color:white;
+    text-align: center;
 }
 
 .card_pic{
@@ -47,4 +48,5 @@
 
 .cardTitle{
     color:black;
+    text-align: center;
 }

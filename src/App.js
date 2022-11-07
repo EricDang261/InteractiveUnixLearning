@@ -7,10 +7,8 @@ import {  Login,
           Home, 
           Introduction, 
           FileManagement,  
-          Advanced,
           Feedback,
           FMPractice,
-          FMQuiz,
           DirectoryManagement,
           Environ,
           DMPractice,
@@ -31,9 +29,7 @@ function App() {
         <Route path='/intro' element={<Introduction/>}></Route>
         <Route path="/dirManage" element={<DirectoryManagement/>}></Route>
         <Route path='/fileManage' element={<FileManagement/>}></Route>
-        <Route path='/fmQuiz' element={<FMQuiz/>}></Route>
         <Route path='/fileManagePractice' element={<FMPractice/>}></Route>
-        <Route path='/advanced' element={<Advanced/>}></Route>
         <Route path='/flashcard' element={ <FlashcardComp/>}> </Route>
         <Route path='/feedback' element={<Feedback/>}></Route>
         <Route path="/environ" element={<Environ/>}></Route>

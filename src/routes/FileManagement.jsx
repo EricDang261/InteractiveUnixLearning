@@ -3,20 +3,19 @@ import {
   SideNav,
   Footer,
   fmData, 
-  FM_MCQs,
   Checkbox
 } from '../components'
 
 import { Link } from 'react-router-dom'
 import Progress from "../components/utility/Progress"
-import Quiz from './Quiz'
+// import Quiz from './Quiz'
 
 import {FaHandPointRight} from "react-icons/fa"
 import {SiAzuredataexplorer} from "react-icons/si"
 import "./fileManagement.css"
 
 const FileManagement = () => {
-  const [qData, setQData] = useState(FM_MCQs)
+  const [qData, setQData] = useState()
   const [loading, SetLoading] = useState(true)
  
 
@@ -404,9 +403,9 @@ const FileManagement = () => {
         <Link to="/fileManagePractice" className="practice">Click Me For More Practice!</Link>
         <div className="break">============</div>
 
-        <div className="quiz">
+        <div>
           <h1 className= "quiz_title">End of Lesson Quiz</h1>
-          <Quiz data={qData}/>
+          
       </div>
       <Checkbox id="3"/>
       <Progress />

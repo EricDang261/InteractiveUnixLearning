@@ -1,6 +1,6 @@
 import React, {useState, useEffect, useRef} from 'react'
 import {Link} from "react-router-dom"
-import './FMPractice.css'
+import './practices/FMPractice.css'
 
 
 import Nav from '../components/utility/Nav'

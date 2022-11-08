@@ -12,7 +12,7 @@ import Progress from "../components/utility/Progress"
 
 import {FaHandPointRight} from "react-icons/fa"
 import {SiAzuredataexplorer} from "react-icons/si"
-import "./fileManagement.css"
+// import "./fileManagement.css"
 
 const FileManagement = () => {
   const [qData, setQData] = useState()

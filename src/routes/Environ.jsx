@@ -41,6 +41,7 @@ const Environ = () => {
             <br/>
             <div className="break">============</div>
             <div className="topic">
+                <div className="env_man"/>
                 <h3 className="topic_title">What is man?</h3>
                 <p>
                     The <span>man</span> command gives you more information about other commands.
@@ -51,6 +52,7 @@ const Environ = () => {
             </div>
             <div className="break">============</div>
             <div className="topic">
+            <div className="env_uname"/>
                 <h3 className="topic_title">What is uname?</h3>
                 <p>
                     The <span>uname</span> command displays information about the system.
@@ -61,6 +63,7 @@ const Environ = () => {
             </div>
             <div className="break">============</div>
             <div className="topic">
+                <div className="env_whoami"/>
                 <h3 className="topic_title">What is whoami?</h3>
                 <p>
                     The <span>whoami</span> prints the current active username.
@@ -68,6 +71,7 @@ const Environ = () => {
             </div>
             <div className="break">============</div>
             <div className="topic">
+                <div className="env_who"/>
                 <h3 className="topic_title">What is who?</h3>
                 <p>
                     The <span>who</span> command gives you information on current
@@ -76,6 +80,7 @@ const Environ = () => {
             </div>
             <div className="break">============</div>
             <div className="topic">
+                <div className="env_su"/>
                 <h3 className="topic_title">What is su?</h3>
                 <p>
                     The <span>su</span> command is used to quickly switch to a different
@@ -86,6 +91,7 @@ const Environ = () => {
             </div>
             <div className="break">============</div>
             <div className="topic">
+                <div className="env_passwd"/>
                 <h3 className="topic_title">What is passwd?</h3>
                 <p>
                     The <span>passwd</span> command changes your password.
@@ -98,6 +104,7 @@ const Environ = () => {
             </div>
             <div className="break">============</div>
             <div className="topic">
+                <div className="env_env"/>
                 <h3 className="topic_title">What is env?</h3>
                 <p>
                     The <span>env</span> command displays all of the environment variables. 
@@ -106,6 +113,7 @@ const Environ = () => {
             <div className="break">============</div>
             
             <div className="topic">
+                <div className="env_whereis"/>
                 <h3 className="topic_title">What is whereis?</h3>
                 <p>
                     The <span>whereis</span> command is used to find where a command
@@ -115,6 +123,7 @@ const Environ = () => {
             </div>
             <div className="break">============</div>
             <div className="topic">
+                <div className="env_whatis"/>
                 <h3 className="topic_title">What is whatis?</h3>
                 <p>
                     The <span>whatis</span> command is used to quickly see an single
@@ -124,6 +133,7 @@ const Environ = () => {
             </div>
             <div className="break">============</div>
             <div className="topic">
+                <div className="env_ps"/>
                 <h3 className="topic_title">What is ps?</h3>
                 <p>
                     The <span>ps</span> command will display all the current processes
@@ -159,6 +169,7 @@ const Environ = () => {
             </div>
             <div className="break">============</div>
             <div className="topic">
+                <div className="env_ctrl"/>
                 <h3 className="topic_title">What is ctrl?</h3>
                 <p>The different <span>ctrl</span> commands terminate or stop processes. The most commonly used version is <span>ctrl-c</span>.</p>
                 <table>
@@ -184,6 +195,7 @@ const Environ = () => {
             </div>
             <div className="break">============</div>
             <div className="topic">
+                <div className="env_kill"/>
                 <h3 className="topic_title">What is kill?</h3>
                 <p>
                     The kill command is used to terminate specific processes. 
@@ -193,6 +205,7 @@ const Environ = () => {
             </div>
             <div className="break">============</div>
             <div className="topic">
+                <div className="env_amp"/>
                 <h3 className="topic_title">What is &?</h3>
                 <p>
                     The <span>&</span> character is added on to a command. It allows the
@@ -203,6 +216,7 @@ const Environ = () => {
             </div>
             <div className="break">============</div>
             <div className="topic">
+                <div className="env_bg"/>
                 <h3 className="topic_title">What is bg?</h3>
                 <p>The <span>bg</span> command will resume suspended jobs in the background.
                     This keeps the terminal free for other commands.
@@ -210,6 +224,7 @@ const Environ = () => {
             </div>
             <div className="break">============</div>
             <div className="topic">
+                <div className="env_fg"/>
                 <h3 className="topic_title">What is fg?</h3>
                 <p>The <span>fg</span> command will resume suspended jobs in the foreground.
                     Also can move background jobs into the foreground.
@@ -217,6 +232,7 @@ const Environ = () => {
             </div>
             <div className="break">============</div>
             <div className="topic">
+                <div className="env_top"/>
                 <h3 className="topic_title">What is top?</h3>
                 <p>
                     The <span>top</span> command gives you real time resource usage by job
@@ -225,6 +241,7 @@ const Environ = () => {
             </div>
             <div className="break">============</div>
             <div className="topic">
+                <div className="env_ssh"/>
                 <h3 className="topic_title">What is ssh?</h3>
                 <p>
                     The <span>ssh</span> command is a protocol that a secure connection
@@ -236,6 +253,7 @@ const Environ = () => {
             </div>
             <div className="break">============</div>
             <div className="topic">
+                <div className="env_scp"/>
                 <h3 className="topic_title">What is scp?</h3>
                 <p>
                     The <span>scp</span> command is a protocol that copies a file from
@@ -249,6 +267,7 @@ const Environ = () => {
             </div>
             <div className="break">============</div>
             <div className="topic">
+                <div className="env_ifconfig"/>
                 <h3 className="topic_title">What is ifconfig?</h3>
                 <p>
                     The <span>ifconfig</span> command is used to view or configure
@@ -260,6 +279,7 @@ const Environ = () => {
             <div className="break">============</div>
             
             <div className="topic">
+                <div className="env_ping"/>
                 <h3 className="topic_title">What is ping?</h3>
                 <p>
                     The <span>ping</span> command is used to see if a server is
@@ -269,6 +289,7 @@ const Environ = () => {
             </div>
             <div className="break">============</div>
             <div className="topic">
+                <div className="env_g"/>
                 <h3 className="topic_title">What is g++?</h3>
                 <p>
                     The <span>g++</span> command will be used a lot in c++ development

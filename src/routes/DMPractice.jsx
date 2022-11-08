@@ -127,6 +127,7 @@ const DMPractice = () => {
         <>
         <Nav/>
         <div className="dm_practice">
+            
             <div className="grid_left">    
                 <h5 className="question_number">Question {currQuestion} out of 5</h5>
                 <div className='question_text'>

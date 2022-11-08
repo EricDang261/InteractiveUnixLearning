@@ -2,27 +2,27 @@ import React, {useState, useEffect, useRef} from 'react'
 import {Link} from "react-router-dom"
 import './FMPractice.css'
 
-import Nav from '../components/utility/Nav'
-import Popup from '../components/utility/Popup'
+import Nav from '../../components/utility/Nav'
+import Popup from '../../components/utility/Popup'
 
-import initial from '../assets/fm/initial.png'
-import pwd from '../assets/fm/pwd.png'
-import ls from '../assets/fm/ls.png'
-import cdvirtualdesktop from '../assets/fm/cdvirtualDesktop.png'
-import appendcontentwithecho from '../assets/fm//append_content_with_echo.png'
-import catmerge from '../assets/fm/catmerge.png'
-import cdparentandls from '../assets/fm/cd..andls.png'
-import touch from '../assets/fm/touch.png'
-import rmfail from '../assets/fm/rmfail.png'
-import rmandls from '../assets/fm/rmandls.png'
-import rmwithr from '../assets/fm/rm-r.png'
-import mv from '../assets/fm/mv.png'
-import lswithla from '../assets/fm/ls-la.png'
-import lsafterrm from '../assets/fm/ls_after_rm.png'
-import ls_after_merge from '../assets/fm/ls_after_merge.png'
-import echo from '../assets/fm/echo.png'
-import cdandtouch from '../assets/fm/cdandtouch.png'
-import catseethecontent from '../assets/fm/catSeeTheContent.png'
+import initial from '../../assets/fm/initial.png'
+import pwd from '../../assets/fm/pwd.png'
+import ls from '../../assets/fm/ls.png'
+import cdvirtualdesktop from '../../assets/fm/cdvirtualDesktop.png'
+import appendcontentwithecho from '../../assets/fm//append_content_with_echo.png'
+import catmerge from '../../assets/fm/catmerge.png'
+import cdparentandls from '../../assets/fm/cd..andls.png'
+import touch from '../../assets/fm/touch.png'
+import rmfail from '../../assets/fm/rmfail.png'
+import rmandls from '../../assets/fm/rmandls.png'
+import rmwithr from '../../assets/fm/rm-r.png'
+import mv from '../../assets/fm/mv.png'
+import lswithla from '../../assets/fm/ls-la.png'
+import lsafterrm from '../../assets/fm/ls_after_rm.png'
+import ls_after_merge from '../../assets/fm/ls_after_merge.png'
+import echo from '../../assets/fm/echo.png'
+import cdandtouch from '../../assets/fm/cdandtouch.png'
+import catseethecontent from '../../assets/fm/catSeeTheContent.png'
 
  
 
@@ -230,7 +230,6 @@ const FMPractice = () => {
           }    
           else{
             setPopup(true)
-           // alert("Wrong command! Expected to input: " + ans);
           }
 
           setText("")

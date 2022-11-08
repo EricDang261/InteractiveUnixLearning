@@ -27,11 +27,11 @@ const DMPractice = () => {
         ]
     const textRef = useRef()
 
-    const pattern1 = new RegExp(/(pwd)/i)
-    const pattern2 = new RegExp(/(cd)\s+(dir2)/i)
-    const pattern3 = new RegExp(/(mkdir)\s+(cat)/i)
-    const pattern4 = new RegExp(/(rmdir)\s+(cat)/i)
-    const pattern5 = new RegExp(/(du)\s+(-sh)\s+(dir1)/i)
+    const pattern1 = new RegExp(/^(pwd)\s*$/i)
+    const pattern2 = new RegExp(/^(cd)\s+(dir2)\s*$/i)
+    const pattern3 = new RegExp(/^(mkdir)\s+(cat)\s*$/i)
+    const pattern4 = new RegExp(/^(rmdir)\s+(cat)\s*$/i)
+    const pattern5 = new RegExp(/^(du)\s+(-sh)\s+(dir1)\s*$/i)
 
     function restart(){
         setCurrQuestion(1)
@@ -150,12 +150,13 @@ const DMPractice = () => {
                 <div className="terminal">
                     <img src={img} ></img>
                 </div>
-                <button className="dm_prev" onClick={prevQuestion}>Prev</button>
-                <button className="dm_next" onClick={nextQuestion}>Next</button>
-                <button className="dm_restart" onClick={restart}>Restart</button>
-                
-                <Link className="dm_exit" to="/dirManage">Exit</Link>
-            
+                <div className="btn_container">
+                    {/* <button className="dm_prev" onClick={prevQuestion}>Prev</button> */}
+                    <button className="dm_next" onClick={nextQuestion}>Next</button>
+                    <button className="dm_restart" onClick={restart}>Restart</button>
+                    <Link className="dm_exit" to="/dirManage">Exit</Link>
+                </div>
+
             </div>
         </div>
         {/* <Footer className="dm_footer"/> */}

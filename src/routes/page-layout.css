@@ -73,8 +73,6 @@ td, th{
     table-layout: fixed;
     border-style: dotted solid double dashed;
     border: 1px solid #52a76e;
-    word-wrap: break-word;
-    word-break: break-word;
     overflow-x:auto;
     padding-left: .2rem;
 }
@@ -115,6 +113,7 @@ td, th{
 }
 
 .practice_link{
+    text-align: center;
     color:black;
     font-size: 25pt;
     background:linear-gradient(100deg, #88ff00 0%, #7ac84d 20%, #3acd64 45%, #5eb080 70%, #11ffb3 90%);
@@ -226,6 +225,13 @@ td, th{
 
     
 }
+
+@media screen and (max-width: 52rem){
+    .practice{
+        display: none;
+    }
+}
+
 
 @media screen and (max-width: 41rem) {
 

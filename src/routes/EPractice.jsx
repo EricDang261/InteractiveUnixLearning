@@ -34,22 +34,22 @@ const EPractice = () => {
     const [ans, setAns] = useState("ls")
     const [popup, setPopup] = useState(false)
 
-    const pattern1 = new RegExp(/(man)\s+(ls)/i)
-    const pattern2 = new RegExp(/(uname)/i)
-    const pattern3 = new RegExp(/(whoami)/i)
-    const pattern4 = new RegExp(/(who)/i)
-    const pattern5 = new RegExp(/(env)/i)
-    const pattern6 = new RegExp(/(whereis)\s+(ls)/i)
-    const pattern7 = new RegExp(/(whatis)\s+(ls)/i)
-    const pattern8 = new RegExp(/(ps)\s+(aux)/i)
-    const pattern9 = new RegExp(/(ps)\s+(-fu)\s+(UserName)/i)
-    const pattern10 = new RegExp(/(ping)\s+(google.com)/i)
-    const pattern11 = new RegExp(/(ctrl-c)/i)
-    const pattern12 = new RegExp(/(ctrl-z)/i)
-    const pattern13 = new RegExp(/(top)/i)
-    const pattern14 = new RegExp(/(ifconfig)\s+(-a)/i)
-    const pattern15 = new RegExp(/(pgrep)\s+(firefox)/i)
-    const pattern16 = new RegExp(/(kill)\s+(27085)/i)
+    const pattern1 = new RegExp(/^(man)\s+(ls)\s*$/i)
+    const pattern2 = new RegExp(/^(uname)\s*$/i)
+    const pattern3 = new RegExp(/^(whoami)\s*$/i)
+    const pattern4 = new RegExp(/^(who)\s*$/i)
+    const pattern5 = new RegExp(/^(env)\s*$/i)
+    const pattern6 = new RegExp(/^(whereis)\s+(ls)\s*$/i)
+    const pattern7 = new RegExp(/^(whatis)\s+(ls)\s*$/i)
+    const pattern8 = new RegExp(/^(ps)\s+(aux)\s*$/i)
+    const pattern9 = new RegExp(/^(ps)\s+(-fu)\s+(UserName)\s*$/i)
+    const pattern10 = new RegExp(/^(ping)\s+(google.com)\s*$/i)
+    const pattern11 = new RegExp(/^(ctrl-c)\s*$/i)
+    const pattern12 = new RegExp(/^(ctrl-z)\s*$/i)
+    const pattern13 = new RegExp(/^(top)\s*$/i)
+    const pattern14 = new RegExp(/^(ifconfig)\s+(-a)\s*$/i)
+    const pattern15 = new RegExp(/^(pgrep)\s+(firefox)\s*$/i)
+    const pattern16 = new RegExp(/^(kill)\s+(27085)\s*$/i)
 
     let qt = 
     [
@@ -64,11 +64,11 @@ const EPractice = () => {
       "9. How about all the processes for the user UserName?",
       "10. Let's try pinging google.com!",
       "11. Now that you have pinged Google, the only way to stop it is to terminate the current process. Go ahead and do that. (This will be a key stroke ctrl command, but since this practice does not take keystrokes as input please type out the command instead)",
-      "12. Instead of terminating the pin process, what happens if you try suspending it? (This will be a key stroke ctrl command, but since this practice does not take keystrokes as input please type out the command instead)",
+      "12. Instead of terminating the ping process, what happens if you try suspending it? (This will be a key stroke ctrl command, but since this practice does not take keystrokes as input please type out the command instead)",
       "13. I wonder what the real time usage for this machine is?",
       "14. I wonder what the network configuration currently look like?",
-      "15. Lets start the Firefox browser process",
-      "16. You are currently running the firefox browser process using pgreg which has the id 27085, let's kill it!"
+      "15. The Firefox browser process is currently running. Let's find its process ID.",
+      "16. You are currently running the firefox browser process which has the id 27085, let's kill it!"
       
     ]
     const textRef = useRef()

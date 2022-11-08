@@ -21,22 +21,25 @@
 
 
 .question_number{
-    font-size: 24pt;
+    font-size: 22pt;
     color:rgba(124, 255, 124);
+    /* width: 20rem; */
 }
 
 .question_text{
     font-size: 13pt;
     padding-top: 2rem;
     color:rgba(124, 255, 124);
+
 }
 
 
 
-/* .terminal img{
+.terminal img{
     position:relative;
-} */
-/* .terminal_input_cmd{
+    
+}
+.terminal_input_cmd{
     position: absolute;
     z-index: 1;
     width: 200px;
@@ -47,18 +50,19 @@
     border: none;
     outline: none;
     color: white;
-} */
-/* 
+}
+
 .dm_exit:hover, .dm_next:hover, .dm_restart:hover{
     cursor: pointer;
-} */
+}
 
-/* .dm_next{
+.dm_next{
     color:rgba(124, 255, 124);
     border: 2px solid;
     width: 50px;
     font-size: 13pt;
-} */
+    margin-top: 1em;
+}
 
 /* .dm_prev{
     color:rgba(124, 255, 124);
@@ -67,34 +71,76 @@
     font-size: 13pt;
 } */
 
-/* .dm_restart{
+.dm_restart{
     color:rgba(124, 255, 124);
     border: 2px solid;
     margin-left: 10px;
     font-size: 13pt;
-} */
+    margin-top: 1em;
+}
 
-/* .dm_exit{
+.dm_exit{
     position: relative;
     border: 2px solid;
-    margin-left: 20rem;
+    margin-left: 25rem;
     padding-left: 2px;
     padding-right: 2px;
     color:rgba(124, 255, 124);
     font-size: 13pt;
-} */
-/* .wrong_ans{
+    margin-top: 1em;
+}
+.wrong_ans{
     background-color: white;
     color: black;
     opacity: .75;
     font-family: 'Courier New', Courier, monospace;
     font-size: 13pt;
-} */
+}
 
-/* @media screen and (max-width: 85rem){
+@media screen and (max-width: 85rem){
     .dm_practice{
         display: flex;
         flex-direction: column;
+        gap: 0;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 3rem;
+    }
+
+    .grid_right{
+        display: flex;
+        flex-direction: row;
+    }
+    .btn_container{
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .question_number, .question_text{
+        margin-top: 1em;
+    }
+
+    .question_text{
+        margin-bottom: 1em;
     }
     
-} */
+    .dm_restart{
+        width: 5rem;
+    }
+    
+    .dm_next{
+        margin-left: 1em;
+    }
+
+    .dm_restart{
+        margin: 0;
+        margin-left: 1em;
+    }
+
+    .dm_exit{
+        margin: 0;
+        margin-left: 1em;
+        margin-top: 20rem;
+    }
+}

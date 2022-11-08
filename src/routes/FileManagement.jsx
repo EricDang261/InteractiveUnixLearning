@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { SideNav, Footer, fmData, Checkbox } from "../components";
-
+import Quiz from "./Quiz";
 import { Link } from "react-router-dom";
+
 import Progress from "../components/utility/Progress";
 import example from "../assets/fm/example.png";
+import practice from "../assets/practice.jpg";
+import quizImg from "../assets/quiz.png";
 
 import { FaHandPointRight } from "react-icons/fa";
 import { SiAzuredataexplorer } from "react-icons/si";
@@ -12,6 +15,7 @@ import "./page-layout.css";
 const FileManagement = () => {
   const [qData, setQData] = useState();
   const [loading, SetLoading] = useState(true);
+  const [quizPopup, setQuizPop] = useState(false);
 
   useEffect(() => {
     fetch("./fmMC.json")
@@ -41,7 +45,8 @@ const FileManagement = () => {
           <FaHandPointRight style={{ color: "white" }} />
         </p>
         <div className="break">============</div>
-        <div className="file_type">
+        <div className="topic">
+          <div className="file_type" />
           <h3 className="topic_title">File Types </h3>
           <p>
             In Unix, we will mostly see these 3 basic types of files: <br />
@@ -57,15 +62,15 @@ const FileManagement = () => {
         {/*end of file_type*/}
         <br />
         <div className="break">============</div>
-        <div className="topic" />
-        <div className="echo_cmd">
+        <div className="topic">
+          <div className="echo_cmd" />
           <h3 className="topic_title">echo command</h3>
           <p>
             Let's start off with one of the most basic and commonS used command{" "}
             <span>echo</span>. This command in linux is used to display line of
             text or string that are passed as an argument.
           </p>
-          <p className="cmd_exe">
+          <p className="topic_ex">
             {" "}
             <span> echo [option] [string]</span>{" "}
           </p>
@@ -99,15 +104,15 @@ const FileManagement = () => {
         {/*end of echo cmd */}
         <br />
         <div className="break">============</div>
-        <div className="topic" />
-        <div className="ls_cmd">
+        <div className="topic">
+          <div className="ls_cmd" />
           <h3 className="topic_title">ls command</h3>
           <p>
             <span>ls</span> commands (abbreviation of list) list out all of the
             files in the current location <br />
           </p>
 
-          <p className="cmd_exe">
+          <p className="topic_ex">
             <span>cd [option]</span>
           </p>
 
@@ -120,7 +125,7 @@ const FileManagement = () => {
 
               <tr>
                 <td> -a </td>
-                <td>
+                <td data-label="-a">
                   {" "}
                   -all, list all files in the directory, include hidden files
                   beginning with .{" "}
@@ -129,7 +134,7 @@ const FileManagement = () => {
 
               <tr>
                 <td> -l </td>
-                <td>
+                <td data-label="-l">
                   {" "}
                   In addition to the file name, the file permissions, owner,
                   file size, etc. are listed in detail.
@@ -138,7 +143,7 @@ const FileManagement = () => {
 
               <tr>
                 <td> -d </td>
-                <td>
+                <td data-label="-d">
                   {" "}
                   -directory, displays the directory as a file instead of the
                   file in it{" "}
@@ -150,8 +155,8 @@ const FileManagement = () => {
         {/*end of ls_cmd*/}
         <br />
         <div className="break">============</div>
-        <div className="topic" />
-        <div className="rm_cmd">
+        <div className="topic">
+          <div className="rm_cmd" />
           <h3 className="topic_title">rm command</h3>
           <p>
             <span>rm </span> command ( short for remove) deletes one or more
@@ -163,7 +168,7 @@ const FileManagement = () => {
             be sure and confirm what you want to delete and your current
             locatio.
           </p>
-          <p className="cmd_exe">
+          <p className="topic_ex">
             {" "}
             <span>rm [options] files or directory</span>{" "}
           </p>
@@ -177,17 +182,23 @@ const FileManagement = () => {
 
               <tr>
                 <td> -f </td>
-                <td> --force Ignore nonexistent files and warning </td>
+                <td data-label="-f">
+                  {" "}
+                  --force Ignore nonexistent files and warning{" "}
+                </td>
               </tr>
 
               <tr>
                 <td> -i </td>
-                <td> --interactive, make an interactive deleteion </td>
+                <td data-label="-i">
+                  {" "}
+                  --interactive, make an interactive deleteion{" "}
+                </td>
               </tr>
 
               <tr>
                 <td> -r </td>
-                <td>
+                <td data-label="-r">
                   {" "}
                   --recursively, delete all directories and subdirectories
                   listed in the paramemter{" "}
@@ -199,14 +210,14 @@ const FileManagement = () => {
         {/*end of rm_cmd*/}
         <br />
         <div className="break">============</div>
-        <div className="topic" />
-        <div className="cp_cmd">
+        <div className="topic">
+          <div className="cp_cmd" />
           <h3 className="topic_title"> cp command</h3>
           <p>
             <span> cp </span> command ( short for copy) is a common used
             commands. This commands used to copy files or directories. <br />
           </p>
-          <p className="cmd_exe">
+          <p className="topic_ex">
             <span>
               cp [options] source file directory <br />
               cp [options] -t directory source file
@@ -222,17 +233,17 @@ const FileManagement = () => {
 
               <tr>
                 <td> -f </td>
-                <td> --force, copy files or directories </td>
+                <td data-label="-f"> --force, copy files or directories </td>
               </tr>
 
               <tr>
                 <td> -i </td>
-                <td> ask before overwritting the file </td>
+                <td data-label="-i"> ask before overwritting the file </td>
               </tr>
 
               <tr>
                 <td> -n </td>
-                <td>
+                <td data-label="-n">
                   {" "}
                   Do not overwritting exisiting files ( disable -i flag){" "}
                 </td>
@@ -240,7 +251,7 @@ const FileManagement = () => {
 
               <tr>
                 <td> -u </td>
-                <td>
+                <td data-label="-u">
                   {" "}
                   --update, the file will be copied only when the modiciation
                   time of the souce file is more than the destination file (or
@@ -253,14 +264,14 @@ const FileManagement = () => {
         {/*end of cp_cmd*/}
         <br />
         <div className="break">============</div>
-        <div className="topic" />
-        <div className="mv_cmd">
+        <div className="topic">
+          <div className="mv_cmd" />
           <h3 className="topic_title">mv command</h3>
           <p>
             <span>mv</span> command is used to move files or change file names.
             It is also used to back up files or director.
           </p>
-          <p className="cmd_exe">
+          <p className="topic_ex">
             {" "}
             <span>
               mv [option] src file or directory target file or directory
@@ -282,8 +293,8 @@ const FileManagement = () => {
         {/*end of mv_cmd*/}
         <br />
         <div className="break">============</div>
-        <div className="topic" />
-        <div className="more_cmd">
+        <div className="topic">
+          <div className="more_cmd" />
           <h3 className="topic_title"> more command</h3>
           <p>
             <span>More </span> command is to display file contents, one screen
@@ -292,15 +303,15 @@ const FileManagement = () => {
             {"<q>"}
           </p>
 
-          <p className="cmd_exe">
+          <p className="topic_ex">
             <span> more filename </span>
           </p>
         </div>{" "}
         {/*end of more_cmd*/}
         <br />
         <div className="break">============</div>
-        <div className="topic" />
-        <div className="tar_cmd">
+        <div className="topic">
+          <div className="tar_cmd" />
           <h3 className="topic_title">tar command</h3>
           <p>
             <span>tar</span> stands for tape archive, is used to create Archive
@@ -316,7 +327,7 @@ const FileManagement = () => {
             of archive file is that it is easier portability and storage, or
             simply to compress files to use less storage space.
           </p>
-          <p className="cmd_exe">
+          <p className="topic_ex">
             {" "}
             <span>
               tar [options] [archive-file] [file or directory to be archived]
@@ -331,12 +342,12 @@ const FileManagement = () => {
 
               <tr>
                 <td> -c </td>
-                <td> --create, create archive </td>
+                <td data-label="-c"> --create, create archive </td>
               </tr>
 
               <tr>
                 <td> -x </td>
-                <td> --extract, extract archive </td>
+                <td data-label="-x"> --extract, extract archive </td>
               </tr>
 
               <tr>
@@ -346,22 +357,25 @@ const FileManagement = () => {
 
               <tr>
                 <td> -t </td>
-                <td> displays or lists files in archived file </td>
+                <td data-label="-x">
+                  {" "}
+                  displays or lists files in archived file{" "}
+                </td>
               </tr>
 
               <tr>
                 <td> -v </td>
-                <td> displays Verbose Information </td>
+                <td data-label="-v"> displays Verbose Information </td>
               </tr>
 
               <tr>
                 <td> -A </td>
-                <td> Concatenates the archive files </td>
+                <td data-label="-A"> Concatenates the archive files </td>
               </tr>
 
               <tr>
                 <td> -z </td>
-                <td>
+                <td data-label="-z">
                   {" "}
                   --zip, tells tar command that creates tar file using gzip{" "}
                 </td>
@@ -369,17 +383,17 @@ const FileManagement = () => {
 
               <tr>
                 <td> -j </td>
-                <td> filter archive tar file using tbzip </td>
+                <td data-label="-j"> filter archive tar file using tbzip </td>
               </tr>
 
               <tr>
                 <td> -W </td>
-                <td> Verify a archive file </td>
+                <td data-label="-W"> Verify a archive file </td>
               </tr>
 
               <tr>
                 <td> -r </td>
-                <td>
+                <td data-label="-r">
                   {" "}
                   update or add file or directory in already existed .tar file{" "}
                 </td>
@@ -407,8 +421,8 @@ const FileManagement = () => {
         {/*end of tar_cmd*/}
         <br />
         <div className="break">============</div>
-        <div className="topic" />
-        <div className="cat_cmd">
+        <div className="topic">
+          <div className="cat_cmd" />
           <h3 className="topic_title">cat command</h3>
           <p>
             <span>cat </span> command ( abbreviation for catalogue/ or
@@ -427,7 +441,7 @@ const FileManagement = () => {
             </li>
           </ul>
 
-          <p className="cmd_exe">
+          <p className="topic_ex">
             {" "}
             <span> cat option </span>
           </p>
@@ -441,12 +455,12 @@ const FileManagement = () => {
 
               <tr>
                 <td> -A </td>
-                <td> --show all Equivalent to -vET </td>
+                <td data-label="-A"> --show all Equivalent to -vET </td>
               </tr>
 
               <tr>
                 <td> -n </td>
-                <td>
+                <td data-label="-n">
                   {" "}
                   --number For all the output line numbers, starting from 1 for
                   all output line numbers
@@ -504,7 +518,8 @@ const FileManagement = () => {
         {/*end of cp_cmd*/}
         <br />
         <div className="break">============</div>
-        <div className="file_security_intro">
+        <div className="topic">
+          <div className="file_security_intro" />
           <h3 className="topic_title"> File Security Intro</h3>
           <p>
             You are now familiar with basic file operations in Unix OS, now
@@ -543,7 +558,8 @@ const FileManagement = () => {
         {/*end of file securtity intro*/}
         <br />
         <div className="break">============</div>
-        <div className="rw-r--r--">
+        <div className="topic">
+          <div className="rw-r--r--" />
           <h3 className="topic_title">rw-r--r--</h3>
           <p>
             There are nine characters in the security<span> rw-r--r-- </span>.
@@ -577,14 +593,15 @@ const FileManagement = () => {
         {/*end of rw-r--r--*/}
         <br />
         <div className="break">============</div>
-        <div className="chmod">
+        <div className="topic">
+          <div className="chmod" />
           <h3 className="topic_title"> Chmod </h3>
           <p>
             The chmod stands for change mode. This command is used for changing
             securities permissions on files
           </p>
 
-          <p className="cmd_exe">
+          <p className="topic_ex">
             <span> chmod o+x </span>
           </p>
 
@@ -605,7 +622,8 @@ const FileManagement = () => {
         {/*end of chmod*/}
         <br />
         <div className="break">============</div>
-        <div className="wildcard">
+        <div className="topic">
+          <div className="wildcard" />
           <h3 className="topic_title">Wildcard</h3>
           <p>
             A wildcard in Linux means it might be a symbol or set of symbols
@@ -632,16 +650,26 @@ const FileManagement = () => {
       {/*end of fm_container*/}
 
       <div className="break">============</div>
-      <Link to="/fileManagePractice" className="practice">
-        Click Me For More Practice!
-      </Link>
-      <div className="break">============</div>
 
-      <div>
-        <h1 className="quiz_title">End of Lesson Quiz</h1>
+      <div className="practice">
+        <h1 className="practice_title">Lesson Practice</h1>
+        <img src={practice} alt="sticky note with word practice" />
+        <Link to="/fileManagePractice" className="practice_link">
+          CLICK HERE FOR PRACTICE!
+        </Link>
       </div>
-      <Checkbox id="3" />
+      <div className="break">============</div>
+      <div className="topic_quiz">
+        <h1 className="topic_quiz_title">End of Lesson Quiz</h1>
+        <img src={quizImg} alt="pencil and test sheet" />
+        <button onClick={() => setQuizPop(true)}>
+          Click here to begin quiz!
+        </button>
+      </div>
+      {/*end of practice*/}
+      <Quiz data={qData} trigger={quizPopup} setTrigger={setQuizPop} />
       <Progress />
+      <Checkbox id="3" />
       <Footer />
     </div>
   );

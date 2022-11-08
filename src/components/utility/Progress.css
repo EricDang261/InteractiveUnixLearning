@@ -9,6 +9,7 @@
     box-shadow: 0 0 10px rgba(0,0,0,0.2);
     display: grid;
     place-items: center;
+    z-index: 2;
   
   }
   
@@ -21,4 +22,5 @@
     display: grid;
     place-items: center;
     font-weight: 500;
+    z-index: 2;
   }

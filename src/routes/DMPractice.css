@@ -10,7 +10,7 @@
 
 .grid_left{
     left: 3rem;
-    width: 500px
+    width: 500px;
 }
 .grid_right{
     right: 2rem;
@@ -86,4 +86,12 @@
     opacity: .75;
     font-family: 'Courier New', Courier, monospace;
     font-size: 13pt;
+}
+
+@media screen and (max-width: 85rem){
+    .dm_practice{
+        display: flex;
+        flex-direction: column;
+    }
+    
 }

@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap");
 
 .intro {
   display: flex;
@@ -82,164 +83,124 @@
 
 
 /* Uses section */
-.uses {
-  padding-top: 2rem;
-  height: 600px;
-  /* background-color: aqua; */
-  overflow: hidden;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  margin-left: 5rem;
-  /* grid-gap: 5px; */
-  grid-column-gap: 15rem;
-  /* align-items: center; */
-  /* justify-content: center; */
+
+.uses{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 9rem;
+    padding-bottom: 5rem;
 }
 
 .intro_topic2 {
   font-size: 25pt;
-  /* text-align: center; */
-  padding-top: 5pt;
-  padding-left: 20px;
-  grid-column-start: 2;
-  grid-column-end: 3;
-  transform: translate(-35px);
+  text-align: center;
   font-family: 'Courier New', Courier, monospace;
+  padding-bottom: 7rem;
+  padding-top: 4rem;
 
 }
 
-/* Hover photos */
+/* Hover pics */
 
-.mod_wrapper {
-  /* background-color: aqua; */
-  grid-column-start: 1;
-  grid-column-end: 2;
-  height: 150px;
-  width: 210px;
-  position: relative;
-
-}
-
-.mod_wrapper:hover .mod_text {
-  visibility: visible;
-
-}
-
-.mod {
-  height: 150px;
-  width: 300px;
-  position: relative;
-  grid-column-start: 1;
-  grid-column-end: 2;
-  /* top: 10rem;
-    left: 2rem; */
-  margin: auto;
-  z-index: -1;
+.mod{
+  max-width: 20rem;
+  width: 100%;
+  max-height: 9.4rem;
+  height: auto;
+  margin-top: 1rem;
 }
 
 
 .mod_text {
-  background-color: black;
-  position: relative;
-  grid-column-start: 1;
-  grid-column-end: 2;
-  width: 200px;
+  width: 12.5rem;
   visibility: hidden;
   z-index: -1;
-  margin-left: 60px;
   font-weight: bold;
   font-family: 'Courier New', Courier, monospace;
+  text-align: center;
+  margin-left: 2rem;
 }
 
-.pas {
-  height: 150px;
-  width: 270px;
-  position: relative;
-  right: 2rem;
+.mod_wrapper:hover .mod_text {
+  visibility: visible;
+}
+
+
+.pas{
+  max-width: 20rem;
+  width: 100%;
+  max-height: 9.4rem;
+  height: auto;
+}
+
+.pas_text {
+  width: 12.5rem;
+  visibility: hidden;
   z-index: -1;
+  font-weight: bold;
+  font-family: 'Courier New', Courier, monospace;
+  text-align: center;
+  margin-left: 2rem;
 }
 
 .pas_wrapper:hover .pas_text {
   visibility: visible;
 }
 
-.pas_wrapper {
-  /* background-color: white; */
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  width: 200px;
-  height: 150px;
-  grid-column-start: 2;
-  grid-column-end: 3;
-
-}
-
-
-.pas_text {
-  background-color: black;
-  position: absolute;
-  width: 200px;
-  top: 10rem;
-  visibility: hidden;
-  z-index: -1;
-  font-weight: bold;
-  font-family: 'Courier New', Courier, monospace;
-}
-
-.encounter {
-  height: 150px;
-  width: 250px;
-  position: relative;
-  right: 3rem;
-}
-
-.encounter_wrapper {
-  /* background-color: red; */
-  position: relative;
-  width: 200px;
-  height: 130px;
-  grid-column-start: 3;
-  grid-column-end: 4;
-
+.encounter{
+  max-width: 20rem;
+  width: 100%;
+  max-height: 9.4rem;
+  height: auto;
 }
 
 .encounter_text {
-  background-color: black;
-  position: absolute;
-  top: 10rem;
-  width: 200px;
+  width: 12.5rem;
   visibility: hidden;
   z-index: -1;
   font-weight: bold;
   font-family: 'Courier New', Courier, monospace;
+  text-align: center;
 }
 
 .encounter_wrapper:hover .encounter_text {
   visibility: visible;
 }
 
+@media screen and (max-width: 60rem){
+  .uses{
+    flex-direction: column;
+  }
+  
+}
+
 /* Architecture section */
 .arch {
-  height: 900px;
-  padding-top: 6rem;
+  height: auto;
+  /* padding-top: 6rem; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  margin-bottom: 5rem;
 }
 
 .intro_topic3{
   font-size: 30pt;
   text-align: center;
-  padding-left: 70px;
   font-family: 'Courier New', Courier, monospace;
 }
 
 .arch_instructions{
   text-align: center;
   padding-top: 2rem;
-  padding-left: 100px;
   font-family: 'Courier New', Courier, monospace;
   font-weight: bold;
   font-size: 13pt;
+  height: auto;
 }
 
 .arch_diagram {
@@ -247,13 +208,12 @@
   position: relative;
   /* Makes so buttons can be clicked */
   z-index: 1;
-  width: 500px;
-  height: 400px;
-  /* width: 50%;
-  height: 50%; */
-  margin-top: 10%;
-  margin-left: 32%;
+  max-width: 32rem;
+  width: 100%;
+  max-height: 25rem;
+  height: auto;
   color: black;
+  margin-right: 5rem;
 
   
 }
@@ -267,6 +227,12 @@
 }
 
 /* Popup components */
+
+.pop_container{
+  display: flex;
+  flex-direction: row;
+  gap: 5rem;
+}
 
 .hw_btn{
   /* background-color: black; */
@@ -285,8 +251,8 @@
   background-color: rgb(221, 255, 135);
   height: 120px;
   width: 200px;
-  margin-left: 20rem;
-  position:absolute;
+  /* margin-left: 20rem; */
+  position:relative;
 }
 
 
@@ -307,9 +273,8 @@
   height: 120px;
   width: 200px;
   /* right: 11%; */
-  margin-left: 70%;
-  position:absolute;
-  margin-top: -33%;
+  /* margin-left: 70%; */
+  position:relative;
   /* z-index: 1; */
 }
 
@@ -329,9 +294,9 @@
   background-color: rgb(251, 211, 126);
   height: 120px;
   width: 200px;
-  margin-left: 21rem;
-  margin-top: -27rem;
-  position:absolute;
+  /* margin-left: 21rem;
+  margin-top: -27rem; */
+  position:relative;
   /* z-index: 10; */
 }
 
@@ -350,46 +315,145 @@
   background-color: rgb(126, 184, 251);
   height: 120px;
   width: 200px;
-  right: 200px;
-  position:absolute;
-  /* z-index: 10; */
+  /* right: 200px; */
+  position:relative;
 }
 
-@media screen and (max-width: 1000px) {
+.stickynotes{
+  display: none;
+}
+
+@media screen and (max-width: 60rem) {
+  .pop_container{
+    gap: 1rem;
+  }
+}
+
+
+@media screen and (max-width: 55rem) {
  .hw_info, .kernel_info, .shell_info, .applic_info {
     display: none;
   }
+
+  .hw_btn, .applic_btn, .shell_btn, .kernel_btn{
+    display: none;
+  }
+
+  .arch_diagram{
+    display: none;
+  }
+
+  .arch_instructions{
+    display: none;
+  }
+  .stickynotes{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .stickynotes a{
+    color:#000;
+    background:#ffc;
+    display:block;
+    height:20em;
+    width:20em;
+    padding:1em;
+    box-shadow: 5px 5px 7px rgba(113, 113, 113, 0.7);
+  }
+  .stickynotes li:nth-child(even) a{
+    color: #15b180;
+    transform:rotate(4deg);
+    position:relative;
+    top:5px;
+  }
+  .stickynotes li:nth-child(1) a{
+    color:rgb(232, 127, 145);
+    transform:rotate(-3deg);
+    position:relative;
+    top:-5px;
+  }
+  .stickynotes li:nth-child(3n) a{
+    color:rgb(232, 127, 145);
+    transform:rotate(-5deg);
+    position:relative;
+    top:-10px;
+  }
+  .stickynotes li{
+    margin: 1em;
+  }
+
+  .stickynotes h2{
+    font-family: 'Reenie Beanie', "Lato";
+    text-decoration: underline;
+    font-size: 3rem;
+  }
+
+  .stickynotes p{
+    padding-top: 1rem;
+    font-family: 'Reenie Beanie', "Lato";
+    font-size: 2rem;
+  }
+
+  .stickynotes a:hover, .stickynotes a:focus{
+    box-shadow:10px 10px 7px rgba(113, 113, 113, 0.7);
+    transform: scale(1.75);
+    position:relative;
+    z-index:1;
+  }
 }
 
-@media screen and (max-width: 1300px){
-  .hw_info{
-    margin-left: 15%;
-  }
 
-  .shell_info{
-    margin-left: 15%;
-  }
-  .kernel_info{
-    margin-left: 75%;
-  }
-
-  .applic_info{
-    margin-left: 75%;
-    margin-top: 20%;
-  }
-
+.topic_quiz{
+  padding-top: 4rem;
+  padding-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
 }
 
-.intro_quiz{
-  height: auto;
-  padding-bottom: 3rem;
-}
-
-.intro_quiz_title{
+.topic_quiz_title{
   text-align: center;
-  padding-top: 6rem;
-  padding-bottom: 3rem;
-  font-family: 'Courier New', Courier, monospace;
+  text-decoration: underline;
+  font-size: 40pt;
+  padding-bottom: 6rem;
+  color: rgba(132, 176, 102);
+}
+
+.topic_quiz img{
+  max-width: 20rem;
+  width: 100%;
+  height: auto;
+  background-color: white;
+}
+
+.topic_quiz button{
+  font-size: 25pt;
+  color: black;
+  background: linear-gradient(100deg, #88ff00 0%, #7ac84d 20%, #3acd64 45%, #5eb080 70%, #11ffb3 90%);
+  border: 3px inset rgb(254, 255, 254);
+  max-width: 100%;
+}
+
+.topic_quiz button:hover{
+  cursor: pointer;
+}
+
+@media screen and (max-width: 41rem) {
+
+  .topic_quiz_title{
+      font-size: 30pt;
+
+  }
+
+  .topic_quiz button{
+      font-size: 15pt;
+  }
+
+  .topic_quiz img{
+      width: 15rem;
+  }
 
 }
 

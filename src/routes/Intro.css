@@ -1,17 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap");
 
 .intro {
+  max-width: 65em;
+  margin: auto;
+  text-align: justify;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   /* This will stop page going after footer */
   overflow: hidden;
-  overflow-x: scroll;
-  color: #52a76e;
-}
-
-.intro_nav{
-  z-index: 2;
+  color: white;
 }
 
 .break{
@@ -19,6 +17,7 @@
 }
 
 .intro_title {
+  color: #fffacd;
   text-align: center;
   font-size: 60px;
   padding-top: 4rem;
@@ -39,6 +38,7 @@
 }
 
 .intro_topic1{
+  color: rgba(255, 252, 127, 1);
   font-size: 25pt;
   font-family: 'Courier New', Courier, monospace;
   text-align: center;
@@ -94,6 +94,7 @@
 }
 
 .intro_topic2 {
+  color: rgba(255, 252, 127, 1);
   font-size: 25pt;
   text-align: center;
   font-family: 'Courier New', Courier, monospace;
@@ -189,6 +190,7 @@
 }
 
 .intro_topic3{
+  color: rgba(255, 252, 127, 1);
   font-size: 30pt;
   text-align: center;
   font-family: 'Courier New', Courier, monospace;

@@ -4,8 +4,18 @@
     height: 100vh;
     z-index: 4;
     position: fixed;
+    display: block;
 }
 
 .close {
     background-color: white;
+    width: 2rem;
+    /* float: right; */
 }
+
+.close_icon{
+    font-size: 2rem;
+
+}
+
+.multiple_choice{}

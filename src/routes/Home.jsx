@@ -7,6 +7,7 @@ import file from "../assets/file_card_image.gif"
 import environ from "../assets/environ_card_image.gif"
 import intro from "../assets/intro_card_image.gif"
 import flashcardgif from "../assets/flashcard.gif"
+import PageProgress from '../components/PageProgress'
 
 import "./home.css"
 
@@ -15,11 +16,11 @@ const Home = () => {
 
   return (
     <div className="home">
-      {console.log("width: ",window.screen.availWidth)}
-        {console.log("height: ",window.screen.availHeight)}
         <Nav/>
         <div className="home_body">
             <h1 className="home_title">Unix With Us</h1>
+            <PageProgress outer="bar_wrapper" text="progress_text" inner="bar_innerwrap"/>
+            <h1 className="lessons">The website to teach you Unix</h1>
             <div className='card_wrapper'>
                   <Card img={intro} 
                         title="Unix Introduction"

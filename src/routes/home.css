@@ -1,11 +1,5 @@
 /* Make footer stay at the bottom of the page without being fixed to screen */
 .home{
-  /* display:flex;
-  flex-direction: column;
-  min-height: 100vh;
-  width: 100%;
-  min-width: 600px;   */
-  background-image: url(../assets/home_background.png);
   background-size: cover;
   width: 100%;
   height: 100vh;
@@ -40,6 +34,12 @@
   to{border-right-color: transparent;}
 }
 
+
+.lessons{
+  color: white;
+  text-align: center;
+  font-size: 30pt;
+}
 
 .card_wrapper{
   display: flex;
@@ -79,4 +79,31 @@
   .home_title{
     font-size: 35pt;
   }
+}
+
+.bar_wrapper{
+  height: 2rem;
+  width: 90%;
+  background-color: whitesmoke;
+  border-radius: 2.5rem;
+  margin: 5rem 3rem 3rem 3rem;
+
+}
+
+.bar_innerwrap{
+  height: 100%;
+  background-color: rgb(210, 255, 151);
+  background: linear-gradient(100deg, #88ff00 0%, #7ac84d 20%, #3acd64 45%, #5eb080 70%, #11ffb3 90%);
+  border-radius: 2.5rem;
+  text-align: center;
+  box-shadow:
+      0 0 1px 2px #fff, 
+      0 0 2px 5px rgb(210, 255, 151), 
+      0 0 5px 7px rgb(241, 255, 223); 
+}
+
+.progress_text{
+  color: black;
+  font-weight: bold;
+  line-height: 2rem;
 }

@@ -38,9 +38,7 @@ const FileManagement = () => {
       <div className="module_body">
         <h1 className="module_title">File Management</h1> <br />
         <p className="module_intro">
-          You will look so cool with your friends when you are able to flex
-          around with file-commands in the terminal. YES!! I am not kidding!! In
-          fact, most of the operations are performed on files. After this
+          In Unix OS, most of the operations are performed on files. After this
           ultimate lesson, you will become an expert. Are you ready? Let's go{" "}
           <FaHandPointRight style={{ color: "white" }} />
         </p>
@@ -50,13 +48,13 @@ const FileManagement = () => {
           <h3 className="topic_title">File Types </h3>
           <p>
             In Unix, we will mostly see these 3 basic types of files: <br />
-            <strong> Ordinary Files - </strong> contains data, text, or program
+            <span2> Ordinary Files - </span2> contains data, text, or program
             instructions. <br />
-            <strong> Special Files - </strong> provide access to hardware, or
-            they could be aliases or shortcuts and enable you to access a single
-            file using different names. <br />
-            <strong> Directories - </strong> As you know, directories are
-            folders which stores both ordinary files and special files.
+            <span2> Special Files - </span2> provide access to hardware, or they
+            could be aliases or shortcuts and enable you to access a single file
+            using different names. <br />
+            <span2> Directories - </span2> As you know, directories are folders
+            which stores both ordinary files and special files.
           </p>
         </div>{" "}
         {/*end of file_type*/}
@@ -83,21 +81,23 @@ const FileManagement = () => {
             <p>Let's see some examples: </p>
             <p>
               To delete all the spaces in between the text <br />
-              <span>$echo -e "hello \bworld \b!"</span> &emsp; {`=>`} output:
-              hellworld! <br />
+              <span>$echo -e "hello \bworld \b!"</span> &emsp; {`=>`} output:{" "}
+              <span2>hellworld! </span2> <br />
               To create new line <br />
               <span>$echo -e "\nHello \nWorld \n!"</span> &emsp; {`=>`} output:{" "}
-              <br /> hello
-              <br />
-              world
-              <br />!<br />
+              <span2>
+                <br /> hello
+                <br />
+                world
+                <br />!<br />
+              </span2>
               To have a sound alert return at the end of the string or text{" "}
               <br />
               <span>$echo -e "\aHello World</span> <br />
               Last but not least, to print all files/folders <br />
               <span>$echo * </span> <br />
-              <SiAzuredataexplorer /> !!! And there are so many more escapes
-              options waiting for you to explore!! <SiAzuredataexplorer />
+              And there are so many more escapes options waiting for you to
+              explore!!
             </p>
           </div>
         </div>{" "}
@@ -113,18 +113,18 @@ const FileManagement = () => {
           </p>
 
           <p className="topic_ex">
-            <span>cd [option]</span>
+            <span>ls [option]</span>
           </p>
 
           <table className="fm_table">
             <tbody>
               <tr>
-                <th> Common Flags</th>
-                <th> Description </th>
+                <th>Common Flags</th>
+                <th>Description</th>
               </tr>
 
               <tr>
-                <td> -a </td>
+                <td>-a</td>
                 <td data-label="-a">
                   {" "}
                   -all, list all files in the directory, include hidden files
@@ -322,10 +322,10 @@ const FileManagement = () => {
           </p>{" "}
           <br />
           <p>
-            <strong> What is archive file? </strong> archive file is a file
-            contains one or more than one file along with metadata. The benefit
-            of archive file is that it is easier portability and storage, or
-            simply to compress files to use less storage space.
+            <span2> Archive file</span2> is a file contains one or more than one
+            file along with metadata. The benefit of archive file is that it is
+            easier portability and storage, or simply to compress files to use
+            less storage space.
           </p>
           <p className="topic_ex">
             {" "}

@@ -87,3 +87,10 @@
 .side_titles{
     color: whitesmoke;
 }
+
+@media screen and (max-width:414px) {
+    .side-menu{
+        width: auto
+    }
+    
+}

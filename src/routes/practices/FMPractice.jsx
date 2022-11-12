@@ -31,28 +31,30 @@ const FMPractice = () => {
   const [ans, setAns] = useState("ls");
   const [popup, setPopup] = useState(false);
 
-  const pattern1 = new RegExp(/(ls)/i);
-  const pattern2 = new RegExp(/(ls)\s+(-la)/i);
-  const pattern3 = new RegExp(/(cd)\s+(virtualDesktop)/i);
-  const pattern4 = new RegExp(/(pwd)/i);
-  const pattern5 = new RegExp(/(touch)\s+(filename.txt)/i);
-  const pattern6 = new RegExp(/(echo)\s+('aloha')\s+(>)\s+()filename.txt/i);
-  const pattern7 = new RegExp(/(cat)\s+(filename.txt)/i);
-  const pattern8 = new RegExp(/(cd)\s+(..)\s+(;)\s+(touch)\s+(test.txt)/i);
+  const pattern1 = new RegExp(/^(ls)\s*$/i);
+  const pattern2 = new RegExp(/^(ls)\s+(-la)\s*$/i);
+  const pattern3 = new RegExp(/^(cd)\s+(virtualDesktop)\s*$/i);
+  const pattern4 = new RegExp(/^(pwd)\s*$/i);
+  const pattern5 = new RegExp(/^(touch)\s+(filename.txt)\s*$/i);
+  const pattern6 = new RegExp(
+    /^(echo)\s+('aloha')\s+(>)\s+()filename.txt\s*$/i
+  );
+  const pattern7 = new RegExp(/^(cat)\s+(filename.txt)\s+$/i);
+  const pattern8 = new RegExp(/^(cd)\s+(..)\s+(;)\s+(touch)\s+(test.txt)\s*$/i);
   const pattern9 = new RegExp(
-    /(cp)\s+(test.txt)\s+(virtualDesktop)\s+(;)\s+(ls)\s+(;)\s+(cd)\s+(virtualDesktop)\s+(;)\s+(echo)\s+('this line should be merged')\s+(>)\s+(test.txt)\s(;)\s+(cat)\s+('filename.txt')\s+('test.txt')\s+(>)\s+('merged_fn.txt')/i
+    /^(cp)\s+(test.txt)\s+(virtualDesktop)\s+(;)\s+(ls)\s+(;)\s+(cd)\s+(virtualDesktop)\s+(;)\s+(echo)\s+('this line should be merged')\s+(>)\s+(test.txt)\s(;)\s+(cat)\s+('filename.txt')\s+('test.txt')\s+(>)\s+('merged_fn.txt')\s*$/i
   );
-  const pattern10 = new RegExp(/(cat)\s+(merged_fn)/i);
-  const pattern11 = new RegExp(/(ls)/i);
-  const pattern12 = new RegExp(/(mv)\s+(merged_fn)\s+(..\/)/i);
-  const pattern13 = new RegExp(/(cd)\s+(..)\s+(;)\s+(ls)/i);
-  const pattern14 = new RegExp(/(rm)\s+(virtualDesktop)/i);
-  const pattern15 = new RegExp(/(rm)\s+(-r)\s+(virtualDesktop)/i);
-  const pattern16 = new RegExp(/(ls)/i);
+  const pattern10 = new RegExp(/^(cat)\s+(merged_fn)\s*$/i);
+  const pattern11 = new RegExp(/^(ls)\s*$/i);
+  const pattern12 = new RegExp(/^(mv)\s+(merged_fn)\s+(..\/)\s*$/i);
+  const pattern13 = new RegExp(/^(cd)\s+(..)\s+(;)\s+(ls)\s*$/i);
+  const pattern14 = new RegExp(/^(rm)\s+(virtualDesktop)\s*$/i);
+  const pattern15 = new RegExp(/^(rm)\s+(-r)\s+(virtualDesktop)\s*$/i);
+  const pattern16 = new RegExp(/^(ls)\s*$/i);
   const pattern17 = new RegExp(
-    /(rm)\s+(test.txt)\s+(merged_fn.txt)\s+(;)\s+(ls)/i
+    /^(rm)\s+(test.txt)\s+(merged_fn.txt)\s+(;)\s+(ls)\s*$/i
   );
-  const pattern18 = new RegExp(/(whoami)/i);
+  const pattern18 = new RegExp(/^(whoami)\s*$/i);
 
   let qt = [
     "1. Let's try to see what are files in the current directory ",
@@ -194,6 +196,7 @@ const FMPractice = () => {
       } else if (pattern18.test(text) === true && currQuestion === 18) {
       } else {
         setPopup(true);
+        // alert("Wrong command! Expected to input: " + ans);
       }
 
       setText("");
@@ -233,15 +236,17 @@ const FMPractice = () => {
           <div className="terminal">
             <img src={img}></img>
           </div>
-          <button className="fm_next" onClick={nextQuestion}>
-            Next
-          </button>
-          <button className="fm_restart" onClick={restart}>
-            Restart
-          </button>
-          <Link className="fm_exit" to="/fileManage">
-            Exit
-          </Link>
+          <div className="btn_container">
+            <button className="fm_next" onClick={nextQuestion}>
+              Next
+            </button>
+            <button className="fm_restart" onClick={restart}>
+              Restart
+            </button>
+            <Link className="fm_exit" to="/fileManage">
+              Exit
+            </Link>
+          </div>
         </div>
       </div>
     </>

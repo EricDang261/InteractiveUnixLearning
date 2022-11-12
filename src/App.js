@@ -8,12 +8,15 @@ import {  Login,
           Introduction, 
           FileManagement,  
           Feedback,
-          FMPractice,
           DirectoryManagement,
           Environ,
-          DMPractice,
-          EPractice
         }from "./routes";
+
+import {
+  DMPractice,
+  EPractice,
+  FMPractice
+} from "./routes/practices"
 
 import{ FlashcardComp,
       } from './components'

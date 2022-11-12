@@ -1,20 +1,19 @@
-import React, {useState, createContext} from 'react'
+import React, { useState, createContext } from "react";
 
-const UsernameContext = createContext()
+const UsernameContext = createContext();
 
-function UsernameProvider({children}){
-    const [usrName, setUsrName] = useState("")
+function UsernameProvider({ children }) {
+  const [usrName, setUsrName] = useState("");
 
-    const userNameObj = {
-        usrName,
-        setUsrName
-    }
-    return(
-        <UsernameContext.Provider value={userNameObj}>
-            {children}
-        </UsernameContext.Provider>
-    )
-
+  const userNameObj = {
+    usrName,
+    setUsrName,
+  };
+  return (
+    <UsernameContext.Provider value={userNameObj}>
+      {children}
+    </UsernameContext.Provider>
+  );
 }
 
-export {UsernameContext, UsernameProvider}
+export { UsernameContext, UsernameProvider };

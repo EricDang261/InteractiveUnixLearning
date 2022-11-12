@@ -77,6 +77,13 @@
 
 @media screen and (max-width: 31rem){
   .home_title{
-    font-size: 35pt;
+    font-size: 30px;
+  }
+
+  /* text animation def */
+  @keyframes animated-write {
+    from{width: 0;}
+    to{width: 300px;}
+    
   }
 }

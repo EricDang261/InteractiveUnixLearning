@@ -1,11 +1,29 @@
 .quiz{
     background-color: grey;
-    width: 100%;
+    width: 75%;
     height: 100vh;
     z-index: 4;
     position: fixed;
+    display: block;
 }
 
 .close {
     background-color: white;
+    width: 2rem;
+    /* float: right; */
+}
+
+.close_icon{
+    font-size: 2rem;
+
+}
+
+.multiple_choice{
+    /* width: 80%; */
+}
+
+@media screen and (max-width: 31rem) {
+    .quiz{
+        width: 100%;
+    }
 }

@@ -21,7 +21,6 @@ import {
 import{ FlashcardComp,
       } from './components'
 
-import Logout from "./routes/Logout"
 
 
 function App() {
@@ -31,7 +30,6 @@ function App() {
         <Route path='/' element={<Home/> }> </Route> 
         <Route path='/login' element= { <Login /> } > </Route> 
         <Route path='/signup' element={ <SignUp /> }></Route>
-        <Route path='/logout' element={ <Logout /> }></Route>
         <Route path='/intro' element={<Introduction/>}></Route>
         <Route path="/dirManage" element={<DirectoryManagement/>}></Route>
         <Route path='/fileManage' element={<FileManagement/>}></Route>

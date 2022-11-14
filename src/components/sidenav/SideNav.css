@@ -63,14 +63,14 @@
 .sidebar-toggle{
     width: 100%;
     /* background-color: black; */
-    height: 80px;
+    height: 5rem;
     display: flex;
     justify-content: flex-start;
     align-items: center;
 }
 
 .side_titles{
-    margin-left: 16px;
+    margin-left: 1rem;
 }
 
 .home_link{

@@ -7,8 +7,10 @@ import file from "../assets/file_card_image.gif";
 import environ from "../assets/environ_card_image.gif";
 import intro from "../assets/intro_card_image.gif";
 import flashcardgif from "../assets/flashcard.gif";
+import PageProgress from "../components/PageProgress";
 
 import "./home.css";
+import SemiCircleProgress from "../components/SemiCircleProgress";
 
 const Home = () => {
   return (
@@ -17,6 +19,13 @@ const Home = () => {
         <Nav />
         <div className="home_body">
           <h1 className="home_title">Unix With Us</h1>
+          <div className ="wide_progress">
+            <PageProgress outer="bar_wrapper" text="progress_text" inner="bar_innerwrap"/>
+            </div>  
+            <div className="mobile_progress">
+              <SemiCircleProgress/>
+            </div>
+            <h1 className="home_text">The website to teach you Unix.</h1>
           <div className="card_wrapper">
             <Card
               img={intro}
@@ -51,7 +60,6 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </div>
   );
 };

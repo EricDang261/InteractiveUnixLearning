@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 
 import Progress from "../components/utility/Progress";
 import example from "../assets/fm/example.png";
+import regexExample from "../assets/fm/regexExample.png";
 import practice from "../assets/practice.jpg";
 import quizImg from "../assets/quiz.png";
 
@@ -116,7 +117,7 @@ const FileManagement = () => {
             <span>ls [option]</span>
           </p>
 
-          <table className="fm_table">
+          <table>
             <tbody>
               <tr>
                 <th>Common Flags</th>
@@ -173,7 +174,7 @@ const FileManagement = () => {
             <span>rm [options] files or directory</span>{" "}
           </p>
 
-          <table className="fm_table">
+          <table>
             <tbody>
               <tr>
                 <th> Common Flags</th>
@@ -224,7 +225,7 @@ const FileManagement = () => {
             </span>
           </p>
 
-          <table className="fm_table">
+          <table>
             <tbody>
               <tr>
                 <th> Common Flags</th>
@@ -333,7 +334,7 @@ const FileManagement = () => {
               tar [options] [archive-file] [file or directory to be archived]
             </span>
           </p>
-          <table className="fm_table">
+          <table>
             <tbody>
               <tr>
                 <th> Common Flags</th>
@@ -446,7 +447,7 @@ const FileManagement = () => {
             <span> cat option </span>
           </p>
 
-          <table className="fm_table">
+          <table>
             <tbody>
               <tr>
                 <th> Common Flags</th>
@@ -519,6 +520,172 @@ const FileManagement = () => {
         <br />
         <div className="break">============</div>
         <div className="topic">
+          <div className="cmp_cmd" />
+          <h3 className="topic_title"> cmp command </h3>
+          <p>
+            <span> cmp </span> command in Unix/Linux is used to compare two
+            files (byte by byte). <br />
+            <span>cmp </span> reports the location of the first mismatch to the
+            screen if difference is found.
+          </p>
+
+          <div className="topic_ex">
+            {" "}
+            <span> $cmp file1.txt file2.txt </span>
+          </div>
+        </div>
+        <br />
+        <div className="break">============</div>
+        <div className="topic">
+          <div className="wc_cmd" />
+          <h3 className="topic_title"> wc command </h3>
+          <p>
+            <span>wc</span> (word count) is used to display the number of lines,
+            word, and bytes in a file
+          </p>
+
+          <div className="topic_ex">
+            {" "}
+            <span> $wc [option] file </span>
+          </div>
+          <table>
+            <tbody>
+              <tr>
+                <th>Common Flags</th>
+                <th>Description</th>
+              </tr>
+
+              <tr>
+                <td>-c</td>
+                <td data-label="-c"> shows bytes</td>
+              </tr>
+
+              <tr>
+                <td> -l </td>
+                <td data-label="-l"> shows rows</td>
+              </tr>
+
+              <tr>
+                <td> -m </td>
+                <td data-label="-m">
+                  {" "}
+                  The number of characters counted. This flag cannot be used
+                  with the -c flag.
+                </td>
+              </tr>
+              <tr>
+                <td> -w </td>
+                <td data-label="-w">
+                  {" "}
+                  shows word. A word is defined as a string separated by blanks,
+                  tabs or newline characters.
+                </td>
+              </tr>
+              <tr>
+                <td> -L </td>
+                <td data-label="-L"> shows the longest line in a file</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <br />
+        <div className="break">============</div>
+        <div className="topic">
+          <div className="grep_cmd" />
+          <h3 className="topic_title"> grep command</h3>
+          <p>
+            <span>grep </span> command is a very powerful command for finding
+            matching text in a file, accepting{" "}
+            <span2>regular expressions</span2> and <span2>wildcards</span2>.{" "}
+            <br />
+            <span>grep </span> return one of the status values: <br />
+            <span2>{"-> "}0</span2> if the template search succeeded. <br />
+            <span2>{"-> "}1</span2> if the search was unsuccessful.
+            <br />
+            <span2>{"-> "}2</span2> if the searched file did not exist. <br />
+            Therefore grep can be used for shell scripts and automated text
+            processing.
+          </p>
+          <p className="topic_ex">
+            <span> $grep [options] pattern [file]</span>
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <th>Common Flags</th>
+                <th>Description</th>
+              </tr>
+
+              <tr>
+                <td>-c</td>
+                <td data-label="-c">
+                  {" "}
+                  -count, count the occurences of the search string found
+                </td>
+              </tr>
+
+              <tr>
+                <td> -i </td>
+                <td data-label="-i">--ignore, ignore case differences</td>
+              </tr>
+
+              <tr>
+                <td> -n </td>
+                <td data-label="-n">--number, output line number</td>
+              </tr>
+              <tr>
+                <td> -v </td>
+                <td data-label="-v">print lines, expcept matching lines</td>
+              </tr>
+              <tr>
+                <td> -r </td>
+                <td data-label="-r">--recursive, recursive search</td>
+              </tr>
+              <tr>
+                <td> --color=auto </td>
+                <td data-label="--color=auto">
+                  Add a color display to the found keyword
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>{" "}
+        {/*end of grep_cmd*/}
+        <br />
+        <div className="break">============</div>
+        <div className="topic">
+          <div className="regex_cmd" />
+          <h3 className="topic_title"> Regular Expression</h3>
+          <p>
+            <span>Regex </span> or <span>regular expression</span> is a sympolic
+            representation that is used to identify text pattern. <br />
+            Regular expression metacharacters (character that has special
+            meaning to the os) consist of the following characters:
+          </p>
+          <p className="topic_ex">
+            <span> ^ $ . [ ] {} - ? * + ( ) | \</span>
+          </p>
+          <p>
+            <span>Regex</span> is usually used with grep as a pattern parameter
+            to match a specific text in a file
+          </p>
+          <p>Basic rules for Regex: </p>
+          <img
+            src={regexExample}
+            alt="regex example"
+            width={700}
+            height={500}
+          ></img>
+          <br />{" "}
+          <h4>
+            Source:
+            <a href="https://labex.io/"> LabEx</a>
+          </h4>
+        </div>{" "}
+        {/*end of regex_cmd*/}
+        <br />
+        <div className="break">============</div>
+        <div className="topic">
           <div className="file_security_intro" />
           <h3 className="topic_title"> File Security Intro</h3>
           <p>
@@ -531,7 +698,7 @@ const FileManagement = () => {
             <br />
             <img src={example} alt="ls-l example" height="300"></img>
             <h4>
-              source:
+              Source:
               <a href="https://linuxsurvival.com/linux-file-security-permissions-part-2/">
                 {" "}
                 Linux survival

@@ -122,7 +122,23 @@
             "id" : 22,
             "question": "more",
             "ans": "display content, one screen at the time"
+        },
+        {
+            "id" : 22,
+            "question": "cmp",
+            "ans": "to compare two text files"
+        },
+        {
+            "id" : 23,
+            "question": "what is wc?",
+            "ans": "to print out the number of characters, bytes, rows, or lines in a file"
+        },
+        {
+            "id" : 24,
+            "question": "what is grep?",
+            "ans": "to find a matching text in a file (usually is used with regex pattern or wildcards)"
         }
+        
     ],
 
     "Environment":[
@@ -254,6 +270,21 @@
             "id" : 45,
             "question": "env",
             "ans": "displays all of the environment variables"
+        },
+        {
+            "id" : 54,
+            "question": "clear",
+            "ans": "clear all text within the terminal"
+        },
+        {
+            "id" : 55,
+            "question": "code .",
+            "ans": "open the VSCode editor from within the terminal"
+        },
+        {
+            "id" : 56,
+            "question": "curl",
+            "ans": "transfers data to/from a server using a sepcified URL"
         }
 
         

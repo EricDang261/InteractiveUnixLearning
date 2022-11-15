@@ -45,6 +45,26 @@ export const fmData = [
     className: "side-text",
   },
   {
+    title: "cmp command",
+    path: "cmp_cmd",
+    className: "side-text",
+  },
+  {
+    title: "wc command",
+    path: "wc_cmd",
+    className: "side-text",
+  },
+  {
+    title: "grep command",
+    path: "grep_cmd",
+    className: "side-text",
+  },
+  {
+    title: "Regex",
+    path: "regex_cmd",
+    className: "side-text",
+  },
+  {
     title: "file security intro ",
     path: "file_security_intro",
     className: "side-text",

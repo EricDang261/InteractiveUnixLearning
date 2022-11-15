@@ -81,13 +81,13 @@ td, th{
     border-style: dotted solid double dashed;
     border: 1px solid #52a76e;
     padding: 0.3em;
-    overflow-x:auto;
+    overflow-x: auto;
     padding-left: .2rem;
 }
 
  tr{
     width:0.1%;
-    white-space: nowrap;
+    /* white-space: nowrap; */
  }
 
 

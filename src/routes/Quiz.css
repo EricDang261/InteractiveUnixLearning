@@ -18,12 +18,10 @@
 
 }
 
-.multiple_choice{
-    /* width: 80%; */
-}
 
 @media screen and (max-width: 31rem) {
     .quiz{
         width: 100%;
+        overflow-y:scroll;
     }
 }

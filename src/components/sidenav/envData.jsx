@@ -50,6 +50,11 @@ export const envData = [
         className: "side-text"
     },
     {
+        title: "What is pgrep?",
+        path: "env_pgrep",
+        className: "side-text"
+    },
+    {
         title: "What is ctrl?",
         path: "env_ctrl",
         className: "side-text"

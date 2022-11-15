@@ -61,33 +61,33 @@
     border: 2px solid;
     width: 50px;
     font-size: 13pt;
-    margin-top: 1em;
+    /* margin-top: 1em; */
 }
 
-/* .dm_prev{
+.dm_prev{
     color:rgba(124, 255, 124);
     border: 2px solid;
     width: 50px;
     font-size: 13pt;
-} */
+}
 
 .dm_restart{
     color:rgba(124, 255, 124);
     border: 2px solid;
     margin-left: 10px;
     font-size: 13pt;
-    margin-top: 1em;
+    /* margin-top: 1em; */
 }
 
 .dm_exit{
     position: relative;
     border: 2px solid;
-    margin-left: 25rem;
+    margin-left: 24rem;
     padding-left: 2px;
     padding-right: 2px;
     color:rgba(124, 255, 124);
     font-size: 13pt;
-    margin-top: 1em;
+    /* margin-top: 1em; */
 }
 .wrong_ans{
     background-color: white;
@@ -124,23 +124,10 @@
     .question_text{
         margin-bottom: 1em;
     }
-    
-    .dm_restart{
-        width: 5rem;
-    }
-    
-    .dm_next{
-        margin-left: 1em;
-    }
-
-    .dm_restart{
-        margin: 0;
-        margin-left: 1em;
-    }
 
     .dm_exit{
         margin: 0;
-        margin-left: 1em;
-        margin-top: 20rem;
+        margin-left: 15em;
+        /* margin-top: 20rem; */
     }
 }

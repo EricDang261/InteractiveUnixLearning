@@ -4,7 +4,10 @@ import "react-circular-progressbar/dist/styles.css"
 
 
 const SemiCircleProgress = () => {
-    const completion = JSON.parse(localStorage.getItem("completion"));
+    let completion = JSON.parse(localStorage.getItem("completion"));
+    if (!completion){
+      completion = 0;
+    }
 
     // Function for calc color change
     const calcColor=(percent, start, end) =>{

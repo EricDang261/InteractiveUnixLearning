@@ -40,26 +40,27 @@ const DMPractice = () => {
   }
 
   function prevQuestion() {
-    if (currQuestion - 1 >= 1) {
+    if (currQuestion - 1 > 0) {
+      setCurrQuestion(currQuestion - 1);
+      // need this variable becasue currQ dosen;y fully update until function is over
+      let prevQ = currQuestion - 1;
       setImg(terminal);
       setPopup(false);
-
-      if (currQuestion === 1) {
+      if (prevQ === 1) {
         setAns("pwd");
       }
-      if (currQuestion === 2) {
+      if (prevQ === 2) {
         setAns("cd dir2");
       }
-      if (currQuestion === 3) {
+      if (prevQ === 3) {
         setAns("mkdir cat");
       }
-      if (currQuestion === 4) {
+      if (prevQ === 4) {
         setAns("rmdir cat");
       }
-      if (currQuestion === 5) {
+      if (prevQ === 5) {
         setAns("du -sh dir1");
       }
-      setCurrQuestion(currQuestion - 1);
     }
   }
   function nextQuestion() {
@@ -146,7 +147,7 @@ const DMPractice = () => {
             <img src={img}></img>
           </div>
           <div className="btn_container">
-            {/* <button className="dm_prev" onClick={prevQuestion}>Prev</button> */}
+            <button className="dm_prev" onClick={prevQuestion}>Prev</button>
             <button className="dm_next" onClick={nextQuestion}>
               Next
             </button>

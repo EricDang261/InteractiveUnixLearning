@@ -74,8 +74,63 @@ const EPractice = () => {
     setPopup(false);
   }
 
+  function prevQuestion() {
+    if (currQuestion - 1 > 0) {
+      setCurrQuestion(currQuestion - 1);
+      // need this variable becasue currQ dosen;y fully update until function is over
+      let prevQ = currQuestion - 1;
+      setImg(initial);
+      setPopup(false);
+      if (prevQ === 1) {
+        setAns("man ls");
+      }
+      if (prevQ === 2) {
+        setAns("uname");
+      }
+      if (prevQ === 3) {
+        setAns("whoami");
+      }
+      if (prevQ === 4) {
+        setAns("who");
+      }
+      if (prevQ === 5) {
+        setAns("env");
+      }
+      if (prevQ === 6) {
+        setAns("whereis ls");
+      }
+      if (prevQ === 7) {
+        setAns("whatis ls");
+      }
+      if (prevQ === 8) {
+        setAns("ps aux");
+      }
+      if (prevQ === 9) {
+        setAns("ps -fu UserName");
+      }
+      if (prevQ === 10) {
+        setAns("ping google.com");
+      }
+      if (prevQ === 11) {
+        setAns("ctrl-c");
+      }
+      if (prevQ === 12) {
+        setAns("ctrl-z");
+      }
+      if (prevQ === 13) {
+        setAns("top");
+      }
+      if (prevQ === 14) {
+        setAns("ifconfig -a");
+      }
+      if (prevQ === 15) {
+        setAns("pgrep firefox");
+      }
+    }
+  }
+
   function nextQuestion() {
-    if (currQuestion + 1 <= 20) {
+    if (currQuestion + 1 <= 16) {
       setImg(initial);
       setPopup(false);
       if (currQuestion === 1) {
@@ -213,6 +268,7 @@ const EPractice = () => {
           <div className="terminal">
             <img src={img}></img>
           </div>
+          <button className="dm_prev" onClick={prevQuestion}>Prev</button>
           <button className="fm_next" onClick={nextQuestion}>
             Next
           </button>

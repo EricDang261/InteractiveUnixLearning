@@ -3,5 +3,6 @@
 }
 .popup_text{
     font-size: 11pt;
-    color: black
+    color: black;
+    padding: 5px;
 }

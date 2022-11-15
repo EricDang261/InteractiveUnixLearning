@@ -84,8 +84,71 @@ const FMPractice = () => {
     setPopup(false);
   }
 
+  function prevQuestion() {
+    if (currQuestion - 1 > 0) {
+      setCurrQuestion(currQuestion - 1);
+      // need this variable becasue currQ dosen;y fully update until function is over
+      let prevQ = currQuestion - 1;
+      setImg(initial);
+      setPopup(false);
+      if (prevQ === 1) {
+        setAns("ls");
+      }
+      if (prevQ === 2) {
+        setAns("ls -la");
+      }
+      if (prevQ === 3) {
+        setAns("cd virtualDesktop");
+      }
+      if (prevQ === 4) {
+        setAns("pwd");
+      }
+      if (prevQ === 5) {
+        setAns("touch filename.txt");
+      }
+      if (prevQ === 6) {
+        setAns("echo 'aloha' >filename.txt");
+      }
+      if (prevQ === 7) {
+        setAns("cat filename.txt");
+      }
+      if (prevQ === 8) {
+        setAns("cd ..; touch test.txt");
+      }
+      if (prevQ === 9) {
+        setAns(
+          "cp test.txt virtualDesktop; ls; cd virtualDeskop; echo 'this line should be merged' > test.txt; cat 'filename.txt' 'test.txt' > 'merged_fn.txt'  "
+        );
+      }
+      if (prevQ === 10) {
+        setAns("cat merged_fn");
+      }
+      if (prevQ === 11) {
+        setAns("ls");
+      }
+      if (prevQ === 12) {
+        setAns("mv merged_fn ../");
+      }
+      if (prevQ === 13) {
+        setAns("cd ..; ls");
+      }
+      if (prevQ === 14) {
+        setAns("rm virtualDesktop");
+      }
+      if (prevQ === 15) {
+        setAns("rm -r virtualDesktop");
+      }
+      if (prevQ === 16) {
+        setAns("ls");
+      }
+      if (prevQ === 17) {
+        setAns("rm test.txt merged_fn.txt; ls");
+      }
+    }
+  }
+
   function nextQuestion() {
-    if (currQuestion + 1 <= 20) {
+    if (currQuestion + 1 <= 17) {
       setImg(initial);
       setPopup(false);
 
@@ -139,9 +202,9 @@ const FMPractice = () => {
       if (currQuestion === 16) {
         setAns("rm test.txt merged_fn.txt; ls");
       }
-      if (currQuestion === 17) {
-        setAns("whoami");
-      }
+      // if (currQuestion === 17) {
+      //   setAns("whoami");
+      // }
       setCurrQuestion(currQuestion + 1);
     }
   }
@@ -157,7 +220,6 @@ const FMPractice = () => {
 
   const handleEnter = (e) => {
     if (e.key === "Enter") {
-      var lower = text.toLowerCase();
 
       if (pattern1.test(text) === true && currQuestion === 1) {
         setImg(ls);
@@ -209,7 +271,7 @@ const FMPractice = () => {
 
       <div className="FMPractice">
         <div className="grid_left">
-          <h5 className="question_number">Question {currQuestion} out of 18</h5>
+          <h5 className="question_number">Question {currQuestion} out of 17</h5>
           <div className="question_text">{qt[currQuestion - 1]}</div>
         </div>
         <div
@@ -237,6 +299,7 @@ const FMPractice = () => {
             <img src={img}></img>
           </div>
           <div className="btn_container">
+            <button className="dm_prev" onClick={prevQuestion}>Prev</button>
             <button className="fm_next" onClick={nextQuestion}>
               Next
             </button>

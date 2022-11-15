@@ -106,6 +106,7 @@ const Introduction = () => {
         </div>
         <div className="break">============</div>
         <h3 className="intro_topic2">Why Use Unix? </h3>
+        <p className="topic2_instruct">Hover over the pictures to see the reasons.</p>
         <div className="uses">
           <div className="mod_wrapper">
             <img

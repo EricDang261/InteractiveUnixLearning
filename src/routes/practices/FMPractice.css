@@ -51,6 +51,7 @@
     border: 2px solid;
     /* margin-left: 33rem;
     padding-left: 2px; */
+    margin-left: 28em;
     padding-right: 2px;
     color:rgba(124, 255, 124);
     font-size: 13pt;
@@ -98,6 +99,6 @@
 
     .fm_exit{
         margin: 0;
-        margin-left: 25em;
+        margin-left: 23em;
     }
 }

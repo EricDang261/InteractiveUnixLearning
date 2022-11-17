@@ -90,8 +90,8 @@
 }
 
 .form-container form .form-inner input[type="submit"], 
-.form-container .form-inner button,
-.welcome button{
+.form-container .form-inner button
+{
     display: inline-block;
     padding: 10px 15px;
     border-radius: 8px;
@@ -105,8 +105,8 @@
 }
 
 .form-container form .form-inner input[type="submit"]:hover, 
-.form-container .form-inner button:hover,
-.welcome button:hover{
+.form-container .form-inner button:hover
+{
     background-position: 100% 0%;
 }
 
@@ -136,3 +136,13 @@ textarea{
 .home_link:hover{
     cursor: pointer;
 }
+
+.fb-button{
+    margin-top: 2rem;
+}
+
+.fb-button:active {
+    background-color: red;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }

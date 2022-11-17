@@ -1,12 +1,13 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 
-import { ReactComponent as MessengerIcon } from "../../icons/messenger.svg";
+import { ReactComponent as FeedbackIcon } from "../../icons/feedback.svg";
 import { ReactComponent as CaretIcon } from "../../icons/caret.svg";
 import { ReactComponent as Signout } from "../../icons/signout.svg";
 import WebsiteLogo from "../../assets/websitelogo.png";
 
 import { UsernameContext } from "../context/UsernameContext";
+import { FaHome } from "react-icons/fa";
 
 import "./Nav.css";
 
@@ -42,9 +43,11 @@ export default function Nav() {
         <img className="logo" src={WebsiteLogo} alt="website logo" />
       </Link>
       <ul className="navbar-list">
-        <li>
-          <Link to="/">Home</Link>
-        </li>
+        {/* <li>
+          <Link to="/">
+            <FaHome />
+          </Link>
+        </li> */}
         <li>
           {checkLogin ? (
             <Link to="/"> {helloUserName} </Link>
@@ -93,7 +96,7 @@ export function DropDownMenu(props) {
   }
   return (
     <div className="dropdown">
-      <DropDownItem leftIcon={<MessengerIcon />}>
+      <DropDownItem leftIcon={<FeedbackIcon />}>
         {" "}
         <Link to="/feedback">Feedback</Link>
       </DropDownItem>

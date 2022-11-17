@@ -51,7 +51,11 @@ const DirectoryManagement = () => {
             directory tree. All leaves(end nodes) and branches(middle nodes)
             stem from a singlular root.
           </p>
-          <img className="dirM_heirarchy" src={tree} alt="directory tree" />
+          <div className="heirarchy_wrapper">
+            {" "}
+            <img className="dirM_heirarchy" src={tree} alt="directory tree" />
+          </div>
+
           <p className="tree_img_resource">
             https://www.linuxyogi.com/linux-directory-structure-file-system-hierarchy/
           </p>

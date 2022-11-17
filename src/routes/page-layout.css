@@ -186,6 +186,13 @@ td, th{
     padding-bottom: 2rem;
 }
 
+.heirarchy_wrapper{
+    display:flex;
+    justify-content: center;
+    width: 40rem;
+   background-color: rgba(245, 245, 245, 0.629);
+}
+
 .dirM_heirarchy{
     padding-top: 3rem;
     max-width: 100%;

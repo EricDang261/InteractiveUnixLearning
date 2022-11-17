@@ -5,6 +5,7 @@
     z-index: 4;
     position: fixed;
     display: block;
+    overflow-y:auto;
 }
 
 .close {

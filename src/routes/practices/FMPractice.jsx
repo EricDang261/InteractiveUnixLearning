@@ -23,6 +23,8 @@ import ls_after_merge from "../../assets/fm/ls_after_merge.png";
 import echo from "../../assets/fm/echo.png";
 import cdandtouch from "../../assets/fm/cdandtouch.png";
 import catseethecontent from "../../assets/fm/catSeeTheContent.png";
+import {HiOutlineLightBulb} from "react-icons/hi"
+
 
 const FMPractice = () => {
   const [text, setText] = useState("");
@@ -30,6 +32,7 @@ const FMPractice = () => {
   const [currQuestion, setCurrQuestion] = useState(1);
   const [ans, setAns] = useState("ls");
   const [popup, setPopup] = useState(false);
+  const [isDisabled, setIsDisabled] = useState(false);
 
   const pattern1 = new RegExp(/^(ls)\s*$/i);
   const pattern2 = new RegExp(/^(ls)\s+(-la)\s*$/i);
@@ -86,11 +89,13 @@ const FMPractice = () => {
 
   function prevQuestion() {
     if (currQuestion - 1 > 0) {
+      setText("");
       setCurrQuestion(currQuestion - 1);
       // need this variable becasue currQ dosen;y fully update until function is over
       let prevQ = currQuestion - 1;
       setImg(initial);
       setPopup(false);
+      setIsDisabled(false);
       if (prevQ === 1) {
         setAns("ls");
       }
@@ -151,7 +156,8 @@ const FMPractice = () => {
     if (currQuestion + 1 <= 17) {
       setImg(initial);
       setPopup(false);
-
+      setText("");
+      setIsDisabled(false);
       if (currQuestion === 1) {
         setAns("ls -la");
       }
@@ -223,42 +229,55 @@ const FMPractice = () => {
 
       if (pattern1.test(text) === true && currQuestion === 1) {
         setImg(ls);
+        setIsDisabled(true);
       } else if (pattern2.test(text) === true && currQuestion === 2) {
         setImg(lswithla);
+        setIsDisabled(true);
       } else if (pattern3.test(text) === true && currQuestion === 3) {
         setImg(cdvirtualdesktop);
+        setIsDisabled(true);
       } else if (pattern4.test(text) === true && currQuestion === 4) {
         setImg(pwd);
+        setIsDisabled(true);
       } else if (pattern5.test(text) === true && currQuestion === 5) {
         setImg(touch);
+        setIsDisabled(true);
       } else if (pattern6.test(text) === true && currQuestion === 6) {
         setImg(echo);
+        setIsDisabled(true);
       } else if (pattern7.test(text) === true && currQuestion === 7) {
         setImg(appendcontentwithecho);
+        setIsDisabled(true);
       } else if (pattern8.test(text) === true && currQuestion === 8) {
         setImg(cdandtouch);
+        setIsDisabled(true);
       } else if (pattern9.test(text) === true && currQuestion === 9) {
         setImg(catmerge);
+        setIsDisabled(true);
       } else if (pattern10.test(text) === true && currQuestion === 10) {
         setImg(catseethecontent);
+        setIsDisabled(true);
       } else if (pattern11.test(text) === true && currQuestion === 11) {
         setImg(ls_after_merge);
+        setIsDisabled(true);
       } else if (pattern12.test(text) === true && currQuestion === 12) {
         setImg(mv);
+        setIsDisabled(true);
       } else if (pattern13.test(text) === true && currQuestion === 13) {
         setImg(cdparentandls);
+        setIsDisabled(true);
       } else if (pattern14.test(text) === true && currQuestion === 14) {
         setImg(rmfail);
+        setIsDisabled(true);
       } else if (pattern15.test(text) === true && currQuestion === 15) {
         setImg(rmwithr);
+        setIsDisabled(true);
       } else if (pattern16.test(text) === true && currQuestion === 16) {
         setImg(lsafterrm);
+        setIsDisabled(true);
       } else if (pattern17.test(text) === true && currQuestion === 17) {
         setImg(rmandls);
-      } else if (pattern18.test(text) === true && currQuestion === 18) {
-      } else {
-        setPopup(true);
-        // alert("Wrong command! Expected to input: " + ans);
+        setIsDisabled(true);
       }
 
       setText("");
@@ -273,6 +292,14 @@ const FMPractice = () => {
         <div className="grid_left">
           <h5 className="question_number">Question {currQuestion} out of 17</h5>
           <div className="question_text">{qt[currQuestion - 1]}</div>
+          <p>Click the terminal to enter your answer!</p>
+          <button className="hint_btn" onClick={()=>{setPopup(true)}}>Hint: <HiOutlineLightBulb size={25}/></button>
+          <Popup
+            className="wrong_ans"
+            trigger={popup}
+            setTrigger={setPopup}
+            text={`Wrong command! Expected to input: ${ans}`}
+          />
         </div>
         <div
           className="grid_right"
@@ -294,13 +321,14 @@ const FMPractice = () => {
             value={text}
             onChange={handleChange}
             onKeyDown={handleEnter}
+            disabled={isDisabled}
           />
           <div className="terminal">
             <img src={img}></img>
           </div>
           <div className="btn_container">
-            <button className="dm_prev" onClick={prevQuestion}>Prev</button>
-            <button className="fm_next" onClick={nextQuestion}>
+            <button className="dm_prev" onClick={prevQuestion} style={{color: currQuestion === 1 ? "grey" : "rgba(124, 255, 124)"}}>Prev</button>
+            <button className="fm_next" onClick={nextQuestion} style={{color: currQuestion === 17 ? "grey" : "rgba(124, 255, 124)"}}>
               Next
             </button>
             <button className="fm_restart" onClick={restart}>

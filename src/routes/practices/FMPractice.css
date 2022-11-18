@@ -68,6 +68,21 @@
     padding-right: 1rem;
 }
 
+.grid_left p{
+    margin-top: 3rem;
+    color:rgba(124, 255, 124);
+}
+
+.hint_btn{
+    color: white;
+    font-size: 13pt;
+    margin-top: 1rem;
+}
+
+.hint_btn:hover{
+    cursor: pointer;
+}
+
 @media screen and (max-width: 85rem){
     .FMPractice{
         display: flex;

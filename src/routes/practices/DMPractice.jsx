@@ -10,6 +10,7 @@ import cdCmd from "../../assets/dm/cd_cmd.png";
 import rmdirCmd from "../../assets/dm/rmdir_cmd.png";
 import duCmd from "../../assets/dm/du_cmd.png";
 import Popup from "../../components/utility/Popup";
+import { HiOutlineLightBulb } from "react-icons/hi"
 
 const DMPractice = () => {
   const [text, setText] = useState("");
@@ -17,6 +18,8 @@ const DMPractice = () => {
   const [currQuestion, setCurrQuestion] = useState(1);
   const [ans, setAns] = useState("pwd");
   const [popup, setPopup] = useState(false);
+  const [isDisabled, setIsDisabled] = useState(false);
+  
   let qt = [
     "1. Try seeing the current directory you are in ",
     "2. Okay, now try to navigate to the directory dir2",
@@ -41,11 +44,13 @@ const DMPractice = () => {
 
   function prevQuestion() {
     if (currQuestion - 1 > 0) {
+      setText("");
       setCurrQuestion(currQuestion - 1);
       // need this variable becasue currQ dosen;y fully update until function is over
       let prevQ = currQuestion - 1;
       setImg(terminal);
       setPopup(false);
+      setIsDisabled(false);
       if (prevQ === 1) {
         setAns("pwd");
       }
@@ -67,6 +72,8 @@ const DMPractice = () => {
     if (currQuestion + 1 <= 5) {
       setImg(terminal);
       setPopup(false);
+      setIsDisabled(false);
+      setText("");
 
       if (currQuestion === 1) {
         setAns("cd dir2");
@@ -100,18 +107,20 @@ const DMPractice = () => {
     if (e.key === "Enter") {
       if (pattern1.test(text) === true && currQuestion === 1) {
         setImg(pwdCmd);
+        setIsDisabled(true);
       } else if (pattern2.test(text) === true && currQuestion === 2) {
         setImg(cdCmd);
+        setIsDisabled(true);
       } else if (pattern3.test(text) === true && currQuestion === 3) {
         setImg(mkdirCmd);
+        setIsDisabled(true);
       } else if (pattern4.test(text) === true && currQuestion === 4) {
         setImg(rmdirCmd);
+        setIsDisabled(true);
       } else if (pattern5.test(text) === true && currQuestion === 5) {
         setImg(duCmd);
-      } else {
-        setPopup(true);
+        setIsDisabled(true);
       }
-
       setText("");
     }
   };
@@ -122,6 +131,14 @@ const DMPractice = () => {
         <div className="grid_left">
           <h5 className="question_number">Question {currQuestion} out of 5</h5>
           <div className="question_text">{qt[currQuestion - 1]}</div>
+          <p>Click the terminal to enter your answer!</p>
+          <button className="hint_btn" onClick={() => { setPopup(true) }}>Hint: <HiOutlineLightBulb size={25} /></button>
+          <Popup
+            className="wrong_ans"
+            trigger={popup}
+            setTrigger={setPopup}
+            text={`Wrong command! Expected to input: ${ans}`}
+          />
         </div>
         <div
           className="grid_right"
@@ -129,26 +146,21 @@ const DMPractice = () => {
             textRef.current.focus();
           }}
         >
-          <Popup
-            className="wrong_ans"
-            trigger={popup}
-            setTrigger={setPopup}
-            text={`Wrong command! Expected to input: ${ans}`}
-          />
-          <input
-            className="terminal_input_cmd"
-            type="text"
-            ref={textRef}
-            value={text}
-            onChange={handleChange}
-            onKeyDown={handleEnter}
-          />
+            <input
+              className="terminal_input_cmd"
+              type="text"
+              ref={textRef}
+              value={text}
+              onChange={handleChange}
+              onKeyDown={handleEnter}
+              disabled={isDisabled}
+            />
           <div className="terminal">
             <img src={img}></img>
           </div>
           <div className="btn_container">
-            <button className="dm_prev" onClick={prevQuestion}>Prev</button>
-            <button className="dm_next" onClick={nextQuestion}>
+            <button className="dm_prev" onClick={prevQuestion} style={{color: currQuestion === 1 ? "grey" : "rgba(124, 255, 124)"}}>Prev</button>
+            <button className="dm_next" onClick={nextQuestion} style={{color: currQuestion === 5 ? "grey" : "rgba(124, 255, 124)"}}>
               Next
             </button>
             <button className="dm_restart" onClick={restart}>

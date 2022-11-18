@@ -8,6 +8,7 @@ const MultipleChoice = ({d}) => {
     const [score, setScore] = useState(0)
     const [currQuestion, setQuestion] = useState(0)
     const [incorrectAns, setIncorrect] = useState([])
+    const [correctAns, setCorrect] = useState([])
 
     //helper functions
     const restartMC = ()=>{
@@ -25,6 +26,12 @@ const MultipleChoice = ({d}) => {
         }
     }
 
+    function updateCorrect(newItem){
+        var temp = correctAns
+        temp.push(newItem)
+        return setCorrect(temp)
+    }
+
     function updateIncorrect(newItem){
         var temp = incorrectAns
         temp.push(newItem)
@@ -35,6 +42,10 @@ const MultipleChoice = ({d}) => {
     const optionClicked = (isCorrect) =>{
         if(isCorrect){
             setScore(score + 1)
+            var temp = new Array()
+            temp.push(d[0][currQuestion].text)
+            temp.push(getAnswer())
+            updateCorrect(temp)
         }
         else{
             var temp = new Array()
@@ -60,17 +71,27 @@ const MultipleChoice = ({d}) => {
                 <div className="mc_results">
                     <h1 className="mc_results_header">Final Results</h1>
                     <h3 className="mc_score">{score} out of {d[0].length} correct - ({(score/d[0].length)*100}%)</h3>
-                    <h2 className="mc_incorrect_title">Correct Answers</h2>
-                    <p>Number of incorrect answers: {incorrectAns.length}</p>
+                    <p className="incorrect_num">Number of incorrect answers: {incorrectAns.length}</p>
                     <ul className = "mc_incorrect_list">
                     {
                         incorrectAns.map((question) =>{
                             {console.log("WHY:",question)}
                             return(
-                                <li>Question: {question[0]} <br/> Answer: {question[1]}</li>
+                                <li><span>Question:</span> {question[0]} <br/> <span>Answer:</span> {question[1]}</li>
                             )
                         })
                     }
+                    </ul>
+                    <p className="correct_num">Number of correct answers: {correctAns.length}</p>
+                    <ul className="mc_correct_list">
+                        {
+                            correctAns.map((question)=>{
+                                return(
+                                    <li><span>Question:</span> {question[0]} <br/> <span>Answer:</span> {question[1]}</li>
+                                )
+                            })
+                        }
+
                     </ul>
                     <button className="mc_restart" onClick={()=>restartMC()}>Restart</button>
 

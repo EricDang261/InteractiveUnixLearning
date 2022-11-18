@@ -22,6 +22,7 @@ import whatis from "../../assets/environment/whatis.png";
 import whereis from "../../assets/environment/whereis.png";
 import who from "../../assets/environment/who.png";
 import whoami from "../../assets/environment/whoami.png";
+import {HiOutlineLightBulb} from "react-icons/hi"
 
 const EPractice = () => {
   const [text, setText] = useState("");
@@ -29,6 +30,7 @@ const EPractice = () => {
   const [currQuestion, setCurrQuestion] = useState(1);
   const [ans, setAns] = useState("ls");
   const [popup, setPopup] = useState(false);
+  const [isDisabled, setIsDisabled] = useState(false);
 
   const pattern1 = new RegExp(/^(man)\s+(ls)\s*$/i);
   const pattern2 = new RegExp(/^(uname)\s*$/i);
@@ -76,11 +78,13 @@ const EPractice = () => {
 
   function prevQuestion() {
     if (currQuestion - 1 > 0) {
+      setText("");
       setCurrQuestion(currQuestion - 1);
       // need this variable becasue currQ dosen;y fully update until function is over
       let prevQ = currQuestion - 1;
       setImg(initial);
       setPopup(false);
+      setIsDisabled(false);
       if (prevQ === 1) {
         setAns("man ls");
       }
@@ -133,6 +137,8 @@ const EPractice = () => {
     if (currQuestion + 1 <= 16) {
       setImg(initial);
       setPopup(false);
+      setText("");
+      setIsDisabled(false);
       if (currQuestion === 1) {
         setAns("uname");
       }
@@ -199,40 +205,53 @@ const EPractice = () => {
     if (e.key === "Enter") {
       if (pattern1.test(text) === true && currQuestion === 1) {
         setImg(man);
+        setIsDisabled(true);
       } else if (pattern2.test(text) === true && currQuestion === 2) {
         setImg(uname);
+        setIsDisabled(true);
       } else if (pattern3.test(text) === true && currQuestion === 3) {
         setImg(whoami);
+        setIsDisabled(true);
       } else if (pattern4.test(text) === true && currQuestion === 4) {
         setImg(who);
+        setIsDisabled(true);
       } else if (pattern5.test(text) === true && currQuestion === 5) {
         setImg(env);
+        setIsDisabled(true);
       } else if (pattern6.test(text) === true && currQuestion === 6) {
         setImg(whereis);
+        setIsDisabled(true);
       } else if (pattern7.test(text) === true && currQuestion === 7) {
         setImg(whatis);
+        setIsDisabled(true);
       } else if (pattern8.test(text) === true && currQuestion === 8) {
         setImg(psaux);
+        setIsDisabled(true);
       } else if (pattern9.test(text) === true && currQuestion === 9) {
         setImg(psfu);
+        setIsDisabled(true);
       } else if (pattern10.test(text) === true && currQuestion === 10) {
         setImg(ping);
+        setIsDisabled(true);
       } else if (pattern11.test(text) === true && currQuestion === 11) {
         setImg(ctrlc);
+        setIsDisabled(true);
       } else if (pattern12.test(text) === true && currQuestion === 12) {
         setImg(ctrlz);
+        setIsDisabled(true);
       } else if (pattern13.test(text) === true && currQuestion === 13) {
         setImg(top);
+        setIsDisabled(true);
       } else if (pattern14.test(text) === true && currQuestion === 14) {
         setImg(ifconfig);
+        setIsDisabled(true);
       } else if (pattern15.test(text) === true && currQuestion === 15) {
         setImg(pgrep);
+        setIsDisabled(true);
       } else if (pattern16.test(text) === true && currQuestion === 16) {
         setImg(kill);
-      } else {
-        setPopup(true);
-      }
-
+        setIsDisabled(true);
+      } 
       setText("");
     }
   };
@@ -244,6 +263,14 @@ const EPractice = () => {
         <div className="grid_left">
           <h5 className="question_number">Question {currQuestion} out of 16</h5>
           <div className="question_text">{qt[currQuestion - 1]}</div>
+          <p>Click the terminal to enter your answer!</p>
+          <button className="hint_btn" onClick={()=>{setPopup(true)}}>Hint: <HiOutlineLightBulb size={25}/></button>
+          <Popup
+            className="wrong_ans"
+            trigger={popup}
+            setTrigger={setPopup}
+            text={`Wrong command! Expected to input: ${ans}`}
+          />
         </div>
         <div
           className="grid_right"
@@ -264,12 +291,13 @@ const EPractice = () => {
             value={text}
             onChange={handleChange}
             onKeyDown={handleEnter}
+            disabled={isDisabled}
           />
           <div className="terminal">
             <img src={img}></img>
           </div>
-          <button className="dm_prev" onClick={prevQuestion}>Prev</button>
-          <button className="fm_next" onClick={nextQuestion}>
+          <button className="dm_prev" onClick={prevQuestion} style={{color: currQuestion === 1 ? "grey" : "rgba(124, 255, 124)"}}>Prev</button>
+          <button className="fm_next" onClick={nextQuestion} style={{color: currQuestion === 16 ? "grey" : "rgba(124, 255, 124)"}}>
             Next
           </button>
           <button className="fm_restart" onClick={restart}>

@@ -297,4 +297,9 @@ export const FlashcardData = [
     question: "what is grep?",
     ans: "to find a matching text in a file (usually is used with regex pattern or wildcards)",
   },
+  {
+    id: 59,
+    question: "what does this command do touch file_name?",
+    ans: "to create, change, modify the file_name file",
+  },
 ];

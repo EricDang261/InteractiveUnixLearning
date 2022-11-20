@@ -1,13 +1,13 @@
 import React, { useContext, useState } from "react";
 import { useEffect } from "react";
 import { CheckBoxContext } from "./context/CheckBoxContext";
-//import useLocalStorage from './LocalStorage'
+import "./checkbox.css";
 
 const Checkbox = (props) => {
   const [isChecked, setIsChecked] = useState(
     JSON.parse(localStorage.getItem(props.id)) || false
   );
-  const [text, setText] = useState("Mark to complete!");
+  const [text, setText] = useState("Mark to complete the lesson!");
   const context = useContext(CheckBoxContext);
 
   useEffect(() => {
@@ -33,27 +33,31 @@ const Checkbox = (props) => {
     if (checked) {
       setIsChecked(!isChecked);
       context.setCompletion(context.completion + 25);
-      setText("Mark to complete!");
+      setText("Completed!");
     } else {
       setIsChecked(false);
       context.setCompletion(context.completion - 25);
-      setText("Lesson Completed!");
+      setText("Mark to complete the lesson!");
     }
   };
 
   return (
-    <div className="checkbox">
-      <label>
-        <input
-          id={props.id}
-          type="checkbox"
-          checked={isChecked}
-          onChange={(e) => handleChange(e)}
-        />
-        <p> {text.toString()}</p>
-        <p>completion? {context.completion.toString()}</p>
+    <>
+      {text.toString()}
+      <input
+        id={props.id}
+        type="checkbox"
+        checked={isChecked}
+        onChange={(e) => handleChange(e)}
+      />
+      <label htmlFor={props.id}>
+        <span></span>
+
+        <ins>
+          <i> Learning Completion: {context.completion.toString()} %</i>
+        </ins>
       </label>
-    </div>
+    </>
   );
 };
 

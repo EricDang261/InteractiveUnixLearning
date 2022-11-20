@@ -7,8 +7,6 @@ import { ReactComponent as Signout } from "../../icons/signout.svg";
 import WebsiteLogo from "../../assets/websitelogo.png";
 
 import { UsernameContext } from "../context/UsernameContext";
-import { FaHome } from "react-icons/fa";
-
 import "./Nav.css";
 
 // import { useAuth } from "../context/AuthContext";
@@ -43,11 +41,6 @@ export default function Nav() {
         <img className="logo" src={WebsiteLogo} alt="website logo" />
       </Link>
       <ul className="navbar-list">
-        {/* <li>
-          <Link to="/">
-            <FaHome />
-          </Link>
-        </li> */}
         <li>
           {checkLogin ? (
             <Link to="/"> {helloUserName} </Link>

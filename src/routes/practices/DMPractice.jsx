@@ -10,7 +10,7 @@ import cdCmd from "../../assets/dm/cd_cmd.png";
 import rmdirCmd from "../../assets/dm/rmdir_cmd.png";
 import duCmd from "../../assets/dm/du_cmd.png";
 import Popup from "../../components/utility/Popup";
-import { HiOutlineLightBulb } from "react-icons/hi"
+import { HiOutlineLightBulb } from "react-icons/hi";
 
 const DMPractice = () => {
   const [text, setText] = useState("");
@@ -19,7 +19,7 @@ const DMPractice = () => {
   const [ans, setAns] = useState("pwd");
   const [popup, setPopup] = useState(false);
   const [isDisabled, setIsDisabled] = useState(false);
-  
+
   let qt = [
     "1. Try seeing the current directory you are in ",
     "2. Okay, now try to navigate to the directory dir2",
@@ -120,6 +120,8 @@ const DMPractice = () => {
       } else if (pattern5.test(text) === true && currQuestion === 5) {
         setImg(duCmd);
         setIsDisabled(true);
+      } else {
+        setPopup(true);
       }
       setText("");
     }
@@ -132,13 +134,6 @@ const DMPractice = () => {
           <h5 className="question_number">Question {currQuestion} out of 5</h5>
           <div className="question_text">{qt[currQuestion - 1]}</div>
           <p>Click the terminal to enter your answer!</p>
-          <button className="hint_btn" onClick={() => { setPopup(true) }}>Hint: <HiOutlineLightBulb size={25} /></button>
-          <Popup
-            className="wrong_ans"
-            trigger={popup}
-            setTrigger={setPopup}
-            text={`Wrong command! Expected to input: ${ans}`}
-          />
         </div>
         <div
           className="grid_right"
@@ -146,21 +141,41 @@ const DMPractice = () => {
             textRef.current.focus();
           }}
         >
-            <input
-              className="terminal_input_cmd"
-              type="text"
-              ref={textRef}
-              value={text}
-              onChange={handleChange}
-              onKeyDown={handleEnter}
-              disabled={isDisabled}
-            />
+          <Popup
+            className="wrong_ans"
+            trigger={popup}
+            setTrigger={setPopup}
+            text={`this is your hint: ${ans}`}
+          />
+          <input
+            className="terminal_input_cmd"
+            type="text"
+            ref={textRef}
+            value={text}
+            onChange={handleChange}
+            onKeyDown={handleEnter}
+            disabled={isDisabled}
+          />
           <div className="terminal">
             <img src={img}></img>
           </div>
           <div className="btn_container">
-            <button className="dm_prev" onClick={prevQuestion} style={{color: currQuestion === 1 ? "grey" : "rgba(124, 255, 124)"}}>Prev</button>
-            <button className="dm_next" onClick={nextQuestion} style={{color: currQuestion === 5 ? "grey" : "rgba(124, 255, 124)"}}>
+            <button
+              className="dm_prev"
+              onClick={prevQuestion}
+              style={{
+                color: currQuestion === 1 ? "grey" : "rgba(124, 255, 124)",
+              }}
+            >
+              Prev
+            </button>
+            <button
+              className="dm_next"
+              onClick={nextQuestion}
+              style={{
+                color: currQuestion === 5 ? "grey" : "rgba(124, 255, 124)",
+              }}
+            >
               Next
             </button>
             <button className="dm_restart" onClick={restart}>

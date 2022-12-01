@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 import Progress from "../components/utility/Progress";
 import example from "../assets/fm/example.png";
-import regexExample from "../assets/fm/regexExample.png";
+import regexExample from "../assets/fm/regex-cheatsheet.jpeg";
 import practice from "../assets/practice.jpg";
 import quizImg from "../assets/quiz.png";
 
@@ -103,6 +103,21 @@ const FileManagement = () => {
           </div>
         </div>{" "}
         {/*end of echo cmd */}
+        <br />
+        <div className="break">============</div>
+        <div className="topic">
+          <div className="touch_cmd" />
+          <h3 className="topic_title">touch command</h3>
+          <p>
+            <span>touch</span> command is used to create, modify, and change the
+            timestamp of the file
+          </p>
+          <p className="topic_ex">
+            {" "}
+            <span> touch filename</span>{" "}
+          </p>
+        </div>{" "}
+        {/*end of touch cmd */}
         <br />
         <div className="break">============</div>
         <div className="topic">
@@ -679,7 +694,10 @@ const FileManagement = () => {
           <br />{" "}
           <h4>
             Source:
-            <a href="https://labex.io/"> LabEx</a>
+            <a href="https://tec-refresh.com/regex-for-beginners/">
+              {" "}
+              TecRefresh
+            </a>
           </h4>
         </div>{" "}
         {/*end of regex_cmd*/}

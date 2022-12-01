@@ -22,7 +22,7 @@ import whatis from "../../assets/environment/whatis.png";
 import whereis from "../../assets/environment/whereis.png";
 import who from "../../assets/environment/who.png";
 import whoami from "../../assets/environment/whoami.png";
-import {HiOutlineLightBulb} from "react-icons/hi"
+import { HiOutlineLightBulb } from "react-icons/hi";
 
 const EPractice = () => {
   const [text, setText] = useState("");
@@ -251,7 +251,9 @@ const EPractice = () => {
       } else if (pattern16.test(text) === true && currQuestion === 16) {
         setImg(kill);
         setIsDisabled(true);
-      } 
+      } else {
+        setPopup(true);
+      }
       setText("");
     }
   };
@@ -265,13 +267,6 @@ const EPractice = () => {
           <div className="question_text">{qt[currQuestion - 1]}</div>
           <p>Click the terminal to enter your answer! You will see what the command does if the answer is correct.</p>
           <p>Click next button after completing the question!</p>
-          <button className="hint_btn" onClick={()=>{setPopup(true)}}>Hint: <HiOutlineLightBulb size={25}/></button>
-          <Popup
-            className="wrong_ans"
-            trigger={popup}
-            setTrigger={setPopup}
-            text={`Wrong command! Expected to input: ${ans}`}
-          />
         </div>
         <div
           className="grid_right"
@@ -297,8 +292,22 @@ const EPractice = () => {
           <div className="terminal">
             <img src={img}></img>
           </div>
-          <button className="dm_prev" onClick={prevQuestion} style={{color: currQuestion === 1 ? "grey" : "rgba(124, 255, 124)"}}>Prev</button>
-          <button className="fm_next" onClick={nextQuestion} style={{color: currQuestion === 16 ? "grey" : "rgba(124, 255, 124)"}}>
+          <button
+            className="dm_prev"
+            onClick={prevQuestion}
+            style={{
+              color: currQuestion === 1 ? "grey" : "rgba(124, 255, 124)",
+            }}
+          >
+            Prev
+          </button>
+          <button
+            className="fm_next"
+            onClick={nextQuestion}
+            style={{
+              color: currQuestion === 16 ? "grey" : "rgba(124, 255, 124)",
+            }}
+          >
             Next
           </button>
           <button className="fm_restart" onClick={restart}>

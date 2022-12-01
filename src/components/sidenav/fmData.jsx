@@ -10,6 +10,11 @@ export const fmData = [
     className: "side-text",
   },
   {
+    title: "touch command",
+    path: "touch_cmd",
+    className: "side-text",
+  },
+  {
     title: "ls command",
     path: "ls_cmd",
     className: "side-text",

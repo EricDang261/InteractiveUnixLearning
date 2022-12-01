@@ -292,7 +292,8 @@ const FMPractice = () => {
         <div className="grid_left">
           <h5 className="question_number">Question {currQuestion} out of 17</h5>
           <div className="question_text">{qt[currQuestion - 1]}</div>
-          <p>Click the terminal to enter your answer!</p>
+          <p>Click the terminal to enter your answer! You will see what the command does if the answer is correct.</p>
+          <p>Click next button after completing the question!</p>
           <button className="hint_btn" onClick={()=>{setPopup(true)}}>Hint: <HiOutlineLightBulb size={25}/></button>
           <Popup
             className="wrong_ans"

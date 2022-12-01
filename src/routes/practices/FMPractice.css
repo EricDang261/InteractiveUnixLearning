@@ -1,7 +1,7 @@
 .FMPractice{
     display: flex;
     flex-direction: row;
-    gap: 30rem;
+    gap: 15rem;
 }
 
 

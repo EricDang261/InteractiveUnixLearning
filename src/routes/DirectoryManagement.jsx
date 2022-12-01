@@ -212,19 +212,16 @@ const DirectoryManagement = () => {
       </div>
       <div className="break">============</div>
       <div className="practice">
-        <h1 className="practice_title">Lesson Practice</h1>
-        <img src={practice} alt="sticky note with word practice" />
         <Link to="/DMPractice" className="practice_link">
-          CLICK HERE FOR PRACTICE!
+          <h1 className="practice_title">Lesson Practice</h1>
         </Link>
+        <img src={practice} alt="sticky note with word practice" />
       </div>
       <div className="break">============</div>
+      <br/>
       <div className="topic_quiz">
-        <h1 className="topic_quiz_title">End of Lesson Quiz</h1>
+      <h1 className="topic_quiz_title" onClick={() => setQuizPop(true)}>End of Lesson Quiz</h1>
         <img src={quizImg} alt="pencil and test sheet" />
-        <button onClick={() => setQuizPop(true)}>
-          Click here to begin quiz!
-        </button>
       </div>
       <Quiz data={qData} trigger={quizPopup} setTrigger={setQuizPop} />
       <Progress />

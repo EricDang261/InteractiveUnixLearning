@@ -428,6 +428,10 @@
   padding-bottom: 6rem;
   color: rgba(132, 176, 102);
 }
+.topic_quiz_title:hover{
+  cursor: pointer;
+  color: rgb(220, 242, 205);
+}
 
 .topic_quiz img{
   max-width: 20rem;

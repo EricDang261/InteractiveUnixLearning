@@ -1,7 +1,7 @@
 .dm_practice{
     display: flex;
     flex-direction: row;
-    gap: 30rem;
+    gap: 15rem;
 }
 
 /* .grid_right, .grid_left{

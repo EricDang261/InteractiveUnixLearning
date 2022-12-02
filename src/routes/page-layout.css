@@ -114,21 +114,15 @@ td, th{
     padding-bottom: 3rem;
     color: rgba(132, 176, 102);
 }
+.practice_title:hover{
+    cursor: pointer;
+    color: rgb(220, 242, 205);
+}
 
 .practice img{
     max-width: 30rem;
     width: 100%;
     height: auto;
-}
-
-.practice_link{
-    text-align: center;
-    color:black;
-    font-size: 25pt;
-    background:linear-gradient(100deg, #88ff00 0%, #7ac84d 20%, #3acd64 45%, #5eb080 70%, #11ffb3 90%);
-    border: 3px white inset;
-    width: 25rem;
-    max-width:100%;
 }
 
 
@@ -149,6 +143,10 @@ td, th{
     padding-bottom: 6rem;
     color: rgba(132, 176, 102);
 }
+.topic_quiz_title{
+    cursor: pointer;
+    color: rgb(220, 242, 205);
+}
 
 .topic_quiz img{
     max-width: 20rem;
@@ -157,18 +155,6 @@ td, th{
     background-color: white;
 }
 
-.topic_quiz button{
-    font-size: 25pt;
-    color: black;
-    /* background-color: white; */
-    background: linear-gradient(100deg, #88ff00 0%, #7ac84d 20%, #3acd64 45%, #5eb080 70%, #11ffb3 90%);
-    border: 3px inset rgb(254, 255, 254);
-    max-width: 100%;
-}
-
-.topic_quiz button:hover{
-    cursor: pointer;
-}
 
 
 

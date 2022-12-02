@@ -58,9 +58,9 @@
   padding-top: 1rem;
 }
 
-.intro_os, .intro_background{
+/* .intro_os, .intro_background{
   text-indent: 4em;
-}
+} */
 
 .intro_warning{
   font-family: 'Courier New', Courier, monospace;

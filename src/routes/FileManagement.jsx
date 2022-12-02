@@ -10,7 +10,6 @@ import practice from "../assets/practice.jpg";
 import quizImg from "../assets/quiz.png";
 
 import { FaHandPointRight } from "react-icons/fa";
-import { SiAzuredataexplorer } from "react-icons/si";
 import "./page-layout.css";
 
 const FileManagement = () => {
@@ -71,7 +70,7 @@ const FileManagement = () => {
           </p>
           <p className="topic_ex">
             {" "}
-            <span> echo [option] [string]</span>{" "}
+            <span>$echo [option] [string]</span>{" "}
           </p>
           <p>
             To enable the interpretation of backslash escapes in a string. You
@@ -114,7 +113,7 @@ const FileManagement = () => {
           </p>
           <p className="topic_ex">
             {" "}
-            <span> touch filename</span>{" "}
+            <span>$touch filename</span>{" "}
           </p>
         </div>{" "}
         {/*end of touch cmd */}
@@ -129,7 +128,7 @@ const FileManagement = () => {
           </p>
 
           <p className="topic_ex">
-            <span>ls [option]</span>
+            <span>$ls [option]</span>
           </p>
 
           <table>
@@ -186,7 +185,7 @@ const FileManagement = () => {
           </p>
           <p className="topic_ex">
             {" "}
-            <span>rm [options] files or directory</span>{" "}
+            <span>$rm [options] files or directory</span>{" "}
           </p>
 
           <table>
@@ -235,8 +234,8 @@ const FileManagement = () => {
           </p>
           <p className="topic_ex">
             <span>
-              cp [options] source file directory <br />
-              cp [options] -t directory source file
+              $cp [options] source file directory <br />
+              $cp [options] -t directory source file
             </span>
           </p>
 
@@ -290,7 +289,7 @@ const FileManagement = () => {
           <p className="topic_ex">
             {" "}
             <span>
-              mv [option] src file or directory target file or directory
+              $mv [option] src file or directory target file or directory
             </span>
           </p>
 
@@ -320,7 +319,7 @@ const FileManagement = () => {
           </p>
 
           <p className="topic_ex">
-            <span> more filename </span>
+            <span> $more filename </span>
           </p>
         </div>{" "}
         {/*end of more_cmd*/}
@@ -346,7 +345,7 @@ const FileManagement = () => {
           <p className="topic_ex">
             {" "}
             <span>
-              tar [options] [archive-file] [file or directory to be archived]
+              $tar [options] [archive-file] [file or directory to be archived]
             </span>
           </p>
           <table>
@@ -459,7 +458,7 @@ const FileManagement = () => {
 
           <p className="topic_ex">
             {" "}
-            <span> cat option </span>
+            <span> $cat option </span>
           </p>
 
           <table>
@@ -787,7 +786,7 @@ const FileManagement = () => {
           </p>
 
           <p className="topic_ex">
-            <span> chmod o+x </span>
+            <span>$chmod o+x </span>
           </p>
 
           <p>

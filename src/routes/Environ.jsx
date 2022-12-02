@@ -23,7 +23,6 @@ const Environ = () => {
             return data[value];
           })
         );
-        console.log(qData);
         SetLoading(false);
       });
   }, []);
@@ -53,7 +52,7 @@ const Environ = () => {
           </p>
           <p className="topic_ex">
             {" "}
-            <span>man cmd </span>
+            <span>$man cmd </span>
           </p>
         </div>
         <div className="break">============</div>
@@ -67,7 +66,7 @@ const Environ = () => {
             hardware platform.
           </p>
           <p className="topic_ex">
-            <span>uname -a</span>
+            <span>$uname -a</span>
           </p>
         </div>
         <div className="break">============</div>
@@ -99,7 +98,7 @@ const Environ = () => {
           </p>
           <p className="topic_ex">
             {" "}
-            <span>su userName</span>
+            <span>$su userName</span>
           </p>
         </div>
         <div className="break">============</div>
@@ -113,7 +112,7 @@ const Environ = () => {
             <span>-d</span> flag is used. A username follows the command
           </p>
           <p className="topic_ex">
-            <span>passwd userName</span>
+            <span>$passwd userName</span>
           </p>
         </div>
         <div className="break">============</div>
@@ -137,7 +136,7 @@ const Environ = () => {
           </p>
           <p className="topic_ex">
             {" "}
-            <span>whereis cmd</span>
+            <span>$whereis cmd</span>
           </p>
         </div>
         <div className="break">============</div>
@@ -150,7 +149,7 @@ const Environ = () => {
           </p>
           <p className="topic_ex">
             {" "}
-            <span>whatis cmd</span>
+            <span>$whatis cmd</span>
           </p>
         </div>
         <div className="break">============</div>
@@ -206,7 +205,7 @@ const Environ = () => {
           </p>
           <p className="topic_ex">
             {" "}
-            <span>pgrep process</span>
+            <span>$pgrep process</span>
           </p>
         </div>
         <div className="topic">
@@ -252,7 +251,7 @@ const Environ = () => {
             done by placing the chosen processId after the command.
           </p>
           <p className="topic_ex">
-            <span>kill processId</span>
+            <span>$kill processId</span>
           </p>
         </div>
         <div className="break">============</div>
@@ -266,7 +265,7 @@ const Environ = () => {
           </p>
           <p className="topic_ex">
             {" "}
-            <span>command& </span>
+            <span>$command& </span>
           </p>
         </div>
         <div className="break">============</div>
@@ -308,7 +307,7 @@ const Environ = () => {
           </p>
           <p className="topic_ex">
             {" "}
-            <span>ssh hostname</span>
+            <span>$ssh hostname</span>
           </p>
         </div>
         <div className="break">============</div>
@@ -325,7 +324,7 @@ const Environ = () => {
           </p>
           <p className="topic_ex">
             {" "}
-            <span>scp localFile remoteHost:/path/</span>
+            <span>$scp localFile remoteHost:/path/</span>
           </p>
         </div>
         <div className="break">============</div>
@@ -342,7 +341,7 @@ const Environ = () => {
           </p>
           <p className="topic_ex">
             {" "}
-            <span>curl url</span>
+            <span>$curl url</span>
           </p>
         </div>
         <div className="break">============</div>
@@ -357,7 +356,7 @@ const Environ = () => {
           </p>
           <p className="topic_ex">
             {" "}
-            <span>ifconfig -a</span>
+            <span>$ifconfig -a</span>
           </p>
         </div>
         <div className="break">============</div>
@@ -371,7 +370,7 @@ const Environ = () => {
           </p>
           <p className="topic_ex">
             {" "}
-            <span>ping dest</span>
+            <span>$ping dest</span>
           </p>
         </div>
         <div className="break">============</div>
@@ -387,7 +386,7 @@ const Environ = () => {
           </p>
           <p className="topic_ex">
             {" "}
-            <span>g++ exeFileName cppFileNames</span>
+            <span>$g++ exeFileName cppFileNames</span>
           </p>
         </div>
         <div className="break">============</div>
@@ -408,7 +407,7 @@ const Environ = () => {
           </p>
           <p className="topic_ex">
             {" "}
-            <span>code .</span>
+            <span>$code .</span>
           </p>
         </div>
       </div>

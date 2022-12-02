@@ -95,14 +95,14 @@ const DirectoryManagement = () => {
                 <th>What it does</th>
               </tr>
               <tr>
-                <td>cd</td>
+                <td>$cd</td>
                 <td data-label="cd">
                   The command by itself will always take you back to your home
                   directory.
                 </td>
               </tr>
               <tr>
-                <td>cd dirName</td>
+                <td>$cd dirName</td>
                 <td data-label="cd dirName">
                   This will navigate you to the specified directory as long as
                   it is one branch lower in the directory tree (listed within
@@ -110,7 +110,7 @@ const DirectoryManagement = () => {
                 </td>
               </tr>
               <tr>
-                <td>cd path/dirName</td>
+                <td>$cd path/dirName</td>
                 <td data-label="cd path/dirName">
                   This type of traversing uses the relative path of the
                   directory. The relative path starts from the current directory
@@ -119,7 +119,7 @@ const DirectoryManagement = () => {
                 </td>
               </tr>
               <tr>
-                <td>cd fullPath/dirName</td>
+                <td>$cd fullPath/dirName</td>
                 <td data-label="cd fullPath/dirName">
                   This type of traversing uses the absolute path of the
                   directory. It starts from the root directory and includes all
@@ -127,7 +127,7 @@ const DirectoryManagement = () => {
                 </td>
               </tr>
               <tr>
-                <td>cd ..</td>
+                <td>$cd ..</td>
                 <td data-label="cd ..">
                   This is like a back button. It will navigate you back to the
                   previous (parent) directory. Combining it with / and more dots
@@ -148,7 +148,7 @@ const DirectoryManagement = () => {
             directory.
           </p>
           <p className="topic_ex">
-            <span>mkdir</span> newDirName
+            <span>$mkdir</span> newDirName
           </p>
         </div>
         <div className="break">============</div>
@@ -163,7 +163,7 @@ const DirectoryManagement = () => {
             deleted.
           </p>
           <p className="topic_ex">
-            <span>rmdir</span> dirName
+            <span>$rmdir</span> dirName
           </p>
         </div>
         <div className="break">============</div>
@@ -183,13 +183,13 @@ const DirectoryManagement = () => {
             </thead>
             <tbody>
               <tr>
-                <td>mv dirName /path/dest</td>
+                <td>$mv dirName /path/dest</td>
                 <td data-label="mv dirName /path/dest">
                   Moves the directory to the specified destination
                 </td>
               </tr>
               <tr>
-                <td>mv dirName newDirName</td>
+                <td>$mv dirName newDirName</td>
                 <td data-label="mv dirName newDirName">
                   Renames the directory to the specified new name
                 </td>

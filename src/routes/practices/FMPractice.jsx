@@ -23,7 +23,6 @@ import ls_after_merge from "../../assets/fm/ls_after_merge.png";
 import echo from "../../assets/fm/echo.png";
 import cdandtouch from "../../assets/fm/cdandtouch.png";
 import catseethecontent from "../../assets/fm/catSeeTheContent.png";
-import { HiOutlineLightBulb } from "react-icons/hi";
 
 const FMPractice = () => {
   const [text, setText] = useState("");
@@ -56,7 +55,6 @@ const FMPractice = () => {
   const pattern17 = new RegExp(
     /^(rm)\s+(test.txt)\s+(merged_fn.txt)\s+(;)\s+(ls)\s*$/i
   );
-  const pattern18 = new RegExp(/^(whoami)\s*$/i);
 
   let qt = [
     "1. Let's try to see what are files in the current directory ",
@@ -292,7 +290,16 @@ const FMPractice = () => {
         <div className="grid_left">
           <h5 className="question_number">Question {currQuestion} out of 17</h5>
           <div className="question_text">{qt[currQuestion - 1]}</div>
-          <p>Click the terminal to enter your answer!</p>
+          <p>
+            {`->`} Click the terminal to enter your answer!
+            <br />
+            {`->`} Once you done writting your command. Hit Enter! <br />
+            {`->`} If you command is right, you would see the executed terminal.{" "}
+            <br />
+            {`->`} Once you done, click next button for moving to the next
+            practice{" "}
+          </p>
+          <p>Have fun!!</p>
         </div>
         <div
           className="grid_right"
@@ -317,7 +324,7 @@ const FMPractice = () => {
             disabled={isDisabled}
           />
           <div className="terminal">
-            <img src={img}></img>
+            <img src={img} alt="terminal"></img>
           </div>
           <div className="btn_container">
             <button

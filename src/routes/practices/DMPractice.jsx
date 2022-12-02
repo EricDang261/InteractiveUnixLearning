@@ -3,14 +3,12 @@ import { Link } from "react-router-dom";
 import "./DMPractice.css";
 import terminal from "../../assets/empty_terminal.png";
 import Nav from "../../components/utility/Nav";
-import { Footer } from "../../components";
 import pwdCmd from "../../assets/dm/pwd_cmd.png";
 import mkdirCmd from "../../assets/dm/mkdir_cmd.png";
 import cdCmd from "../../assets/dm/cd_cmd.png";
 import rmdirCmd from "../../assets/dm/rmdir_cmd.png";
 import duCmd from "../../assets/dm/du_cmd.png";
 import Popup from "../../components/utility/Popup";
-import { HiOutlineLightBulb } from "react-icons/hi";
 
 const DMPractice = () => {
   const [text, setText] = useState("");
@@ -133,7 +131,16 @@ const DMPractice = () => {
         <div className="grid_left">
           <h5 className="question_number">Question {currQuestion} out of 5</h5>
           <div className="question_text">{qt[currQuestion - 1]}</div>
-          <p>Click the terminal to enter your answer!</p>
+          <p>
+            {`->`} Click the terminal to enter your answer!
+            <br />
+            {`->`} Once you done writting your command. Hit Enter! <br />
+            {`->`} If you command is right, you would see the executed terminal.{" "}
+            <br />
+            {`->`} Once you done, click next button for moving to the next
+            practice{" "}
+          </p>
+          <p>Have fun!!</p>
         </div>
         <div
           className="grid_right"
@@ -145,7 +152,7 @@ const DMPractice = () => {
             className="wrong_ans"
             trigger={popup}
             setTrigger={setPopup}
-            text={`this is your hint: ${ans}`}
+            text={`Wrong command! Expected to input: ${ans}`}
           />
           <input
             className="terminal_input_cmd"
@@ -157,7 +164,7 @@ const DMPractice = () => {
             disabled={isDisabled}
           />
           <div className="terminal">
-            <img src={img}></img>
+            <img src={img} alt="terminal"></img>
           </div>
           <div className="btn_container">
             <button
@@ -187,7 +194,6 @@ const DMPractice = () => {
           </div>
         </div>
       </div>
-      {/* <Footer className="dm_footer"/> */}
     </>
   );
 };

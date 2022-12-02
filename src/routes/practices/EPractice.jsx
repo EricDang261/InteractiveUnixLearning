@@ -22,7 +22,6 @@ import whatis from "../../assets/environment/whatis.png";
 import whereis from "../../assets/environment/whereis.png";
 import who from "../../assets/environment/who.png";
 import whoami from "../../assets/environment/whoami.png";
-import { HiOutlineLightBulb } from "react-icons/hi";
 
 const EPractice = () => {
   const [text, setText] = useState("");
@@ -265,7 +264,16 @@ const EPractice = () => {
         <div className="grid_left">
           <h5 className="question_number">Question {currQuestion} out of 16</h5>
           <div className="question_text">{qt[currQuestion - 1]}</div>
-          <p>Click the terminal to enter your answer!</p>
+          <p>
+            {`->`} Click the terminal to enter your answer!
+            <br />
+            {`->`} Once you done writting your command. Hit Enter! <br />
+            {`->`} If you command is right, you would see the executed terminal.{" "}
+            <br />
+            {`->`} Once you done, click next button for moving to the next
+            practice{" "}
+          </p>
+          <p>Have fun!!</p>
         </div>
         <div
           className="grid_right"
@@ -289,7 +297,7 @@ const EPractice = () => {
             disabled={isDisabled}
           />
           <div className="terminal">
-            <img src={img}></img>
+            <img src={img} alt="terminal"></img>
           </div>
           <button
             className="dm_prev"

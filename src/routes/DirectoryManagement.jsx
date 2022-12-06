@@ -10,6 +10,7 @@ import Quiz from "./Quiz";
 import { Checkbox } from "../components/";
 import quizImg from "../assets/quiz.png";
 import practice from "../assets/practice.jpg";
+import { motion } from "framer-motion";
 
 const DirectoryManagement = () => {
   const [qData, setQData] = useState();
@@ -25,14 +26,18 @@ const DirectoryManagement = () => {
             return data[value];
           })
         );
-        //   console.log(qData)
         SetLoading(false);
       });
   }, []);
 
   if (loading) return <h1>Loading</h1>;
   return (
-    <div className="module">
+    <motion.div
+      className="module"
+      initial={{ opacity: 0, scale: 0.5 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.5 }}
+    >
       <SideNav className="dirM_nav" page={dmData} />
       <div className="module_body">
         <h1 className="module_title">Directory Management</h1>
@@ -218,16 +223,18 @@ const DirectoryManagement = () => {
         <img src={practice} alt="sticky note with word practice" />
       </div>
       <div className="break">============</div>
-      <br/>
+      <br />
       <div className="topic_quiz">
-      <h1 className="topic_quiz_title" onClick={() => setQuizPop(true)}>End of Lesson Quiz</h1>
+        <h1 className="topic_quiz_title" onClick={() => setQuizPop(true)}>
+          End of Lesson Quiz
+        </h1>
         <img src={quizImg} alt="pencil and test sheet" />
       </div>
       <Quiz data={qData} trigger={quizPopup} setTrigger={setQuizPop} />
       <Progress />
       <Checkbox id="2" />
       <Footer />
-    </div>
+    </motion.div>
   );
 };
 

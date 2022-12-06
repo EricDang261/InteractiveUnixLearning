@@ -20,6 +20,7 @@ import {
 
 import{ FlashcardComp,
       } from './components'
+import AnimatedRoutes from "./routes/AnimatedRoutes";
 
 
 
@@ -31,15 +32,12 @@ function App() {
         <Route path='/login' element= { <Login /> } > </Route> 
         <Route path='/signup' element={ <SignUp /> }></Route>
         <Route path='/intro' element={<Introduction/>}></Route>
-        <Route path="/dirManage" element={<DirectoryManagement/>}></Route>
-        <Route path='/fileManage' element={<FileManagement/>}></Route>
-        <Route path='/fileManagePractice' element={<FMPractice/>}></Route>
-        <Route path='/flashcard' element={ <FlashcardComp/>}> </Route>
+        <Route path='/fileManagePractice' element={<FMPractice/>}></Route>    
         <Route path='/feedback' element={<Feedback/>}></Route>
-        <Route path="/environ" element={<Environ/>}></Route>
         <Route path="/dmPractice" element={<DMPractice/>}></Route>
         <Route path="/ePractice" element={<EPractice/>}></Route>
       </Routes>
+      <AnimatedRoutes/>
     </div>
   );
 }

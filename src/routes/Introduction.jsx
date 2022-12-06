@@ -15,6 +15,8 @@ import Popup from "../components/utility/Popup";
 import Progress from "../components/utility/Progress";
 import Checkbox from "../components/Checkbox";
 
+import { motion } from "framer-motion";
+
 const Introduction = () => {
   const [hwPopup, setHWPop] = useState(false);
   const [kernPopup, setKernPop] = useState(false);
@@ -33,7 +35,6 @@ const Introduction = () => {
             return data[value];
           })
         );
-        console.log(qData);
         SetLoading(false);
       });
   }, []);
@@ -41,7 +42,12 @@ const Introduction = () => {
   if (loading) return <h1>Loading</h1>;
 
   return (
-    <div className="intro">
+    <motion.div
+      className="intro"
+      initial={{ opacity: 0, scale: 0.5 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.5 }}
+    >
       <SideNav className="intro_nav" page={IntroData} />
       <div className="intro_body">
         <h1 className="intro_title">Introduction</h1>
@@ -56,57 +62,36 @@ const Introduction = () => {
         <div className="definition">
           <h3 className="intro_topic1"> What is Unix?</h3>
           <p className="intro_os">
-            Unix is the Granddaddy (yes capital G) of all operating systems
-            (OS). Simply put the OS is software that controls the hardware of a
-            computer system. OS manage resources and services such as memory
-            management, device management, and resource allocation to name a
-            few. Basically, everyhting that makes a computer useful is taken
-            care of by the OS. Without it, your computer would be a pile of
-            useless hardware. The purpose of an OS is to create an interface
-            between the user and hardware of their system.
+            Unix is the Granddaddy (yes capital G) of all operating systems. The
+            Unix OS was created by Bell Labs back w hen punch cards were still
+            being used and the first man landed on the moon. It was born from
+            the ashes of Multics, a failed previous attempt at an OS system, and
+            was originally named Unics (wanna take a guess why?). The goal of
+            the project was to create a system that supports: multi-users,
+            multi-tasking, and multi-processes.
           </p>
           <br />
           <p className="intro_background">
-            The Unix OS was created by Bell Labs back when punch cards were
-            still being used and the first man landed on the moon. It was born
-            from the ashes of Multics, a failed previous attempt at an OS
-            system, and was originally named Unics (wanna take a guess why?).
-            The goal of the project was to create a system that supports:
-          </p>
-          <ul className="unics_reasons">
-            <li>
-              Multiple users- several people using the computer at the same time
-            </li>
-            <li>
-              Multitasking- running multiple programs at the same time (exe
-              programs)
-            </li>
-            <li>
-              Multi-processes- executing several processes simultaneously per
-              user (programs in exe)
-            </li>
-          </ul>
-          <br />
-          <p className="intro_background">
-            As seen, their project ended up a success and can be described very
-            simply as a shell program, a command line interpreter (CLI), which
-            translates user input commands into a language the OS, or kernel,
-            can understand. A good analogy is to imagine the kernal is a foreign
-            manager and the shell is the translating app you are using to
-            communicate.
+            The project succeeded and can be described very simply as a shell
+            program, a command line interpreter (CLI)- sometimes can be used
+            interchanbly with bash or shell, which translates user input
+            commands into a language the OS, or kernel, can understand. A good
+            analogy is to imagine the kernal is a foreign manager and the shell
+            is the translating app you are using to communicate.
           </p>
           <br />
           <p className="intro_warning">
             WARNING: Linux != Unix
             <br />
-            <br />
-            Linix is one of Unix's many grandchildren. Linux is used with GNU
+            Linux is one of Unix's many grandchildren. Linux is used with GNU
             (an OS) which stands for GNU is Not Unix.
           </p>
         </div>
         <div className="break">============</div>
         <h3 className="intro_topic2">Why Use Unix? </h3>
-        <p className="topic2_instruct">Hover over the pictures to see the reasons.</p>
+        <p className="topic2_instruct">
+          Hover over the pictures to see the reasons.
+        </p>
         <div className="uses">
           <div className="mod_wrapper">
             <img
@@ -201,7 +186,7 @@ const Introduction = () => {
           <div className="stickynotes">
             <ul>
               <li>
-                <a href="#">
+                <a href="/#">
                   <h2>Hardware Layer</h2>
                   <p>
                     The innermost layer that is composed of visible system
@@ -210,7 +195,7 @@ const Introduction = () => {
                 </a>
               </li>
               <li>
-                <a href="#">
+                <a href="/#">
                   <h2>Kernel Layer</h2>
                   <p>
                     The second most inner layer that manages and allocates tasks
@@ -219,7 +204,7 @@ const Introduction = () => {
                 </a>
               </li>
               <li>
-                <a href="#">
+                <a href="/#">
                   <h2>Shell Layer</h2>
                   <p>
                     The Third layer that consists of the CLI, the bridge between
@@ -228,7 +213,7 @@ const Introduction = () => {
                 </a>
               </li>
               <li>
-                <a href="#">
+                <a href="/#">
                   <h2>Application Layer</h2>
                   <p>
                     The outermost layer that consists of the data and programs
@@ -242,7 +227,9 @@ const Introduction = () => {
       </div>
       <div className="break">============</div>
       <div className="topic_quiz">
-        <h1 className="topic_quiz_title" onClick={() => setQuizPop(true)}>End of Lesson Quiz</h1>
+        <h1 className="topic_quiz_title" onClick={() => setQuizPop(true)}>
+          End of Lesson Quiz
+        </h1>
         <img src={quizImg} alt="pencil and test sheet" />
         {/* <button onClick={() => setQuizPop(true)}>
           Click here to begin quiz!
@@ -252,7 +239,7 @@ const Introduction = () => {
       <Progress />
       <Checkbox id="1" />
       <Footer />
-    </div>
+    </motion.div>
   );
 };
 

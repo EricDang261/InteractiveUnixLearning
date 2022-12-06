@@ -9,6 +9,8 @@ import Quiz from "./Quiz";
 import quizImg from "../assets/quiz.png";
 import practice from "../assets/practice.jpg";
 
+import { motion } from "framer-motion";
+
 const Environ = () => {
   const [qData, setQData] = useState();
   const [loading, SetLoading] = useState(true);
@@ -30,7 +32,12 @@ const Environ = () => {
   if (loading) return <h1>Loading</h1>;
 
   return (
-    <div className="module">
+    <motion.div
+      className="module"
+      initial={{ opacity: 0, scale: 0.5 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.5 }}
+    >
       <SideNav page={envData} />
       <div className="module_body">
         <div className="module_title">Environment & Development</div>
@@ -419,16 +426,18 @@ const Environ = () => {
         <img src={practice} alt="sticky note with word practice" />
       </div>
       <div className="break">============</div>
-      <br/>
+      <br />
       <div className="topic_quiz">
-      <h1 className="topic_quiz_title" onClick={() => setQuizPop(true)}>End of Lesson Quiz</h1>
+        <h1 className="topic_quiz_title" onClick={() => setQuizPop(true)}>
+          End of Lesson Quiz
+        </h1>
         <img src={quizImg} alt="pencil and test sheet" />
       </div>
       <Quiz data={qData} trigger={quizPopup} setTrigger={setQuizPop} />
       <Checkbox id="4" />
       <Progress />
       <Footer />
-    </div>
+    </motion.div>
   );
 };
 

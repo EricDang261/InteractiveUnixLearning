@@ -18,11 +18,11 @@ const SideNav = (props) => {
     <>
       <div className="sidebar">
         <Link to="#" className="menu-bars">
-          <FaIcons.FaBars onClick={showSidebar} size={40}/>
+          <FaIcons.FaBars onClick={showSidebar} size={40} />
         </Link>
         <div className="home_link">
           <Link to="/" className="home_icon">
-            <FaIcons.FaHome size={40}/>
+            <FaIcons.FaHome size={40} />
           </Link>
         </div>
       </div>

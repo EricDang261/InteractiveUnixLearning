@@ -52,7 +52,7 @@ const Home = () => {
             <Card
               img={environ}
               title="Environment / Development"
-              descr="How can I do cool stuff with Unix CLI?"
+              descr="Become a hacker with Unix CLI"
               path="/environ"
             />
             <Card

@@ -10,6 +10,8 @@ import practice from "../assets/practice.jpg";
 import quizImg from "../assets/quiz.png";
 
 import { FaHandPointRight } from "react-icons/fa";
+
+import { motion } from "framer-motion";
 import "./page-layout.css";
 
 const FileManagement = () => {
@@ -33,7 +35,12 @@ const FileManagement = () => {
   if (loading) return <h1>Loading</h1>;
 
   return (
-    <div className="module">
+    <motion.div
+      className="module"
+      initial={{ opacity: 0, scale: 0.5 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.5 }}
+    >
       <SideNav className="fm_nav" page={fmData} />
       <div className="module_body">
         <h1 className="module_title">File Management</h1> <br />
@@ -47,14 +54,14 @@ const FileManagement = () => {
           <div className="file_type" />
           <h3 className="topic_title">File Types </h3>
           <p>
-            In Unix, we will mostly see these 3 basic types of files: <br />
+            In Unix, we mostly see these 3 basic types of files: <br />
             <span2> Ordinary Files - </span2> contains data, text, or program
             instructions. <br />
             <span2> Special Files - </span2> provide access to hardware, or they
             could be aliases or shortcuts and enable you to access a single file
             using different names. <br />
-            <span2> Directories - </span2> As you know, directories are folders
-            which stores both ordinary files and special files.
+            <span2> Directories - </span2> Directories are folders which stores
+            both ordinary files and special files.
           </p>
         </div>{" "}
         {/*end of file_type*/}
@@ -64,8 +71,8 @@ const FileManagement = () => {
           <div className="echo_cmd" />
           <h3 className="topic_title">echo command</h3>
           <p>
-            Let's start off with one of the most basic and commonS used command{" "}
-            <span>echo</span>. This command in linux is used to display line of
+            Let's start off with one of the most basic and common used command,{" "}
+            <span>$echo</span>. This command in linux is used to display line of
             text or string that are passed as an argument.
           </p>
           <p className="topic_ex">
@@ -109,7 +116,7 @@ const FileManagement = () => {
           <h3 className="topic_title">touch command</h3>
           <p>
             <span>touch</span> command is used to create, modify, and change the
-            timestamp of the file
+            timestamp of a file
           </p>
           <p className="topic_ex">
             {" "}
@@ -175,13 +182,12 @@ const FileManagement = () => {
           <h3 className="topic_title">rm command</h3>
           <p>
             <span>rm </span> command ( short for remove) deletes one or more
-            files or directories in a directory. It can also delete a directory
-            and all files and subdirectories under it. <br />
-            For new user be careful when you use this command.This is not a
+            files or directories. It can also delete a directory and all files
+            and subdirectories under it. <br />
+            For beginner, be careful when you using this command. This is not a
             reversale command. The entire system might be destroyed with this
-            command (for example, rm * -rf under / (root directory)). Therefore,
-            be sure and confirm what you want to delete and your current
-            locatio.
+            command (for example, <span2> $rm * -rf /</span2> ). Therefore, be
+            sure and confirm what you want to delete and your current location.
           </p>
           <p className="topic_ex">
             {" "}
@@ -207,7 +213,7 @@ const FileManagement = () => {
                 <td> -i </td>
                 <td data-label="-i">
                   {" "}
-                  --interactive, make an interactive deleteion{" "}
+                  --interactive, make an interactive deletion{" "}
                 </td>
               </tr>
 
@@ -782,7 +788,7 @@ const FileManagement = () => {
           <h3 className="topic_title"> Chmod </h3>
           <p>
             The chmod stands for change mode. This command is used for changing
-            securities permissions on files
+            security permissions on files
           </p>
 
           <p className="topic_ex">
@@ -842,9 +848,11 @@ const FileManagement = () => {
         <img src={practice} alt="sticky note with word practice" />
       </div>
       <div className="break">============</div>
-      <br/>
+      <br />
       <div className="topic_quiz">
-        <h1 className="topic_quiz_title" onClick={() => setQuizPop(true)}>End of Lesson Quiz</h1>
+        <h1 className="topic_quiz_title" onClick={() => setQuizPop(true)}>
+          End of Lesson Quiz
+        </h1>
         <img src={quizImg} alt="pencil and test sheet" />
       </div>
       {/*end of practice*/}
@@ -852,7 +860,7 @@ const FileManagement = () => {
       <Progress />
       <Checkbox id="3" />
       <Footer />
-    </div>
+    </motion.div>
   );
 };
 

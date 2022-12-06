@@ -1,36 +1,37 @@
-import React, { useState , useEffect, useRef} from 'react'
-import "./Flashcard.css"
+import React, { useState, useEffect, useRef } from "react";
+import "./Flashcard.css";
 
-export default function Flashcard ({flashcard}) {
-    const[flip, setFlip ] = useState(false)
-    const[height, setHeight] = useState('initial')
+export default function Flashcard({ flashcard }) {
+  const [flip, setFlip] = useState(false);
+  const [height, setHeight] = useState("initial");
 
-    const frontEl = useRef()
-    const backEl = useRef()
+  const frontEl = useRef();
+  const backEl = useRef();
 
-    function setMaxHeight(){
-      const frontHeight = frontEl.current.getBoundingClientRect().height
-      const backHeight = backEl.current.getBoundingClientRect().height
-      setHeight(Math.max(frontHeight, backHeight, 100))
-    }
-
-    useEffect(setMaxHeight, [flashcard.question, flashcard.ans])
-    useEffect(() =>{
-      window.addEventListener('resize', setMaxHeight)
-      return () =>window.removeEventListener('resize', setMaxHeight)
-    },[])
-
-    return (
-    <div
-        className={`flashCard ${flip ? 'flip' : ''}`}
-        style={{height: height}}
-        onClick={() => setFlip(!flip)}
-    >
-        <div className="front" ref={frontEl}>
-          {flashcard.question}
-        </div>
-        <div className="back" ref={backEl}>{flashcard.ans}</div>
-    </div>
-    )
+  function setMaxHeight() {
+    const frontHeight = frontEl.current.getBoundingClientRect().height;
+    const backHeight = backEl.current.getBoundingClientRect().height;
+    setHeight(Math.max(frontHeight, backHeight, 100));
   }
-  
+
+  useEffect(setMaxHeight, [flashcard.question, flashcard.ans]);
+  useEffect(() => {
+    window.addEventListener("resize", setMaxHeight);
+    return () => window.removeEventListener("resize", setMaxHeight);
+  }, []);
+
+  return (
+    <div
+      className={`flashCard ${flip ? "flip" : ""}`}
+      style={{ height: height }}
+      onClick={() => setFlip(!flip)}
+    >
+      <div className="front" ref={frontEl}>
+        {flashcard.question}
+      </div>
+      <div className="back" ref={backEl}>
+        {flashcard.ans}
+      </div>
+    </div>
+  );
+}
